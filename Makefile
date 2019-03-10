@@ -5,11 +5,14 @@ INCDIR=-I src/include
 
 all: main
 
-main: main.o
-	g++ -o target/main target/main.o
+main: main.o image.o
+	g++ -o target/main target/main.o target/image.o
 
-main.o: src/bin/main.cpp target
-	g++ $(INCDIR) -c src/bin/main.cpp -o target/main.o
+main.o: src/bin/main.cc target
+	g++ $(INCDIR) -c src/bin/main.cc -o target/main.o
+
+image.o: src/bin/image.cc target
+	g++ $(INCDIR) -c src/bin/image.cc -o target/image.o
 
 target: 
 	mkdir -p target
@@ -18,6 +21,6 @@ clean:
 	rm target/main.o
 	rm target/main
 
-.PHONY: clean main main.o all
+.PHONY: clean main main.o image.o all
 
 

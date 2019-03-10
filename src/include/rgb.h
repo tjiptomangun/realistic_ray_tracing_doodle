@@ -119,11 +119,12 @@ inline rgb operator* (const rgb& c1, const rgb& c2){
 	return rgb(c1._r*c2._r, c1._g*c2._g, c1._b*c2._b);
 } 
 
+inline rgb operator/ (const rgb& c1, const rgb& c2){
+	return rgb(c1._r/c2._r, c1._g/c2._g, c1._b/c2._b);
+}
+
 inline rgb operator+ (const rgb& c1, const rgb& c2){
 	return rgb(c1._r+c2._r, c1._g+c2._g, c1._b+c2._b);
 }
 
-inline rgb operator/ (const rgb& c1, const rgb& c2){
-	return rgb(c1._r/c2._r, c1._g/c2._g, c1._b/c2._b);
-}
 #endif //_RGB_H_
