@@ -1,6 +1,7 @@
 // image.cc
 #include <image.h>
 #include <iostream>
+
 using namespace std;
 
 Image::Image() {
@@ -48,7 +49,68 @@ void Image::gammaCorrect(float gamma){
 	for (int i = 0; i < nx; i ++)
 		for (int j = 0; j < ny; j++){
 			temp = raster[i][j];
-			raster[i][j] = rgb(pow(temp.r(), power, pow(temp.g(), power,
-				rgb(pow(temp.b(), power));
+			raster[i][j] = rgb(pow(temp.r(), power), pow(temp.g(), power),
+				pow(temp.b(), power));
 		}
 }
+
+void Image::writePPM(ostream &out){
+	// output header
+	out << "P6\n";
+	out << nx << ' ' << ny << '\n';
+	out << "255\n";
+
+	int i, j;
+	unsigned int ired, igreen, iblue;
+	unsigned char red, green , blue;
+
+	//output clamped [0, 255] values
+	for (i = ny - 1; i >= 0; i--)
+		for(j = 0; j < nx; j ++) {
+			ired = (unsigned int)(255 * raster[j][i].r());
+			igreen= (unsigned int)(255 * raster[j][i].g());
+			iblue= (unsigned int)(255 * raster[j][i].b());
+
+			if (ired > 255) ired = 255;
+			if (igreen > 255) igreen = 255;
+			if (iblue > 255) iblue= 255;
+
+			red = (unsigned char)(ired);
+			green = (unsigned char)(green);
+			blue = (unsigned char)(blue);
+			out.put(red);
+			out.put(green);
+			out.put(blue); 
+		}
+}
+
+// read in a binary PPM
+void Image::readPPM(string file_name)  {
+	ifstream in;
+	in.open(file_name.c_str());
+	if (!in.is_open()){
+		cerr << " ERROR -- Couldn't open file \'" << file_name << "\'.\n";
+		exit (-1);
+	}
+	char ch, type;
+	char red, green, blue;
+	int i, j, cols, rows;
+	int num;
+    
+    // read in header info
+    in.get(ch);
+    in.get(type);
+    in >> cols >> rows >> num; 
+
+	nx = cols;
+	ny = rows;
+
+	//allocate raster
+
+	raster = new rgb*[nx];
+	for (i = 0 ; i < nx; i++)
+		raster[i] = new rgb[ny];
+	
+}
+
+

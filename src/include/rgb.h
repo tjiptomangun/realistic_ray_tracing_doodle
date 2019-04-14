@@ -7,7 +7,7 @@ class rgb{
 
 public:
 	rgb() {_r = _g = _b = 0;}
-	rgb(double ret, double green ,double blue);
+	rgb(double red, double green ,double blue);
 	rgb(const rgb & original){ *this = original; }
 
 	void setRed(double red) { _r = red; }
