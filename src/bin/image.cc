@@ -110,7 +110,21 @@ void Image::readPPM(string file_name)  {
 	raster = new rgb*[nx];
 	for (i = 0 ; i < nx; i++)
 		raster[i] = new rgb[ny];
-	
+
+	// Clean up newline
+	in.get(ch);
+
+	// store PPM pixel values in raster
+	for (i = ny - 1; i >= 0; i --)
+		for (j = 0; i < nx; j ++){
+			in.get(red);
+			in.get(green);
+			in.get(blue);
+			raster[j][i] = rgb((float) ((unsigned char) red)/255.0,
+				(float) ((unsigned char) green)/255.0,
+				(float) ((unsigned char) blue)/255.0
+			);
+		} 
 }
 
 
