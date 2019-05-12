@@ -1,0 +1,47 @@
+\documentclass[a4paper, 12pt]{article}
+  
+\usepackage{algorithm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\parindent}{0pt}
+
+\title{Notes on Vectors}
+
+\begin{document} 
+\textbf{Linear combinations.}
+if $a1....am$ are n-vectors, and $\beta_1...\beta_m$ are scalars, the $n-vector$
+\begin{align*}
+\beta_1a_1+...+\beta_ma_m
+\end{align*}
+is called a \textit{linear combination} of vectors $a_1...a_n$. The scalars $\beta_1...\beta_m$
+ are called the \textit{coefficients} of the lienar combination.
+\\
+\\
+\textbf{The inner product function.} Suppose $a$ is an $n-vector$. We can defien scalar-valued
+function $f$ of $n-vectors$, given by
+\begin{equation}
+f(x) = a^Tx = a_1x_1 + a_2x_2+...+a_nx_n
+\end{equation}
+for any $n-vector x$. This function gives the inner product of its $n-vector$ argument $x$ with
+some (fixed) $n-vector$.
+\\
+\\
+\textbf{Superposition and linearity}. The inner product function $f$ defined above satisfies
+property
+\begin{align*}
+f(\alpha x +\beta y) &= a^T(\alpha x + \beta y) \\
+&= a^T(\alpha x) + a^T(\beta y) \\
+&= \alpha(a^Tx) + \beta(a^Ty) \\
+&= \alpha f(x) + \beta f(x)
+\end{align*}
+\\
+for all $n-vectors x, y$, and all scalars $\alpha, \beta$. This property is called \textit{superposition}.
+ A function that satisfies the superposition property is called \textit{linear}.
+\\
+\\
+\textbf{Superposition equality} is thus
+\begin{equation}
+f(\alpha x + \beta y) = \alpha f(x) + \beta f(y)
+\end{equation}
+\end{document}
+
