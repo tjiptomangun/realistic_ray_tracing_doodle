@@ -3,12 +3,14 @@
 \usepackage{algorithm}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{multicol}
 \setlength{\parindent}{0pt}
 
 \title{Notes on Vectors}
-
+%comment comment comment
 \begin{document} 
-\textbf{Augmented Matrix} is a matrix obtained by appending the columns of two given matrices.\\
+\textbf{Augmented Matrix} is a matrix obtained by appending the columns of 
+two given matrices.\\
 Given the matrices A and B, where
 $$
 A =
@@ -35,6 +37,45 @@ $$
 5 & 2 & 2 & 1
 \end{bmatrix}
 $$
+\\
+Augmented Matrix can be used to represent sytem equations.
+For example :
+\begin{multicols}{2}
+\begin{align*}
+x_1 + x_2 + 2x_3 &= 9 \\
+2x_1 + 4x_2 - 3x_3 &= 1 \\
+3x_1 + 6x_2 - 5x_3 &= 0\\
+\end{align*}
+\break
+\[ \left[ {\begin{array}{cccc}
+1 & 1 & 2 & 9 \\
+2 & 4 & -3 & 1 \\
+3 & 6 & -5 & 0
+\end{array}} \right] \]
+\end{multicols}
+
+The basic method for solving a linear system is to perform appropiate 
+algebraic operations on the system that do not alter the solution set 
+and that produce a succession of increasingly simple system, until a 
+point is reached where it can be ascertained whether the system is 
+consistent, and if so, what its solutions are. Typically, the algebraic
+operations are as follows:
+\begin{enumerate}
+\item Multiply an equation through a a nonzero constant
+\item Interchange two equations
+\item Add a constant time one equation to another 
+\end{enumerate}
+
+Since the rows (horizontal lines) of an augmented matrix correspond
+to the equations in the associated system, these three operations 
+correspond to the following operation on the rows of the augmented
+matrix 
+\begin{enumerate}
+\item Multiply a row through a a nonzero constant
+\item Interchange two rows
+\item Add a constant time one row to another 
+\end{enumerate}
+
 \textbf{Inner Product}
 The standard \textit{inner product} (also called \textit{dot product}) of two $n$-vectors is defined as the scalar
 \begin{align*}
