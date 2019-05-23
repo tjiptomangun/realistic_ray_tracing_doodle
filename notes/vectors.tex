@@ -9,6 +9,33 @@
 \title{Notes on Vectors}
 %comment comment comment
 \begin{document} 
+\textbf{Linear Equation}
+is equation where $n$ variables $x_1, x_2, ..., x_n$  can be expressed in the form
+$a_1x_1 + a_2x_2 + ... + a_nx_n = b $ \\
+where $a_1, a_2, ..., a_nx_n$ and $b$ are constants, and $a's$  are not all zero.
+\\
+\\
+\textbf{System of linear equations} or \textbf{linear system} is a finite test of 
+linear equations.The variables are called \textbf{unknowns}
+\\
+\\
+\textbf{Solution} of a linear system with $n$ unknonws $x_1, x_2, ... , x_n$ is 
+a sequance of $n$ numbers  $s_1, s_2, ... s_n$ for which the substitution
+$x_1 = s_1, x_2 = s_2, ..., x_n = s_n$
+makes each equation a true statement.
+\\
+\\
+\textit{Every system of linear equations has zero, one or infinitely many solutions.
+There are no other possibilities.}
+\\
+\\
+\textbf{Consistent} linear system is the one that has at least one solution.
+They are two equations in this system,  one solution of infinitely many.
+\\
+\\
+\textbf{Inconsistent} linear system is the one that has no solutions.
+\\
+\\ 
 \textbf{Augmented Matrix} is a matrix obtained by appending the columns of 
 two given matrices.\\
 Given the matrices A and B, where
@@ -54,6 +81,7 @@ x_1 + x_2 + 2x_3 &= 9 \\
 \end{array}} \right] \]
 \end{multicols}
 
+\textbf{Elementary Row Operations}
 The basic method for solving a linear system is to perform appropiate 
 algebraic operations on the system that do not alter the solution set 
 and that produce a succession of increasingly simple system, until a 
@@ -61,9 +89,9 @@ point is reached where it can be ascertained whether the system is
 consistent, and if so, what its solutions are. Typically, the algebraic
 operations are as follows:
 \begin{enumerate}
-\item Multiply an equation through a a nonzero constant
+\item Multiply an equation through by a nonzero constant
 \item Interchange two equations
-\item Add a constant time one equation to another 
+\item Add a constant times of one equation to another 
 \end{enumerate}
 
 Since the rows (horizontal lines) of an augmented matrix correspond
@@ -71,9 +99,9 @@ to the equations in the associated system, these three operations
 correspond to the following operation on the rows of the augmented
 matrix 
 \begin{enumerate}
-\item Multiply a row through a a nonzero constant
+\item Multiply a row through by a nonzero constant
 \item Interchange two rows
-\item Add a constant time one row to another 
+\item Add a constant times of one row to another 
 \end{enumerate}
 
 \begin{multicols}{2}
@@ -108,14 +136,237 @@ x + 4y - 9z  &= -18\\
 0 & 2 & -7 & -17 \\
 1 & 4 & -9 & -18 
 \end{array}} \right] \]
+\end{multicols} 
+
+\begin{multicols}{2} 
+Add the first equation the third equation
+\break
+Add the first row to the third row
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{align*}
+-x  -y - 2z &= -9 \\
+2y - 7z &= -17 \\
+3y - 11z  &= -27\\
+\end{align*}
+\break
+\[ \left[ {\begin{array}{cccc}
+-1 & -1 & -2 & -9 \\
+0 & 2 & -7 & -17 \\
+0 & 3 & -11 & -27 
+\end{array}} \right] \]
+\end{multicols} 
+
+\begin{multicols}{2} 
+Add -1 of the third equation the second equation
+\break
+Add -1 of the third row to the second row
+\end{multicols} 
+
+\begin{multicols}{2}
+\begin{align*}
+-x  -y - 2z &= -9 \\
+-y + 4z &= 10 \\
+3y - 11z  &= -27\\
+\end{align*}
+\break
+\[ \left[ {\begin{array}{cccc}
+-1 & -1 & -2 & -9 \\
+0 & -1 & +4 & 10 \\
+0 & 3 & -11 & -27 
+\end{array}} \right] \]
+\end{multicols} 
+
+\begin{multicols}{2} 
+Add -1 of the second equation the first equation
+\break
+Add -1 of the second row to the first row
+\end{multicols} 
+
+\begin{multicols}{2}
+\begin{align*}
+-x +  0y  - 6z &= -19 \\
+-y + 4z &= 10 \\
+3y - 11z  &= -27\\
+\end{align*}
+\break
+\[ \left[ {\begin{array}{cccc}
+-1 & 0 & -6 & -19 \\
+0 & -1 & 4 & 10 \\
+0 & 3 & -11 & -27 
+\end{array}} \right] \]
+\end{multicols} 
+
+\begin{multicols}{2} 
+Add 3 times of the second equation the third equation
+\break
+Add 3 times  of the second row to the third row
+\end{multicols} 
+
+\begin{multicols}{2}
+\begin{align*}
+-x +  0y  - 6z &= -19 \\
+-y + 4z &= 10 \\
+z  &= 3
+\end{align*}
+\break
+\[ \left[ {\begin{array}{cccc}
+-1 & 0 & -6 & -19 \\
+0 & -1 & 4 & 10 \\
+0 & 0 & 1  & 3 
+\end{array}} \right] \]
+\end{multicols} 
+
+\begin{multicols}{2} 
+Add 6 times of the third equation the first equation
+\break
+Add 6 times of the third row to the first row
+\end{multicols} 
+
+\begin{multicols}{2}
+\begin{align*}
+-x &= -1 \\
+-y + 4z &= 10 \\
+z  &= 3\\
+\end{align*}
+\break
+\[ \left[ {\begin{array}{cccc}
+-1 & 0 & 0  & -1 \\
+0 & -1 & 4 & 10 \\
+0 & 0 & 1  & 3 
+\end{array}} \right] \]
+\end{multicols} 
+
+\begin{multicols}{2} 
+Add -4 times of the third equation the second equation
+\break
+Add -4 times of the third row to the second row
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{align*}
+-x &= -1 \\
+-y &= -2 \\
+z  &= 3\\
+\end{align*}
+\break
+\[ \left[ {\begin{array}{cccc}
+-1 & 0 & 0  & -1 \\
+0 & -1 & 0 & -2 \\
+0 & 0 & 1  & 3 
+\end{array}} \right] \]
+\end{multicols} 
+
+\begin{multicols}{2} 
+Multiply -1 times for each equation 1 and 2
+\break
+Multiply -1 times for each row 1 and 2
 \end{multicols}
 
 
+\begin{multicols}{2}
+\begin{align*}
+x &= 1 \\
+y &= 2 \\
+z  &= 3\\
+\end{align*}
+\break
+\[ \left[ {\begin{array}{cccc}
+1 & 0 & 0  & 1 \\
+0 & 1 & 0 & 2 \\
+0 & 0 & 1  & 3 
+\end{array}} \right] \]
+\end{multicols} 
 
+\textbf{Echelon Forms and Reduced Echelon Forms}
+\begin{enumerate}
+\item If row does not consists of entirely zeroes, then the first nonzero 
+      number in the row is a 1. This is called a \textit{leading 1}.
+\item It there are any rows that consist entirely of zeroes, the they are 
+      grouped together a the bottom of the matrix.
+\item In any two succesive rows that do not consist entirely of zeros, the 
+      leading 1 in the lower row occurs farther to the right the the 
+      leading 1 in the higher row.
+\item Each column that contains a leading 1 has zeroes everywhere else in
+      the column.
+\end{enumerate}
+1 to 3 is property of  \textit{row echelon form}, meanwhile 1 to 4 is 
+property of \textit{reduced row echelon form}.
+\\
+\\
+Example of Reduced Echelon Form
+$$
+\begin{bmatrix}
+1 && 0 && 0 && 4 \\
+0 && 1 && 0 && 7 \\
+0 && 0 && 1 && -1 \\
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+1 && 0 && 0 \\
+0 && 1 && 0 \\
+0 && 0 && 1 \\
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+0 && 1 && -2 && 0 && 1 \\
+0 && 0 && 0 && 1 && 3  \\
+0 && 0 && 0 && 0 && 0  \\
+0 && 0 && 0 && 0 && 0  \\
+\end{bmatrix}
+$$
 
+Example of Echelon Form but not Reduced
+$$
+\begin{bmatrix}
+1 && 4 && -3 && 7 \\
+0 && 1 && 6 && 2 \\
+0 && 0 && 1 && 5
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+1 && 1 && 0 \\
+0 && 1 && 0 \\
+0 && 0 && 0
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+0 && 1 && 2 && 6 && 0 \\
+0 && 0 && 1 && -1 && 0 \\
+0 && 0 && 0 && 0 && 1
+\end{bmatrix}
+$$
+\\
+\\
+\textbf{General Solutions}. If a linear system has infinitely many solutions,
+then a set of parametric equations from which all solutions can be obtained
+by assigning numerical values to the parameters is called 
+\textbf{general solution} to the system.
+\\
+\\
+\textbf{Elimination Procedure} is steps that can be used to reduce matrix to 
+reduced echelon form
+\\
+\\
+\textbf{Gauss-Jordan Elimination}.
+\[ \left[ {\begin{array}{cccccc}
+0 & 0 & -2  & 0 & 7 & 12 \\
+2 & 4 & -10 & 6 & 12 & 28 \\
+2 & 4 & -5 & 6 & -5 & -1
+\end{array}} \right] \]
 
+\begin{enumerate}
+\item Locate the leftmost column that does not consist entirely zeros
+\[ \left[ {\begin{array}{cccccc}
+0 & 0 & -2  & 0 & 7 & 12 \\
+2 & 4 & -10 & 6 & 12 & 28 \\
+2 & 4 & -5 & 6 & -5 & -1
+\end{array}} \right] \]
+\end{enumerate}
 \textbf{Inner Product}
-The standard \textit{inner product} (also called \textit{dot product}) of two $n$-vectors is defined as the scalar
+The standard \textit{inner product} (also called \textit{dot product}) of 
+two $n$-vectors is defined as the scalar
 \begin{align*}
 a^Tb = a_1b_1 + a_2b_2 + ... + a_nb_n
 \end{align*}
@@ -173,4 +424,3 @@ $a^Tx$ is inner product representation of $f$
 A function $f: \mathbf{R} ^n \to \mathbf{R}$ is affine if an only if it can be expressed as $f(x) = a^T x + b$
 
 \end{document}
-
