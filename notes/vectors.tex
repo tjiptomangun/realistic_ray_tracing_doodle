@@ -3,7 +3,13 @@
 \usepackage{algorithm}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{multicol}
+\usepackage{multicol} 
+\usepackage{color, colortbl}
+
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightCyan}{rgb}{0.70,1,1}
+\definecolor{OliveGreen}{rgb}{0,0.6,0}
+
 \setlength{\parindent}{0pt}
 
 \title{Notes on Vectors}
@@ -360,10 +366,145 @@ reduced echelon form
 \item Locate the leftmost column that does not consist entirely zeros
 \[ \left[ {\begin{array}{cccccc}
 0 & 0 & -2  & 0 & 7 & 12 \\
+\rowcolor{Gray}
 2 & 4 & -10 & 6 & 12 & 28 \\
 2 & 4 & -5 & 6 & -5 & -1
 \end{array}} \right] \]
+\item Interchange the top row with another row, if necessary, to bring 
+a nonzeor entry to the top of the column found in 1
+\[ \left[ {\begin{array}{cccccc}
+\rowcolor{Gray}
+2 & 4 & -10 & 6 & 12 & 28 \\
+\rowcolor{Gray}
+0 & 0 & -2  & 0 & 7 & 12 \\
+2 & 4 & -5 & 6 & -5 & -1
+\end{array}} \right] \]
+\item If the entry that is now at the top of the column found in 1 is a,
+multiply the first row by $1/a$ in order to introduce a leading 1.
+\[ \left[ {\begin{array}{cccccc}
+\rowcolor{Gray}
+1 & 2 & -5 & 3 & 6 & 14 \\
+0 & 0 & -2  & 0 & 7 & 12 \\
+2 & 4 & -5 & 6 & -5 & -1
+\end{array}} \right] \]
+\item Add a suitable multiples of the top row to the rows below so that
+all entries below the leading 1 becomes zeros
+\[ \left[ {\begin{array}{cccccc}
+1 & 2 & -5 & 3 & 6 & 14 \\
+0 & 0 & -2  & 0 & 7 & 12 \\
+\rowcolor{Gray}
+0 & 0 & 5 & 0 & -17 & -29
+\end{array}} \right] \]
+\item Now cover the top row in the matrix and begina again with step 1
+applied to the submatrix that remains. Continue in this way untuk the
+entire matrix in row echelon form
+\[ \left[ {\begin{array}{cccccc}
+\rowcolor{LightCyan}
+1 & 2 & -5 & 3 & 6 & 14 \\
+0 & 0 & -2  & 0 & 7 & 12 \\
+0 & 0 & 5 & 0 & -17 & -29
+\end{array}} \right] \]
+
+\[ \left[ {\begin{array}{cccccc}
+\rowcolor{LightCyan}
+1 & 2 & -5 & 3 & 6 & 14 \\
+\rowcolor{Gray}
+0 & 0 & -2  & 0 & 7 & 12 \\
+0 & 0 & 5 & 0 & -17 & -29
+\end{array}} \right] \]
+
+\[ \left[ {\begin{array}{cccccc}
+\rowcolor{LightCyan}
+1 & 2 & -5 & 3 & 6 & 14 \\
+\rowcolor{Gray}
+0 & 0 & 1  & 0 & -7/2 & -6 \\
+0 & 0 & 5 & 0 & -17 & -29
+\end{array}} \right] \]
+
+\[ \left[ {\begin{array}{cccccc}
+\rowcolor{LightCyan}
+1 & 2 & -5 & 3 & 6 & 14 \\
+\rowcolor{LightCyan}
+0 & 0 & 1  & 0 & -7/2 & -6 \\
+\rowcolor{Gray}
+0 & 0 & 0  & 0 & 1/2  & 1 
+\end{array}} \right] \]
+
+\[ \left[ {\begin{array}{cccccc}
+\rowcolor{LightCyan}
+1 & 2 & -5 & 3 & 6 & 14 \\
+\rowcolor{LightCyan}
+0 & 0 & 1  & 0 & -7/2 & -6 \\
+\rowcolor{LightCyan}
+0 & 0 & 0  & 0 & 1  & 2 
+\end{array}} \right] \]
+
+\item Beginning with the last nonzero row and working upward, add suitable
+multiples of each row to the rows above to introduce zeros above the 
+leading 1's
+
+\[ \left[ {\begin{array}{cccccc}
+1 & 2 & -5 & 3 & 6 & 14 \\
+0 & 0 & 1  & 0 & -7/2 & -6 \\
+0 & 0 & 0  & 0 & 1  & 2 
+\end{array}} \right] \]
+
+
+
+\[ \left[ {\begin{array}{cccccc}
+1 & 2 & -5 & 3 & 6 & 14 \\
+0 & 0 & 1  & 0 & -7/2 & -6 \\
+\rowcolor{Gray}
+0 & 0 & 0  & 0 & 1  & 2 
+\end{array}} \right] \]
+
+
+
+\[ \left[ {\begin{array}{cccccc}
+\rowcolor{Gray}
+1 & 2 & -5 & 3 & 0 & 2 \\
+\rowcolor{Gray}
+0 & 0 & 1  & 0 & 0 & 1\\
+\rowcolor{LightCyan}
+0 & 0 & 0  & 0 & 1  & 2 
+\end{array}} \right] \]
+
+\[ \left[ {\begin{array}{cccccc} 
+1 & 2 & -5 & 3 & 0 & 2 \\ 
+\rowcolor{Gray}
+0 & 0 & 1  & 0 & 0 & 1\\
+\rowcolor{LightCyan}
+0 & 0 & 0  & 0 & 1  & 2 
+\end{array}} \right] \]
+
+\[ \left[ {\begin{array}{cccccc} 
+\rowcolor{Gray}
+1 & 2 & 0 & 3 & 0 & 7 \\ 
+\rowcolor{LightCyan}
+0 & 0 & 1  & 0 & 0 & 1\\
+\rowcolor{LightCyan}
+0 & 0 & 0  & 0 & 1  & 2 
+\end{array}} \right] \]
+
+\[ \left[ {\begin{array}{cccccc} 
+\rowcolor{LightCyan}
+1 & 2 & 0 & 3 & 0 & 7 \\ 
+\rowcolor{LightCyan}
+0 & 0 & 1  & 0 & 0 & 1\\
+\rowcolor{LightCyan}
+0 & 0 & 0  & 0 & 1  & 2 
+\end{array}} \right] \]
+
 \end{enumerate}
+
+\textbf{Example} 
+\begin{eqnarray}
+%x_1 &+ 3x_2 &- 2x_3 &&+ 2x_5 &&= 0 \\
+2x_1 &+ 6x_2 &- 5x_3 &+ 2x_4 &+ 4x_5 &- 3x_6 &= -1\\
+%& & 5x_3 &+ 10x_4 & &+ 15x_6 &= 5 \\
+%2x_1 &+ 6x_2 &  &+ 8x_4 &+ 4x_5 &+ 18x_6 &= 6  \\
+\end{eqnarray}
+
 \textbf{Inner Product}
 The standard \textit{inner product} (also called \textit{dot product}) of 
 two $n$-vectors is defined as the scalar

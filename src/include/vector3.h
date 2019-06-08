@@ -40,7 +40,31 @@ public:
 
 	friend bool operator==(const Vector3& v1, const Vector3& v2);
 	friend bool operator!=(const Vector3& v1, const Vector3& v2);
+
+	friend istream &operator>>(istream &is, Vector3 &t);
+	friend ostream &operator<<(ostream &os, const Vector3 &t);
+
+	friend Vector3 operator+(const Vector3 v1, const Vector3& v2);
+	friend Vector3 operator-(const Vector3 v1, const Vector3& v2);
+	friend Vector3 operator/(const Vector3 vec, float scalar);
+	friend Vector3 operator*(const Vector3 vec, float scalar);
+	friend Vector3 operator*(float scalar, const Vector3 vec);
+
+	Vector3& operator = (const Vector3& v2);
+	Vector3& operator += (const Vector3& v2);
+	Vector3& operator -= (const Vector3& v2);
+	Vector3& operator *= (const float t);
+	Vector3& operator /= (const float t);
+
+	friend Vector3 unitVector(const Vector3& v);
+	friend Vector3 minVec(const Vector3& v1, const Vector3& v2);
+	friend Vector3 maxVec(const Vector3& v1, const Vector3& v2);
+	friend Vector3 cross(const Vector3& v1, const Vector3& v2);
+	friend float dot(const Vector3& v1, const Vector3& v2);
+	friend float tripleProduct(const Vector3& v1, const Vector3& v2, const Vector3& v3);
+
+	float e[3];
 	
-}
+};
 
 #endif
