@@ -67,4 +67,54 @@ public:
 	
 };
 
+inline Vector3::Vector3(float e0, float e1, float e2){
+	e[0] = e0;
+	e[1] = e1;
+	e[2] = e2;
+}
+
+inline const Vector3& Vector3::operator+() const{
+	return *this;
+}
+
+inline Vector3& Vector3::operator-() const{
+	return Vector3(-e[0], -e[1], -e[2]);
+}
+
+inline float Vector3::length() const{
+	return sqrt(e[0] * e[0] + e[1] * e[1] + e[2] * e[2]);
+}
+
+inline float Vector3::squaredLength() const{
+	e[0] * e[0] + e[1] * e[1] + e[2] * e[2];
+}
+
+inline void Vector3::makeUnitVector(){
+	*this = *this / (*this).length();
+}
+
+inline float Vector3::minComponent() const {
+	float temp = e[0];
+	if (e[1] < temp) temp = e[1];
+	if (e[2] < temp) temp = e[2];
+
+	return temp; 
+} 
+
+inline float Vector3::maxComponent() const {
+	float temp = e[0];
+	if (e[1] > temp) temp = e[1];
+	if (e[2] > temp) temp = e[2];
+
+	return temp; 
+} 
+inline float Vector3::maxAbsComponent() const {
+	float temp = fabs(e[0]);
+	if (fabs(e[1]) > temp) temp = fabs(e[1]);
+	if (fabs(e[2]) > temp) temp = fabs(e[2]);
+
+	return temp; 
+} 
+
+
 #endif
