@@ -498,7 +498,7 @@ leading 1's
 \end{enumerate}
 
 \textbf{Homogeneous Linear Systems} \\
-A system of linear equations is said to be \textbf{\textit{homgeneous}} if 
+A system of linear equations is said to be \textbf{\textit{homogeneous}} if 
 the constant terms all zero; that is, the system has the form
 \begin{eqnarray*}
 a_{11}x_1  &+ a_{12}x_2 &+ ... + a_{1n}x_n = 0\\
@@ -507,13 +507,81 @@ a_{21}x_1  &+ a_{22}x_2 &+ ... + a_{2n}x_n = 0\\
 a_{m1}x_1  &+ a_{m2}x_2 &+ ... + a_{mn}x_n = 0\\
 \end{eqnarray*}
 
+Every homogeneous system of linear equations is consistent because
+all such systems have $x_1 = 0, x_2 = 0, x_n = 0$ as a solution.
+This solution is called \textbf{\textit{trivial solution}}; if there
+are other solutions, they are called \textbf{\textit{nontrivial solutions}}.
+
+\begin{align*}
+x_1 + 3x_2 - 2x_3 + 2x_5 &= 0 \\
+2x_1 + 6x_2 - 5x_3 - 2x_4 + 4x_5 - 3x_6 &= 0\\
+5x_3 + 10x_4 + 15x_6 &= 0\\
+2x_1 + 6x_2 + 8x_4 + 4x_5 + 18x_6 &= 0 \\
+\end{align*}
+
+\[ \left[
+\begin{array}{ccccccc} 
+1 & 3 & -2 &  0 & 2 &  0 & 0\\
+2 & 6 & -5 & -2 & 4 & -3 & 0\\
+0 & 0 &  5 & 10 & 0 & 15 & 0\\
+2 & 6 &  0 &  8 & 4 & 18 & 0\\ 
+\end{array} 
+\right] \] 
+
+
+\[ \left[
+\begin{array}{ccccccc} 
+1  &  3  &  0 &  4  &  2 &  0 & 0\\
+0  &  0  &  1 &  2  &  0 &  0 & 0\\
+0  &  0  &  0 &  0  &  0 &  1 & 0\\ 
+0  &  0  &  0 &   0 &  0 &  0 & 0\\
+\end{array} 
+\right] \] 
+
+$
+x_6 = 0 \\
+x_3 = -2x_4 \\
+x_4 = t \\
+x_3 = -2t \\
+x_1 = -3v -4t - 2w \\
+x_2 = v
+$
+\\
+\\
+Note that the trivial solution results when $v = t = w = 0$.
+\\
+\\
+\textbf{Leading Variables} Are those whose columns in the 
+\textit{Reduced Row Echelon Form} contains leading $1$.
+\\
+\\
+\textbf{Free Variables} Are those whose columns in the 
+\textit{Reduced Row Echelon Form} do not contain leading $1$.
+\\
+\\
+$x_1, x_3$ and $x_6$ are all \textit{Leading Variables}
+\\
+$x_2, x_4$ and $x_5$ are all \textit{Free Variables}
+\\
+\\
+\textbf{Free Variable Theorem for Homogeneous System}. If a homogeneous has 
+$n$ unknowns, and if the \textit{reduced row echelon form} of its 
+\textit{augmented matrix} has r nonzero rows, then the system has $n - r$
+free variables.
+\\
+\\
+\textbf{Free Variables , Homogeneous System and Solutions}. A 
+\textit{Homogeneous Linear System} with more unknowns that equations
+has infinitely many solutions.
+\\
+\\
 \textbf{Inner Product}
 The standard \textit{inner product} (also called \textit{dot product}) of 
 two $n$-vectors is defined as the scalar
 \begin{align*}
 a^Tb = a_1b_1 + a_2b_2 + ... + a_nb_n
 \end{align*}
-
+\\
 \textbf{Linear combinations.}
 if $a_1....a_m$ are n-vectors, and $\beta_1...\beta_m$ are scalars, the $n-vector$
 \begin{align*}
