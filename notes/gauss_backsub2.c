@@ -1,5 +1,5 @@
 #include <stdio.h>
-//write the code here
+// write the code here
 // from https://www.codewithc.com/c-program-for-gauss-elimination-method/
 #include <stdio.h>
 
@@ -27,5 +27,15 @@ int main() {
                 }
             }
         }
+    }
+
+    x[n] = A[n][n + 1] / A[n][n];
+
+    for(i = n ; i >= 1; i --){
+        sum = 0;
+        for (j = i + 1; j <= n; j ++){
+            sum = sum + A[i][j] * x[j];
+        }
+        x[i] = (A[i][n + 1] - sum) / A[i][i];
     }
 }
