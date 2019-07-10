@@ -1,4 +1,4 @@
-all: notes gauss_jordan gauss_backsub
+all: notes gauss_jordan gauss_backsub2
   
 notes: notes
 	latex vectors.tex
@@ -7,9 +7,9 @@ notes: notes
 gauss_jordan: gauss_jordan.c
 	gcc -Wall -ggdb3 gauss_jordan.c -o gauss_jordan
 
-gauss_backsub: gauss_backsub.c
-	gcc -Wall -ggdb3 gauss_backsub.c -o gauss_backsub
+gauss_backsub2: gauss_backsub2.c
+	gcc -Wall -ggdb3 gauss_backsub2.c -o gauss_backsub2
 
 clean: vectors.tex
-	rm -f gauss_jordan gauss_backsub vectors.aux vectors.dvi vectors.log
+	rm -f gauss_jordan gauss_backsub2 vectors.aux vectors.dvi vectors.log
    

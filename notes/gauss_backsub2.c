@@ -31,7 +31,7 @@ int main() {
 
     x[n] = A[n][n + 1] / A[n][n];
 
-    for(i = n ; i >= 1; i --){
+    for(i = n - 1 ; i >= 1; i --){
         sum = 0;
         for (j = i + 1; j <= n; j ++){
             sum = sum + A[i][j] * x[j];

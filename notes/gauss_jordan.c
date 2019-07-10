@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int print_matrix(double* input, int num_col, int num_row) {
+int print_matrix(double* input, int num_row, int num_col) {
     int i, j;
     fprintf(stdout, "---------  MATRIX %d x %d ---------\n", num_col, num_row);
     for (i = 0; i < num_row; i ++) {
@@ -19,7 +19,7 @@ int print_matrix(double* input, int num_col, int num_row) {
     return 0;
 }
 
-int reduce(double *input, int num_col, int num_row) {
+int reduce(double *input, int num_row, int num_col) {
 	double *temp = (double *) calloc(num_col, sizeof(double));	
 
 	int crow, ccol;
@@ -31,7 +31,7 @@ int reduce(double *input, int num_col, int num_row) {
     int all_zero ;
 
 	while (procrow < num_row){
-        print_matrix(input, num_col, num_row);
+        print_matrix(input, num_row, num_col);
         all_zero = 1;
 		mincol = num_col;
 
@@ -81,13 +81,14 @@ int reduce(double *input, int num_col, int num_row) {
         for (ccol = 0; ccol < num_col; ccol ++){
             if (input[procrow * num_col + ccol] != 0.000f && ccol < mincol){
                 mincol = ccol;
-                candval = input[crow * num_col + ccol];
+                candval = input[procrow * num_col + ccol];
                 all_zero = 0;
             }
         }
         if (!all_zero) {
             for (crow = procrow - 1; crow >= 0; crow --){
-                reduce_factor = - (input[crow * num_col + mincol] / input[procrow * num_col + mincol]);
+                //reduce_factor = - (input[crow * num_col + mincol] / input[procrow * num_col + mincol]);
+                reduce_factor = - input[crow * num_col + mincol] / candval;
                 for (ccol = 0; ccol < num_col; ccol ++){
                     temp[ccol] = input[procrow * num_col + ccol] * reduce_factor;
                     input[crow * num_col + ccol] += temp[ccol];
@@ -95,6 +96,8 @@ int reduce(double *input, int num_col, int num_row) {
             
             }
         }
+
+        print_matrix(input, num_row, num_col);
         
         procrow --;
     }
@@ -112,8 +115,17 @@ int main(int argc, char **argv) {
 							{1.0, 3.0, 0.0, 4.0}, 
 						};
 
+	double test_again[3][6] = {
+							{0.0, 0.0,  -2.0, 0.0,  7.0, 12.0}, 
+							{2.0, 4.0, -10.0, 6.0, 12.0, 28.0}, 
+							{2.0, 4.0,  -5.0, 6.0, -5.0, -1.0} 
+						};
+
 	reduce((double *)test, 4, 4);	
     print_matrix((double *)test, 4, 4);
+
+	reduce((double *)test_again, 3, 6);	
+    print_matrix((double *)test_again, 3, 6);
 /*
 	for (i = 0; i < 4; i ++){
 		for(j = 0; j < 4; j ++){
