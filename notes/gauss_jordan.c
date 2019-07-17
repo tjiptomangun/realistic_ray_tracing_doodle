@@ -87,7 +87,6 @@ int reduce(double *input, int num_row, int num_col) {
         }
         if (!all_zero) {
             for (crow = procrow - 1; crow >= 0; crow --){
-                //reduce_factor = - (input[crow * num_col + mincol] / input[procrow * num_col + mincol]);
                 reduce_factor = - input[crow * num_col + mincol] / candval;
                 for (ccol = 0; ccol < num_col; ccol ++){
                     temp[ccol] = input[procrow * num_col + ccol] * reduce_factor;
@@ -115,8 +114,10 @@ int main(int argc, char **argv) {
 							{1.0, 3.0, 0.0, 4.0}, 
 						};
 
-	double test_again[3][6] = {
+	double test_again[5][6] = {
 							{0.0, 0.0,  -2.0, 0.0,  7.0, 12.0}, 
+							{0.0, 0.0,   0.0, 0.0,  0.0,  0.0},
+							{2.0, 4.0, -10.0, 6.0, 12.0, 28.0}, 
 							{2.0, 4.0, -10.0, 6.0, 12.0, 28.0}, 
 							{2.0, 4.0,  -5.0, 6.0, -5.0, -1.0} 
 						};
@@ -124,8 +125,8 @@ int main(int argc, char **argv) {
 	reduce((double *)test, 4, 4);	
     print_matrix((double *)test, 4, 4);
 
-	reduce((double *)test_again, 3, 6);	
-    print_matrix((double *)test_again, 3, 6);
+	reduce((double *)test_again, 5, 6);	
+    print_matrix((double *)test_again, 5, 6);
 /*
 	for (i = 0; i < 4; i ++){
 		for(j = 0; j < 4; j ++){

@@ -1,3 +1,3 @@
-currently gauss jordan and gauss backsub2
-gaus backsub2 in terms of gauss jordan (in algorithm)
+Matrix Multiplication by Columns and by Rows
+
 

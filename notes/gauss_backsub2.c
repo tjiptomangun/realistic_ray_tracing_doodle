@@ -38,4 +38,9 @@ int main() {
         }
         x[i] = (A[i][n + 1] - sum) / A[i][i];
     }
+
+    for (i = 1; i <= n ; i++){
+        printf("x[%d] = %f  ,", i, x[i]);
+    }
+        printf("\n");
 }

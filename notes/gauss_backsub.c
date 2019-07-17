@@ -91,7 +91,14 @@ int reduce(double *input, int num_col, int num_row) {
            // all functions are all the same 
            // f (rightmost, x1val, x2val, x3val, ..., xnval) = rightmost - (x1val + x2val + x3val ... + xnval)
            // x1val, ...xnval is another function 
+
+
+            /**
+                x[mincol] = procrow[num_col] - (x[mincol + 1] ... x[num_col - 1])
+             */
+            
         } 
+
         procrow --;
     } 
 	free(temp);
@@ -132,6 +139,9 @@ int main(int argc, char **argv) {
 							{0.0, 2.0, 1.0, 1.0}, 
 							{1.0, 3.0, 0.0, 4.0}, 
 						};
+
+    double result[3];
+    int solved[3];
 
 	reduce((double *)test, 4, 4);	
     print_matrix((double *)test, 4, 4);
