@@ -626,15 +626,212 @@ Substituting $x_3 = -2x_4$ into the first equation yields
 \\
 \textbf{row vector} or \textbf{row matrix} is a matrix with only one row.\\
 \\
-\textbf{cross product} If $A$ is an $m x n$ matrix and $B$ is $r x n$ matrix, 
-then the \textbf{product} AB is the $m x n$ matrix whose entries are determined 
+\textbf{cross product} If $A$ is an $m \times n$ matrix and $B$ is $r \times n$ matrix, 
+then the product \textbf{AB}  is the $m \times n$ matrix whose entries are determined 
 as follows: To find the entry in row $i$ and column $j$ of $AB$, single out row $i$ 
-from the matrix $A$ and column $B$ from the matrix $B$. Multiply the corresponding
-entries from the row and column together, an thena add up the resulting
+from the matrix $A$ and column $j$ from the matrix $B$. Multiply the corresponding
+entries from the row and column together, an then add up the resulting
 products.\\
 \\ 
+\[ A = \left[ {\begin{array}{ccc}
+a_{00} &  a_{01} &  a_{02} \\
+a_{10} &  a_{11} &  a_{12} \\
+a_{20} &  a_{21} &  a_{22} \\
+a_{30} &  a_{31} &  a_{32}
+\end{array}}
+\right]
+B =  \left[ {\begin{array}{cc}
+b_{00} &  b_{01} \\
+b_{10} &  b_{11} \\
+b_{20} &  b_{21} 
+\end{array}}
+\right] 
+\]
+\[
+AB = \left[ {\begin{array}{cc}
+a_{00} \times b_{00} + a_{01} \times b_{10} + a_{02} \times b_{20}   &  a_{00} \times b_{01} + a_{01} \times b_{11} + a_{02} \times b_{21}   \\
+a_{10} \times b_{00} + a_{11} \times b_{10} + a_{12} \times b_{20}   &  a_{10} \times b_{01} + a_{11} \times b_{11} + a_{12} \times b_{21}   \\
+a_{20} \times b_{00} + a_{21} \times b_{10} + a_{22} \times b_{20}   &  a_{20} \times b_{01} + a_{21} \times b_{11} + a_{22} \times b_{21}   \\
+a_{30} \times b_{00} + a_{31} \times b_{10} + a_{32} \times b_{20}   &  a_{30} \times b_{01} + a_{31} \times b_{11} + a_{32} \times b_{21}   
+
+\end{array}}
+\right]
+\]
+\\
+The definition of matrix multiplication requires that the number of columns of the 
+first factor $A$ be the same as the number of rows of the second factor $B$ in order
+to form the product $AB$.
+\\
+\\
 \textbf{Partitioned Matrices} A matrix can be subdivided or partitioned into smaller
 matrices by inserting horizontal and vertical rules between selected rows and columns.\\
+\\
+\\
+Partitioning can be used to find particular rows or columns of a matrix product $AB$ without
+computing the entire product. 
+\\
+Any individual column vector of $AB$ can be obtained by partitioning $B$ into column vectors.
+\[
+AB = A\left[
+{\begin{array}{cccc}
+b_0 & b_1 & ... &b_n
+\end{array}}
+\right]
+\]
+\\
+Any individual row vector of $AB$ can be obtained by partitioning $A$ into row vectors.
+\[
+AB = \left[
+{\begin{array}{c}
+a_0\\
+a_1\\
+.\\
+.\\
+.\\
+a_n\\
+\end{array}}
+\right]B
+\]
+\\
+From previous $AB$ with 
+\[
+b_{col_0} = 
+\left[
+{
+\begin{array}{c}
+b_{00} \\
+b_{10} \\
+b_{20}
+\end{array}
+}
+\right]
+\]
+
+\[
+(AB)_{col_0} = Ab_{col_0} = 
+\left[
+{
+    \begin{array}{ccc}
+        a_{00} &  a_{01} &  a_{02} \\
+        a_{10} &  a_{11} &  a_{12} \\
+        a_{20} &  a_{21} &  a_{22} \\
+        a_{30} &  a_{31} &  a_{32}
+    \end{array}
+}
+\right]
+\left[
+{
+    \begin{array}{c}
+        b_{00} \\
+        b_{10} \\
+        b_{20}
+    \end{array}
+}
+\right]
+\]
+\\
+and with
+\\
+\[
+a_{row_0} =
+\left[
+{
+\begin{array}{ccc}
+a_{00} & a_{01} & a_{02}
+\end{array}
+}
+\right]
+\]
+
+\[
+(AB)_{row_0} = a_{row_0}B  = 
+\left[
+{
+    \begin{array}{ccc}
+    a_{00} &  a_{01} &  a_{02}
+    \end{array}
+}
+\right]
+\left[
+{
+    \begin{array}{cc}
+        b_{00} &  b_{01} \\
+        b_{10} &  b_{11} \\
+        b_{20} &  b_{21} 
+    \end{array}
+}
+\right]
+\]
+\textbf{Linear combinations.}
+if $A_1....A_m$ are matrices of the same size, and $c_1...c_m$ are scalars, the expression
+of the form
+\begin{align*}
+c_1A_1+...+c_mA_m
+\end{align*}
+is called a \textit{linear combination} of matrices $A_1...A_m$. The scalars $c_1...c_m$
+ are called the \textit{coefficients} of the lienar combination.
+\\
+\\
+If $A$ is an $m \times n$ matrix, and if $x$ is an $n \times 1$ column vector, 
+then the product of $Ax$ can be expressed as a linear combination of the column vectors
+of $A$ in which the coefficients are the entries of $x$.
+\[
+A = \left[{
+    \begin{array}{cccc}
+    a_{00} & a_{01} & ... & a_{0n} \\
+    a_{10} & a_{11} & ... & a_{1n} \\
+    .      & .      & ... & .      \\
+    .      & .      & ... & .      \\
+    a_{m0} & a_{m1} & ... & a_{mn} 
+    \end{array}
+}
+\right]
+and\ x = \left[{
+    \begin{array}{c}
+    x_1 \\
+    x_2 \\
+    . \\
+    . \\
+    x_n 
+    \end{array}
+}
+\right]
+\] 
+\\ 
+\textbf{Transpose} of any $m \times n$ matrix $A$ (denoted by $A^T$)is an $n \times m$ matrix that
+results by interchanging the rows and columns of $A$, that is the first column of $A^T$ is is the first row
+of $A$, the second column of $A^T$ is the second row of $A$, and so forth.
+\\
+\\
+\textbf{trace} of any matrix $A$, denoted by $tr(A)$, is the sum of the entries on the main diagonal
+of $A$. The trace of $A$ is undefined if $A$ is not a square matrix.
+\\
+\\
+\[
+A = \left[{
+    \begin{array}{ccc}
+    a_{00} & a_{01} & a_{02} \\
+    a_{10} & a_{11} & a_{12} \\
+    a_{20} & a_{21} & a_{22}
+    \end{array}
+}
+\right]
+,
+B = \left[{
+    \begin{array}{cccc}
+    -1 &  2 &  7 &  0 \\
+    3  &  5 & -8 &  4 \\
+    1  &  2 &  7 & -3 \\
+    4  & -2 &  1 &  0
+    \end{array} 
+}\right]
+\]
+\\
+\[
+tr(A) = a_{00} + a_{11} + a_{22}, 
+tr(B) = -1 + 5 + 7 + 0 = 11
+\]
+\\
 \\
 \textbf{Inner Product}
 The standard \textit{inner product} (also called \textit{dot product}) of 
@@ -642,15 +839,6 @@ two $n$-vectors is defined as the scalar
 \begin{align*}
 a^Tb = a_1b_1 + a_2b_2 + ... + a_nb_n
 \end{align*}
-\\
-\textbf{Linear combinations.}
-if $a_1....a_m$ are n-vectors, and $\beta_1...\beta_m$ are scalars, the $n-vector$
-\begin{align*}
-\beta_1a_1+...+\beta_ma_m
-\end{align*}
-is called a \textit{linear combination} of vectors $a_1...a_n$. The scalars $\beta_1...\beta_m$
- are called the \textit{coefficients} of the lienar combination.
-\\
 \\
 \textbf{The inner product function.} Suppose $a$ is an $n-vector$. We can define scalar-valued
 function $f$ of $n-vectors$, given by
