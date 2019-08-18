@@ -833,6 +833,109 @@ tr(B) = -1 + 5 + 7 + 0 = 11
 \]
 \\
 \\
+\textbf{Square Matrix of Order n} is a matrix with $n$ rows and $n$ columns.
+\\
+\\
+\textbf{Main Diagonal} of a square matrix is entries with index 
+$a_{00}$, $a_{11}$, $a_{22}$, ..., $a_{nn}$
+\\
+\\
+\textbf{Identity Matrix} is a square matrix with 1's on the main 
+diagonal and zero elsewheare.
+\[
+\left[{
+\begin{array}{c}
+1
+\end{array}
+} \right]
+,
+\left[{
+\begin{array}{cc}
+1 & 0 \\
+0 & 1 
+\end{array}
+} \right]
+,
+\left[{
+\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array}
+} \right]
+\] 
+\\
+\\
+\textbf{$I_n$} is the identity matrix for the $n \times n$ matrix
+\\
+\\
+$I_n$ has the property for that every matrix $A$ of size $n \times n$ 
+it is true that $A I_n = A$  and $I_n A = A$
+\\
+\\
+\textbf{Theorem} If $R$ is the reduced row echelon form of an $n \times n$
+matrix $A$, then either $R$ has a row of zeros or $R$ is the indenitity
+matrix $I_n$
+\\
+\\
+\textbf{Inverse} . If $A$ is a square matrix, and if $B$ is matrix of 
+the same size and that $AB = BA = I$, then $A$ is said to be 
+\textit{\textbf{invertible}} or \textit{\textbf{nonsingular}} and $B$
+is called \textit{\textbf{inverse}} of $A$. If no such matrix $B$
+can be found, then $A$ is said to be \textit{\textbf{singular}}.
+\\
+\begin{align*}
+XA &= B \\
+XAA^{-1} &= BA^{-1} \\
+XI &= BA^{-1} \\
+X &= BA^{-1} 
+\end{align*}
+\\
+\textbf{A Real Life Example} Bus and Train
+A group took a trip an a bus, at  \$3 per child and \$3.2 per adult for 
+a total of \$118.40\\
+The took the train back at \$3.50 per child and \$3.60 per adult for a 
+total of \$135.20\\
+How many children, and how many adults?
+\[
+\left[{\begin{array}{cc}
+x_1 & x_2
+\end{array}
+}
+\right]
+\left[{\begin{array}{cc}
+3 & 3.5  \\
+3.2 & 3.6
+\end{array}
+}
+\right]
+=
+\left[{\begin{array}{cc}
+118.4 & 135.2
+\end{array}
+}
+\right] 
+\]
+\[
+\left[{\begin{array}{cc}
+x_1 & x_2
+\end{array}
+}
+\right]
+I
+=
+\left[{\begin{array}{cc}
+118.4 & 135.2
+\end{array}
+}
+\right] 
+\left[{\begin{array}{cc}
+3 & 3.5  \\
+3.2 & 3.6
+\end{array}
+}
+\right] ^{-1}
+\] 
 \textbf{Inner Product}
 The standard \textit{inner product} (also called \textit{dot product}) of 
 two $n$-vectors is defined as the scalar
