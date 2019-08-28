@@ -878,6 +878,41 @@ matrix $A$, then either $R$ has a row of zeros or $R$ is the indenitity
 matrix $I_n$
 \\
 \\
+\textbf{Zero Matrices} are matrices with all elements are zero. Some example:
+\[
+\left[{
+\begin{array}{cc}
+0 & 0 \\
+0 & 0
+\end{array} 
+} \right]
+,
+\left[{
+\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}
+}\right]
+,
+\left[{
+\begin{array}{cccc}
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{array}
+}\right]
+\]
+\\
+\\
+Some properties of zero matrices
+\\
+\begin{enumerate}
+\item $A + 0 = 0 + A = A$
+\item $A - 0 = A$
+\item $A - A = A + (-A) = 0$
+\item $0A = 0$
+\item If $cA = 0$, then $c = 0$ or $A = 0$
+\end{enumerate}
 \textbf{Inverse} . If $A$ is a square matrix, and if $B$ is matrix of 
 the same size and that $AB = BA = I$, then $A$ is said to be 
 \textit{\textbf{invertible}} or \textit{\textbf{nonsingular}} and $B$
@@ -891,6 +926,7 @@ XI &= BA^{-1} \\
 X &= BA^{-1} 
 \end{align*}
 \\
+%https://www.mathsisfun.com/algebra/matrix-inverse.html
 \textbf{A Real Life Example} Bus and Train
 A group took a trip an a bus, at  \$3 per child and \$3.2 per adult for 
 a total of \$118.40\\
@@ -898,44 +934,71 @@ The took the train back at \$3.50 per child and \$3.60 per adult for a
 total of \$135.20\\
 How many children, and how many adults?
 \[
+{\begin{array}{ccccc}
 \left[{\begin{array}{cc}
 x_1 & x_2
 \end{array}
 }
-\right]
+\right] &
 \left[{\begin{array}{cc}
 3 & 3.5  \\
 3.2 & 3.6
 \end{array}
 }
-\right]
-=
+\right] &
+=       &
 \left[{\begin{array}{cc}
 118.4 & 135.2
 \end{array}
 }
-\right] 
-\]
-\[
+\right] &
+\\
+%\qquad \qquad 
+%\qquad \qquad 
 \left[{\begin{array}{cc}
 x_1 & x_2
 \end{array}
 }
-\right]
-I
-=
+\right]  &
+%\qquad 
+I &
+%\qquad
+= &
 \left[{\begin{array}{cc}
 118.4 & 135.2
 \end{array}
 }
-\right] 
+\right] &
 \left[{\begin{array}{cc}
 3 & 3.5  \\
 3.2 & 3.6
 \end{array}
 }
-\right] ^{-1}
+\right] ^{-1} 
+\end{array}}
 \] 
+\\
+%https://www.quora.com/Why-do-some-square-matrices-not-have-an-inverse-I-need-a-simple-answer/answer/Alexander-Farrugia?share=b4a0ab60\&srid=X2PlW
+%https://www.quora.com/Why-do-some-square-matrices-not-have-an-inverse-I-need-a-simple-answer/answer/Alexandre-Borovik?share=e7d1d377&srid=X2PlW
+%https://www.quora.com/Why-do-some-square-matrices-not-have-an-inverse-I-need-a-simple-answer
+\\
+\\
+If $A$ is a square matrix of size $n \times n$ and there any matrix $B$ of the same size such that  
+$A B = 0$ then $A$ is not invertible.
+\\
+\\
+Remember that a matrix is representation of several linear formula (linear map or linear function).
+I $A$ is matrix , $X$ is a set of unknown variable (Domain) and $Y$ is a set of Codomain of
+$AX$. If for every unique combination of $X$ there is a unique combination of $Y$ then $A$
+is invertible and the set of function that can map $Y$ to $X$ is inverse of $A$.
+\\
+\\
+A matrix is also said non invertible if can not reduced by elementary row operatiibs to identity matrix.
+\\
+\\
+\textbf{Method To Find Inverse of A Matrix unsing Elementary Row Operation}
+\\
+\\
 \textbf{Inner Product}
 The standard \textit{inner product} (also called \textit{dot product}) of 
 two $n$-vectors is defined as the scalar
