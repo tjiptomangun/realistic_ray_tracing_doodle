@@ -997,7 +997,381 @@ A matrix is also said non invertible if can not reduced by elementary row operat
 \\
 \\
 \textbf{Method To Find Inverse of A Matrix unsing Elementary Row Operation}
+%https://www.mathsisfun.com/algebra/matrix-inverse-row-operations-gauss-jordan.html
 \\
+\\
+Inverse of any invertible matrix can be deduced by applying the same gauss jordan operation
+to get its \textit{reduced row echelon form} ,which is \textit{indentity matrix} 
+if there is no row of zeros,
+to the \textit{reduced row echelon form}.
+\\
+\\
+Suppose three equations:
+\begin{align*}
+3x + 2y + 5z &= 12\\
+x - 3y + 2z &= -13\\
+5x - y + 4z &= 10 
+\end{align*}
+\[
+\left[{
+\begin{array}{ccc}
+3 & 2 & 5 \\
+1 & -3 & 2 \\
+5 & -1 & 4
+\end{array}
+}
+\right]
+\begin{array}{ccc}
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  
+\end{array}
+\left[{
+\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array} 
+}
+\right] 
+\] 
+\[
+\left[{
+\begin{array}{ccc}
+3 & 2 & 5 \\
+1 & -3 & 2 \\
+5 & -1 & 4
+\end{array}
+}
+\right]
+\begin{array}{ccc}
+R_1/3 \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  
+\end{array}
+\left[{
+\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array} 
+}
+\right]\\ 
+\] 
+\[
+\left[{
+\begin{array}{ccc}
+%1 & \frac{2}{3} & \frac{5}{3} \\
+1 & 2/3 & 5/3 \\
+1 & -3 & 2 \\
+5 & -1 & 4
+\end{array}
+}
+\right]
+\begin{array}{ccc}
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+R_2 - R_1 \\
+R_3 - 5R_1
+\end{array}
+\left[{
+\begin{array}{ccc}
+1/3 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{array} 
+}
+\right]\\ 
+\] 
+\[
+\left[{
+\begin{array}{ccc}
+1 & 2/3 & 5/3 \\
+0 & -11/3  & 1/3 \\
+0 & -13/3 & -13/3 
+\end{array}
+}
+\right]
+\begin{array}{ccc}
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+R_2 \times -3/11 \\ 
+\end{array}
+\left[{
+\begin{array}{ccc}
+1/3 & 0 & 0\\
+-1/3 & 1 & 0\\
+-5/3 & 0 & 1
+\end{array} 
+}
+\right]\\ 
+\] 
+\[
+\left[{
+\begin{array}{ccc}
+1 & 2/3 & 5/3 \\
+0 & 1  & 1/11 \\
+0 & -13/3 & -13/3 
+\end{array}
+}
+\right]
+\begin{array}{ccc}
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+R_3 \times 13/3R_2 \\ 
+\end{array}
+\left[{
+\begin{array}{ccc}
+1/3 & 0 & 0\\
+1/11 & -3/11 & 0\\
+-5/3 & 0 & 1
+\end{array} 
+}
+\right]\\ 
+\] 
+\[
+\left[{
+\begin{array}{ccc}
+1 & 2/3 & 5/3 \\
+0 & 1  & -1/11 \\
+0 & 0  & -156/33 
+\end{array}
+}
+\right]
+\begin{array}{ccc}
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+R_3 \times -33/156
+\end{array}
+\left[{
+\begin{array}{ccc}
+1/3 & 0 & 0\\
+1/11 & -3/11 & 0\\
+-14/11 & -13/11 & 1
+\end{array} 
+}
+\right]
+\] 
+\[
+\left[{
+\begin{array}{ccc}
+1 & 2/3 & 5/3 \\
+0 & 1  & -1/11 \\
+0 & 0  & 1
+\end{array}
+}
+\right]
+\begin{array}{ccc}
+R_1 - 5/3 R_3  \\
+R_2 + 1/11 R_3  \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  
+\end{array}
+\left[{
+\begin{array}{ccc}
+1/3 & 0 & 0\\
+1/11 & -3/11 & 0\\
+14/52 & 13/52 & -11/52
+\end{array} 
+}
+\right]\\ 
+\] 
+\[
+\left[{
+\begin{array}{ccc}
+1 & 2/3 & 0 \\
+0 & 1  & 0 \\
+0 & 0  & 1
+\end{array}
+}
+\right]
+\begin{array}{ccc}
+R_1 - 2/3 R_2 \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  
+\end{array}
+\left[{
+\begin{array}{ccc}
+-3/26 & -5/12 & 55/156\\
+3/26 & -1/4 & -1/52\\
+7/26 & 1/4 & -11/52
+\end{array} 
+}
+\right]\\ 
+\] 
+\[
+\left[{
+\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1  & 0 \\
+0 & 0  & 1
+\end{array}
+}
+\right]
+\begin{array}{ccc} 
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  
+\end{array}
+\left[{
+\begin{array}{ccc}
+-5/26 & -1/4 & 19/52\\
+3/26 & -1/4 & -1/52\\
+7/26 & 1/4 & -11/52
+\end{array} 
+} \right]\\ 
+\] 
+\\
+because
+\[
+\left[{
+\begin{array}{ccc}
+3 & 2 & 5 \\
+1 & -3  & 2\\
+5 & -1  & 4
+\end{array}
+} \right]
+\left[{
+\begin{array}{c}
+x \\
+y \\
+z
+\end{array} 
+} \right]\\ 
+=
+\left[{
+\begin{array}{c} 
+12 \\
+-13 \\
+10
+\end{array}
+} \right]
+\] 
+so
+\[
+\left[{
+\begin{array}{ccc}
+-5/26 & -1/4 & 19/52\\
+3/26 & -1/4 & -1/52\\
+7/26 & 1/4 & -11/52
+\end{array} 
+} \right]\\ 
+\left[{
+\begin{array}{ccc}
+3 & 2 & 5 \\
+1 & -3  & 2\\
+5 & -1  & 4
+\end{array}
+} \right]
+\left[{
+\begin{array}{c} 
+x \\
+y \\
+z
+\end{array}
+} \right]
+=
+\left[{
+\begin{array}{ccc} 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 
+\end{array}
+} \right]
+\left[{
+\begin{array}{c} 
+x \\
+y \\
+z
+\end{array}
+} \right]
+=
+\left[{
+\begin{array}{c} 
+x \\
+y \\
+z
+\end{array}
+} \right]
+\] 
+\[
+\left[{
+\begin{array}{ccc}
+-5/26 & -1/4 & 19/52\\
+3/26 & -1/4 & -1/52\\
+7/26 & 1/4 & -11/52
+\end{array} 
+} \right]
+\left[{
+\begin{array}{ccc}
+3 & 2 & 5 \\
+1 & -3  & 2\\
+5 & -1  & 4
+\end{array}
+} \right]
+\left[{
+\begin{array}{c}
+x \\
+y \\
+z
+\end{array} 
+} \right]\\ 
+=
+\left[{
+\begin{array}{ccc}
+-5/26 & -1/4 & 19/52\\
+3/26 & -1/4 & -1/52\\
+7/26 & 1/4 & -11/52
+\end{array} 
+} \right]
+\left[{
+\begin{array}{c} 
+12 \\
+-13 \\
+10
+\end{array}
+} \right]
+\]
+then 
+\[
+\left[{
+\begin{array}{c}
+x \\
+y \\
+z
+\end{array}
+}\right] 
+=
+\left[{
+\begin{array}{c}
+4.59615384615385 \\
+4.44230769230769 \\
+-2.13461538461538
+\end{array}
+}\right] 
+\]
+and
+\[
+\left[{
+\begin{array}{ccc}
+3 & 2 & 5 \\
+1 & -3  & 2\\
+5 & -1  & 4
+\end{array}
+} \right]
+\left[{
+\begin{array}{c}
+4.59615384615385 \\
+4.44230769230769 \\
+-2.13461538461538
+\end{array}
+}\right] 
+=
+\left[{
+\begin{array}{c} 
+12 \\
+-13 \\
+10
+\end{array}
+} \right] 
+\]
 \\
 \textbf{Inner Product}
 The standard \textit{inner product} (also called \textit{dot product}) of 
