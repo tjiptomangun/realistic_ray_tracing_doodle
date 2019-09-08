@@ -31,7 +31,6 @@ int reduce(double *input, int num_row, int num_col) {
     int all_zero ;
 
 	while (procrow < num_row){
-        print_matrix(input, num_row, num_col);
         all_zero = 1;
 		mincol = num_col;
 
@@ -94,10 +93,7 @@ int reduce(double *input, int num_row, int num_col) {
                 }
             
             }
-        }
-
-        print_matrix(input, num_row, num_col);
-        
+        } 
         procrow --;
     }
     

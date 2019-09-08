@@ -1,6 +1,5 @@
-Matrix Multiplication by Columns and by Rows
+continue with 
+https://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html
 
-Code code code, forget subtle math
-Have fun, tocp, combinatorics
-
-
+and
+p 176 of elementary linear algebra
