@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{multicol} 
 \usepackage{color, colortbl}
+\usepackage{tikz}
 
 \definecolor{Gray}{gray}{0.9}
 \definecolor{LightCyan}{rgb}{0.70,1,1}
@@ -1393,6 +1394,35 @@ and
 \end{array}
 } \right] 
 \]
+\\
+\\
+\textbf{Vector} or also called \textbf{Euclidian Vector} is geometric object that has magnitude(length) and direction. It is frequently
+represented by a line segment with definite direction and denoted by $\overrightarrow{AB}$
+\\
+\\ 
+\begin{tikzpicture}
+\draw[white](-4, 0) grid (2, 2);
+\draw node [anchor=north east, gray]{$\boldsymbol{A}$} [->, ultra thick, gray](0, 0) -- (2, 2) node [anchor=south west]{$\boldsymbol{B}$};
+\end{tikzpicture}
+\\
+\\
+\textbf{Norm of a Vector} is length of a vector. Using $Phytagorean theorem$ it can be found that norm of a 2 space vector of x, and y is
+\\
+\\
+$||v|| = \sqrt{x^2 + y^2}$
+\\
+\\
+Using $Pythagorean Theorem$ it is also can be defined \textit{Norm of any vector in n space}.
+\\
+\\
+\textbf{unit vector} is a vector of length 1. It often denoted by lower letter with circumflex $\hat{u}$
+\\
+\\
+For any vector in any space it can be shown that
+\[
+\hat{u} = \frac{u}{|u|}
+\]
+\\
 \\
 \textbf{Inner Product}
 The standard \textit{inner product} (also called \textit{dot product}) of 

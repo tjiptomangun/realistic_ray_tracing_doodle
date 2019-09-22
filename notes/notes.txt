@@ -3,3 +3,36 @@ https://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html
 
 and
 p 176 of elementary linear algebra
+
+https://en.wikipedia.org/wiki/Dot_product
+Algebraically, the dot product is the sum of the products of the corresponding entries of the two sequences of numbers
+Geometrically, it is the product of the Euclidean magnitudes of the two vectors and the cosine of the angle between them
+Scalar projection and first properties
+Scalar projection 
+The scalar projection (or scalar component) of a Euclidean vector a in the direction of a Euclidean vector b is given by 
+
+
+https://www.mathsisfun.com/algebra/vectors-dot-product.html
+Why cos(θ) ?
+
+OK, to multiply two vectors it makes sense to multiply their lengths together but only when they point in the same direction.
+
+So we make one "point in the same direction" as the other by multiplying by cos(θ):
+
+https://betterexplained.com/articles/vector-calculus-understanding-the-dot-product/ 
+Dot product: Apply the directional growth of one vector to another. The result is how much stronger we've made the original vector (positive, negative, or zero).
+
+http://mathworld.wolfram.com/DotProduct.html
+The dot product therefore has the geometric interpretation as the length of the projection of X onto the unit vector Y^^ when the two vectors are placed so that their tails coincide. 
+
+https://math.stackexchange.com/questions/414776/what-is-the-use-of-the-dot-product-of-two-vectors
+https://en.wikipedia.org/wiki/Dot_product
+
+In Euclidean space, a Euclidean vector is a geometrical object that possesses both a magnitude and a direction. A vector can be pictured as an arrow. Its magnitude is its length, and its direction is the direction the arrow points. The magnitude of a vector A is denoted by ∥A∥. The dot product of two Euclidean vectors A and B is defined by
+
+
+Next
+https://en.wikipedia.org/wiki/Standard_basis
+
+https://en.wikipedia.org/wiki/Dot_product
+Equivalence of the definitions
