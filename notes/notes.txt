@@ -36,3 +36,8 @@ https://en.wikipedia.org/wiki/Standard_basis
 
 https://en.wikipedia.org/wiki/Dot_product
 Equivalence of the definitions
+-> Key is in element b2 pr12
+
+how to get home early?
+
+https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/vector-dot-product-and-vector-length

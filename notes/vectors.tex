@@ -12,6 +12,7 @@
 \definecolor{OliveGreen}{rgb}{0,0.6,0}
 
 \setlength{\parindent}{0pt}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
 \title{Notes on Vectors}
 %comment comment comment
@@ -1396,7 +1397,7 @@ and
 \]
 \\
 \\
-\textbf{Vector} or also called \textbf{Euclidian Vector} is geometric object that has magnitude(length) and direction. It is frequently
+\textbf{Vector} or also called \textbf{Eucledian Vector} is geometric object that has magnitude(length) and direction. It is frequently
 represented by a line segment with definite direction and denoted by $\overrightarrow{AB}$
 \\
 \\ 
@@ -1406,13 +1407,13 @@ represented by a line segment with definite direction and denoted by $\overright
 \end{tikzpicture}
 \\
 \\
-\textbf{Norm of a Vector} is length of a vector. Using $Phytagorean theorem$ it can be found that norm of a 2 space vector of x, and y is
+\textbf{norm of a vector} is length of a vector. Using \textit{Phytagorean theorem} it can be found that norm of a 2 space vector of x, and y is
 \\
 \\
 $||v|| = \sqrt{x^2 + y^2}$
 \\
 \\
-Using $Pythagorean Theorem$ it is also can be defined \textit{Norm of any vector in n space}.
+Using \textit{Pythagorean Theorem} it is also can be defined Norm of any vector in n space.
 \\
 \\
 \textbf{unit vector} is a vector of length 1. It often denoted by lower letter with circumflex $\hat{u}$
@@ -1420,8 +1421,25 @@ Using $Pythagorean Theorem$ it is also can be defined \textit{Norm of any vector
 \\
 For any vector in any space it can be shown that
 \[
-\hat{u} = \frac{u}{|u|}
+\hat{u} = \frac{u}{||u||}
 \]
+\\
+\textbf{standard basis} (also called \textbf{natural basis}) is the set of \textit{unit vectors} in the direction of the axes of \textit{Cartesian Coordinate System}.
+\\
+\\
+\begin{tikzpicture}
+\draw[white](-4, 0) grid (2, 2);
+\draw [-, black](0, 0) -- (0, 2) node [anchor=south]{$\boldsymbol{y}$};
+\draw [->, ultra thick, green](0, 0) -- (0, 1) node [anchor=south east]{$\boldsymbol{j}$};
+\draw [-, black](0, 0) -- (2, 0) node [anchor=north east]{$\boldsymbol{x}$};
+\draw [->, ultra thick, blue](0, 0) -- (1, 0) node [anchor=north]{$\boldsymbol{i}$};
+\draw [-, black](0, 0) -- (-1.2, -1.2) node [anchor=east]{$\boldsymbol{z}$};
+\draw [->, ultra thick, red](0, 0) -- (-.6, -.6) node [anchor=east]{$\boldsymbol{k}$};
+\end{tikzpicture}
+\\
+\\
+\textbf{orthonormal basis} is a set of unit vector that are orthogonal to each other.
+\\
 \\
 \\
 \textbf{Inner Product}
@@ -1431,6 +1449,110 @@ two $n$-vectors is defined as the scalar
 a^Tb = a_1b_1 + a_2b_2 + ... + a_nb_n
 \end{align*}
 \\
+\\
+\textbf{Geometric Definition of Dot Product}
+\begin{equation}
+a.b = \norm{a} \norm{b} cos\theta
+\end{equation}
+\\
+\textbf{Equivalence of the definitions}
+\\
+if $e_1, ..., e_n$ are the standard basis vectors in $\mathbb{R}^n$, then we may write
+\begin{align*}
+a &= \left[{
+\begin{array}{ccc}
+a_1,&...,&a_n
+\end{array}
+}\right]
+= \sum\limits_{i}^{n} a_ie_i
+\\
+b &= \left[{
+\begin{array}{ccc}
+b_1,&...,&b_n
+\end{array}
+}\right]
+= \sum\limits_{i}^{n} b_ie_i 
+\end{align*}
+\\
+\\
+The vectors $e_i$ are an orthonormal basis, which means that they have unit length and are at
+right angels to each other. Hence since these vectors have unit length
+\[
+e_i.e_i = 1
+\]
+and for $i \ne $ j
+\[
+e_i.e_j = 0
+\]
+\\
+\\
+Thus we can say that :
+\[
+e_i.e_j = \delta_{ij},
+\]
+where $\delta_{ij}$ is the Kronecker delta.
+\\
+\\
+Also by the geometric definition, for any vector $e_i$ and a vector $a$, we note
+\[
+a.e_i = \norm{a}  \norm{e_i} \cos \theta_i = \norm{a} \cos \theta_i = a_i
+\]
+\\
+\\
+where $a_i$ is the component of vector $a$ in the direction of $e_i$.  
+\\
+\\
+Applying the distributivity of geometric version of the dot product gives
+\[
+a.b = a.\sum \limits_{i} b_ie_i = \sum \limits_{i} b_i(a.e_i) = \sum \limits_{i} a_i b_i
+\]
+\\
+\\
+Another way to prove this equivalence
+\\
+\\
+\begin{tikzpicture}
+\draw[white](-4, 0) grid (4, 4);
+\draw [-, black](0, 0) -- (0, 2) node [anchor=south]{$\boldsymbol{y}$};
+\draw [-, black](0, 0) -- (2, 0) node [anchor=north east]{$\boldsymbol{x}$};
+\draw [-, black](0, 0) -- (-1.2, -1.2) node [anchor=east]{$\boldsymbol{z}$};
+\draw [->, ultra thick, cyan](0, 0) -- (2, 1) node [anchor=south west]{$\boldsymbol{u(u_1, u_2, u_3)}$};
+\draw [->, ultra thick, cyan](0, 0) -- (1, 2) node [anchor=south west]{$\boldsymbol{v(v_1, v_2, v_3)}$};
+\draw [->, ultra thick, cyan](2.0, 1.05) -- (1.05, 2.0) node [anchor=north]{$\boldsymbol{i}$};
+\draw (.5, 1) arc (60:20:1); node [anchor=west] {$\boldsymbol{\theta}$}
+\end{tikzpicture}
+\\
+\\
+From the law of cosine
+\begin{align*}
+\norm{v - u}^2 &= \norm{u}^2 + \norm{v}^2 - 2\norm{u}\norm{v}cos\theta\\
+\norm{u}\norm{v}cos\theta &= \frac{1}{2}\left({\norm{u}^2 + \norm{v}^2 - \norm{v - u}^2 }\right)\\
+u.v &= \frac{1}{2}\left({\norm{u}^2 + \norm{v}^2 - \norm{v - u}^2 }\right)\\
+\end{align*} 
+with\\
+\begin{align*}
+\norm{u}^2 &= u_1^2 + u_2^2 + u_3^2\\
+\norm{v}^2 &= v_1^2 + v_2^2 + v_3^2\\
+\end{align*} 
+and\\
+\begin{align*}
+\norm{v - u}^2 &= (v_1 - u_1) ^2 + (v_2 - u_2)^2 + (v_3 - u_3)^2\\ 
+\norm{v - u}^2 &= (v_1^2 + u_1^2 -2v_1u_1) + (v_2^2 + u_2^2 -  2v_2u_2) + (v_3^2 + u_3^2 - 2v_3u_3)\\ 
+\norm{v - u}^2 & = v_1^2 + v_2^2 + v_3^2 + u_1^2 + u_2^2 + u_3^2 - 2v_1u_1 -2v_2u_2 - 2v_3u_3\\
+\norm{v - u}^2 & = v^2 + u^2  - 2v_1u_1 -2v_2u_2 - 2v_3u_3 \\
+\norm{v - u}^2 & = \norm{v}^2 + \norm{u}^2  - 2v_1u_1 -2v_2u_2 - 2v_3u_3 
+\end{align*} 
+since\\
+\[
+\norm{v - u}^2 = \norm{v - u}^2
+\]
+\begin{align*}
+\norm{u}^2 + \norm{v}^2 - 2\norm{u}\norm{v}cos\theta &=  \norm{v}^2 + \norm{u}^2 - 2v_1u_1 -2v_2u_2 - 2v_3u_3 \\
+- 2\norm{u}\norm{v}cos\theta &=  - 2v_1u_1 -2v_2u_2 - 2v_3u_3  \\
+\norm{u}\norm{v}cos\theta &=  v_1u_1 + v_2u_2  + v_3u_3 
+\end{align*}
+\\
+\\
 \textbf{The inner product function.} Suppose $a$ is an $n-vector$. We can define scalar-valued
 function $f$ of $n-vectors$, given by
 \begin{equation}
@@ -1439,7 +1561,7 @@ f(x) = a^Tx = a_1x_1 + a_2x_2+...+a_nx_n
 for any $n-vector x$. This function gives the inner product of its $n-vector$ argument $x$ with
 some (fixed) $n-vector$.
 \\
-\\
+\\ 
 \textbf{Superposition and linearity}. The inner product function $f$ defined above satisfies
 property
 \begin{align*}
