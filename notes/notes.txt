@@ -41,3 +41,5 @@ Equivalence of the definitions
 how to get home early?
 
 https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/vector-dot-product-and-vector-length
+
+now in

@@ -44,6 +44,14 @@ They are two equations in this system,  one solution of infinitely many.
 \textbf{Inconsistent} linear system is the one that has no solutions.
 \\
 \\ 
+\textbf{Matrix} is rectangular array of numbers.
+\\
+\\
+\textbf{Size of A Matrix} is described in terms of number of rows(horizontal lines)
+and columns(vertical lines). For example matrix with 3 rows and 2 columns have size
+3 by 2 (written 3 x 2)
+\\
+\\
 \textbf{Augmented Matrix} is a matrix obtained by appending the columns of 
 two given matrices.\\
 Given the matrices A and B, where
@@ -1551,6 +1559,50 @@ since\\
 - 2\norm{u}\norm{v}cos\theta &=  - 2v_1u_1 -2v_2u_2 - 2v_3u_3  \\
 \norm{u}\norm{v}cos\theta &=  v_1u_1 + v_2u_2  + v_3u_3 
 \end{align*}
+\\
+\\
+\textbf{orthogonality}. Two vector \textbf{u} and \textbf{v} is said \textbf{orthogonal} or \textbf{perpendicular} if  
+$\vec{u} . \vec{v} = 0$ 
+\\
+\\
+\textbf{normal of a given vector} is another vector that perpendicular to previous.
+\\
+\\ 
+A line that meet the equation
+\[
+ax + by + c = 0
+\]
+where :
+\begin{align*}
+a &\ne 0,\\ 
+b &\ne 0 \\
+c &\in \mathbb{Q}
+\end{align*} 
+\\
+\\
+\begin{align*}
+\forall c,d &\in \mathbb{Q}\\
+\vec{r} \perp ax + by + c  &=> \vec{r} \perp ax + by + d
+\end{align*} 
+\\
+\\
+for $c = 0$ 
+\[
+ax + by = 0
+\]
+equals to
+\[
+(a, b) . (x, y) = 0
+\]
+\\
+For 
+\\
+\begin{align*}
+\forall p_n \ne 0 &\land
+c,d \in \mathbb{Q}\\
+\vec{r} \perp p_nx_n + p_{n - 1}x_{n - 1} + ... + p_1x_1 + c  &=> \vec{r} \perp p_nx_n + p_{n - 1}x{n - 1} + ... p_1x_1 + d\\
+(p_n, p_{n-1}, ..., p_1) . (x_n, x_{n-1}, ..., x_1) &= 0
+\end{align*} 
 \\
 \\
 \textbf{The inner product function.} Suppose $a$ is an $n-vector$. We can define scalar-valued
