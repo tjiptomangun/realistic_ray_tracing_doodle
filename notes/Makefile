@@ -4,6 +4,13 @@ notes: notes
 	latex vectors.tex
 	pdflatex vectors.tex
 
+notes: notes
+	latex vectors.tex
+	pdflatex vectors.tex
+	latex elements.tex
+	pdflatex elements.tex
+
+
 gauss_jordan: gauss_jordan.c
 	gcc -Wall -ggdb3 gauss_jordan.c -o gauss_jordan
 
@@ -14,5 +21,5 @@ inverse_gaussjordan: inverse_gaussjordan.c
 	gcc -Wall -ggdb3 inverse_gaussjordan.c -o inverse_gaussjordan
 
 clean: vectors.tex
-	rm -f gauss_jordan gauss_backsub2 vectors.aux vectors.dvi vectors.log
+	rm -f gauss_jordan gauss_backsub2 vectors.aux vectors.dvi vectors.log elements.aux elements.dvi elements.log
    
