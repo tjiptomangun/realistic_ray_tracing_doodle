@@ -1,14 +1,14 @@
-all: notes gauss_jordan gauss_backsub2 inverse_gaussjordan
-  
-notes: notes
-	latex vectors.tex
-	pdflatex vectors.tex
+all: notes gauss_jordan gauss_backsub2 inverse_gaussjordan annex
 
-notes: notes
+annex: elements_id_annex.tex  
+	latex elements_id_annex.tex
+	pdflatex elements_id_annex.tex
+
+notes: 
 	latex vectors.tex
 	pdflatex vectors.tex
-	latex elements.tex
-	pdflatex elements.tex
+	latex elements_id.tex
+	pdflatex elements_id.tex
 
 
 gauss_jordan: gauss_jordan.c
@@ -21,5 +21,5 @@ inverse_gaussjordan: inverse_gaussjordan.c
 	gcc -Wall -ggdb3 inverse_gaussjordan.c -o inverse_gaussjordan
 
 clean: vectors.tex
-	rm -f gauss_jordan gauss_backsub2 vectors.aux vectors.dvi vectors.log elements.aux elements.dvi elements.log
+	rm -f gauss_jordan gauss_backsub2 vectors.aux vectors.dvi vectors.log elements_id.aux elements_id.dvi elements_id.log
    

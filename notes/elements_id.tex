@@ -1,0 +1,292 @@
+\documentclass[a4paper, 12pt]{book}
+  
+\usepackage{algorithm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol} 
+\usepackage{color, colortbl}
+\usepackage{tikz}
+\usepackage[bahasa]{babel}
+
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightCyan}{rgb}{0.70,1,1}
+\definecolor{OliveGreen}{rgb}{0,0.6,0}
+
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\begin{document}
+\title{\textbf{Element - Element dari Geometri Euklid 
+(Cuplikan Dalam Indonesia)}}
+\author{Euclid dari Alexandria}
+\maketitle
+\pagenumbering{gobble}
+\pagestyle{empty}
+\setcounter{chapter}{1}
+\chapter*{\centering \chaptername{ \thechapter} \\Dasar - Dasar dari Geometri Bidang Datar Yang Melibatkan Garis Lurus}
+%\author{Euclid of Alexandria}
+%\begin{titlepage}
+%\begin{center}
+%{\huge \bfseries Element Element Geometri Euklid - Terjemahan Bahasa Indonesia}
+%{\huge Element Element Geometri Euklid - Terjemahan Bahasa Indonesia}
+%\end{center}
+%\end{titlepage}
+%comment comment comment
+%\chaptername{\thechapter}
+
+\pagenumbering{alph} 
+
+\begin{center}
+\textbf{Definisi - definisi}
+\end{center}
+
+\begin{enumerate}
+\item Sebuah titik adalah yang darinya tidak ada bagian lagi.
+\item Dan sebuah garis adalah panjang yang tidak memiliki lebar.
+\item Dan ujung - ujung dari sebuah garis adalah titik - titik.
+\item Sebuah garis lurus adalah garis yang terletak dengan rata dengan titik - titik padanya.
+\item Dan sebuah bidang adalah yang memiliki panjang dan lebar saja.
+\item Dan ujung - ujung sebuah bidang adalah garis - garis.
+\item Dan bidang datar adalah bidang yang terletak dengan rata dengan garis - garis lurus padanya.
+\item Dan sudut bidang datar adalah kemiringan garis - garis tersebut 
+satu dengan lain, ketika dua garis dalam sebuah bidang datar bertemu satu dengan
+yang lain, dan tidak terletak pada garis lurus.
+\item Dan ketika garis - garis yang mengapit sudut tersebut adalah garis lurus maka sudut
+tersebut disebut sebagai sudut \textit{rectilinear}.
+\item Dan ketika sebuah garis lurus berdiri diatas garis lurus lain dan 
+membentuk sudut - sudut yang bersebelahan yang sama besar satu dengan yang 
+lain, masing - masing sudut yang sama besar tersebut adalah sudut siku - siku,
+dan garis lurus yang pertama dikatakan tegak lurus terhadap garis lurus kedua
+di mana dia berdiri.
+\item Sebuah sudut tumpul adalah sudut yang lebih besar dari sudut siku - siku.
+\item Sebuah sudut lancip adalah sudut yang lebih kecil dari sudut siku - siku.
+\item Sebuah batas adalah ujung - ujung dari sesuatu.
+\item Sebuah bangun adalah yang berada didalam batas atau batas - batas.
+\item Sebuah lingkaran adalah bentuk bidang datar yang dikandung dalam sebuah 
+sebuah garis [yang disebut keliling], (sedemikian rupa) sehingga semua 
+garis - garis lurus menyebar kearah keliling dari satu titik di dalam bidang
+tersebut sehingga garis - garis lurus tersebut sama panjang.
+\item Dan titik tersebut dinamakan pusat lingkaran.
+\item Dan diameter dari lingkaran adalah sembarang garis lurus yang melalui 
+pusat lingkaran tadi dan berhenti di masing - masing arah pada
+keliling lingkaran. Dan garis lurus seperti itu juga membagi lingkaran 
+menjadi dua bagian sama besar.
+\item Dan setengah lingkaran adalah bidang yang dikandung dari diameter dan 
+keliling yang dipotong diameter. Dan pusat setengah lingkaran sama dengan 
+pusat dari lingkaran.
+\item Bangun - bangun rectilinear adalah bangun - bangun yang berada di dalam
+garis - garis lurus: bangun segitiga adalah bangun yang berada di dalam tiga buah
+garis lurus, bangun segiempat adalah bangun yang berada di dalam empat garis lurus dan 
+segibanyak adalah bidang yang berada di dalam lebih dari empat garis lurus.
+\item Dan pada bangun segitiga: sebuah segitiga sama sisi adalah yang memiliki tiga
+sisi sama besar, segitiga sama kaki adalah yang memiliki dua sisi sama besar, dan 
+segitiga sembarang adalah yang tidak memiliki sisi yang sama besar.
+\item Dan selanjutnya pada bangun segitiga: segitiga siku - siku adalah yang memiliki
+satu sudut siku - siku, segitiga tumpul adalah yang memiliki satu sudut tumpulm dan 
+segitiga lancip adalah yang memiliki tiga sudut lancip.
+\item Dan pada bangun segiempat: Bujur sangkar adalah yang segiempat yang
+sudut - sudut nya siku - siku dan sisi - sisinya sama panjang, persegipanjang
+adalah yang sudut - sudut nya siku dan tetapi tidak semua sisinya sama panjang, 
+belah ketupat adalah yang memiliki sisi - sisi sama panjang tetapi
+sudut - sudutnya tidak siku - siku, jajarang genjang adalah yang sudut - sudut 
+dan sisi - sisi yang berhadapan sama besar tetapi tidak siku - siku dan tidak 
+semua sisi sama panjang, dan persegiempat lainnya yang tidak dalam kategori tersebut
+disebut dengan trapezium.
+\item Garis - garis paralel adalah garis - garis lurus yang jika berada dalam 
+bidang yang sama dan diperpanjang hingga tak terhingga ke masing - masing arah
+tidak bertemu satu dengan yang lain.  
+\end{enumerate}
+
+\begin{center}
+\textbf{Postulat - postulat}
+\end{center}
+\begin{enumerate}
+\item one
+\item two
+\end{enumerate}
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Untuk menggambarkan segitiga sama sisi pada sebuah ruas garis.  
+
+\begin{tikzpicture}
+\draw (-2, 0) circle (4);
+\draw (2, 0) circle (4);
+\draw (-6, 0) node [anchor=east]{D} (-2, 0) node [anchor=east]{A} (-2, 0) 
+-- (2, 0) node[anchor=west]{B} (6, 0) node[anchor=west]{E} (0, 4.0)node[anchor=north]{C};
+\draw (-2, 0) -- (0, 3.464101) -- (2, 0) circle; 
+\end{tikzpicture} 
+
+Misalkan $AB$ adalah ruas garis.
+
+Dibutuhkan untuk menggambarkan segitiga sama sisi pada ruas garis $AB$.
+
+Misalkan $BCD$ adalah lingkaran dengan pusat $A$ dan jari jari $AB$ sudah digambarkan.
+
+\setcounter{section}{13}
+\section*{\centering \thesection} 
+Jika sebuah garis lurus berdiri pada sebuah garis lain membentuk sudut - sudut, maka
+sudut - sudut yang dibentuk adalah dua buah sudut sikut siku , atau sudut sudut yang
+jumlahnya sama dengan dua buah sudut siku - siku.
+\begin{tikzpicture}
+\draw [-, black](-2,-2) -- (2, -2);
+\draw (-2, -2.5) node {D} (0, -2.5) node {B} (2, -2.5) node {C};
+\draw [-, black](-0,-2) -- (0, 2); 
+\draw [-, black](-0,-2) -- (3, 2);
+\draw (0, 2.5) node {E} (3, 2.5) node {A};
+\end{tikzpicture}
+
+Sebab misalkan garis lurus $AB$ berdiri pada garis lurus $CD$ membentuk 
+sudut - sudut $CBA$ dan $ABD$. Saya katakan bahwa sudut - sudut $CBA$ dan
+$ABD$ adalah masing - masing sudut siku - siku atau besar keduanya adalah 
+sejumlah dua buah sudut siku - siku.
+
+Pada kenyattannya, jika $CBA$ sama dengan $ABD$ maka keduanya adalah dua buah 
+sudut siku - siku [Def 1.10]. Jika tidak, asumsikan $BE$
+\setcounter{section}{29}
+\section*{\centering \thesection} 
+Sebuah ruas garis yang jatuh memotong ruas - ruas garis yang sejajar akan membuat
+sudut - sudut yang berselang seling sama besar, sudut luar sama dengan sudut dalam
+yang bertentangan, dan jumlah dari sudut - sudut pada sisi yang sama sama dengan
+besar 2 buah sudut siku - siku.  
+
+\begin{tikzpicture}
+\draw(-2, 4) node[anchor=south]{E} (-2, 4) -- (3, -2) node[anchor=north]{F};
+\draw (-6, 3) node[anchor=east]{A}(-6, 3) -- (6, 3) node [anchor=west]{B};
+\draw (-6, -1) node[anchor=east]{C}(-6, -1) -- (6, -1) node [anchor=west]{D};
+\end{tikzpicture} 
+
+Misalkan ruas garis $EF$ jatuh memotong ruas - ruas gais $AB$ dan $CD$. 
+Saya katakan bahwa $EF$ membuat sudut - sudut yang berselang seling 
+$AGH$ dan $GHD$ sama besar, sudut luar $EGB$ sama besar dengan sudut dalam
+yang bertentangan $GHD$, dan jumlah dari sudut - sudut dalam yang berada 
+pada sisi yang sama $BGH$ dan $GHD$, sama dengan dua buah sudut siku - siku.
+
+Karena jika $AGH$ tidak sama besar dengan $GHD$ maka salah satunya pasti
+lebih besar. Misalkan $AGH$ adalah yang lebih besar. Misalkan $BGH$ 
+ditambahkan kepada keduanya. Maka jumlah dari $AGH$ dan $BGH$ akan 
+lebih besar dari jumlah dari $BGH$ dan $GHD$. Tetapi besar dari $AGH$
+dan $BGD$ harus sama dengan dua buah sudut siku - siku [1.13]. Jadi
+jumlah $BGH$ dan $GHD$ juga lebih kecil dari dua buah sudut siku - siku.
+
+\setcounter{section}{31}
+\section*{\centering \thesection} 
+Untuk menggambarkan sebuah ruas garis yang sejajar terhadap sebuah ruas 
+garis tertentu yang melalui sebuah titik tertentu.
+
+\begin{tikzpicture}
+\draw(2, 2) node[anchor=south]{A} (2, 2) -- (-2, -2) node[anchor=north]{D};
+\draw (-6, 2) node[anchor=east]{E}(-6, 2) -- (6, 2) node [anchor=west]{F};
+\draw (-6, -2) node[anchor=east]{B}(-6, -2) -- (6, -2) node [anchor=west]{C};
+\end{tikzpicture}
+
+Misalkan $A$ adalah sebuah titik tertentu, dan $BC$ adalah sebuah garis tertentu. Jadi
+yang dimaksudkan adalah meggambarkan satu garis yang sejajar dengan garis $BC$ 
+dan melalui titik $A$.
+
+Misalkan titik $D$ adalah sembarang titik yang berada di $BC$, and $AD$ terhubung. 
+Dan misalkan (sudut) $DAE$, yang sama besar dengan sudut $ADC$, telah dibuat 
+pada ruas garis $SA$ dengan titik A barada diujungnya [1.23]. Dan misalkan garis
+lurus $AF$ adalah perpanjangan $EA$.
+
+Dan karena ruas garis $AD$, jatuh didalam  kedua ruas garis $BC$ dan $EF$, membuat 
+sudut - sudut yang berseberangan $EAD$ dan $ADC$ sama besar, $EAF$ dengan demikian
+sejajar dengan $BC$ [1.27]
+
+
+\setcounter{section}{34}
+\section*{\centering \thesection}
+
+Pada bidang - bidang jajaran genjang, sisi - sisi dan sudut - sudut yang saling
+bertentangan besarnya sama satu dengan yang lain , dan sebuah diagonal membaginya
+menjadi dua bagian yang sama besar.
+
+\begin{tikzpicture}
+\draw (-4, 2) node[anchor=east]{A}(-4, 2) -- (6, 2) node [anchor=west]{B};
+\draw (-6, -2) node[anchor=east]{C}(-6, -2) -- (4, -2) node [anchor=west]{D};
+\draw (-6, -2) -- (-4, 2);
+\draw (4, -2) -- (6, 2);
+\draw (-6, -2) -- (6, 2); 
+\end{tikzpicture} 
+
+Misalkan $ABCD$ ada sebuah jajaran genjang, dan $BC$ adalah diagonalnya. Saya katakan
+bahwa untuk jajaran genjang $ABCD$, sisi sisi yang bertentangan dan sudut - sudut yang bertentangan
+sama besar satu dengan yang lain, dan diagonal $BC$ membaginya menjadi dua bagian yang sama besar.
+
+Karena $AB$ sejajar dengan $CD$, dan ruas garis $BC$ jatuh memotong keduanya, sudut - sudut yang 
+berhadapan $ABC$ dan $BCD$ sama besar satu dengan yang lain [1.29]. Dan karena $AC$ sejajar dengan
+$BD$, dan $BC$ memotong keduanya, sudut - sudut yang berseberangan $ACB$ dan $CBD$ sama besar satu 
+dengan yang lain [1.29]. Dengan demikian $ABC$ dan $BCD$ adalah dua buah segitiga yang memiliki
+kedua sudut masing - masing $ABC$ dan $BCA$ sama besar dengan kedua sudut $BCD$ dan $CDB$, dan satu 
+sisi sama besar, yaitu $BC$, yang di sini milik bersama kedua segitiga.
+Dengan demikian sisi sisi lainnya akan sama besar satu dengan yang lain, 
+dan satu sudut lainnya akan sama satu dengan yang lain [1.26]. Dengan demikian, sisi $AB$ 
+sama besar dengan $CD$ , dan sisi $AC$ dengan $BD$. Lebih lanjut, sudut $BAC$ sama besar
+dengan $CDB$. Dan karena $ABC$ sama besar dengan $BCD$, dan $CBD$ dengan $ACB$, keseluruhan
+sudut segitiga $ABD$ dengan demikian sama dengan keseluruahn  sudut segitiga $ACD$
+
+\stepcounter{section}
+
+\section*{\centering \thesection}
+\par Jajaran - jajaran genjang yang memiliki alas yang sama dan berada diantara dua
+garis - garis sejajar yang sama , sama (besarnya) satu dengan yang lain.  
+
+\begin{tikzpicture}
+\draw (-8, 2) node[anchor=south]{A}(-8, 2) -- (-5, 2) node [anchor=south]{D} (-5, 2) -- (2, 2) node [anchor=south]{E} (2, 2) -- (5, 2) node[anchor=south]{F};
+\draw (-6, -2) node[anchor=north]{B}(-6, -2) -- (-3, -2) node [anchor=north]{C};
+\draw (-6, -2) -- (-8, 2);
+\draw (-3, -2) -- (-5, 2);
+\draw (-6, -2) -- (2, 2);
+\draw (-3, -2) -- (5, 2);
+\draw (-3.75, -0.5) node[anchor=west]{G};
+\end{tikzpicture}
+
+Misalkan $ABCD$ dan $EBCF$ adalah bidang - bidang jajaran genjang yang memiliki alas yang sama yaitu $BC$, 
+dan berada diantara dua buah garis sejajar $AF$ dan $BC$. Saya katakan bahwa $ABCD$ sama dengan bidang
+jajaran genjang $EBCF$.  
+
+Karena $ABCD$ adalah sebauh jajaran genjang, $AD$ sama besar dengan $BC$ [1.34]. Dengan dengan alasan - alasan
+yang sama, $EF$ juga sama dengan $BC$. Dengan demikian $AD$ juga sama dengan $EF$. Dan $DE$ adalah 
+
+\setcounter{chapter}{2}
+\chapter*{\centering \chaptername{ \thechapter} \\Dasar - Dasar Aljabar Geometri}
+\setcounter{section}{12}
+\section*{\centering \thesection} 
+
+Pada segitiga tumpul, besar bujur sangkar dari sisi yang menghadap sudut tumpul
+ adalah lebih besar dari jumlah besar bujur sangkar - bujur sangkar sisi - sisi yang 
+mengapit sudut tumpul sebanyak dua kali besar persegi panjang yang dibentuk
+dari satu sisi yang yang mengapit sudut tumpul yang padanya garis lurus jatuh
+secara tegak lurus, dan garis lurus yang memotong sisi luar (segitiga tersebut) secara tegak lurus 
+kearah sudut tumpul.
+
+\begin{tikzpicture}
+\draw [-, black] (-2, -2) -- (6, -2);
+\draw [-, black] (-2, -2) -- (-2, 3);
+\draw [-, black] (0, -2) -- (-2, 3);
+\draw [-, black] (6, -2) -- (-2, 3);
+\end{tikzpicture} 
+
+Misalkan $ABC$ adalah segitiga tumpul, dengan sudut $BAC$ adalah sudut tumpul.
+Misalkan $BD$ ditarik dari titik $B$ tegak lurus terhadap $CA$ [Prop 1.12]. Saya
+katakan bahwa bujur sangkar $BC$ adalah lebih besar dari jumlah bujur sangkar $BA$
+dan bujur sangkar $AC$, sebanyak dua kali persegi panjang yang dibentuk $CA$ dan $AD$.
+
+Karena garis lurus $CD$ sudah dipotong pada sebarang titik, $A$, bujur sangkar para $DC$
+dengan demikian sama dengan jumlah dari jumlah bujur sangkar $CA$ dan $AD$, dan dua kali
+persegi panjang yang dibentuk $CA$ dan $AD$ [Prop.2.4]. Misalkan bujur  sangkar $DB$
+ditambahkan kepada keduanya 
+\begin{thebibliography}{9}
+\bibitem{fitzpatrick}
+Richard Fitzpatrick.
+\textit{EUCLID’S ELEMENTS OF GEOMETRY , The Greek text of J.L Heiberg(1883 - 1885)}.
+Revised and corrected - 2008 
+\bibitem{jafareffendi}
+M Jafar Effendi.
+\textit{Geometri Euclid}.
+Makalah mata kuliah Geometri Fakultas Pasca Sarjana Program Studi Pendidikan Matematika 2012.
+\bibitem{clarkuni}
+https://mathcs.clarku.edu/~djoyce/java/elements/elements.html 
+\end{thebibliography}
+\end{document}
+
