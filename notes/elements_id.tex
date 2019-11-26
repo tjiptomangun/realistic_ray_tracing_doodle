@@ -152,7 +152,52 @@ Dengan demikian ketika garis lurus $CA$, $AB$ dan $BC$ sama satu dengan
 yang lain.
 
 Dengan demikian, segitiga $ABC$ adalah sama sisi, dan dibangun dari
-satu ruas gari $AB$. Yang adalah hal yang ingin kita buktikan.  
+satu ruas gari $AB$. Yang adalah hal yang kita butuhkan.  
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+
+Untuk menempatkan sebuah ruas garis yang sama dengan ruas garis tertentu
+pada satu titik tertentu (sebagai salah satu ujungnya).
+
+\begin{tikzpicture}
+\draw [-] (0, 0) -- (2., 3) node [anchor=south west]{$C$};
+\draw [-] (-2, -.0) -- (0, 0);
+\draw (0, 0) node [anchor=west] {$B$}-- (120:2) node [anchor = south] {$D$}--+ (240:2) node [anchor=east] {$A$};
+\draw (0, 0) -- (120:2) --+ (240:9)node [anchor = south east] {$E$};
+\draw (0, 0) -- (-60:7) node [anchor = south west]{$F$};
+\draw (0, 0) circle (3.606);
+%\draw (-1, 1.73205) -- (240:8);
+\draw (-1, 1.73205) circle (5.606) (-7, 0) node [anchor = west] {$K$};
+\draw (-3.8, -3.8) node {$L$};
+\draw (2.3, -3.4) node {$G$};
+\draw (0.0, 4) node {$H$}; 
+\end{tikzpicture} 
+
+Misalkan $A$ adalah suatu titik tertentu, dan $BC$ adalah suatu ruas garis
+tertentu. Dibutuhkan untuk menempatkan garis lurus di $A$ yang sama dengan
+garis lurus $BC$.
+
+Sebab, misalkan ruas garis $AB$ sudah terhubung dari titik $A$ ke titik $B$
+[Post. 1], dan misalkan segitiga sama sisi $DAB$ sudah digambarkan 
+padanya [Prop 1.1]. Dan misalkan garis lurus $AE$ dan $BF$ sudah 
+ditarik lurus dengan masing masing $DA$ dan $DB$ [Post. 2]. Dan
+misalkan lingkaran $CGH$ dengan pusat $B$ dan jari - jari $BC$ sudah 
+digambarkan [Post. 3], dan lagi misalkan lingkaran $GKL$ dengan pusat $D$
+dan jari - jari $DG$ sudah digambarkan [Post. 3].  
+
+Dengan demikian, karena titik $B$ adalah pusat dari lingkaran $CGH$, $BC$ sama 
+dengan $BG$ [Def. 1.15].  Dan lagi karena titik $D$ adalah pusat dari 
+lingkaran $GKL$, $DL$ sama dengan $DG$ [Def. 1.15]. Dan di dalam ini, $DA$
+sama dengan $DB$. Dengan demikian sisa dari $AL$ sama dengan sisa $BG$
+[G.U. 3]. Tetapi $BC$ juga sudah dibuktikan sama dengan $BG$. Tetapi hal - hal
+yang nilainya sama dengan satu hal lain di luar keduanya adalah sama satu 
+dengan yang lain [G.U. 1.1]. Dengan demikian AL juga sama dengan BC.
+
+Dengan demikian, ruas garis AL sama dengan ruas garis tertentu
+$BC$, yang terletak pada garis tertentu $A$. Hal yang kita butuhkan.
+
+
 
 \setcounter{section}{13}
 \section*{\centering \thesection} 
@@ -172,7 +217,7 @@ sudut - sudut $CBA$ dan $ABD$. Saya katakan bahwa sudut - sudut $CBA$ dan
 $ABD$ adalah masing - masing sudut siku - siku atau besar keduanya adalah 
 sejumlah dua buah sudut siku - siku.
 
-Pada kenyattannya, jika $CBA$ sama dengan $ABD$ maka keduanya adalah dua buah 
+Pada kenyataannya, jika $CBA$ sama dengan $ABD$ maka keduanya adalah dua buah 
 sudut siku - siku [Def 1.10]. Jika tidak, asumsikan $BE$
 \setcounter{section}{29}
 \section*{\centering \thesection} 
