@@ -4,6 +4,10 @@ annex: elements_id_annex.tex
 	latex elements_id_annex.tex
 	pdflatex elements_id_annex.tex
 
+elements_id:
+	latex elements_id.tex
+	pdflatex elements_id.tex
+
 notes: 
 	latex vectors.tex
 	pdflatex vectors.tex

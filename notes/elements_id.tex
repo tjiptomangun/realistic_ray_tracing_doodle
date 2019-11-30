@@ -11,6 +11,8 @@
 \definecolor{Gray}{gray}{0.9}
 \definecolor{LightCyan}{rgb}{0.70,1,1}
 \definecolor{OliveGreen}{rgb}{0,0.6,0}
+\definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71}
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
 
 
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
@@ -102,7 +104,7 @@ tidak bertemu satu dengan yang lain.
 \end{center}
 \begin{enumerate}
 \item Anggap sudah didalilkan melalui dua titik sembarang dapat dibuat garis lurus.
-\item Dan di dalam sebuah garis lurus bisa diambil garis tak putus dengan panjang tertentu.
+\item Dan dan memperpanjang sebuah ruas garis dengan panjang tertentu tanpa terputus.
 \item Dan dengan sembarang pusat dan jari -jari dapat dibuat sebuah lingkaran.
 \item Dan bahwa semua sudut siku - siku sama besar.
 \item Dan jika suatu garis lurus memotong dua buah garis lurus yang lain dan membentuk sudut - sudut dalam pada sisi yang sama yang jumlah besar sudutnya lebih kecil dari dua  sudut siku - siku, maka dua garis lurus yang di sisi lainnya, jika diperpanjang sampai tak terhingga, akan bertemu di sisi tersebut, dan dua garis lurus yang berada di sisi sudut dalam yang lebih kecil dari dua sudut siku siku tidak akan pernah bertemu jika diperpanjang di sisi tersebut.
@@ -127,10 +129,10 @@ Untuk menggambarkan segitiga sama sisi pada sebuah ruas garis.
 \draw (-2, 0) circle (4);
 \draw (2, 0) circle (4);
 \draw (-6, 0) node [anchor=east]{D} (-2, 0) node [anchor=east]{A} (-2, 0) 
--- (2, 0) node[anchor=west]{B} (6, 0) node[anchor=west]{E} (0, 4.0)node[anchor=north]{C};
+-- (2, 0) node[anchor=west]{B} (6, 0) node[anchor=west]{E} 
+(0, 4.0)node[anchor=north]{C};
 \draw (-2, 0) -- (0, 3.464101) -- (2, 0) circle; 
 \end{tikzpicture} 
-
 Misalkan $AB$ adalah ruas garis.
 
 Dibutuhkan untuk menggambarkan segitiga sama sisi pada ruas garis $AB$.
@@ -143,8 +145,8 @@ tersebut saling memotong, masing - masing ke titik $A$ dan $B$ [Post. 1].
 
 
 Dan karena $A$ adalah pusat dari lingkaran $CDB$, maka $AC$ sama dengan $AB$
-[Def. 15]. Dan karena titik $B$ adalah pusat dari lingkaran $CAE$, maka
-$BC$ sama dengan $BA$ [Def. 15]. Tetapi $CA$ juga sudah dibuktikan sama 
+[Def. 1.15]. Dan karena titik $B$ adalah pusat dari lingkaran $CAE$, maka
+$BC$ sama dengan $BA$ [Def. 1.15]. Tetapi $CA$ juga sudah dibuktikan sama 
 dengan $AB$. Dengan demikian $CA$ dan $CB$ adalah sama dengan $AB$. Tetapi
 hal - hal yang nilainya sama dengan satu hal lain di luar keduanya adalah sama
 satu dengan yang lain [GU. 1]. Dengan demikian, $CA$ juga sama dengan $CB$.  
@@ -192,12 +194,68 @@ lingkaran $GKL$, $DL$ sama dengan $DG$ [Def. 1.15]. Dan di dalam ini, $DA$
 sama dengan $DB$. Dengan demikian sisa dari $AL$ sama dengan sisa $BG$
 [G.U. 3]. Tetapi $BC$ juga sudah dibuktikan sama dengan $BG$. Tetapi hal - hal
 yang nilainya sama dengan satu hal lain di luar keduanya adalah sama satu 
-dengan yang lain [G.U. 1.1]. Dengan demikian AL juga sama dengan BC.
+dengan yang lain [G.U. 1]. Dengan demikian AL juga sama dengan BC.
 
 Dengan demikian, ruas garis AL sama dengan ruas garis tertentu
-$BC$, yang terletak pada garis tertentu $A$. Hal yang kita butuhkan.
+$BC$, yang terletak pada garis tertentu $A$. Hal yang kita butuhkan.  
+
+Ilustrasi lain
+
+\begin{tikzpicture}
+\draw [-, ashgrey] (0, 0.0) node [anchor = north]{$A$} -- (2, 0.0) node [anchor = west] {$B$};
+\draw [-, dashed, ashgrey] (0, 0) -- (120:3) --++ (240:3)--++(-0:3); 
+\draw [-] (-1.5, 2.6) node [anchor = south] {$C$}-- (.5, 2.6);
+\draw [-, dashed, ashgrey] (-1.5, 2.6) circle(2);
+\draw [-, dashed, ashgrey] (-3.0, 0.0) circle(5);
+\draw [-, dashed, ashgrey] (-3.0, 0.0) --++(0:6);
+\draw [-, dashed, ashgrey] (-3.0, 0.0) --++(60:6);
+\end{tikzpicture}
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+
+Pada dua buah ruas garis yang tidak sama panjang, cara untuk
+memotong dari ruas garis yang lebih besar ruas garis yang sama panjang dengan
+ruas garis yang lebih pendek.
+
+\begin{tikzpicture}
+\draw [-] (0, 0.0) node [anchor = north]{$A$} -- (7, 0.0) node [anchor = west] {$B$};
+\draw [-, dashed, ashgrey] (0, 0)--(135 : 2.82842712474)--(195:2.82842712474)--(0, 0);
+\draw [-, dashed, ashgrey] (0, 0)--(-45 : 5);
+\draw [-] (-2, 2) -- (.5, 2);
+\draw (-0.5, 2.9) node {$C$};
+\draw [-, dashed, ashgrey] (-2, 2) circle(2.5);
+\draw [-, dashed, ashgrey] (-2, 2) --++(75:2.5);
+\draw [-, dashed, ashgrey] (0, 0)--(135 : 2.82842712474)--(195:2.82842712474)--(15: 5);
+\draw [-, dashed, ashgrey] (-2.73205080756, -0.732050807567) circle(5.32842712474);
+\draw [-] (0, 0.0) node [anchor = north]{$A$} -- (15:2.5) node [anchor = west] {$D$};
+\draw [-] (0, 0.0) circle (2.5);
+\draw (2.5, 0) node [anchor = north west] {$E$};
+\draw (0, -2.5) node [anchor = north] {$F$};
 
 
+%\draw [-, dashed, ashgrey] (0, 0)--(135:2.82842712474);
+%\draw [-, dashed, ashgrey] (-3.0, 0.0) circle(5);
+%\draw [-, dashed, ashgrey] (-3.0, 0.0) --++(0:6);
+%\draw [-, dashed, ashgrey] (-3.0, 0.0) --++(60:6);
+\end{tikzpicture}
+
+Misalkan $AB$ dan $C$ adalah dua buah garis tak sama panjang yang dimaksud,
+dimana $AB$ adalah garis yang lebih panjang. Jadi dibutuhkan untuk memotong
+dari ruas garis $AB$ sebuah ruas garis yang sama panjang dengan $C$.
+
+Misalkan ruas garis $AD$ ,sama panjang dengan ruas garis $C$, sudah ditempatkan
+pada titik $A$ sebagai salah satu ujungnya [Prop. 1.2]. Dan misalkan lingkaran
+$DEF$ sudah digambarkan dengan titik $A$ dan jari - jari $AD$ [Post. 3].
+
+Dan karena titik $A$ adalah pusat dari lingkaran $DEF$, $AE$ dengan demikian
+sama dengan $AD$ [Def.1.14]. Tetapi $C$ juga sama panjang dengan $AD$. Dengan 
+demikian $AE$ dan $C$ adalah sama dengan $AD$. Sehinggan $AE$ juga sama dengan
+$C$ [G.U.1].
+
+Dengan demikian , untuk dua buah ruas garis yang tidak sama panjang $AB$ 
+dan $C$, ruas garis $AE$ yang sama panjang dengan $C$ telah dipotong dari 
+$AB$. Hal yang mana yang perlu kita lakukan.
 
 \setcounter{section}{13}
 \section*{\centering \thesection} 
@@ -308,7 +366,9 @@ sudut segitiga $ABD$ dengan demikian sama dengan keseluruahn  sudut segitiga $AC
 garis - garis sejajar yang sama , sama (besarnya) satu dengan yang lain.  
 
 \begin{tikzpicture}
-\draw (-8, 2) node[anchor=south]{A}(-8, 2) -- (-5, 2) node [anchor=south]{D} (-5, 2) -- (2, 2) node [anchor=south]{E} (2, 2) -- (5, 2) node[anchor=south]{F};
+\draw (-8, 2) node[anchor=south]{A}(-8, 2) -- (-5, 2) 
+node [anchor=south]{D} (-5, 2) -- (2, 2) 
+node [anchor=south]{E} (2, 2) -- (5, 2) node[anchor=south]{F};
 \draw (-6, -2) node[anchor=north]{B}(-6, -2) -- (-3, -2) node [anchor=north]{C};
 \draw (-6, -2) -- (-8, 2);
 \draw (-3, -2) -- (-5, 2);
