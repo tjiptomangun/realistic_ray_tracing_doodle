@@ -232,12 +232,6 @@ ruas garis yang lebih pendek.
 \draw [-] (0, 0.0) circle (2.5);
 \draw (2.5, 0) node [anchor = north west] {$E$};
 \draw (0, -2.5) node [anchor = north] {$F$};
-
-
-%\draw [-, dashed, ashgrey] (0, 0)--(135:2.82842712474);
-%\draw [-, dashed, ashgrey] (-3.0, 0.0) circle(5);
-%\draw [-, dashed, ashgrey] (-3.0, 0.0) --++(0:6);
-%\draw [-, dashed, ashgrey] (-3.0, 0.0) --++(60:6);
 \end{tikzpicture}
 
 Misalkan $AB$ dan $C$ adalah dua buah garis tak sama panjang yang dimaksud,
@@ -256,6 +250,38 @@ $C$ [G.U.1].
 Dengan demikian , untuk dua buah ruas garis yang tidak sama panjang $AB$ 
 dan $C$, ruas garis $AE$ yang sama panjang dengan $C$ telah dipotong dari 
 $AB$. Hal yang mana yang perlu kita lakukan.
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+
+Jika pada dua buah segitiga, yang pertama  memiliki dua buah sisi yang sama 
+panjang dengan dua buah sisi segitiga yang satunya, dan pada keduanya sudut
+yang diapit oleh sisi - sisi yang sama panjang tadi adalah sama besar, 
+maka alas (sisi ketiga) dari kedua segitiga tersebut adalah sama besar, dan kedua 
+segitiga tersebut akan sama, dan sudut - sudut selebihnya yang menghadap dua 
+sisi - sisi yang sama panjang yang pertama tadi adalah sama besar pada 
+kedua segitiga.
+
+\begin{tikzpicture}
+\draw(-3, -1) node[anchor=east] {$B$} -- (-1,  1) node[anchor=south]{A} 
+     -- (0, -1) node[anchor=west]{$C$} -- (-3, -1); 
+\draw(2, -1) node[anchor=east] {$E$} -- (4,  1) node[anchor=south]{D} 
+     -- (5, -1) node[anchor=west]{$F$} -- (2, -1); 
+\end{tikzpicture}
+
+Misalkan $ABC$ dan $DEF$ adalah dua buah segitiga yang memiliki 
+sisi - sisi $AB$ dan $AC$ yang sama panjang dengan sisi - sisi $DE$ dan $DF$.
+Yakni $AD$ dengan $DE$  dan $AC$ dengan $DF$. Dan misalkan sudut $BAC$ sama
+besar dengan sudut $EDF$. Saya katakan bahwa sisi alas $BC$ juga sama panjang
+dengan  sisi alas $EF$, dan segitiga $ABC$ juga akan sama dengan segitiga 
+$DEF$, dan sudut sudut selebihnya yang menghadap sisi - sisi yang sama yang 
+akan sama satu dengan yang lain. Yakni $ABC$ dengan $DEF$ dan $ACB$ dengan 
+$DFE$.
+
+Karena jika segitiga $ABC$ di tempatkan ke segitiga $DEF$, titik $A$ 
+ditempatkan pada titik $D$, dan ruas garis $AB$ pada $DE$, maka
+titik $B$ juga akan bertemu dengan $E$ dengan 
+
 
 \setcounter{section}{13}
 \section*{\centering \thesection} 
