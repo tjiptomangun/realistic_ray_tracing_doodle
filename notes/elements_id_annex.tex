@@ -14,7 +14,6 @@
 \begin{document}
 
 % Create a new 1st level heading
-\section{Main Heading}
 
 For orthogonal
 \[
@@ -27,7 +26,9 @@ For any obtuse
 c^2 = a^2 + b^2 + 2ad
 \]
 
-where d is b projected along a
+dimana $d$ adalah proyeksi $b$ pada $a$.
+
+Komposisi dari Komponen - komponen dengan Titik Aplikasi Bersama.
 
 \begin{tikzpicture}
 %the vectors
@@ -92,8 +93,11 @@ OA &= v_1/\theta_1 \\
 OB &= v_2/\theta_2\\
 OC &= r/\theta\\
 r^2 &= v_1^2 + v_2^2 + 2v_1v_2\cos(\theta2 - \theta_1)\\
-\tan\theta &= \frac{v_1\sin\theta_1 + v_2\sin\theta_2}{v_1\cos\theta_1 + v_2\cos\theta_2} 
-\end{align*}
+\tan\theta &= \frac{v_1\sin\theta_1 + v_2\sin\theta_2}{v_1\cos\theta_1 + v_2\cos\theta_2}\\
+r &= \sqrt{v_1^2 + v_2^2 + 2v_1v_2\cos(\theta2 - \theta_1)}\\
+\theta &= \tan^{-1}{\frac{v_1\sin\theta_1 + v_2\sin\theta_2}{v_1\cos\theta_1 + v_2\cos\theta_2}}
+\end{align*} 
+
 
 When the components are equal
 
@@ -138,11 +142,11 @@ $\theta$ is
 
 \draw [black] (.75, -.25) node {$O$}; 
 \draw [black] (5.25, -.25) node {$A$}; 
-\draw [black] (3.15, 4.25) node {$B$}; 
+\draw [black] (3.15, 4.25) node {$B$};
 \draw [black] (7.0, 4.25) node {$C$}; 
 \end{tikzpicture}
 
-With $r$, $v_1$, $\theta$ is known, find $\theta_2$ and $v_2$ ($OB$).
+Dengan $r$, $v_1$, $\theta$ diketahui, carilah nilai $\theta_2$ dan $v_2$ ($OB$)!
 
 \begin{tikzpicture}
 %the vectors
@@ -176,10 +180,10 @@ With $r$, $v_1$, $\theta$ is known, find $\theta_2$ and $v_2$ ($OB$).
 \draw [black] (7.0, 4.25) node {$C$}; 
 \end{tikzpicture}
 
-Line $OB$ is identical with the diagonal of the parallelogram formed
-by $OC$ and $OA$ reversed
+Garis $OB$ sama dengan diagonal jajaran genjang yang dibentuk oleh
+$OC$ dan $OA$ dibalik.
 
-$v_2$ or $OB$ is
+$v_2$ atau $OB$ adalah:
 
 \begin{align*}
 v_2 &= \sqrt{(-v_1)^2 + r^2 + 2v_1r\cos(\pi - \theta_2)}\\
@@ -274,5 +278,35 @@ v_1 &= 100\frac{\cos(30^\circ)(1-cos(60^\circ))}{1-\cos^2(60^\circ)}\\
 v_1 &= 100\frac{\cos(30^\circ)(1-\cos(60^\circ))}{(1-\cos(60^\circ))(1+\cos(60^\circ))}\\
 v_1 &= 100\frac{\cos(30^\circ)}{1+\cos(60^\circ)}\\
 \end{align*}
+
+Komposisi beberapa vektor dengan titik awal bersama. $Resultant$ nya dapat 
+diperoleh dengan konstruksi grafix berikut: Ambil vektor dengan sembarang 
+urutan, misal $A$, $B$, $C$. Dari titik akhir $A$ gambarkan $\grave{B}$ yang 
+sama panjang dan paralel dengan $B$, dan dari titik akhir $\grave{B}$ tarik 
+vektor $\grave{C}$ yang sama panjang dan paralel dengan $C$. Vektor yang 
+bermula dari $A$ dan berakhir di $\grave{C}$ adalah $Resultant$ dari 
+vektor - vektor tersebut. $Resultant$ yang didapat sama tanpa memperhatikan 
+urutan vektor, dan karena urutannya tidak menentukan area yang diliputi.
+
+Hasilnya dapat di peroleh secara analitis sebagai berikut.
+Misalkan 
+\[
+f_1/\underline{\theta_1} + f_2/\underline{\theta_2} +  ... + f_n/\underline{\theta_n}.
+\]
+sekarang
+\[
+f_1/\underline{\theta_1} = f_1\cos\theta_1/\underline{0} + f_1\sin\theta_1/\underline{\frac{\pi}{2}} 
+\]
+juga
+\[
+f_2/\underline{\theta_2} = f_2\cos\theta_2/\underline{0} + f_2\sin\theta_2/\underline{\frac{\pi}{2}} 
+\]
+dan
+\[
+f_n/\underline{\theta_n} = f_n\cos\theta_n/\underline{0} + f_n\sin\theta_n/\underline{\frac{\pi}{2}} 
+\]
+dengan demikian
+
+
 
 \end{document}
