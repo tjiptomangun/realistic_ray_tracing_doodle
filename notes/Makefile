@@ -25,5 +25,5 @@ inverse_gaussjordan: inverse_gaussjordan.c
 	gcc -Wall -ggdb3 inverse_gaussjordan.c -o inverse_gaussjordan
 
 clean: vectors.tex
-	rm -f gauss_jordan gauss_backsub2 vectors.aux vectors.dvi vectors.log elements_id.aux elements_id.dvi elements_id.log
+	rm -f gauss_jordan gauss_backsub2 vectors.aux vectors.dvi vectors.log elements_id.aux elements_id.dvi elements_id.log elements_id.pdf vectors.pdf elements_id_annex.pdf
    
