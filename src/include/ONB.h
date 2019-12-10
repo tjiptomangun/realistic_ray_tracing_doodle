@@ -1,6 +1,6 @@
 #ifndef _ONB_H_
 #define _ONB_H_
-#include "Vector3.h"
+#include "vector3.h"
 
 class ONB{
 public:
@@ -22,17 +22,17 @@ public:
 	// The first one th the fixed vector (just normalized)
 	// The second in normalized and its direction can be adjusted
 
-	void initFromUV(const Vector3& u, Vector3 &v);
-	void initFromVU(const Vector3& v, Vector3 &u);
+	void initFromUV(const Vector3& u, const Vector3 &v);
+	void initFromVU(const Vector3& v, const Vector3 &u);
 
-	void initFromUW(const Vector3& u, Vector3 &w);
-	void initFromWU(const Vector3& w, Vector3 &u);
+	void initFromUW(const Vector3& u, const Vector3 &w);
+	void initFromWU(const Vector3& w, const Vector3 &u);
 
-	void initFromVW(const Vector3& v, Vector3 &w);
-	void initFromWV(const Vector3& w, Vector3 &v);
+	void initFromVW(const Vector3& v, const Vector3 &w);
+	void initFromWV(const Vector3& w, const Vector3 &v);
 
-	friend istream &operator >>(istream &is, ONB &t);
-	friend ostream &operator <<(ostream &is, ONB &t);
+	friend std::istream & operator>>(std::istream &is, ONB &t);
+	friend std::ostream & operator<<(std::ostream &is, ONB &t);
 
 	friend bool operator==(const ONB& o1, const ONB& o2);
 
@@ -43,5 +43,5 @@ public:
 
 	Vector3 U, V, W;
 	
-}
+};
 #endif //_ONB_H_
