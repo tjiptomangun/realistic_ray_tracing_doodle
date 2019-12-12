@@ -200,7 +200,7 @@ Dengan demikian, ruas garis AL sama dengan ruas garis tertentu
 $BC$, yang terletak pada garis tertentu $A$. Hal yang kita butuhkan.  
 
 Ilustrasi lain
-
+\begin{center}
 \begin{tikzpicture}
 \draw [-, ashgrey] (0, 0.0) node [anchor = north]{$A$} -- (2, 0.0) node [anchor = west] {$B$};
 \draw [-, dashed, ashgrey] (0, 0) -- (120:3) --++ (240:3)--++(-0:3); 
@@ -209,7 +209,8 @@ Ilustrasi lain
 \draw [-, dashed, ashgrey] (-3.0, 0.0) circle(5);
 \draw [-, dashed, ashgrey] (-3.0, 0.0) --++(0:6);
 \draw [-, dashed, ashgrey] (-3.0, 0.0) --++(60:6);
-\end{tikzpicture}
+\end{tikzpicture} 
+\end{center}
 
 \stepcounter{section}
 \section*{\centering \thesection} 
@@ -218,6 +219,7 @@ Pada dua buah ruas garis yang tidak sama panjang, cara untuk
 memotong dari ruas garis yang lebih besar ruas garis yang sama panjang dengan
 ruas garis yang lebih pendek.
 
+\begin{center}
 \begin{tikzpicture}
 \draw [-] (0, 0.0) node [anchor = north]{$A$} -- (7, 0.0) node [anchor = west] {$B$};
 \draw [-, dashed, ashgrey] (0, 0)--(135 : 2.82842712474)--(195:2.82842712474)--(0, 0);
@@ -233,6 +235,7 @@ ruas garis yang lebih pendek.
 \draw (2.5, 0) node [anchor = north west] {$E$};
 \draw (0, -2.5) node [anchor = north] {$F$};
 \end{tikzpicture}
+\end{center}
 
 Misalkan $AB$ dan $C$ adalah dua buah garis tak sama panjang yang dimaksud,
 dimana $AB$ adalah garis yang lebih panjang. Jadi dibutuhkan untuk memotong
@@ -261,13 +264,14 @@ maka alas (sisi ketiga) dari kedua segitiga tersebut adalah sama besar, dan kedu
 segitiga tersebut akan sama, dan sudut - sudut selebihnya yang menghadap dua 
 sisi - sisi yang sama panjang yang pertama tadi adalah sama besar pada 
 kedua segitiga.
-
+\begin{center}
 \begin{tikzpicture}
 \draw(-3, -1) node[anchor=east] {$B$} -- (-1,  1) node[anchor=south]{A} 
      -- (0, -1) node[anchor=west]{$C$} -- (-3, -1); 
 \draw(2, -1) node[anchor=east] {$E$} -- (4,  1) node[anchor=south]{D} 
      -- (5, -1) node[anchor=west]{$F$} -- (2, -1); 
 \end{tikzpicture}
+\end{center}
 
 Misalkan $ABC$ dan $DEF$ adalah dua buah segitiga yang memiliki 
 sisi - sisi $AB$ dan $AC$ yang sama panjang dengan sisi - sisi $DE$ dan $DF$.
@@ -299,6 +303,40 @@ maka kedua nya juga akan memiliki sisi alas yang sama panjang, dan kedua
 segitiga tersebut adalah sama, dan sudut - sudut selebihnya yang menghadap
 sisi - sisi panjang tadi akan sama besar. Hal yang mana perlu kita buktikan.
 
+\stepcounter{section}
+\section*{\centering \thesection} 
+
+Pada segitiga sama sisi, sudut - sudut alas sama satu dengan yang lain, dan
+jika sisi - sisi yang sama panjang diperpanjang lagi maka sudut - sudut yang
+ada di bawah sisi alas akan sama satu dengan yang lain.
+
+\begin{center}
+\begin{tikzpicture}
+\draw [-, black] (-2, 0) node [anchor = north] {$D$} -- (0, 5) node [anchor = south]{$A$};
+\draw [-, black] (2, 0) node [anchor = north] {$E$} -- (0, 5);
+\draw [-, black] (-1.2, 2.0) node [anchor = east] {$B$} -- (1.2, 2.0) node [anchor = west]{$C$};
+\draw [-, black] (-1.2, 2.0) -- (1.6, 1.0) node [anchor = west]{$G$};
+\draw [-, black] (1.2, 2.0) -- (-1.6, 1.0) node [anchor = east]{$F$}; 
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ adalah segitiga sama sisi dengan sisi $AB$ sama panjang dengan 
+sisi $AC$, dan misalkan ruas garis $BD$ and $CE$ sudhah diperpanjang 
+masing - masing dari $AB$ dan $AC$[Post. 2].  Saya katakan bahwa sudut $ABC$ 
+sama dengan $ACB$ dan sudut $CBD$ sama dengan $BCE$.
+
+Sebab misalkan titik $F$ sudah diambil secara acak pada $BD$, dan misalkan 
+$AG$ sudah dipotong dari  $AE$, sama panjang dengan $AF$ [Prop. 1.3]. Dan 
+misalkan garis - garis $FC$ dan $GB$ sudah dihubungkan [Post. 1].
+
+Kenyataanya, karena $AF$ sama panjang dengan $AG$, dan $AB$ dengan $AC$, kedua
+ruas garis $FA$, $AC$ sama panjang dengan kedua ruas garis $GA$, $AB$. Keduanya
+juga mengapit sudut yang sama yakni $FAG$. Dengan demikian, sisi alas $FC$ sama 
+dengan sisi alas $GB$, dan segitiga $AFC$ sama dengan segitiga $AGB$, dan sudut
+- sudut nya yang dihadapan sisi - sisi yang sama panjang sama besar satu sama
+lain [Prop. 1.4]. Yakni $ACF$ dengan $ABG$ dan $AFC$ dengan $AGB$. Dan karena
+panjang $AF$ sama dengan $AG$ dan di dalamnya $AB$ sama dengan $AC, maka panjang
+ruas garis sisanya $BF$ sama dengan $CG$ [G.U.3].
 
 \setcounter{section}{13}
 \section*{\centering \thesection} 
@@ -458,7 +496,8 @@ dan bujur sangkar $AC$, sebanyak dua kali persegi panjang yang dibentuk $CA$ dan
 Karena garis lurus $CD$ sudah dipotong pada sebarang titik, $A$, bujur sangkar para $DC$
 dengan demikian sama dengan jumlah dari jumlah bujur sangkar $CA$ dan $AD$, dan dua kali
 persegi panjang yang dibentuk $CA$ dan $AD$ [Prop.2.4]. Misalkan bujur  sangkar $DB$
-ditambahkan kepada keduanya 
+ditambahkan kepada keduanya
+
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
 Richard Fitzpatrick.
