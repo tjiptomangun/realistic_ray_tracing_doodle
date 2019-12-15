@@ -1629,10 +1629,79 @@ Proof
 k &= \norm{u}\cos(\theta)\\
 u \cdot a &= \norm{u}\norm{a}\cos(\theta)\\
 k\norm{a} &= \frac{u \cdot a}{\norm{a}} \\
-k &= \frac{u \cdot a}{\norm{a}^2}
+k &= \frac{u \cdot a}{\norm{a}^2}\\
+w_1 &= \frac{u \cdot a}{\norm{a}^2} a\\
+w_2 &= u - \frac{u\cdot a}{\norm{a}^2} a
 \end{align*} 
+in a more common notation 
+\begin{align*}
+proj_au&= \frac{u \cdot a}{\norm{a}^2} a \text{(vector component of $u$ along $a$)}\\
+u - proj_au &= u - \frac{u\cdot a}{\norm{a}^2} a \text{(vector component of $u$ orthogonal to $a$)}
+\end{align*}
 \\
 \\
+Example
+
+Find the orthogonal projections of the vectors $e_1 = (1, 0)$ and $e_2 = (0, 1)$ on the line $L$
+that makes an angle $\theta$ with positive x-axis in $R^2$
+
+\begin{center}
+\begin{tikzpicture}
+\draw [->] (0, 0) -- (4, 0) node [black, anchor=west] {$e_1$};
+\draw [-, blue, dashed] (4, 0)--++(120:2);
+\draw [-] (0, 0) -- (30:7) node [black, anchor=south west] {$L$};
+\draw [-] (.65, 0.20) node{$\theta$};
+\draw [<->] (1, 0) arc (0:30:1) ; %start:stop:radius
+\draw [-, black, dotted] (0, 0)--++(300:4);
+\draw [-, blue, dashed] (4, 0)--++(210:3.5);
+\draw [<->] (.5, -.8) arc (300:360:1) ; %start:stop:radius
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\draw [->] (0, 0) -- (4, 0) node [black, anchor=west] {$e_1$};
+\draw [-, blue, dashed] (4, 0)--++(120:2);
+\draw [-] (0, 0) -- (30:7) node [black, anchor=south west] {$L$};
+\draw [-] (.65, 0.20) node{$\theta$};
+\draw [<->] (1, 0) arc (0:30:1) ; %start:stop:radius
+\draw [-, black, dotted] (0, 0)--++(300:4);
+\draw [-, blue, dashed] (4, 0)--++(210:3.5);
+\draw [<->] (.5, -.8) arc (300:360:1) ; %start:stop:radius
+\draw (.8*4, .5*4) node {$(\cos\theta, \sin\theta)$};
+\end{tikzpicture}
+\end{center}
+
+From the picture, we know that vector {$(\cos\theta, \sin\theta)$} is in line $L$.
+So we have $a = (\cos\theta, \sin\theta)$
+
+\begin{align*}
+proj_{(1, 0)}\vec{a} &= \frac{(1, 0)\cdot(\cos\theta, \sin\theta)}{\norm{a}^2}(\cos\theta, \sin\theta)\\
+proj_{(1, 0)}\vec{a} &= (\cos^2\theta, \cos\theta\sin\theta)\\
+(1, 0) - proj_{(1, 0)}\vec{a} &= (1 - \cos^2\theta, - \cos\theta\sin\theta)\\
+(1, 0) - proj_{(1, 0)}\vec{a} &= (\sin^2\theta, - \cos\theta\sin\theta)
+\end{align*}
+
+
+\begin{center}
+\begin{tikzpicture}
+\draw [->] (0, 0) -- (0, 4) node [black, anchor=south] {$e_1$};
+\draw [-] (0, 0) -- (60:7) node [black, anchor=south west] {$L$};
+\draw [-] (.15, 0.75) node{$\theta$};
+\draw [<->] (0.45, 0.8) arc (0:120:.30) ; %start:stop:radius
+\draw [-, blue, dashed] (0, 4) --++ (-30:.5*4);
+\draw [-, blue, dashed] (0, 0) -- (150:.5*4); 
+\draw (4*.5, 4*.8) node {$(\sin\theta, \cos\theta)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{align*}
+proj_{(0, 1)}a &= \frac{(0, 1)\cdot a}{\norm{a}^2}a\\
+&= \frac{(0, 1)\cdot (\sin\theta, \cos\theta)}{\norm{a}^2}a\\
+&= \cos\theta(\sin\theta, \cos\theta)\\
+&= (\cos\theta\sin\theta, \cos^2\theta)\\
+\end{align*}
+
 \textbf{The inner product function.} Suppose $a$ is an $n-vector$. We can define scalar-valued
 function $f$ of $n-vectors$, given by
 \begin{equation}

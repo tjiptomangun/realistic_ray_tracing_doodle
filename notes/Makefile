@@ -8,11 +8,12 @@ elements_id:
 	latex elements_id.tex
 	pdflatex elements_id.tex
 
-notes: 
+vector:
 	latex vectors.tex
 	pdflatex vectors.tex
-	latex elements_id.tex
-	pdflatex elements_id.tex
+
+notes: elements_id vector annex
+	
 
 
 gauss_jordan: gauss_jordan.c
