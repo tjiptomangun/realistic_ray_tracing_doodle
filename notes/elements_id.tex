@@ -95,7 +95,7 @@ dan sisi - sisi yang berhadapan sama besar tetapi tidak siku - siku dan tidak
 semua sisi sama panjang, dan persegiempat lainnya yang tidak dalam kategori tersebut
 disebut dengan trapezium.
 \item Garis - garis paralel adalah garis - garis lurus yang jika berada dalam 
-bidang yang sama dan diperpanjang hingga tak terhingga ke masing - masing arah
+bidang yang sama dan dipanjangkan hingga tak terhingga ke masing - masing arah
 tidak bertemu satu dengan yang lain.  
 \end{enumerate}
 
@@ -104,10 +104,10 @@ tidak bertemu satu dengan yang lain.
 \end{center}
 \begin{enumerate}
 \item Anggap sudah didalilkan melalui dua titik sembarang dapat dibuat garis lurus.
-\item Dan dan memperpanjang sebuah ruas garis dengan panjang tertentu tanpa terputus.
+\item Dan memanjangkan sebuah ruas garis dengan panjang tertentu tanpa terputus.
 \item Dan dengan sembarang pusat dan jari -jari dapat dibuat sebuah lingkaran.
 \item Dan bahwa semua sudut siku - siku sama besar.
-\item Dan jika suatu garis lurus memotong dua buah garis lurus yang lain dan membentuk sudut - sudut dalam pada sisi yang sama yang jumlah besar sudutnya lebih kecil dari dua  sudut siku - siku, maka dua garis lurus yang di sisi lainnya, jika diperpanjang sampai tak terhingga, akan bertemu di sisi tersebut, dan dua garis lurus yang berada di sisi sudut dalam yang lebih kecil dari dua sudut siku siku tidak akan pernah bertemu jika diperpanjang di sisi tersebut.
+\item Dan jika suatu garis lurus memotong dua buah garis lurus yang lain dan membentuk sudut - sudut dalam pada sisi yang sama yang jumlah besar sudutnya lebih kecil dari dua  sudut siku - siku, maka dua garis lurus yang di sisi lainnya, jika dipanjangkan sampai tak terhingga, akan bertemu di sisi tersebut, dan dua garis lurus yang berada di sisi sudut dalam yang lebih kecil dari dua sudut siku siku tidak akan pernah bertemu jika dipanjangkan di sisi tersebut.
 \end{enumerate}
 
 \begin{center}
@@ -306,9 +306,9 @@ sisi - sisi panjang tadi akan sama besar. Hal yang mana perlu kita buktikan.
 \stepcounter{section}
 \section*{\centering \thesection} 
 
-Pada segitiga sama sisi, sudut - sudut alas sama satu dengan yang lain, dan
-jika sisi - sisi yang sama panjang diperpanjang lagi maka sudut - sudut yang
-ada di bawah sisi alas akan sama satu dengan yang lain.
+Pada segitiga sama sisi, sudut - sudut alas sama besar satu dengan yang lain, 
+dan jika sisi - sisi yang sama panjang dipanjangkan lagi maka sudut - sudut 
+yang ada di bawah sisi alas akan sama besar satu dengan yang lain.
 
 \begin{center}
 \begin{tikzpicture}
@@ -321,7 +321,7 @@ ada di bawah sisi alas akan sama satu dengan yang lain.
 \end{center}
 
 Misalkan $ABC$ adalah segitiga sama sisi dengan sisi $AB$ sama panjang dengan 
-sisi $AC$, dan misalkan ruas garis $BD$ and $CE$ sudhah diperpanjang 
+sisi $AC$, dan misalkan ruas garis $BD$ and $CE$ sudah dipanjangkan 
 masing - masing dari $AB$ dan $AC$[Post. 2].  Saya katakan bahwa sudut $ABC$ 
 sama dengan $ACB$ dan sudut $CBD$ sama dengan $BCE$.
 
@@ -335,8 +335,60 @@ juga mengapit sudut yang sama yakni $FAG$. Dengan demikian, sisi alas $FC$ sama
 dengan sisi alas $GB$, dan segitiga $AFC$ sama dengan segitiga $AGB$, dan sudut
 - sudut nya yang dihadapan sisi - sisi yang sama panjang sama besar satu sama
 lain [Prop. 1.4]. Yakni $ACF$ dengan $ABG$ dan $AFC$ dengan $AGB$. Dan karena
-panjang $AF$ sama dengan $AG$ dan di dalamnya $AB$ sama dengan $AC, maka panjang
-ruas garis sisanya $BF$ sama dengan $CG$ [G.U.3].
+panjang $AF$ sama dengan $AG$ dan di dalamnya $AB$ sama dengan $AC$, maka panjang
+ruas garis sisanya $BF$ sama dengan $CG$ [G.U.3]. Tetapi $FC$ juga sudah kita
+tunjukkan sama dengan $GB$. Jadi kedua garis lurus $BF$, $FC$ adalah sama dengan
+dua garis lurus $CG$, $GB$, masing - masing, dan sudut $BFC$ sama besar dengan 
+sudut $CGB$, dan sisi alas ada $BC$ adalah milik keduanya. Dengan demikian 
+segitiga $BFC$ akan sama dengan segitiga $CGB$ dan sudut - sudut sisanya yang
+menghadap sisi - sisi yang sama besar akan sama besar dengan 
+sudut - sudut sisanya yang bersesuaian [Prop 1.4]. Dengan demikian $FBC$ sama
+besar dengan $GCB$ dan $BCF$ dengan $CBG$. Dengan demikian, karena sudut 
+keseluruhan $ABG$ sudah ditunjukkan sama dengan sudut $ACF$, yang didalamnya 
+$CBG$ sama dengan $BCF$, sisa pengurangan $ABC$ dengan demikian sama dengan 
+sisa pengurangan $ACB$ [G.U. 3]. Dan keduanya adalah alas dari segitiga $ABC$.
+Dan $FBC$ juga sudah ditunjukkan sama dengan $GCB$. Dan keduanya ada dibawah
+sisi alas.
+
+Dengan demikian, untuk segitiga sama sisi, sudut - sudut yang pada alas sama
+besar satu dengan yang lain, dan jika sisi - sisi yang sama panjang 
+masing - masing dipanjangkan maka sudut - sudut dibawah sisi alas akan sama 
+besar satu dengan yang lain. Yang adalah hal yang ingin kita buktikan.
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Jika sebuah segitiga memiliki dua buah sudut yang sama besar satu dengan yang 
+lain, maka sisi - sisi yang menghadap sudut - sudut yang sama besar tersebut
+akan sama panjang satu dengan yang lain.
+\begin{center}
+\begin{tikzpicture}
+\draw[-](0, 0)node[anchor=east] {B} --++(0:4) node [anchor=west] {$C$} --++
+(110:5.84760880033) node [anchor=south] {$A$} --++(250:5.84760880033);
+\draw[-](4, 0)--++(127:4.477) node [anchor=south east] {$D$};
+\end{tikzpicture}
+\end{center} 
+
+Misalkan $ABC$ adalah segitiga dengan sudut $ABC$ sama dengan $ACB$. Saya 
+katakan bahwa sisi $AB$ juga sama panjang dengan sisi $AC$.
+
+Sebab jika $AB$ tidak sama panjang dengan $AC$ maka salah satu daripadanya
+akan lebih panjang. Misalkan $AB$ adalah sisi yang lebih panjang. Dan 
+misalkan $DB$ sama panjang dengan sisi yang lebih pendek $AC$, sudah dipotong
+dari sisi yang lebih panjang $AB$ [Prop. 1.3]. Dan misalkan $DC$ sudah
+terhubung [Post.1].
+
+Dengan demikian, karena $DB$ sama panjang dengan $AC$, dan $BC$ adalah milik
+keduanya, sisi - sisi yang sama $DB$, $BC$ sama panjang dengan sisi - sisi
+$AC$, $CB$, masing - masing, dan sudut $DBC$ sama besar dengan sudut $ACB$.
+Dengan demikian sisi alas $DC$ sama besar dengan sisi alas $AB$, dan segitiga
+$DBC$ akan sama dengan segitiga $ACB$ [Prop. 1.4], yang lebih kecil sama
+dengan yang lebih besar. Ide yang benar - benar tidak masuk akal [G.U. 5].
+Dengan demikian keduanya sama.
+
+Dengan demikian, jika sebuah segitiga memiliki dua buah sudut yang sama besar
+satu dengan yang lain maka sisi - sisi yang menghadap sudut - sudut yang sama
+besar akan juga sama panjang satu dengan yang lain. Yang adalah hal yang ingin
+ kita buktikan
 
 \setcounter{section}{13}
 \section*{\centering \thesection} 
