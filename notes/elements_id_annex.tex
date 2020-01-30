@@ -311,5 +311,21 @@ dengan demikian
 &=\sqrt{(\sum{f \cos\theta})^2 + (\sum{f \sin \theta})^2}/\tan^{-1}\frac{\sum f \sin \theta}{\sum f \cos \theta}
 \end{align*}
 
+Quaternion
+\begin{align*}
+(\alpha_1, 0) (a_1, a_2) &= (\alpha_1 a_1, \alpha_1 a_2)\\
+(\alpha_1, \alpha_2) (a_1, 0) &= (\alpha_1 a_1, \alpha_2 a_1)\\
+(0, \alpha_2)(0, a_2) &= (-1 \alpha_2 a_2, 0 \alpha_2 a_2)\\
+(\alpha_1, \alpha_2) &= (\alpha_1, 0) + (0, \alpha_2)\\
+(\alpha_1, \alpha_2) (a_1, a_2) &= (\alpha_1, 0)(a_1, a_2) + (0, \alpha_2)(a_1, a_2)\\
+(\alpha_1, \alpha_2) (a_1, a_2) &= (\alpha_1 a_1, \alpha_1 a_2) + (0, \alpha_2)(a_1, a_2)\\
+(\alpha_1, \alpha_2) (a_1, a_2) &= (\alpha_1 a_1, \alpha_1 a_2) + (0, \alpha_2)(0, a_2) + (0, \alpha_2)(a_1, 0)\\
+(\alpha_1, \alpha_2) (a_1, a_2) &= (\alpha_1 a_1, \alpha_1 a_2) + (-\alpha_2 a_2, 0) + (0, \alpha_2)(a_1, 0)\\
+(\alpha_1, \alpha_2) (a_1, a_2) &= (\alpha_1 a_1, \alpha_1 a_2) + (-\alpha_2 a_2, 0) + (a_1 0, a_1 \alpha_2)\\
+(\alpha_1, \alpha_2) (a_1, a_2) &= (\alpha_1 a_1 -\alpha_2 a_2 , \alpha_1 a_2 + \alpha_2 a_1)
+\end{align*}
+
+
+
 
 \end{document}
