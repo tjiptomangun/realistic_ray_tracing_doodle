@@ -90,7 +90,7 @@ segitiga lancip adalah yang memiliki tiga sudut lancip.
 sudut - sudut nya siku - siku dan sisi - sisinya sama panjang, persegipanjang
 adalah yang sudut - sudut nya siku dan tetapi tidak semua sisinya sama panjang, 
 belah ketupat adalah yang memiliki sisi - sisi sama panjang tetapi
-sudut - sudutnya tidak siku - siku, jajarang genjang adalah yang sudut - sudut 
+sudut - sudutnya tidak siku - siku, jajaran genjang adalah yang sudut - sudut 
 dan sisi - sisi yang berhadapan sama besar tetapi tidak siku - siku dan tidak 
 semua sisi sama panjang, dan persegiempat lainnya yang tidak dalam kategori tersebut
 disebut dengan trapezium.
@@ -247,7 +247,7 @@ $DEF$ sudah digambarkan dengan titik $A$ dan jari - jari $AD$ [Post. 3].
 
 Dan karena titik $A$ adalah pusat dari lingkaran $DEF$, $AE$ dengan demikian
 sama dengan $AD$ [Def.1.14]. Tetapi $C$ juga sama panjang dengan $AD$. Dengan 
-demikian $AE$ dan $C$ adalah sama dengan $AD$. Sehinggan $AE$ juga sama dengan
+demikian $AE$ dan $C$ adalah sama dengan $AD$. Sehingga $AE$ juga sama dengan
 $C$ [G.U.1].
 
 Dengan demikian , untuk dua buah ruas garis yang tidak sama panjang $AB$ 
@@ -266,10 +266,15 @@ sisi - sisi yang sama panjang yang pertama tadi adalah sama besar pada
 kedua segitiga.
 \begin{center}
 \begin{tikzpicture}
-\draw(-3, -1) node[anchor=east] {$B$} -- (-1,  1) node[anchor=south]{A} 
-     -- (0, -1) node[anchor=west]{$C$} -- (-3, -1); 
-\draw(2, -1) node[anchor=east] {$E$} -- (4,  1) node[anchor=south]{D} 
-     -- (5, -1) node[anchor=west]{$F$} -- (2, -1); 
+\draw(-5, -1) node[anchor=east] {$B$} -- (-1,  2) node[anchor=south]{A} 
+     -- (0, -1) node[anchor=west]{$C$} -- (-5, -1); 
+\draw(3, -1) node[anchor=east] {$E$} -- (7,  2) node[anchor=south]{D} 
+     -- (8, -1) node[anchor=west]{$F$} -- (3, -1); 
+%%\draw(2, -1) arc (54:180:x radius = 1., y radius = 1);
+%%this arc here is section of circle which have radius 2.6
+%%with the section to cut is on 235 to 305, the center is
+%%calculated by tex so that its 235 degree start in (2, -1)
+\draw(3, -1) arc (235 : 305 : 4.35);
 \end{tikzpicture}
 \end{center}
 
@@ -291,7 +296,7 @@ dengan $DEF$. Jadi titik $C$ juga akan berhimpit dengan titik $F$, lagi
 dikarenakan alasan $AC$ sama panjang dengan $DF$. Tapi titik $B$ juga tepat
 berhimpit dengan titik $E$, sehingga sisi alas $BC$ akan berhimpit
 dengan sisi alan $EF$. Karena jika $B$ berhimpitan dengan $E$, dan $C$ dengan
-$F$ , dan sisi alas $BC$ tidak berhimpin dengan $EF$, maka dua buah ruas
+$F$ , dan sisi alas $BC$ tidak berhimpit dengan $EF$, maka dua buah ruas
 garis akan meliputi daerah tersebut. Hal yang sangat mustahil [Post. 1].
 Dengan demikian sisi alas $BC$ juga berhimpit dengan $EF$ dan sama panjang
 [G.U.4], dan sudut - sudut selebihnya akan sama besar [G.U.4]. Yakni
@@ -378,17 +383,83 @@ dari sisi yang lebih panjang $AB$ [Prop. 1.3]. Dan misalkan $DC$ sudah
 terhubung [Post.1].
 
 Dengan demikian, karena $DB$ sama panjang dengan $AC$, dan $BC$ adalah milik
-keduanya, sisi - sisi yang sama $DB$, $BC$ sama panjang dengan sisi - sisi
+keduanya, sisi - sisi $DB$, $BC$ sama panjang dengan sisi - sisi
 $AC$, $CB$, masing - masing, dan sudut $DBC$ sama besar dengan sudut $ACB$.
 Dengan demikian sisi alas $DC$ sama besar dengan sisi alas $AB$, dan segitiga
 $DBC$ akan sama dengan segitiga $ACB$ [Prop. 1.4], yang lebih kecil sama
-dengan yang lebih besar. Ide yang benar - benar tidak masuk akal [G.U. 5].
+dengan yang lebih besar. Gagasan yang adalah mustahil [G.U. 5].
 Dengan demikian keduanya sama.
 
 Dengan demikian, jika sebuah segitiga memiliki dua buah sudut yang sama besar
 satu dengan yang lain maka sisi - sisi yang menghadap sudut - sudut yang sama
 besar akan juga sama panjang satu dengan yang lain. Yang adalah hal yang ingin
- kita buktikan
+ kita buktikan.
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Pada garis lurus yang sama, dua buah garis lurus yang lain yang bertemu pada 
+satu titik, dan masing - masing sama panjang dengan dua buah garis lurus lain 
+lainnya yang juga bertemu pada satu titik, tidak dapat dibuat bertemu pada 
+titik yang berbeda pada sisi yang sama dari garis lurus yang pertama, 
+tetapi memiliki ujung - ujung yang sama pada garis yang pertama.
+\begin{center}
+\begin{tikzpicture}
+\draw[-] (-4, -4)node [anchor=east] {\textbf{A}} (-4, -4) -- (4, -4) 
+node[anchor=west]{\textbf{B}} -- (2, 0) node [anchor=south west] {\textbf{D}}--
+(-4, -4);
+\draw[-] (4, -4) -- (0, 0.5) node [anchor=south] {\textbf{C}} -- (-4, -4);
+\draw[-] (0, 0.5) -- (2, 0);
+\end{tikzpicture} 
+\end{center}
+Karena, jika mungkin, misalkan kedua buah garis $AC$, $CB$, masing - masing 
+sama panjang dengan dua buah garis yang lain $AD$, $DB$, sudah di buat berada
+pada satu garis yang sama $AB$, dan bertemu di titik - titik $C$ dan $D$, pada
+sisi yang sama dari $AB$, dan memiliki ujung - ujung yang sama pada $AB$. 
+Sehingga $CA$ sama panjang dengan $DA$, dengan sama - sama memiliki titik $A$ 
+sebagai ujungnya dan $CB$ sama panjang dengan $DB$ dengan, dengan sama - sama
+memiliki titik $B$ sebagai ujungnya. Dan misalkan $CD$ sudah dipertemukan 
+[Post. 1].  
+
+Dengan demikian, karena $AC$ sama panjang dengan $AD$, sudut $ACD$ 
+juga akan sama dengan $ADC$ [Prop 1.5]. Dengan demikian sudut $ADC$ 
+(yang sama dengan sudut $ACD$ atau $DCA$)lebih 
+besar dari sudut $DCB$ (atau $BCD$) 
+[G.U.5]. Dengan demikian $CDB$ (yang lebih besar dari $ADC$ dan $ACD$ [G.U.5]) 
+jauh lebih besar dari $DCB$ (atau $BCD$).
+Dan lagi karena $CB$ sama panjang dengan $DB$, sudut $CDB$ juga sama besar
+dengan sudut $DCB$ [Prop. 1.5]. Tetapi sudah ditunjukkan bahwa sudut terdahulu 
+pertama juga jauh lebih besar dari yang kemudian. Hal yang tidak mungkin.
+
+Dengan demikian, pada satu garis lurus yang sama, dua buah garis lurus lainnya 
+yang bertemu pada satu titik, dan masing - masing sama panjang dengan dua buah
+garis lurus lain lainnya yang juga bertemu pada satu titik, tidak dapat dibuat
+bertemu pada titik yang berbeda pada sisi yang sama dari garis lurus yang 
+pertama, tetapi memiliki ujung - ujung yang berbeda - beda pada garis yang
+pertama.
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Jika pada dua buah segitiga,  yang pertama memiliki dua buah sisi yang sama
+panjang dengan segitiga yang kedua, dan juga sisi alas kedua segitiga tersebut
+sama besar, maka kedua segitiga akan memiliki sudut - sudut yang sama besar
+yang diapit oleh sisi - sisi yang sama panjang.
+
+\begin{center}
+\begin{tikzpicture}
+\draw[-](-3, -1)node[anchor = east]{\text{B}}(-3, -1) -- 
+(0, -.25)node[anchor=west]{\textbf{C}} -- (-2, 2.75) node[anchor=south]{\textbf{A}} 
+-- (-3, -1);
+
+\draw[-](3, -1)node[anchor = east]{\text{E}}(3, -1) -- 
+(6, -.25)node[anchor=west]{\textbf{F}} -- (5, 3) node[anchor=south]{\textbf{G}} 
+-- (3, -1);
+\draw[-](6, -0.25) -- (4, 2.75) node[anchor=south]{\textbf{D}} -- (3, -1);
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ dan $DEF$ adalah duah buah segitiga dengan dua buah sisi 
+$AB$ dan $BC$ yang sama panjang dengan dua sisi $DE$ dan $DF$. Yakni
+$AB$ dengan $DE$, dan $AC$ dengan $DF$. 
 
 \setcounter{section}{13}
 \section*{\centering \thesection} 
