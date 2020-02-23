@@ -353,7 +353,107 @@ ax^2 + bx + c &= 0\\
 ax^2 &= -bx - c\\
 ax^2 &= -bx - c\\
 \frac{ax^2}{b} &= -\frac{bx}{b} - \frac{c}{b}\\ 
-\frac{a}{b}x\times x + x&= -\frac{c}{b}
+\frac{a}{b}x\times x + x&= -\frac{c}{b}\\
+(\frac{a}{b}x + 1)\times x &= -\frac{c}{b}
 \end{align*}
 
+\textbf{Solving quadration equation}
+\begin{enumerate}
+
+\item \textit{Factoring by Inspection}
+
+It is almost possible to factorize quadratic equation $ax^2 + bx + c$ into
+$(px + q)(rx + s)$. By dividing the first equation with $a$ second equation
+can be expressed as $(x + q)(x + s)$. $q$ and $s$ in turns should be equals
+to $b$ if added up and and the product equals to $c$. In case either $b$ or $c$
+is $0$ factoring by inspection will fail.
+
+
+
+
+\item \textit{Completing the square}
+
+The process of completing the square makes use of algebraic identity
+
+\[
+x^2 + 2hx + h^2 = (x + h)^2
+\]
+
+for example 
+\begin{align*}
+(x + 3) ^2 &= x^2 + 6x + 9     &(p = 3)\\
+(x - 5) ^2 &= x^2 - 10x + 25   &(p = -5)
+\end{align*}
+
+The steps of completing the square
+
+\begin{enumerate}
+\item Divide each side by $a$, the coefficient of square term
+\item Subtract the constant term $c\div a$ from both sides
+\item Add the square of one-half $b\div a$, the coefficient of x, to both sides.
+This "completes the square", converting the left side into a perfect square
+\item Write the left side as a square and simplify the right side if necessary.
+\item Produce two linear equations by equating the square root of the left side
+with positive and negative square roots of the right side.
+\item Solve each of the two linear equations.
+\end{enumerate}
+
+example
+\[
+x^2 + 10x + 28 = 0
+\]
+
+we know that
+\[
+(x + 5)^2 = x^2 + 10x + 25
+\]
+
+\begin{align*}
+x^2 + 10x + 28 &= (x + 5)^2 + 3\\
+(x + 5)^2 + 3&= 0\\
+(x + 5)^2 &= -3\\ 
+(x + 5) &= \pm\sqrt{-3}\\
+x  &= -5 \pm\sqrt{-3}
+\end{align*}
+
+Another example
+
+\begin{align*}
+x^2 + 6x + 5 &= 0\\
+(x + 3)^2 - 4 &= 0\\
+(x + 3)^2 &= 4\\
+x + 3 &= \pm \sqrt{4}\\
+x  &= -3 \pm 2\\
+\end{align*}
+
+try to summarize with picture
+
+\begin{tikzpicture}
+\draw (0, 1) [anchor=east] node {x} ;
+\draw (0, 0) [gray, fill=gray] rectangle +(2, 2) (4, 0) rectangle +(.8, 2) ;
+\draw (1, 2) [black, anchor=south] node {x};
+\draw (3, 1) [black] node{+};
+\draw (6, 1) [black] node{=};
+\draw (4.4, 0)[black, -, dashed] -- (4.4, 2);
+\draw (4, 0) [anchor = north east] node {$\frac{b}{2a}x$};
+\draw (4.8, 0) [anchor = north west] node {$\frac{b}{2a}x$};
+\draw (8, 1) node {$\frac{c}{a}$};
+%\draw (3.5, 0) rectangle(.2, 1);
+\end{tikzpicture}
+
+which can be equal for for equation
+\[ax^2 + bx + c = 0\] 
+\begin{align*}
+ x^2 + \frac{b}{a} + \frac{c}{a} &= 0\\
+ x^2 + \frac{b}{a} &= - \frac{c}{a}\\
+ x^2 + \frac{b}{a} + \frac{b^2}{4a^2} &= - \frac{c}{a} + \frac{b^2}{4a^2}\\
+ (x + \frac{b}{2a})^2 &= - \frac{c}{a} + (\frac{b}{2a})^2\\
+ (x + \frac{b}{2a})^2 &= - \frac{c}{a} + (\frac{b2}{4a^2})\\
+ (x + \frac{b}{2a})^2 &= - \frac{4ac}{4a^2} + (\frac{b2}{4a^2})\\
+ (x + \frac{b}{2a})^2 &= \frac{b2 - 4ac}{4a^2}\\
+  x + \frac{b}{2a} &= \sqrt{\frac{b2 - 4ac}{4a^2}}\\
+  x &= - \frac{b}{2a} \pm \sqrt{\frac{b2 - 4ac}{4a^2}}\\
+  x &= - \frac{b \pm \sqrt{b2 - 4ac}}{2a}
+\end{align*}
+\end{enumerate} 
 \end{document}
