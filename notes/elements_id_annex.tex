@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{amsfonts, amsthm, amsmath, braket} 
+\usepackage{changepage}
 \usepackage{tikz}
 \usetikzlibrary{angles, quotes, calc, patterns}
 \definecolor{cadetgrey}{rgb}{0.57, 0.64, 0.69}
@@ -427,19 +428,77 @@ x  &= -3 \pm 2\\
 \end{align*}
 
 try to summarize with picture
+\begin{figure}
+\begin{adjustwidth*}{2em}{}
+\begin{tikzpicture}
+\draw (0, 1) [anchor=east] node {x} ;
+\draw (0, 0) [gray, fill=gray] rectangle +(2, 2) (4, 0) rectangle +(.8, 2) ;
+\draw (1, 2) [black, anchor=south] node {x};
+\draw (3, 1) [black] node{+};
+\draw (6, 1) [black] node{+};
+\draw (4.4, 0)[black, -, dashed] -- (4.4, 2);
+\draw (4, 0) [anchor = north east] node {$\frac{b}{2a}x$};
+\draw (4.8, 0) [anchor = north west] node {$\frac{b}{2a}x$};
+\draw (7, 1) node {$\frac{c}{a}$};
+\draw (8, 1) [black] node{=};
+\draw (9, 1) [black] node{0};
+\end{tikzpicture}
 
 \begin{tikzpicture}
 \draw (0, 1) [anchor=east] node {x} ;
 \draw (0, 0) [gray, fill=gray] rectangle +(2, 2) (4, 0) rectangle +(.8, 2) ;
 \draw (1, 2) [black, anchor=south] node {x};
 \draw (3, 1) [black] node{+};
-\draw (6, 1) [black] node{=};
+%\draw (6, 1) [black] node{+};
 \draw (4.4, 0)[black, -, dashed] -- (4.4, 2);
 \draw (4, 0) [anchor = north east] node {$\frac{b}{2a}x$};
 \draw (4.8, 0) [anchor = north west] node {$\frac{b}{2a}x$};
-\draw (8, 1) node {$\frac{c}{a}$};
-%\draw (3.5, 0) rectangle(.2, 1);
+\draw (7, 1) node {$-\frac{c}{a}$};
+\draw (6, 1) [black] node{=};
+%\draw (9, 1) [black] node{0};
 \end{tikzpicture}
+
+\begin{tikzpicture}
+\draw (0, 1) [anchor=east] node {x} ;
+\draw (0, 0) [gray, fill=gray] rectangle +(2, 2) (0, 2) rectangle +(2, .4) (2, 0) rectangle +(.4, 2);
+\draw (1, 0) [black, anchor=north] node {x};
+\draw (2, 2)[black, -, dashed] -- (0, 2) (0, 2.4)node [anchor=south west] {$\frac{b}{2a}x$};
+\draw (2, 2)[black, -, dashed] -- (2, 0) node [anchor=north west] {$\frac{b}{2a}x$};
+\draw (2, 2)[red, -,  fill=blue] rectangle +(.4, .4);
+\draw (2.2, 2.4) node [anchor = south]{$\frac{b}{2a}$};
+\draw (2.4, 2.2) node [anchor = west]{$\frac{b}{2a}$};
+\draw (3, 1) [black] node{=};
+\draw (4, 1) [black] node {$-\frac{c}{a} + \frac{b^2}{4a^2}$};
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\draw (0, 1) [anchor=east] node {x};
+\draw (0, 0) [gray, fill=gray] rectangle +(2, 2) (0, 2) rectangle +(2, .4) (2, 0) rectangle +(.4, 2);
+\draw (1, 0) [black, anchor=north] node {x};
+\draw (2, 2)[black, -, dashed] -- (0, 2) (0, 2.4)node [anchor=south west] {$\frac{b}{2a}x$};
+\draw (2, 2)[black, -, dashed] -- (2, 0) node [anchor=north west] {$\frac{b}{2a}x$};
+\draw (2, 2)[red, -,  fill=blue] rectangle +(.4, .4);
+\draw (2.2, 2.4) node [anchor = south]{$\frac{b}{2a}$};
+\draw (2.4, 2.2) node [anchor = west]{$\frac{b}{2a}$};
+\draw (3, 1) [black] node{=};
+\draw (4, 1) [black] node {$-\frac{4ac}{4a^2} + \frac{b^2}{4a^2}$};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw (0, 1) [anchor=east] node {x} ;
+\draw (0, 0) [gray, fill=gray] rectangle +(2, 2) (0, 2) rectangle +(2, .4) (2, 0) rectangle +(.4, 2);
+\draw (1, 0) [black, anchor=north] node {x};
+\draw (2, 2)[black, -, dashed] -- (0, 2) (0, 2.4)node [anchor=south west] {$\frac{b}{2a}x$};
+\draw (2, 2)[black, -, dashed] -- (2, 0) node [anchor=north west] {$\frac{b}{2a}x$};
+\draw (2, 2)[red, -,  fill=blue] rectangle +(.4, .4);
+\draw (2.2, 2.4) node [anchor = south]{$\frac{b}{2a}$};
+\draw (2.4, 2.2) node [anchor = west]{$\frac{b}{2a}$};
+\draw (3, 1) [black] node{=};
+\draw (4, 1) [black] node {$\frac{b^2 - 4ac}{4a^2}$};
+\end{tikzpicture}
+\end{adjustwidth*}
+\end{figure}
 
 which can be equal for for equation
 \[ax^2 + bx + c = 0\] 
