@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{book}
+\documentclass[a4paper]{book}
   
 \usepackage{algorithm}
 \usepackage{amsmath}
@@ -8,12 +8,14 @@
 \usepackage{tikz}
 \usepackage[bahasa]{babel}
 
+\hbadness=999999
+\vbadness=999999
+
 \definecolor{Gray}{gray}{0.9}
 \definecolor{LightCyan}{rgb}{0.70,1,1}
 \definecolor{OliveGreen}{rgb}{0,0.6,0}
 \definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71}
-\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
-
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0} 
 
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
@@ -25,23 +27,13 @@
 \pagenumbering{gobble}
 \pagestyle{empty}
 \setcounter{chapter}{1}
-\chapter*{\centering \chaptername{ \thechapter} \\Dasar - Dasar dari Geometri Bidang Datar Yang Melibatkan Garis Lurus}
-%\author{Euclid of Alexandria}
-%\begin{titlepage}
-%\begin{center}
-%{\huge \bfseries Element Element Geometri Euklid - Terjemahan Bahasa Indonesia}
-%{\huge Element Element Geometri Euklid - Terjemahan Bahasa Indonesia}
-%\end{center}
-%\end{titlepage}
-%comment comment comment
-%\chaptername{\thechapter}
-
+\chapter*{\centering \chaptername{ \thechapter} 
+Dasar - Dasar dari Geometri Bidang Datar Yang Melibatkan Garis Lurus}
 \pagenumbering{alph} 
 
 \begin{center}
 \textbf{Definisi - definisi}
-\end{center}
-
+\end{center} 
 \begin{enumerate}
 \item Sebuah titik adalah yang darinya tidak ada bagian lagi.
 \item Dan sebuah garis adalah panjang yang tidak memiliki lebar.
@@ -69,7 +61,7 @@ sebuah garis [yang disebut keliling], (sedemikian rupa) sehingga semua
 garis - garis lurus menyebar kearah keliling dari satu titik di dalam bidang
 tersebut sehingga garis - garis lurus tersebut sama panjang.
 \item Dan titik tersebut dinamakan pusat lingkaran.
-\item Dan diameter dari lingkaran adalah sembarang garis lurus yang melalui 
+\item Dan diameter dari lingkaran adalah garis lurus yang melalui 
 pusat lingkaran tadi dan berhenti di masing - masing arah pada
 keliling lingkaran. Dan garis lurus seperti itu juga membagi lingkaran 
 menjadi dua bagian sama besar.
@@ -82,7 +74,7 @@ garis lurus, bangun segiempat adalah bangun yang berada di dalam empat garis lur
 segibanyak adalah bidang yang berada di dalam lebih dari empat garis lurus.
 \item Dan pada bangun segitiga: sebuah segitiga sama sisi adalah yang memiliki tiga
 sisi sama besar, segitiga sama kaki adalah yang memiliki dua sisi sama besar, dan 
-segitiga sembarang adalah yang tidak memiliki sisi yang sama besar.
+segitiga adalah yang tidak memiliki sisi yang sama besar.
 \item Dan selanjutnya pada bangun segitiga: segitiga siku - siku adalah yang memiliki
 satu sudut siku - siku, segitiga tumpul adalah yang memiliki satu sudut tumpulm dan 
 segitiga lancip adalah yang memiliki tiga sudut lancip.
@@ -103,9 +95,9 @@ tidak bertemu satu dengan yang lain.
 \textbf{Postulat - postulat}
 \end{center}
 \begin{enumerate}
-\item Anggap sudah didalilkan melalui dua titik sembarang dapat dibuat garis lurus.
+\item Anggap sudah didalilkan melalui dua titik dapat dibuat garis lurus.
 \item Dan memanjangkan sebuah ruas garis dengan panjang tertentu tanpa terputus.
-\item Dan dengan sembarang pusat dan jari -jari dapat dibuat sebuah lingkaran.
+\item Dan dengan pusat dan jari -jari dapat dibuat sebuah lingkaran.
 \item Dan bahwa semua sudut siku - siku sama besar.
 \item Dan jika suatu garis lurus memotong dua buah garis lurus yang lain dan membentuk sudut - sudut dalam pada sisi yang sama yang jumlah besar sudutnya lebih kecil dari dua  sudut siku - siku, maka dua garis lurus yang di sisi lainnya, jika dipanjangkan sampai tak terhingga, akan bertemu di sisi tersebut, dan dua garis lurus yang berada di sisi sudut dalam yang lebih kecil dari dua sudut siku siku tidak akan pernah bertemu jika dipanjangkan di sisi tersebut.
 \end{enumerate}
@@ -123,16 +115,17 @@ tidak bertemu satu dengan yang lain.
 
 \stepcounter{section}
 \section*{\centering \thesection} 
-Untuk menggambarkan segitiga sama sisi pada sebuah ruas garis.  
-
+Untuk menggambarkan segitiga sama sisi pada sebuah ruas garis.
+\begin{center}
 \begin{tikzpicture}
-\draw (-2, 0) circle (4);
-\draw (2, 0) circle (4);
-\draw (-6, 0) node [anchor=east]{D} (-2, 0) node [anchor=east]{A} (-2, 0) 
--- (2, 0) node[anchor=west]{B} (6, 0) node[anchor=west]{E} 
-(0, 4.0)node[anchor=north]{C};
-\draw (-2, 0) -- (0, 3.464101) -- (2, 0) circle; 
-\end{tikzpicture} 
+\draw (-1.5, 0) circle (3);
+\draw (1.5, 0) circle (3);
+\draw (-4.5, 0) node [anchor=east]{D} (-1.5, 0) node [anchor=east]{A} (-1.5, 0) 
+-- (1.5, 0) node[anchor=west]{B} (4.5, 0) node[anchor=west]{E} 
+(0, 3.0)node[anchor=north]{C};
+\draw (-1.5, 0) -- ++(60:3) -- ++(-60:3);
+\end{tikzpicture}
+\end{center}
 Misalkan $AB$ adalah ruas garis.
 
 Dibutuhkan untuk menggambarkan segitiga sama sisi pada ruas garis $AB$.
@@ -162,7 +155,7 @@ satu ruas gari $AB$. Yang adalah hal yang kita butuhkan.
 Untuk menempatkan sebuah ruas garis yang sama dengan ruas garis tertentu
 pada satu titik tertentu (sebagai salah satu ujungnya).
 
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=.6, every node/.style={scale=.6}]
 \draw [-] (0, 0) -- (2., 3) node [anchor=south west]{$C$};
 \draw [-] (-2, -.0) -- (0, 0);
 \draw (0, 0) node [anchor=west] {$B$}-- (120:2) node [anchor = south] {$D$}--+ (240:2) node [anchor=east] {$A$};
@@ -177,8 +170,8 @@ pada satu titik tertentu (sebagai salah satu ujungnya).
 \end{tikzpicture} 
 
 Misalkan $A$ adalah suatu titik tertentu, dan $BC$ adalah suatu ruas garis
-tertentu. Dibutuhkan untuk menempatkan garis lurus di $A$ yang sama dengan
-garis lurus $BC$.
+tertentu. Dibutuhkan untuk menempatkan garis lurus di $A$ yang sama panjang
+dengan garis lurus $BC$.
 
 Sebab, misalkan ruas garis $AB$ sudah terhubung dari titik $A$ ke titik $B$
 [Post. 1], dan misalkan segitiga sama sisi $DAB$ sudah digambarkan 
@@ -220,8 +213,8 @@ memotong dari ruas garis yang lebih besar ruas garis yang sama panjang dengan
 ruas garis yang lebih pendek.
 
 \begin{center}
-\begin{tikzpicture}
-\draw [-] (0, 0.0) node [anchor = north]{$A$} -- (7, 0.0) node [anchor = west] {$B$};
+\begin{tikzpicture}[scale=.9, every node/.style={scale=.9}]
+\draw [-] (0, 0.0) node [anchor = north]{$A$} -- (3, 0.0) node [anchor = west] {$B$};
 \draw [-, dashed, ashgrey] (0, 0)--(135 : 2.82842712474)--(195:2.82842712474)--(0, 0);
 \draw [-, dashed, ashgrey] (0, 0)--(-45 : 5);
 \draw [-] (-2, 2) -- (.5, 2);
@@ -241,7 +234,7 @@ Misalkan $AB$ dan $C$ adalah dua buah garis tak sama panjang yang dimaksud,
 dimana $AB$ adalah garis yang lebih panjang. Jadi dibutuhkan untuk memotong
 dari ruas garis $AB$ sebuah ruas garis yang sama panjang dengan $C$.
 
-Misalkan ruas garis $AD$ ,sama panjang dengan ruas garis $C$, sudah ditempatkan
+Misalkan ruas garis $AD$, sama panjang dengan ruas garis $C$, sudah ditempatkan
 pada titik $A$ sebagai salah satu ujungnya [Prop. 1.2]. Dan misalkan lingkaran
 $DEF$ sudah digambarkan dengan titik $A$ dan jari - jari $AD$ [Post. 3].
 
@@ -265,15 +258,11 @@ segitiga tersebut akan sama, dan sudut - sudut selebihnya yang menghadap dua
 sisi - sisi yang sama panjang yang pertama tadi adalah sama besar pada 
 kedua segitiga.
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=.8, every node/.style={scale=.8}]
 \draw(-5, -1) node[anchor=east] {$B$} -- (-1,  2) node[anchor=south]{A} 
      -- (0, -1) node[anchor=west]{$C$} -- (-5, -1); 
 \draw(3, -1) node[anchor=east] {$E$} -- (7,  2) node[anchor=south]{D} 
      -- (8, -1) node[anchor=west]{$F$} -- (3, -1); 
-%%\draw(2, -1) arc (54:180:x radius = 1., y radius = 1);
-%%this arc here is section of circle which have radius 2.6
-%%with the section to cut is on 235 to 305, the center is
-%%calculated by tex so that its 235 degree start in (2, -1)
 \draw(3, -1) arc (235 : 305 : 4.35);
 \end{tikzpicture}
 \end{center}
@@ -383,8 +372,8 @@ dari sisi yang lebih panjang $AB$ [Prop. 1.3]. Dan misalkan $DC$ sudah
 terhubung [Post.1].
 
 Dengan demikian, karena $DB$ sama panjang dengan $AC$, dan $BC$ adalah milik
-keduanya, sisi - sisi $DB$, $BC$ sama panjang dengan sisi - sisi
-$AC$, $CB$, masing - masing, dan sudut $DBC$ sama besar dengan sudut $ACB$.
+keduanya, masing - masing sisi - sisi $DB$, $BC$ sama panjang dengan sisi - sisi
+$AC$, $CB$, dan sudut $DBC$ sama besar dengan sudut $ACB$.
 Dengan demikian sisi alas $DC$ sama besar dengan sisi alas $AB$, dan segitiga
 $DBC$ akan sama dengan segitiga $ACB$ [Prop. 1.4], yang lebih kecil sama
 dengan yang lebih besar. Gagasan yang adalah mustahil [G.U. 5].
@@ -397,11 +386,10 @@ besar akan juga sama panjang satu dengan yang lain. Yang adalah hal yang ingin
 
 \stepcounter{section}
 \section*{\centering \thesection} 
-Pada garis lurus yang sama, dua buah garis lurus yang lain yang bertemu pada 
-satu titik, dan masing - masing sama panjang dengan dua buah garis lurus lain 
-lainnya yang juga bertemu pada satu titik, tidak dapat dibuat bertemu pada 
-titik yang berbeda pada sisi yang sama dari garis lurus yang pertama, 
-tetapi memiliki ujung - ujung yang sama pada garis yang pertama.
+Pada satu garis lurus , dua buah garis lurus yang lain yang masing - masing 
+sama panjang dengan dua buah garis lurus yang lain lagi, tidak bisa dibuat 
+bertemu pada titik yang berbeda di sisi yang sama dari garis lurus, tetapi
+memiliki titik - titik ujung yang sama pada garis lurus tersebut.
 \begin{center}
 \begin{tikzpicture}
 \draw[-] (-4, -4)node [anchor=east] {\textbf{A}} (-4, -4) -- (4, -4) 
@@ -430,19 +418,17 @@ Dan lagi karena $CB$ sama panjang dengan $DB$, sudut $CDB$ juga sama besar
 dengan sudut $DCB$ [Prop. 1.5]. Tetapi sudah ditunjukkan bahwa sudut terdahulu 
 pertama juga jauh lebih besar dari yang kemudian. Hal yang tidak mungkin.
 
-Dengan demikian, pada satu garis lurus yang sama, dua buah garis lurus lainnya 
-yang bertemu pada satu titik, dan masing - masing sama panjang dengan dua buah
-garis lurus lain lainnya yang juga bertemu pada satu titik, tidak dapat dibuat
-bertemu pada titik yang berbeda pada sisi yang sama dari garis lurus yang 
-pertama, tetapi memiliki ujung - ujung yang berbeda - beda pada garis yang
-pertama.
+Dengan demikian, pada satu garis lurus , dua buah garis lurus yang lain yang masing - masing 
+sama panjang dengan dua buah garis lurus yang lain lagi, tidak bisa dibuat 
+bertemu pada titik yang berbeda di sisi yang sama dari garis lurus, tetapi
+memiliki titik - titik ujung yang sama pada garis lurus tersebut.
 
 \stepcounter{section}
 \section*{\centering \thesection} 
-Jika pada dua buah segitiga,  yang pertama memiliki dua buah sisi yang sama
-panjang dengan segitiga yang kedua, dan juga sisi alas kedua segitiga tersebut
-sama besar, maka kedua segitiga akan memiliki sudut - sudut yang sama besar
-yang diapit oleh sisi - sisi yang sama panjang.
+Jika pada dua buah segitiga,  segitiga yang pertama memiliki dua buah sisi 
+yang sama panjang dengan segitiga yang kedua, dan juga alas kedua segitiga 
+tersebut sama besar, maka pada kedua segitiga sudut - sudut 
+yang diapit oleh sisi yang sama panjang tadi akan sama besar juga.
 
 \begin{center}
 \begin{tikzpicture}
@@ -457,15 +443,194 @@ yang diapit oleh sisi - sisi yang sama panjang.
 \end{tikzpicture}
 \end{center}
 
-Misalkan $ABC$ dan $DEF$ adalah duah buah segitiga dengan dua buah sisi 
+Misalkan $ABC$ dan $DEF$ adalah dua buah segitiga dengan dua buah sisi 
 $AB$ dan $BC$ yang sama panjang dengan dua sisi $DE$ dan $DF$. Yakni
-$AB$ dengan $DE$, dan $AC$ dengan $DF$. 
+$AB$ dengan $DE$, dan $AC$ dengan $DF$. Misalkan juga sisi alas $BC$ sama
+panjang dengan $EF$. Saya katakan bahwa sudut $BAC$ juga sama besar dengan 
+sudut $EDF$.
 
-\setcounter{section}{13}
+Karena jika segitiga $ABC$ diterapkan pada segitiga $DEF$, titik $B$ ditaruh
+pada titik $E$, dan garis lurus $BC$ pada $EF$, dan titik $C$ akan bertemu
+dengan titik $F$, dikarenakan $BC$ sama panjang $EF$. Jadi karena $BC$
+berimpit dengan $EF$, sisi - sisi $BA$ dan $CA$ masing - masing juga akan 
+berhimpit dengan $ED$ dan $EF$. Karena jika sisi $BC$  berimpit dengan $EF$, 
+tetapi masing - masing sisi - sisi $AB$ dan $AC$  tidak berimpit dengan 
+$ED$ dan $EF$, tetapi meleset seperti $EG$ dan $EF$ di gambar atas, maka 
+pada garis yang sama kita akan membuat dua buah garis yang masing - masing
+sama panjang panjang dengan dua buah garis lain dan bertemu pada titik yang
+berbeda pada sisi yang sama tetapi bertemu pada ujung yang sama. Tetapi garis
+seperti itu tidak bisa dibuat [Prop.1. 7]. Dengan demikian, sisi alas $BC$ 
+diterapkan ke sisi alas $EF$, masing - masing sisi $BA$ dan sisi  $AC$ tidak 
+bisa bertemu dengan $ED$ dan $EF$. Dengan demikian mereka harus bertemu.
+Dengan demikian sudut $BAC$ juga akan bertemu dengan $EDF$ dan sama besar 
+[GU. 4]
+
+Dengan demikian, jika dua buah segitiga masing - masing memiliki dua buah 
+sisi sama panjang dengan sisi lain, dan keduanya memiliki alas 
+sama panjang maka sudut yang diapit oleh sisi yang sama panjang tadi akan 
+sama besar.
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Untuk membagi jadi dua bagian sama besar sudut rectilinear tertentu.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor = north] {B} -- (1, 3) node [anchor = east] {D} 
+	-- (2, 6) node [anchor = south] {A};
+\draw (4, 0) node [anchor = north] {C} -- (3, 3) node [anchor = west] {E} 
+	-- (2, 6);
+\draw (1, 3) -- (3, 3);
+\draw [dashed, gray](1, 3) circle(2);
+\draw [dashed, gray](3, 3) circle(2);
+\draw (1, 3) -- ++(-60: 2) -- ++(60: 2);
+\draw (2, {3 - 2*sin(60)}) node [anchor=north] {F} -- (2, 6);
+\end{tikzpicture}
+\end{center} 
+
+Misalkan $BAC$ adalah sudut rectilinear. Jadi dibutuhkan untuk 
+membaginya menjadi dua bagian sama besar.
+
+Misalkan titik $D$ sudah diambil secara acak di sepanjang $AB$, dan misalkan
+$AE$, sama panjang dengan $AD$ sudah dipotong dari $AC$ [Prop. 1. 3], dan 
+misalkan $DE$ sudah dihubungkan. Dan misalkan segitiga sama sisi $DEF$ sudah
+dibuat pada $DE$ [Prop. 1.1], dan misalkan $AF$ sudah dihubungkan. Saya 
+katakan bahwa sudut $BAC$ sudah dibagi dua sama besar oleh garis lurus $AF$.
+
+Dikarenakan $AD$ sama panjang dengan $AE$, dan $AF$ adalah umum, masing - masing
+kedua garis lurus $DA$, $AF$ sama panjang dengan garis lurus $EA$, $AF$. Dan 
+sisi alas $DF$ sama panjang dengan sisi alas $EF$. Dengan demikian, segitiga
+$DAF$ sama dengan segitiga $EAF$ [Prop. 1.8].
+
+Dengan demikian, sudut rectiliniear $BAC$ tadi sudah dibagi menjadi dua bagian
+sama besar oleh garis lurus $AF$. Yang adalah hal yang ingin dilakukan.
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Untuk memotong satu buah garis dengan panjang tertentu menjadi dua buah bagian 
+sama panjang.
+
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node [anchor=east] {A} -- (4, 0) node [anchor=west] {B};
+\draw(0, 0) [dashed, gray] circle(4); 
+\draw(4, 0) [dashed, gray] circle(4); 
+\draw (0, 0) -- (2, {4*sin(60)}) node [anchor=south] {C}-- (4, 0);
+\draw [dashed, gray](0, 0) -- (2, {-4*sin(60)}) -- (4, 0);
+\draw (2, {4*sin(60)}) -- (2, {-4*sin(60)});
+\draw (2, 0) node[anchor=north east] {D};
+\end{tikzpicture}
+\end{center}
+
+Misalkan $AB$ adalah sebuah ruas garis dengan panjang tertentu, jadi diperlukan
+untuk memotong $AB$ menjadi dua bagian sama panjang.
+
+Misalkan segitiga sama sisi $ABC$ sudah di buat dari $AB$ [Prop. 1.1] dan
+misalkan sudut $ABC$ sudah dibagi menjadi dua bagian sama besar oleh garis 
+$CD$ [Prop. 1.9]. Saya katakan bahwa garis lurus $AB$ sudah dipotong menjadi
+dua bagian sama besar pada titik $D$.
+
+Sebabnya adalah karena $AC$ sama dengan $CB$ dan $CD$ adalah umum, masing - masing
+kedua garis lurus $AC$, $CD$ sama panjang dengan garis lurus $BC$, $CD$. Dan 
+sudut $ACD$ sama besar dengan sudut $BCD$. Dengan demikian sisi alas $AD$ sama
+panjang dengan sisi alas $BC$ [Prop. 1.4].
+
+Dengan demikian ruas garis garis $AB$ sudah dipotong menjadi dua bagian panjang
+pada titik $D$. Yang adalah hal yang dibutuhkan.
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Untuk membuat sebuah garis yang membentuk sudut siku (tegak lurus) terhadap satu
+garis lurus tertentu dari satu titik tertentu pada garis lurus tertentu itu.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=south] {A} -- (10, 0) node [anchor=south] {B};
+\draw (5, 0) node [anchor=north] {C};
+\draw (3, 0) node [anchor=north east] {D};
+\draw [dashed, gray](5, 0) circle(2);
+\draw (7, 0) node [anchor=north west] {E};
+\draw [dashed, gray](7, 0) circle(4);
+\draw [dashed, gray](3, 0) circle(4);
+\draw (7, 0) --++(120:4) --++(-120:4);
+\draw (5, 0) -- (5, {4*sin(60)}) node [anchor=south] {F};
+\end{tikzpicture}
+\end{center}
+
+Misalkan $AB$ adalah garis lurus tertentu dan $C$ adalah titik tertentu yang
+terletak padanya. Jadi perlu untuk menarik garis lurus dari $C$ yang tegak
+lurus terhadap $AB$
+
+Misalkan titik $D$ sudah dipilih dengan acak pada $AC$, dan misalkan $CE$ 
+sudah dibuat sama panjang dengan dengan $CD$ [Prop. 1. 3], dan misalkan
+segitiga sama sisi $FDE$ sudah dibuat pada $DE$ [Prop. 1.1], dan misalkan
+$FC$ sudah dihubungkan. Saya katakan bahwa garis lurus $FC$ sudah ditarik
+tegak lurus terhadap garis lurus $AB$ dari titik $C$ yang apa pada nya.
+
+Disebabkan karena $DC$ sama panjang dengan $CE$, dan $CF$ adalah umum, 
+masing - masing kedua garis lurus $DC$, $CF$ sama panjang dengan garis lurus
+$EC$, $CF$. Dan sisi alas $DF$ sama panjang dengan $FE$. Dengan demikian
+sudut $DCF$ sama besar dengan sudut $ECF$ [Prop. 1.8], dan keduanya 
+bersebelahan. Tetapi jika sebuah garis lurus berdiri diatas garis lurus
+yang lain dan membuat sudut bersebelahan yang sama besar satu dengan yang
+lain, maka masing - masing sudut yang sama besar tersebut adalah sudut
+siku - siku [Def. 1.10]. Dengan demikian sudut - sudut
+$DCF$ dan $FCE$ adalah sudut siku - siku.
+
+Dengan demikian garis lurus $CF$ sudah ditarik tegak lurus dengan
+$AB$ pada titik $C$ yang ada padanya. Hal yang kita perlukan.
+
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Untuk menggambarkan satu garis lurus yang tegak lurus terhadap garis
+lurus tak terhingga tertentu dari satu titik yang tidak berada pada
+garis tertentu tersebut.  
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=south east] {A} -- (10, 0) node [anchor=south west]  {B};
+\draw (5, 4) node [anchor=south] {C};
+\draw (5, 4) circle(5);
+%\draw (6.4, -.7) node [anchor=north west] {D} -- (6.6, -.8);
+\draw (6.5, -.77) circle(.03) node [anchor=north west] {D};
+\draw (2, 0) node [anchor=north]{G};
+\draw (8, 0) node [anchor=north]{E};
+\draw (5, 0) node [anchor=north]{H} -- (5, 4);
+\draw (2, 0) -- (5, 4)--(8, 0);
+\end{tikzpicture}
+\end{center} 
+Misalkan $AB$ adalah garis lurus tak terhingga tertentu dan $C$ adalah titik 
+tertentu, yang tidak berada di ($AB$). Jadi diperlukan untuk menarik garis lurus
+tegak lurus dari titik $C$ yang tidak berada di $AB$ terhadap garis tak 
+terhingga $AB$.
+
+Karena misalkan titik $D$ sudah diambil secara acak di sisi yang berbeda $AB$ dari
+$C$, dan misalkan lingkaran $EFG$ sudah digambarkan dengan pusat $C$ dan 
+jari - jari $CD$ [Post. 3], dan misalkan garis $EG$ sudah dibagi dua pada
+titik $H$ [Prop. 1.10], dan misalkan garis - garis lurus $CG$, $CH$ dan $CE$
+sudah dihubungkan. Saya katakan bahwa garis lurus $CH$ sudah ditarik tegak 
+lurus terhadap garis lurus tak terhingga $AB$ dari titik $C$, yang tidak 
+berada pada $AB$. 
+
+Disebabkan karena $GH$ sama panjang dengan $HE$ dan $HC$ adalah umum, 
+masing - masing kedua garis lurus $GH$, $HC$ sama panjang dengan kedua garis 
+lurus  $EH$, $HC$ dan sisi alas $CG$ sama panjang dengan sisi alas $CE$. 
+Dengan demikian sudut $GHC$ sama besar dengan sudut $EHC$ [Prop. 1.8], dan 
+keduanya  bersebelahan. Tetapi jika sebuah garis lurus berdiri di atas
+sebuah garis lurus yang lain membuat sudut - sudut yang bersebelahan 
+sama besar, maka masing - masing dari sudut yang sama besar tersebut adalah
+sudut siku - siku, dan garis lurus yang pertama disebut tegak lurus terhadap
+garis tempatnya berdiri [Def. 1.10].
+
+Dengan demikian garis lurus $CH$ sudah ditarik tegak lurus terhadap garis
+lurus tak terhingga $AB$ dari titik tertentu $C$ yang tidak berada pada
+$AB$. Yang adalah hal yang diperlukan.
+
+
+\stepcounter{section}
 \section*{\centering \thesection} 
 Jika sebuah garis lurus berdiri pada sebuah garis lain membentuk sudut - sudut, maka
-sudut - sudut yang dibentuk adalah dua buah sudut sikut siku , atau sudut sudut yang
+sudut - sudut yang dibentuk adalah dua buah sudut siku - siku , atau sudut sudut yang
 jumlahnya sama dengan dua buah sudut siku - siku.
+\begin{center}
 \begin{tikzpicture}
 \draw [-, black](-2,-2) -- (2, -2);
 \draw (-2, -2.5) node {D} (0, -2.5) node {B} (2, -2.5) node {C};
@@ -473,6 +638,7 @@ jumlahnya sama dengan dua buah sudut siku - siku.
 \draw [-, black](-0,-2) -- (3, 2);
 \draw (0, 2.5) node {E} (3, 2.5) node {A};
 \end{tikzpicture}
+\end{center}
 
 Sebab misalkan garis lurus $AB$ berdiri pada garis lurus $CD$ membentuk 
 sudut - sudut $CBA$ dan $ABD$. Saya katakan bahwa sudut - sudut $CBA$ dan
@@ -480,7 +646,197 @@ $ABD$ adalah masing - masing sudut siku - siku atau besar keduanya adalah
 sejumlah dua buah sudut siku - siku.
 
 Pada kenyataannya, jika $CBA$ sama dengan $ABD$ maka keduanya adalah dua buah 
-sudut siku - siku [Def 1.10]. Jika tidak, asumsikan $BE$
+sudut siku - siku [Def 1.10]. Jika tidak, asumsikan $BE$ sudah ditarik secara
+tegak lurus dari titik $B$ pada garis lurus $CD$ [Prop. 1.11]. Dengan demikian
+$CBE$ dan $EBD$ adalah dua sudut siku - siku. Dan karena besar sudut $CBE$ sama 
+dengan jumlah kedua sudut $CBA$ dan $ABE$, misalkan $EBD$ sudah ditambahkan pada 
+keduanya. Dengan demikian jumlah sudut - sudut $CBE$ dan $EBD$ sama dengan
+jumlah ketiga sudut $CBA$, $ABE$ dan $EBD$ [G.U. 2]. Dan lagi, karena $DBA$
+sama dengan jumlah kedua sudut $DBE$ dan $ABE$, misalkan $ABC$ sudah 
+ditambahkan pada keduanya. Dengan demikian jumlah sudut sudut $DBA$  dan $ABC$
+sama dengan jumlah ketiga sudut $DBE$, $EBA$ dan $ABC$ [G.U. 2]. Tetapi jumlah
+dari $CBE$ dan $EBD$ sudah ditunjukkan sama dengan jumlah tiga sudut. Dan hal -
+hal yang sama terhadap hal yang sama adalah sama satu dengan yang lain. Dengan
+demikian jumlah dari $CBE$ dan $EBD$ juga sama dengan jumlah dari $DBA$ dan 
+$ABC$. Tetapi jumlah dari $CBA$dan $ABD$ adalah dua buah sudut siku - siku. 
+Dengan demikian jumlah dari $ABD$ dan $ABC$ adalah juga sama dengan dua buah
+sudut siku - siku.
+
+Dengan demikian, jika sebuah garis lurus berdiri di atas garis lurus yang lain
+membentuk sudut, pasti akan membentuk dua buah sudut siku - siku atau dua buah
+sudut yang berjumlah dua buah sudut siku - siku. Yang adalah hal yang ingin
+kita tunjukkan.
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+
+Jika dua buah garis lurus yang tidak berada pada sisi yang sama, membentuk
+sudut sudut yang berdampingan yang jumlahnya adalah dua buah sudut siku - siku
+dengan garis lurus lain pada satu titik di atasnya, maka kedua garis lurus tersebut 
+akan lurus satu dengan yang lain.
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=north] {C} -- (5, 0) node [anchor=north] {B} --
+	(10, 0) node [anchor=north]{D};
+\draw (5, 0) -- (0, 5) node [anchor=south] {A};
+\draw (5, 0) -- (10,5) node [anchor=south] {E};
+\end{tikzpicture}
+\end{center}
+
+Karena misalkan kedua garis lurus $BC$ dan $BD$, tidak berada pada sisi yang sama,
+membentuk sudut - sudut berdampingan $ABC$ dan $ABD$ yang jumlahnya sama dengan
+dua buah sudut siku - siku dengan garis lurus $AB$, pada titik $B$ pada nya, Saya
+katakan garis $BD$ adalah lurus terhadap $CB$.
+
+Karena jika $BD$ tidak lurus terhadap $BC$ maka misalkan $BE$ lurus
+terhadap $BC$. 
+
+Dengan demikian, karena garis lurus $AB$ berdiri pada garis lurus $CBE$, maka 
+jumlah sudut - sudut $ABC$ dan $ABE$ dengan demikian sama dengan dua buah 
+sudut siku - siku [Prop. 1.13]. Tetapi jumlah dari $ABC$ dan $ABD$ juga sama
+dengan dua buah sudut siku - siku. Dengan demikian jumlah sudut - sudut $CBA$
+dan $ABE$ sama dengan jumlah kedua sudut $CBA$ dan $ABD$ [G.U. 1]. Misalkan 
+sudut $CBA$ sudah dikurangkan dari keduanya. Dengan demikian sisa pertama 
+yakni $ABE$ sama dengan sisa kedua yakni $ABD$
+ [G.U. 3]. Yang lebih kecil sama
+dengan yang lebih besar. Hal yang mustahil. Dengan demikian $BE$ tidak lurus pada
+$CB$, dengan cara yang sama, kita bisa juga buktikan bahwa garis - garis lain
+juga tidak kecuali $BD$. Dengan demikian $CB$ lurus terhadap $BD$.
+
+Dengan demikian, jika dua buah garis lurus, tidak berada pada sisi yang sama, 
+membentuk sudut berdampingan yang jumlahnya adalah sama dengan dua buah sudut
+siku - siku dengan garis lurus lain, pada satu titik padanya, maka kedua
+garis lurus tersebut adalah lurus satu terhadap yang lain. Yang adalah hal yang
+perlu kita tunjukkan.  
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Jika dua buah garis lurus saling memotong satu dengan yang lain maka sudut - 
+sudut yang bertolak belakang  sama besar satu dengan yang lain.
+\begin{center}
+\begin{tikzpicture}
+\draw (-1, 2) node [anchor=east] {D} -- (7, 2) node [anchor=west] {C};
+\draw (3, 2) node [anchor=south] {E};
+\draw (6, 0) node [anchor=west] {B} -- (0, 4) node [anchor=east] {A};
+\end{tikzpicture}
+\end{center}
+Karena misalkan dua buah garis lurus $AB$ dan $CD$ saling memotong satu dengan
+yang lain di titik $E$. Saya katakan sudut $AEC$ sama besar dengan dengan 
+sudut $DEB$, dan sudut $CEB$ sama besar dengan sudut $AED$.
+
+Karena garis lurus $AE$ berdiri di atas garis lurus $CD$, membentuk sudut
+$CEA$ dan $AED$, jumlah sudut $CEA$ dan $AED$ dengan demikian sama dengan
+dua buah sudut siku - siku [Prop. 1.13]. Dan lagi, karena garis lurus $DE$ 
+berdiri di garis lurus $AB$, membentuk sudut $AED$ dan $DEB$, jumlah sudut 
+$AED$ dan $DEB$ dengan demikian sama dengan dua sudut siku - siku
+[Prop. 1.13]. Tapi jumlah $CEA$ dan $AED$ juga ditunjukkan sama dengan dua 
+buah sudut siku - siku. Dengan demikian, jumlah $CEA$ dan $AED$ adalah sama dengan
+jumlah $AED$ dan $DEB$ [G.U. 1]. Misalkan $AED$ telah dikurangkan dari keduanya. 
+Jadi, sudut sisanya $CEA$ adalah sama dengan sudut sisanya $BED$ [G.U. 3]. 
+Demikian pula, bisa diperlihatkan bahwa $CEB$ dan $DEA$ juga sama.
+
+Jadi, jika dua garis lurus memotong satu sama lain maka sudut - sudut yang 
+bertolak belakang sama besar dengan yang lain. Hal yang perlu kita tunjukkan.
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Untuk segitiga, jika salah satu sisi diperpanjang, besar sudut 
+exterior adalah lebih besar dari sudut interior yang tidak bersisian.
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=east] {B} -- ++(60:4) node [anchor=south]{A}
+ -- ++ (290:3.7) node [anchor=south west]{C}
+ -- ++ (290:2.3) node[anchor=north]{G};
+\draw (0, 0) -- (6, 0) node [anchor=west] {D};
+\draw (0, 0) -- ++(60:4) 
+ -- ++ (290:1.85) node[anchor=east] {E} 
+	-- ++ (33.3:3.15) node [anchor=south] {F} -- ++ (239.8:4.);
+\draw (0, 0) -- ++(60:4) 
+ -- ++ (290:1.85)-- ++ (213.4:3.15); 
+\draw [gray, dashed]({4*cos(60)}, {4*sin(60)}) 
+	-- ({(4*cos(60)- 3.7*cos(290-180))/2}, 0) 
+	-- ++({290-(180 - (60 + (180-110)))/2}: {4*sin(60)/sin(85)})
+	-- ({4*cos(60) + (4*sin(60)/sin(70))*cos(70)}, 0); 
+\end{tikzpicture}
+\end{center}
+Misalkan $ABC$ adalah segitiga, dan misalkan salah satu sisinya $BC$ telah 
+diperpanjang sampai $D$.  Saya katakan bahwa sudut eksterior $ACD$ lebih besar 
+dari sudut interior yang tidak bersisian $CBA$ dan $BAC$.
+
+Misalkan garis lurus $AC$ dipotong menjadi dua pada titik $E$ [Prop. 1.10]. 
+Dan $BE$ sudah dipertemukan dan misalkan garis itu diperpanjang sebagai 
+garis lurus ke titik $F$. 
+Dan misalkan $EF$ dibuat sama panjang dengan $BE$ [Prop. 1.3], 
+dan misalkan $FC$ telah dipertemukan, 
+dan misalkan $AC$ telah ditarik sampai ke (titik) G.
+
+Dengan demikian, karena $AE$ sama dengan $EC$, dan $BE$ sama dengan $EF$,
+masing - masing kedua garis lurus $AE$, $EB$ sama panjang dengan kedua 
+garis lurus $CE$, $EF$. Juga, sudut $AEB$ sama dengan sudut $FEC$, karena
+keduanya adalah sudut -sudut yang bertolak belakang [Prop. 1.15]. 
+Dengan demikian, sisi alas $AB$ sama dengan sisi alas $FC$, dan segitiga 
+$ABE$ sama dengan segitiga $FEC$, dan sudut-sudut selebihnya yang berhadapan
+dengan sisi-sisi yang sama panjang adalah sama panjang adalah sama besar
+pada kedua segitiga[Prop. 1.4]. Dengan demikian, $BAE$ sama dengan $ECF$. 
+Tetapi $ECD$ lebih besar dari $ECF$. Dengan demikian, $ACD$ lebih besar 
+dari $BAE$. 
+Demikian pula, dengan memotong $BC$ menjadi dua, dapat ditunjukkan 
+bahwa $BCG$ - yaitu, $ACD$ - juga lebih besar dari $ABC$.  
+
+Dengan demikian untuk segitiga, jika salah satu sisi diperpanjang, 
+besar sudut eksterior adalah lebih besar dari sudut interior yang 
+tidak bersisian.  
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Untuk semua segitiga, jumlah dua buah sudut manapun lebih kecil dari
+dua jumlah dua buah sudut siku - siku.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=north]{B} -- (4, 0) node [anchor=north]{C} -- (6, 0) node [anchor=north] {D};
+\draw (0, 0) --++ (120:4) node [anchor=south]{A} -- (4, 0);
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ adalah sebuah tiga. Saya katakan bahwa jumlah  dua buah 
+sudut manapun segitiga $ABC$ lebih kecil dari jumlah dua buah sudut siku - siku.
+
+Misalkan $BC$ sudah diperpanjang sampai ke $D$.
+
+Dan karena sudut $ACD$ adalah sudut eksterior segitiga $ABC$, maka sudut 
+tersebut lebih besar dari sudut interior yang tidak bersisian 
+$ABC$ [Prop. 1.16]. 
+Misalkan $ACB$ sudah ditambahkan pada keduanya. Dengan demikian jumlah 
+sudut - sudut $ACD$ dan $ACB$ lebih besar dari jumlah sudut - sudut $ABC$ dan 
+$BCA$. Tetapi jumlah $ACD$ dan $ACB$  lebih besar dari jumlah sudut -sudut
+$ACD$ dan $ACB$ adalah sama dengan dua buah sudut siku - siku [Prop.1.13].
+Dengan demikian jumlah dari $ABC$ dan $BCA$ lebih kecil dari dua buah sudut 
+siku - siku, dan lebih jauh jumlah $CAB$ dan $ABC$ lebih kecil dari dua
+buah sudut siku - siku.
+
+Dengan demikian, untuk semua segitiga, jumlah dari dua buah sudut manapun
+lebih kecil dari dua buah sudut siku - siku. Hal yang perlu dibuktikan.
+
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+Untuk semua segitiga, sisi yang lebih besar menghadap sisi yang lebih
+besar.
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node[anchor=north]{B} --++ (120:4) node [anchor=south] {A} 
+	-- ++ (330:{4*cos(30)/cos(60)}) node[anchor=west] {C} -- (0, 0);
+\draw (0, 0)  --++ (120:4) -- ++ (330:4)node [anchor=west] {D}  -- (0, 0); 
+\end{tikzpicture}
+\end{center}
+
+
+\stepcounter{section}
+\section*{\centering \thesection} 
+
 \setcounter{section}{29}
 \section*{\centering \thesection} 
 Sebuah ruas garis yang jatuh memotong ruas - ruas garis yang sejajar akan membuat
@@ -490,8 +846,8 @@ besar 2 buah sudut siku - siku.
 
 \begin{tikzpicture}
 \draw(-2, 4) node[anchor=south]{E} (-2, 4) -- (3, -2) node[anchor=north]{F};
-\draw (-6, 3) node[anchor=east]{A}(-6, 3) -- (6, 3) node [anchor=west]{B};
-\draw (-6, -1) node[anchor=east]{C}(-6, -1) -- (6, -1) node [anchor=west]{D};
+\draw (-4, 3) node[anchor=east]{A}(-4, 3) -- (4, 3) node [anchor=west]{B};
+\draw (-4, -1) node[anchor=east]{C}(-4, -1) -- (4, -1) node [anchor=west]{D};
 \end{tikzpicture} 
 
 Misalkan ruas garis $EF$ jatuh memotong ruas - ruas gais $AB$ dan $CD$. 
@@ -514,15 +870,15 @@ garis tertentu yang melalui sebuah titik tertentu.
 
 \begin{tikzpicture}
 \draw(2, 2) node[anchor=south]{A} (2, 2) -- (-2, -2) node[anchor=north]{D};
-\draw (-6, 2) node[anchor=east]{E}(-6, 2) -- (6, 2) node [anchor=west]{F};
-\draw (-6, -2) node[anchor=east]{B}(-6, -2) -- (6, -2) node [anchor=west]{C};
+\draw (-4, 2) node[anchor=east]{E}(-4, 2) -- (4, 2) node [anchor=west]{F};
+\draw (-4, -2) node[anchor=east]{B}(-4, -2) -- (4, -2) node [anchor=west]{C};
 \end{tikzpicture}
 
 Misalkan $A$ adalah sebuah titik tertentu, dan $BC$ adalah sebuah garis tertentu. Jadi
 yang dimaksudkan adalah meggambarkan satu garis yang sejajar dengan garis $BC$ 
 dan melalui titik $A$.
 
-Misalkan titik $D$ adalah sembarang titik yang berada di $BC$, and $AD$ terhubung. 
+Misalkan titik $D$ adalah titik yang berada di $BC$, and $AD$ terhubung. 
 Dan misalkan (sudut) $DAE$, yang sama besar dengan sudut $ADC$, telah dibuat 
 pada ruas garis $SA$ dengan titik A barada diujungnya [1.23]. Dan misalkan garis
 lurus $AF$ adalah perpanjangan $EA$.
@@ -532,95 +888,92 @@ sudut - sudut yang berseberangan $EAD$ dan $ADC$ sama besar, $EAF$ dengan demiki
 sejajar dengan $BC$ [1.27]
 
 
-\setcounter{section}{34}
-\section*{\centering \thesection}
+%\setcounter{section}{34}
+%\section*{\centering \thesection} 
+%Pada bidang - bidang jajaran genjang, sisi - sisi dan sudut - sudut yang saling
+%bertentangan sama besar satu dengan yang lain, dan sebuah diagonal membaginya jadi dua bagian yang sama besar.  
 
-Pada bidang - bidang jajaran genjang, sisi - sisi dan sudut - sudut yang saling
-bertentangan besarnya sama satu dengan yang lain , dan sebuah diagonal membaginya
-menjadi dua bagian yang sama besar.
+%\begin{tikzpicture}
+%\draw (-3, 2) node[anchor=east]{A} -- (4, 2) node [anchor=west]{B};
+%\draw (-4, -2) node[anchor=east]{C}(-4, -2) -- (3, -2) node [anchor=west]{D};
+%\draw (-4, -2) -- (-3, 2);
+%\draw (3, -2) -- (4, 2);
+%\draw (-4, -2) -- (4, 2); 
+%\end{tikzpicture}
 
-\begin{tikzpicture}
-\draw (-4, 2) node[anchor=east]{A}(-4, 2) -- (6, 2) node [anchor=west]{B};
-\draw (-6, -2) node[anchor=east]{C}(-6, -2) -- (4, -2) node [anchor=west]{D};
-\draw (-6, -2) -- (-4, 2);
-\draw (4, -2) -- (6, 2);
-\draw (-6, -2) -- (6, 2); 
-\end{tikzpicture} 
-
-Misalkan $ABCD$ ada sebuah jajaran genjang, dan $BC$ adalah diagonalnya. Saya katakan
-bahwa untuk jajaran genjang $ABCD$, sisi sisi yang bertentangan dan sudut - sudut yang bertentangan
-sama besar satu dengan yang lain, dan diagonal $BC$ membaginya menjadi dua bagian yang sama besar.
-
-Karena $AB$ sejajar dengan $CD$, dan ruas garis $BC$ jatuh memotong keduanya, sudut - sudut yang 
-berhadapan $ABC$ dan $BCD$ sama besar satu dengan yang lain [1.29]. Dan karena $AC$ sejajar dengan
-$BD$, dan $BC$ memotong keduanya, sudut - sudut yang berseberangan $ACB$ dan $CBD$ sama besar satu 
-dengan yang lain [1.29]. Dengan demikian $ABC$ dan $BCD$ adalah dua buah segitiga yang memiliki
-kedua sudut masing - masing $ABC$ dan $BCA$ sama besar dengan kedua sudut $BCD$ dan $CDB$, dan satu 
-sisi sama besar, yaitu $BC$, yang di sini milik bersama kedua segitiga.
-Dengan demikian sisi sisi lainnya akan sama besar satu dengan yang lain, 
-dan satu sudut lainnya akan sama satu dengan yang lain [1.26]. Dengan demikian, sisi $AB$ 
-sama besar dengan $CD$ , dan sisi $AC$ dengan $BD$. Lebih lanjut, sudut $BAC$ sama besar
-dengan $CDB$. Dan karena $ABC$ sama besar dengan $BCD$, dan $CBD$ dengan $ACB$, keseluruhan
-sudut segitiga $ABD$ dengan demikian sama dengan keseluruahn  sudut segitiga $ACD$
-
-\stepcounter{section}
-
-\section*{\centering \thesection}
-\par Jajaran - jajaran genjang yang memiliki alas yang sama dan berada diantara dua
-garis - garis sejajar yang sama , sama (besarnya) satu dengan yang lain.  
-
-\begin{tikzpicture}
-\draw (-8, 2) node[anchor=south]{A}(-8, 2) -- (-5, 2) 
-node [anchor=south]{D} (-5, 2) -- (2, 2) 
-node [anchor=south]{E} (2, 2) -- (5, 2) node[anchor=south]{F};
-\draw (-6, -2) node[anchor=north]{B}(-6, -2) -- (-3, -2) node [anchor=north]{C};
-\draw (-6, -2) -- (-8, 2);
-\draw (-3, -2) -- (-5, 2);
-\draw (-6, -2) -- (2, 2);
-\draw (-3, -2) -- (5, 2);
-\draw (-3.75, -0.5) node[anchor=west]{G};
-\end{tikzpicture}
-
-Misalkan $ABCD$ dan $EBCF$ adalah bidang - bidang jajaran genjang yang memiliki alas yang sama yaitu $BC$, 
-dan berada diantara dua buah garis sejajar $AF$ dan $BC$. Saya katakan bahwa $ABCD$ sama dengan bidang
-jajaran genjang $EBCF$.  
-
-Karena $ABCD$ adalah sebauh jajaran genjang, $AD$ sama besar dengan $BC$ [1.34]. Dengan dengan alasan - alasan
-yang sama, $EF$ juga sama dengan $BC$. Dengan demikian $AD$ juga sama dengan $EF$. Dan $DE$ adalah 
-
-\setcounter{chapter}{2}
-\chapter*{\centering \chaptername{ \thechapter} \\Dasar - Dasar Aljabar Geometri}
-\setcounter{section}{12}
-\section*{\centering \thesection} 
-
-Pada segitiga tumpul, besar bujur sangkar dari sisi yang menghadap sudut tumpul
- adalah lebih besar dari jumlah besar bujur sangkar - bujur sangkar sisi - sisi yang 
-mengapit sudut tumpul sebanyak dua kali besar persegi panjang yang dibentuk
-dari satu sisi yang yang mengapit sudut tumpul yang padanya garis lurus jatuh
-secara tegak lurus, dan garis lurus yang memotong sisi luar (segitiga tersebut) secara tegak lurus 
-kearah sudut tumpul.
-
-\begin{tikzpicture}
-\draw [-, black] (-2, -2) -- (6, -2);
-\draw (-2.25, -2.25) node {$D$};
-\draw (6.25, -2.25) node {$C$};
-\draw [-, black] (-2, -2) -- (-2, 3);
-\draw (-2.25, 3.25) node {$B$};
-\draw [-, black] (0, -2) -- (-2, 3);
-\draw (0.0, -2.25) node {$A$};
-\draw [-, black] (6, -2) -- (-2, 3);
-\end{tikzpicture} 
-
-Misalkan $ABC$ adalah segitiga tumpul, dengan sudut $BAC$ adalah sudut tumpul.
-Misalkan $BD$ ditarik dari titik $B$ tegak lurus terhadap $CA$ [Prop 1.12]. Saya
-katakan bahwa bujur sangkar $BC$ adalah lebih besar dari jumlah bujur sangkar $BA$
-dan bujur sangkar $AC$, sebanyak dua kali persegi panjang yang dibentuk $CA$ dan $AD$.
-
-Karena garis lurus $CD$ sudah dipotong pada sebarang titik, $A$, bujur sangkar para $DC$
-dengan demikian sama dengan jumlah dari jumlah bujur sangkar $CA$ dan $AD$, dan dua kali
-persegi panjang yang dibentuk $CA$ dan $AD$ [Prop.2.4]. Misalkan bujur  sangkar $DB$
-ditambahkan kepada keduanya
-
+%Misalkan $ABCD$ ada sebuah jajaran genjang, dan $BC$ adalah diagonalnya. Saya katakan
+%bahwa untuk jajaran genjang $ABCD$, sisi sisi yang bertentangan dan sudut - sudut yang bertentangan
+%sama besar satu dengan yang lain, dan diagonal $BC$ membaginya menjadi dua bagian yang sama besar.
+%
+%Karena $AB$ sejajar dengan $CD$, dan ruas garis $BC$ jatuh memotong keduanya, sudut - sudut yang 
+%berhadapan $ABC$ dan $BCD$ sama besar satu dengan yang lain [1.29]. Dan karena $AC$ sejajar dengan
+%$BD$, dan $BC$ memotong keduanya, sudut - sudut yang berseberangan $ACB$ dan $CBD$ sama besar satu 
+%dengan yang lain [1.29]. Dengan demikian $ABC$ dan $BCD$ adalah dua buah segitiga yang memiliki
+%kedua sudut masing - masing $ABC$ dan $BCA$ sama besar dengan kedua sudut $BCD$ dan $CDB$, dan satu 
+%sisi sama besar, yaitu $BC$, yang di sini milik bersama kedua segitiga.
+%Dengan demikian sisi sisi lainnya akan sama besar satu dengan yang lain, 
+%dan satu sudut lainnya akan sama satu dengan yang lain [1.26]. Dengan demikian, sisi $AB$ 
+%sama besar dengan $CD$ , dan sisi $AC$ dengan $BD$. Lebih lanjut, sudut $BAC$ sama besar
+%dengan $CDB$. Dan karena $ABC$ sama besar dengan $BCD$, dan $CBD$ dengan $ACB$, keseluruhan
+%sudut segitiga $ABD$ dengan demikian sama dengan keseluruahn  sudut segitiga $ACD$
+%
+%\stepcounter{section} 
+%\section*{\centering \thesection}
+%Jajaran - jajaran genjang yang memiliki alas yang sama dan berada diantara dua
+%garis - garis sejajar yang sama , sama (besarnya) satu dengan yang lain.  
+%
+%\begin{tikzpicture}
+%\draw (-8, 2) node[anchor=south]{A}(-8, 2) -- (-5, 2) 
+%node [anchor=south]{D} (-5, 2) -- (2, 2) 
+%node [anchor=south]{E} (2, 2) -- (5, 2) node[anchor=south]{F};
+%\draw (-6, -2) node[anchor=north]{B}(-6, -2) -- (-3, -2) node [anchor=north]{C};
+%\draw (-6, -2) -- (-8, 2);
+%\draw (-3, -2) -- (-5, 2);
+%\draw (-6, -2) -- (2, 2);
+%\draw (-3, -2) -- (5, 2);
+%\draw (-3.75, -0.5) node[anchor=west]{G};
+%\end{tikzpicture} 
+%Misalkan $ABCD$ dan $EBCF$ adalah bidang - bidang jajaran genjang yang memiliki alas yang sama yaitu $BC$, 
+%dan berada diantara dua buah garis sejajar $AF$ dan $BC$. Saya katakan bahwa $ABCD$ sama dengan bidang
+%jajaran genjang $EBCF$.
+%
+%Karena $ABCD$ adalah sebauh jajaran genjang, $AD$ sama besar dengan $BC$ [1.34]. Dengan dengan alasan - alasan
+%yang sama, $EF$ juga sama dengan $BC$. Dengan demikian $AD$ juga sama dengan $EF$. Dan $DE$ adalah 
+%
+%\setcounter{chapter}{2}
+%\chapter*{\centering \chaptername{ \thechapter} 
+%Dasar - Dasar Aljabar Geometri}
+%\setcounter{section}{12}
+%\section*{\centering \thesection} 
+%
+%Pada segitiga tumpul, besar bujur sangkar dari sisi yang menghadap sudut tumpul
+% adalah lebih besar dari jumlah besar bujur sangkar - bujur sangkar sisi - sisi yang 
+%mengapit sudut tumpul sebanyak dua kali besar persegi panjang yang dibentuk
+%dari satu sisi yang yang mengapit sudut tumpul yang padanya garis lurus jatuh
+%secara tegak lurus, dan garis lurus yang memotong sisi luar (segitiga tersebut) secara tegak lurus 
+%kearah sudut tumpul.
+%
+%\begin{tikzpicture}
+%\draw [-, black] (-2, -2) -- (6, -2);
+%\draw (-2.25, -2.25) node {$D$};
+%\draw (6.25, -2.25) node {$C$};
+%\draw [-, black] (-2, -2) -- (-2, 3);
+%\draw (-2.25, 3.25) node {$B$};
+%\draw [-, black] (0, -2) -- (-2, 3);
+%\draw (0.0, -2.25) node {$A$};
+%\draw [-, black] (6, -2) -- (-2, 3);
+%\end{tikzpicture} 
+%
+%Misalkan $ABC$ adalah segitiga tumpul, dengan sudut $BAC$ adalah sudut tumpul.
+%Misalkan $BD$ ditarik dari titik $B$ tegak lurus terhadap $CA$ [Prop 1.12]. Saya
+%katakan bahwa bujur sangkar $BC$ adalah lebih besar dari jumlah bujur sangkar $BA$
+%dan bujur sangkar $AC$, sebanyak dua kali persegi panjang yang dibentuk $CA$ dan $AD$.
+%
+%Karena garis lurus $CD$ sudah dipotong pada sebarang titik, $A$, bujur sangkar para $DC$
+%dengan demikian sama dengan jumlah dari jumlah bujur sangkar $CA$ dan $AD$, dan dua kali
+%persegi panjang yang dibentuk $CA$ dan $AD$ [Prop.2.4]. Misalkan bujur  sangkar $DB$
+%ditambahkan kepada keduanya
+%
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
 Richard Fitzpatrick.
@@ -633,5 +986,4 @@ Makalah mata kuliah Geometri Fakultas Pasca Sarjana Program Studi Pendidikan Mat
 \bibitem{clarkuni}
 https://mathcs.clarku.edu/~djoyce/java/elements/elements.html 
 \end{thebibliography}
-\end{document}
-
+\end{document} 
