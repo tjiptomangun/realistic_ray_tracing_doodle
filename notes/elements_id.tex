@@ -24,12 +24,17 @@
 (Cuplikan Dalam Indonesia)}}
 \author{Euclid dari Alexandria}
 \maketitle
-\pagenumbering{gobble}
+\tableofcontents
+\newcommand\chap[1]{%
+\chapter*{#1}%
+  \addcontentsline{toc}{chapter}{section}{#1}}
+\pagenumbering{arabic}
 \pagestyle{empty}
 \setcounter{chapter}{1}
 \chapter*{\centering \chaptername{ \thechapter} 
 Dasar - Dasar dari Geometri Bidang Datar Yang Melibatkan Garis Lurus}
-\pagenumbering{alph} 
+%\chapter{Dasar - Dasar dari Geometri Bidang Datar Yang Melibatkan Garis Lurus}
+
 
 \begin{center}
 \textbf{Definisi - definisi}
@@ -295,7 +300,7 @@ Dengan demikian, jika dua buah segitiga memiliki dua buah sisi yang sama
 panjang dan sebuah sudut yang diapit oleh sisi - sisi tadi adalah sama besar,
 maka kedua nya juga akan memiliki sisi alas yang sama panjang, dan kedua
 segitiga tersebut adalah sama, dan sudut - sudut selebihnya yang menghadap
-sisi - sisi panjang tadi akan sama besar. Hal yang mana perlu kita buktikan.
+sisi - sisi panjang tadi akan sama besar. Hal yang perlu dibuktikan.
 
 \stepcounter{section}
 \section*{\centering \thesection} 
@@ -347,7 +352,7 @@ sisi alas.
 Dengan demikian, untuk segitiga sama sisi, sudut - sudut yang pada alas sama
 besar satu dengan yang lain, dan jika sisi - sisi yang sama panjang 
 masing - masing dipanjangkan maka sudut - sudut dibawah sisi alas akan sama 
-besar satu dengan yang lain. Yang adalah hal yang ingin kita buktikan.
+besar satu dengan yang lain. Hal yang perlu dibuktikan.
 
 \stepcounter{section}
 \section*{\centering \thesection} 
@@ -381,8 +386,7 @@ Dengan demikian keduanya sama.
 
 Dengan demikian, jika sebuah segitiga memiliki dua buah sudut yang sama besar
 satu dengan yang lain maka sisi - sisi yang menghadap sudut - sudut yang sama
-besar akan juga sama panjang satu dengan yang lain. Yang adalah hal yang ingin
- kita buktikan.
+besar akan juga sama panjang satu dengan yang lain. Hal yang perlu dibuktikan.
 
 \stepcounter{section}
 \section*{\centering \thesection} 
@@ -822,7 +826,7 @@ lebih kecil dari dua buah sudut siku - siku. Hal yang perlu dibuktikan.
 
 \stepcounter{section}
 \section*{\centering \thesection} 
-Untuk semua segitiga, sisi yang lebih besar menghadap sisi yang lebih
+Untuk semua segitiga, sisi yang lebih panjang menghadap sudut yang lebih
 besar.
 
 \begin{center}
@@ -833,9 +837,342 @@ besar.
 \end{tikzpicture}
 \end{center}
 
+Misalkan $ABC$ adalah segitiga dengan sisi $AC$ lebih besar dari $AB$. Saya
+katakan sudut $ABC$ juga lebih besar dari $BCA$.
+
+Disebabkan karena $AC$ lebih besar dari $AB$, misalkan $AD$ dibuat sama
+dengan $AB$ [Prop 1.3], dan misalkan $BD$ sudah terhubung.
+
+Dan karena sudut $ADB$ adalah sudut exterior dari segitiga $BCD$, maka ia
+akan lebih besar dari sudut interior yang tidak bersisian $DCB$ [Prop 1.16].
+Tetapi $ADB$ sama dengan $ABD$, karena sisi $AB$ juga sama panjang dengan 
+sisi $AD$ [Prop 1.15]. Dengan demikian $ABD$ juga lebih besar dari $ACB$.
+Dengan demikian $ABC$ jauh lebih besar dari $ACB$.
+
+Dengan demikian, pada setiap segitiga, sisi yang lebih besar menghadap sudut
+yang lebih besar. Yang adalah hal yang perlu dibuktikan.
 
 \stepcounter{section}
 \section*{\centering \thesection} 
+Pada semua segitiga, sudut yang lebih besar menghadap sisi yang lebih panjang.
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node[anchor=east] {B} -- (2, 2) node[anchor=south] {A} -- (2, -6) node[anchor=north] {C}-- (0,0);
+\end{tikzpicture}
+\end{center} 
+
+Misalkan $ABC$ adalah segitiga dengan sudut $ABC$ lebih besar dari $BCA$. 
+Saya katakan sisi $AC$ juga lebih besar dari $AB$.
+
+Karena jika tidak, $AC$ pasti sama dengan atau lebih kecil dari $AB$. Kenyataannya
+$AC$ tidak sama dengan $AB$. Karena dengan demikian sudut $ABC$ seharusnya sama 
+dengan $ACB$ [Prop 1.5]. Tetapi tidak demikian. Dengan demikian $AC$ tidak 
+sama dengan $AB$. Juga $AC$ tidak lebih kecil dari $AB$. Karena dengan
+demikian sudut $ABC$ akan lebih kecil dari sudut $ACB$ [Prop 1.18]. Tetapi
+tidak demikian kenyataannya. Dengan demikian $AC$ tidak lebih kecul dari 
+$AB$. Tetapi juga telah ditunjukkan $AC$ tidak sama dengan $AB$. Dengan demikian
+$AC$ lebih besar dari $AB$.
+
+Dengan demikian , pada semua segitga, sudut yang lebih besar menghadap sisi yang
+lebih panjang. Hal yang perlu dibuktikan.
+
+\stepcounter{section}
+\section*{\centering \thesection}
+Pada semua segitiga, jumlah dua buah sisinya lebih besar dari sisi selebihnya.
+
+\begin{center}
+%\begin{tikzpicture}
+\begin{tikzpicture}[scale=.8, every node/.style={scale=.8}]
+\draw (0, 0) node [anchor=north east] {B} --++ (60: 3) node [anchor=east] {A} 
+	-- ++(-30:5.2) node [anchor=north west] {C} --++(180: 6.01);
+\draw (0, 0) node [anchor=north east] {B} --++ (60: 8.2) node [anchor=south] {D}
+	-- ++(285.05: 7.359);
+\draw [gray, dashed] (0, 0) -- (240:6.01) --++ (30:10.3);
+\draw [gray, dashed] ({sqrt(3*3 + 5.2*5.2)}, 0) -- ++(-30:5.2)
+	-- (0, 0);
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ adalah segitiga. Saya katakan pada segitiga $ABC$, jumlah dua
+buah sisi lebih besar dari sisi selebihnya. Sehinga jumlah $BA$ dan $AC$ lebih
+besar dari $BC$ ,jumlah dari $AB$ dan $BC$ lebih besar dari $AC$, dan jumlah
+dari $BC$ dan $CA$ lebih besar dari $AB$.
+
+Sebab misalkan $BA$ sudah ditarik sampai titik $D$, dan misalkan $AD$ sudah dibuat 
+sama dengan $CA$ [Prop. 1.3], dan misalkan $DC$ sudah terhubung.
+
+Dengan demikian, karena $DA$ sama dengan $AC$, sudut $ADC$ juga sama dengan 
+$ACD$ [Prop. 1.5]. Dengan demikian $BCD$ lebih besar dari $ACD$ [G.U 5]. 
+Dan karena $DCB$ adalah segitiga dengan sudut $BCD$ lebih besar dari $BDC$, 
+and sudut yang lebih besar menghadap sisi yang lebih besar [Prop. 1.19], $DB$
+dengan demikian lebih besar dari $BC$. Tetapi $DA$ sama panjang dengan $AC$.
+Dengan demikian, jumlah dari sisi $BA$ dan $AC$ lebih besar dari besar sisi
+$BC$. Dengan cara yang sama kita bisa buktikan jumlah $AB$ dan $BC$ lebih besar
+dari $CA$, dan jumlah dari sisi - sisi $BC$ dan $CA$ lebih besar dari $AB$.  
+
+Sebab itu, pada semua segitiga, jumlah dua buah sisinya lebih besar dari sisi 
+selebihnya. Hal yang perlu ditunjukkan.  
+
+\stepcounter{section}
+\section*{\centering \thesection}
+Jika dari ujung - ujung satu sisi segitiga dua buah garis lurus ditarik dan 
+bertemu di dalam segitiga tersebut, jumlah kedua garis lurus tadi akan lebih
+kecil dari jumlah dua sisi segitiga lainnya, tetapi akan membentuk sudut
+yang lebih besar.
+
+\begin{center}
+\begin{tikzpicture}
+%\begin{tikzpicture}[scale=.8, every node/.style={scale=.8}]
+\draw (0, 0) node [anchor = north east] {B} --++ (65:4) node [anchor=south]{A}
+	--++(-30:7.25) node [anchor=north west]{C} --++ (180:7.975);
+\draw (0, 0) --++ (50:4.05) node [anchor=south west] {E};
+\draw (7.975, 0) --++ (160:6.5) node [anchor=east]{D};
+\end{tikzpicture}
+\end{center}
+
+Sebab misalkan dua buah garis - lurus $BD$ dan $DC$ sudah ditarik dari
+satu sisi $DC$ dari segitiga $ABC$, masing - masing dari titik - titik ujung
+$B$ dan $C$. Saya katakan $BD$ dan $DC$ lebih kecil dari jumlah sisi - sisi
+selebihnya segitiga yaitu $BA$ dan $AC$, tetapi membentuk sudut 
+$BDC$ yang lebih besar  dari $BAC$.
+
+Sebab misalkan $BD$ sudah ditarik melalui sampai ke $E$. Dan karena pada semua
+segitiga jumlah dari dua buah sisi lebih besar dari sisi selebihnya 
+[Prop. 1.20], pada segitiga $ABE$ jumlah dua sisi $AB$ dan $AE$ dengan demikian
+lebih besar dari $BE$. Misalkan $EC$ sudah ditambahkan pada keduanya. Dengan 
+demikian jumlah dari $BA$ dan $AC$ lebih besar dari jumlah $BE$ dan $EC$. Dan 
+lagi, karena pada segitiga $CED$ jumlah dua buah sisi $CE$ dan $ED$ lebih
+besar dari $CD$, misalkan $DB$ sudah ditambahkan pada keduanya. Dengan demikian
+jumlah dari $CE$ dan $EB$ lebih besar dari jumlah $CD$ dan $DB$. Tetapi
+sudah ditunjukkan jumlah $BA$ dan $AC$ lebih besar dari jumlah $BE$ dan $EC$.
+Dengan demikian jumlah $BA$ dan $AC$ jauh lebih besar dari jumlah $BD$ 
+dan $DC$.
+
+Lagi, karena pada semua segitiga sudut exterior lebih besar dari sudut - sudut
+interior yang tidak bersisian [Prop. 1.16], pada segitiga $CDE$ sudut exterior
+$BDC$ dengan demikian lebih besar dari $CED$. Karenanya, dengan alasan yang
+sama sudut exterior $CEB$ dari segitiga $ABE$ juga lebih
+besar dari $BAC$. Tetapi $BDC$ sudah ditunjukkan lebih besar dari $CEB$. Dengan
+demikian $BDC$ jauh lebih besar dari $BAC$.
+ 
+Dengan demikian, jika dari ujung - ujung satu sisi segitiga dua buah 
+garis lurus ditarik dan bertemu di dalam segitiga tersebut, jumlah kedua 
+garis lurus tadi akan lebih kecil dari jumlah dua sisi segitiga lainnya, 
+tetapi akan membentuk sudut
+yang lebih besar. Hal yang perlu kita tunjukkan.
+
+
+\stepcounter{section}
+\section*{\centering \thesection}
+Untuk membuat sebuah segitiga dari tiga buah garis lurus dimana panjang
+sisi - sisi segitiga sama dengan ketiga garis lurus. Perlu dipastikan bahwa
+jumlah dua buah garis mana saja lebih besar dari selebihnya, dengan 
+perhitungan pada fakta pada semua segitiga, jumlah dari dua buah sisi
+selalu lebih besar dari sisi selebinya [Prop. 1.20].
+\begin{center}
+%\begin{tikzpicture}
+\begin{tikzpicture}[scale=.8, every node/.style={scale=.8}]
+\draw (0, 5) node [anchor=east] {A}-- (5, 5);
+\draw (0, 4) node [anchor=east] {B}-- (4, 4);
+\draw (0, 3) node [anchor=east] {C}-- (3, 3);
+\draw (0, -5) node[anchor=east] {D} --++ (0:5) node[anchor=north]{F} 
+	   --++ (0:4) node[anchor=north]{G} --++ (0:3) node [anchor=north west]{H}
+	   --++ (0:2) node[anchor=west]{E};
+\draw (5, -5) circle(5);
+\draw (9, -5) circle(3);
+\draw (9, -5) --++(90:3) node[anchor=south]{K} --++({180 + asin(3/5)}:5);
+\draw (9, -8) node[anchor=north]{L}; 
+\end{tikzpicture}
+\end{center}
+
+Misalkan $A$, $B$, $C$ adalah tiga buah garis lurus, yang dimana panjang
+dua buah garis mana saja lebih lebih besar dari garis sisanya. Dengan demikian
+panjang $A$ dan $B$ lebih besar dari $C$, panjang $A$ dan $C$ lebih besar dari
+$B$, juga panjang $B$ dan $C$ lebih besar dari $A$. Jadi diperlukan untuk
+membuat segitiga dengan sisi - sisi sama dengan $A$, $B$ dan $C$.
+
+Misalkan garis $DE$ sudah dibuat, berujung di $D$ dan tak terhingga di arah $E$.
+Dan misalkan $DF$ sudah dibuat sama dengan $A$, dan $FG$ sama dengan $B$, dan 
+$GH$ sama dengan $C$ [Prop. 1.3]. Dan misalkan lingkaran $DKL$ sudah di ditarik
+dengan pusat pusat $F$ dan jari - jari $FD$. Dan lagi, lingkaran $KLH$ sudah
+ditarik dengan pusat $G$ dan jari - jari $GH$. Dan misalkan $KF$ dan $KG$ sudah
+dihubungkan. Saya katakan segitiga $KFG$ sudah dibuat dengan tiga buah
+garis yang sama panjang dengan $A$, $B$ dan $C$.
+
+Disebabkan titik $F$ adalah pusat lingkaran $DKL$, $FD$ sama dengan $FK$. 
+Tetapi, $FD$ sama dengan $A$. Dengan demikian, $KF$ juga sama dengan $A$. Lagi, 
+karena titik $G$ adalah pusat dari lingkaran $LKH$, $GH$ sama dengan $GK$, $GH$
+juga sama dengan $GK$. Tetapi, $GH$ sama dengan $C$. Dengan demikian $GH$ sama
+degnan $C$. $FG$ juga sama dengan $B$. Dengan demikian, masing - masing 
+ketiga garis lurus $KF$, $FG$ dan $GK$ sama dengan  $A$, $B$ dan $C$.
+
+Dengan demikian, segitiga $KFG$ sudah dibuat dari tiga buah garis lurus $KF$, 
+$FG$ dan $GK$, yang masing - masing sama panjang dengan tiga garis lurus 
+$A$, $B$ dan $C$. Hal yang perlu kita lakukan.
+
+
+Contoh lain
+
+\begin{center}
+%\begin{tikzpicture}
+\begin{tikzpicture}[scale=.5, every node/.style={scale=.5}]
+\draw (0, -5)[gray, dashed] node[anchor=east] {D} --++ (0:3) node[anchor=north]{F} 
+	   --++ (0:4) node[anchor=north]{G} --++ (0:5) node [anchor=north west]{H}
+	   --++ (0:2) node[anchor=west]{E};
+\draw (3, -5)[gray, dashed] circle(3);
+\draw (7, -5)[gray, dashed] circle(5);
+\draw (3, -5)[gray, dashed] --++(90:3) node[anchor=south]{K} --++({- acos(4/5)}:5);
+\draw (3, -8)[gray, dashed] node[anchor=north]{L}; 
+\end{tikzpicture}
+\end{center}
+
+
+\stepcounter{section}
+\section*{\centering \thesection}
+Untuk membentuk sebuah sudut rectilinear yang sama besar dengan sudut 
+rectilinear tertentu pada satu titik pada satu garis lurus tertentu.
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node[anchor=east] {C} --++ (20:3) node[anchor=south]{D} --++(20:1);
+\draw (0, 0) --++ (-25:3.5) node[anchor=north]{E} --++(-25:1);
+\draw (0, 0) --++ (20:3) --++(278:2.5); 
+\draw (0, -6) node [anchor=east] {A} --++ (0:3.5) node[anchor=north] {G}
+	--++ (0:2.5) node [anchor=north] {H} --++ (0:1) node[anchor=north] {B}; 
+\draw (0, -6)[gray, dashed] circle(3.0);
+\draw (3.5, -6)[gray, dashed] circle(2.5);
+\draw (0, -6) --++(44.5:3) node[anchor=south]{F}--++(303:2.5);
+\end{tikzpicture}
+\end{center}
+
+Misalkan $AB$ adalah satu garis lurus tertentu, $A$ adalah satu titik pada 
+garis tersebut, dan $DCE$ adalah sudut rectilinear tertentu. Jadi diperlukan
+untuk membuat sudut rectilinear yang sama besar dengan sudut rectiliniear
+$DCE$ pada titik tertentu $A$ pada garis lurus tertentu $AB$.
+
+Misalkan titik $D$ dan $E$ sudah diambil secara acak pada masing - masing
+pada garis lurus $CD$ dan $CE$, dan misalkan $DE$ sudah dihubungkan. 
+Dan misalkan segitga $AFG$ sudah di buat dari tiga buah garis lurus yang 
+masing - masing sama panjang dengan $CD$, $DE$ dan $CE$, sehingga $CD$ sama
+panjang dengan $AF$, $CE$ sama panjang dengan $AG$ dan lebih jauh $DE$ 
+sama panjang dengan $FG$ [Prop. 1.22].
+
+Dengan demikian karena kedua garis lurus $DC$ dan $CE$ sama dengan kedua
+garis lurus $FA$ dan $AG$, dan sisi alas $DE$ sama panjang dengan sisi
+alas $FG$, sudut $DCE$ dengan demikian sama besar dengan 
+sudut $FAG$ [Prop. 1.8].
+
+Dengan demikian, sudut rectilinear $FAG$ sama besar dengan sudut rectilinear
+$DCE$, sudah dibuat pada titik $A$ pada garis lurus $AB$. Yang adalah hal
+yang perlu dilakukan.
+
+\stepcounter{section}
+\section*{\centering \thesection}
+Jika pada dua buah segitiga , yang pertama memiliki dua buah sisi yang sama 
+panjang  dengan dua buah sisi pada segitiga yang kedua, tetapi pada yang pertama 
+sisi - sisi tadi mengapit sudut yang lebih besar daripada sudut yang diapit oleh 
+kedua sisi tadi pada segitiga yang kedua , maka segitiga yang pertama juga akan
+ memiliki sisi alas yang lebih panjang yang kedua.
+\begin{center}
+\begin{tikzpicture}
+\draw [dashed, gray](0, 0) --++(305:1)circle(.01);
+\draw [dashed, gray](0, 0) --++(260:1)circle(.01) --++ (12.7:0.75);
+\draw (0, 0) --++(305:4) node[anchor=north]{B};
+\draw (0, 0) node [anchor=south] {A} --++(260:4.5) node[anchor=north]{C} --++ (20.70:3.29);
+
+\draw [dashed, gray](6, 0) --++(305:1)circle(.01);
+\draw [dashed, gray](6, 0) --++(260:1)circle(.01) --++ (12.7:0.75);
+\draw [dashed, gray](6, 0) circle(1);
+\draw [dashed, gray](6, 0) --++(305:1) circle(.75);
+\draw (6, 0) --++(305:4) node[anchor=north]{E};
+\draw (6, 0) node [anchor=south] {D} --++(280:4.5) node[anchor=north]{C} --++ (37.5:1.91);
+\draw (6, 0) --++(260:4.5) --++ (20.70:3.29);
+\end{tikzpicture}
+\end{center} 
+
+Misalkan $ABC$ dan $DEF$ adalah dua buah segitiga dengan masing - masing 
+dua sisi $AB$ dan $AC$ sama panjang dengan dua sisi $DE$ dan $DF$. Yakni
+$AB$ dengan $DE$, dan $AC$ terhadap $DF$. Dan misalkan juga sudut $A$ 
+lebih besar dari sudut $D$. Saya katakan sisi alas $BC$ juga lebih besar
+dari sisi alas $EF$.
+
+Disebabkan karena sudut $BAC$ lebih besar daripada sudut $EDF$, misalkan
+sudut $EDG$, sama besar dengan sudut $BAC$, sudah dibuat pada titik $D$
+pada titik $DE$ [Prop. 1.23]. Dan misalkan $DG$ dibuat sama panjang
+dengan salah satu $AC$ atau $DF$ [Prop. 1.3]. Dan misalkan $EF$ dan 
+$FG$ sudah dihubungkan.
+
+Dengan demikian, karena $AB$ sama dengan $DE$ dan $AC$ terhadap $DG$,
+masing - masing garis lurus $BA$, $AC$ sama panjang dengan  dengan
+kedua garis lurus $ED$, $DG$. Juga sudut $BAC$ sama besar dengan sudut
+$EDG$. Dengan demikian sisi alas $BC$ sama panjang dengan sisi alas
+$EG$ [Prop. 1.4]. Dan lagi karena $DF$ sama panjang dengan $DG$, sudut
+$DFG$ sama besar dengan sudut $DGF$ [Prop. 1.5]. Dengan demikian $DFG$
+lebih besar dari $EGF$ (Karena $DFG$ sama dengan $DGF$, dan $EGF$
+adalah bagian dari $DGF$ [G.U. 1.5]). Dengan demikian $EFG$ jauh lebih
+besar dari dari $EGF$ (karena $DFG$ bagian dari $EFG$ [G.U. 1.5]). Dan
+karena segitiga $EFG$ memiliki sudut $EFG$ lebih besar dari sudut
+$EGF$ dan sudut yang lebih besar menghadap sisi yang lebih besar 
+[Prop. 1.19], sisi $EG$ dengan demikian juga lebih besar dari
+sisi $EF$. Tetapi $EG$ sama dengan $BC$. Dengan demikian $BC$ juga
+lebih besar dari $EF$.
+
+Dengan demikian, jika pada dua buah segitiga , yang pertama memiliki 
+dua buah sisi yang sama panjang  dengan dua buah sisi pada segitiga yang 
+kedua, tetapi pada yang pertama sisi - sisi tadi mengapit sudut yang 
+lebih besar daripada sudut yang diapit oleh kedua sisi tadi pada segitiga 
+yang kedua , maka segitiga yang pertama juga akan memiliki sisi alas 
+yang lebih panjang yang kedua. Yang adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering \thesection}
+Jika dua buah segitiga , yang pertama memiliki dua buah sisi yang
+sama panjang dengan dua buah sisi pada segitiga yang kedua, tetapi
+yang pertama memiliki sisi alas yang lebih panjang dari yang kedua, 
+maka yang pertama juga memiliki sudut yang diapit oleh dua sisi tadi
+lebih besar daripada sudut yang diapit oleh sisi yang bersesuaian 
+pada segitiga yang kedua.
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node[anchor=south]{A} --++ (230:4)node [anchor=east]{B} --++ (10:5) node[anchor=west]{C} --++ (137:3.225);
+\draw(0, -5) node[anchor=south]{D} --++ (230:4)node [anchor=east]{E} --++ (-2.5:2.99) node[anchor=west]{F} --++ (97.5:3.225);
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ dan $DEF$ adalah dua buah segitiga memiliki sisi - sisi
+$AB$ dan $AC$ sama panjang dengan dua buah sisi $DE$ dan $DEF$, yaitu
+$AB$ sama dengan $DE$ dan $AC$ dengan $DF$. Dan misalkan sisi alas $BC$
+lebih besar dari sisi alas $EF$. Saya katakan bahwa sudut $BAC$ juga lebih
+besar daripada sudut $EDF$.
+
+Karena jika tidak, $BAC$ pasti sama besar atau lebih kecil dari $EDF$. Pada 
+kenyatannyannya, $BAC$ tidak sama dengan $EDF$. Karena juga benar maka sisi
+alas $BC$ juga kan sama dengan $EF$ [Prop. 1.4]. Tetapi tidak. Dengan demikian
+sudut $BAC$ tidak sama dengan $EDF$. Tidak juga bahwa $BAC $lebih kecil 
+daripada $EDF$. Karena jika demikian, sisi alas $BC$ juga akan lebih
+kecil daripada $EF$ [Prop. 1.24]. Tetapi itu tidak benar. Dengan demikian, 
+sudut $BAC$ tidak lebih kecil daripada $EDF$. Tetapi juga ditunjukkan $BAC$
+tidak sama dengan $EDF$. Dengan demikian $BAC$ lebih besar dari $EDF$.
+
+Dengan demikian, jika dua buah segitiga , yang pertama memiliki dua buah sisi 
+yang sama panjang dengan dua buah sisi pada segitiga yang kedua, tetapi
+yang pertama memiliki sisi alas yang lebih panjang dari yang kedua, 
+maka yang pertama juga memiliki sudut yang diapit oleh dua sisi tadi
+lebih besar daripada sudut yang diapit oleh sisi yang bersesuaian 
+pada segitiga yang kedua. Hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering \thesection}
+Jika dua buah segitiga yang pertama memiliki dua buah sudut yang sama besar
+dengan yang segitiga yang kedua, dan memiliki satu sisi yang sama panjang dengan
+satu sisi pada segitiga yang dua, bisa sisi yang berada pada dua sudut tadi atau
+menghadap salah satu sudut tadi, maka pada sisi - sisi selebihnya pada yang 
+pertama akan sama panjang dengan sisi - sisi selebihnya pada yang kedua, dan 
+sudut selebihnya pada yang pertama akan sama besar dengan sudut selebihnya pada
+yang kedua.
+
+
+
 
 \setcounter{section}{29}
 \section*{\centering \thesection} 
@@ -885,21 +1222,20 @@ lurus $AF$ adalah perpanjangan $EA$.
 
 Dan karena ruas garis $AD$, jatuh didalam  kedua ruas garis $BC$ dan $EF$, membuat 
 sudut - sudut yang berseberangan $EAD$ dan $ADC$ sama besar, $EAF$ dengan demikian
-sejajar dengan $BC$ [1.27]
+sejajar dengan $BC$ [1.27] 
 
+\setcounter{section}{34}
+\section*{\centering \thesection} 
+Pada bidang - bidang jajaran genjang, sisi - sisi dan sudut - sudut yang saling
+bertentangan sama besar satu dengan yang lain, dan sebuah diagonal membaginya jadi dua bagian yang sama besar.  
 
-%\setcounter{section}{34}
-%\section*{\centering \thesection} 
-%Pada bidang - bidang jajaran genjang, sisi - sisi dan sudut - sudut yang saling
-%bertentangan sama besar satu dengan yang lain, dan sebuah diagonal membaginya jadi dua bagian yang sama besar.  
-
-%\begin{tikzpicture}
-%\draw (-3, 2) node[anchor=east]{A} -- (4, 2) node [anchor=west]{B};
-%\draw (-4, -2) node[anchor=east]{C}(-4, -2) -- (3, -2) node [anchor=west]{D};
-%\draw (-4, -2) -- (-3, 2);
-%\draw (3, -2) -- (4, 2);
-%\draw (-4, -2) -- (4, 2); 
-%\end{tikzpicture}
+\begin{tikzpicture}
+\draw (-3, 2) node[anchor=east]{A} -- (4, 2) node [anchor=west]{B};
+\draw (-4, -2) node[anchor=east]{C}(-4, -2) -- (3, -2) node [anchor=west]{D};
+\draw (-4, -2) -- (-3, 2);
+\draw (3, -2) -- (4, 2);
+\draw (-4, -2) -- (4, 2); 
+\end{tikzpicture}
 
 %Misalkan $ABCD$ ada sebuah jajaran genjang, dan $BC$ adalah diagonalnya. Saya katakan
 %bahwa untuk jajaran genjang $ABCD$, sisi sisi yang bertentangan dan sudut - sudut yang bertentangan
