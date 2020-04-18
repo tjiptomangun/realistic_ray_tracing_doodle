@@ -1085,8 +1085,9 @@ kedua sisi tadi pada segitiga yang kedua , maka segitiga yang pertama juga akan
 \draw [dashed, gray](6, 0) circle(1);
 \draw [dashed, gray](6, 0) --++(305:1) circle(.75);
 \draw (6, 0) --++(305:4) node[anchor=north]{E};
-\draw (6, 0) node [anchor=south] {D} --++(280:4.5) node[anchor=north]{C} --++ (37.5:1.91);
-\draw (6, 0) --++(260:4.5) --++ (20.70:3.29);
+\draw (6, 0) node [anchor=south] {D} --++(280:4.5) node[anchor=north]{F} --++ (37.5:1.91);
+\draw (6, 0) --++(260:4.5) node[anchor=north]{G}-++ (20.70:3.29);
+\draw (6, 0) --++(260:4.5) --++ (0:1.57);
 \end{tikzpicture}
 \end{center} 
 
@@ -1146,7 +1147,7 @@ lebih besar dari sisi alas $EF$. Saya katakan bahwa sudut $BAC$ juga lebih
 besar daripada sudut $EDF$.
 
 Karena jika tidak, $BAC$ pasti sama besar atau lebih kecil dari $EDF$. Pada 
-kenyatannyannya, $BAC$ tidak sama dengan $EDF$. Karena juga benar maka sisi
+kenyatannyannya, $BAC$ tidak sama dengan $EDF$. Karena jika benar maka sisi
 alas $BC$ juga kan sama dengan $EF$ [Prop. 1.4]. Tetapi tidak. Dengan demikian
 sudut $BAC$ tidak sama dengan $EDF$. Tidak juga bahwa $BAC $lebih kecil 
 daripada $EDF$. Karena jika demikian, sisi alas $BC$ juga akan lebih
@@ -1166,10 +1167,52 @@ pada segitiga yang kedua. Hal yang perlu ditunjukkan.
 Jika dua buah segitiga yang pertama memiliki dua buah sudut yang sama besar
 dengan yang segitiga yang kedua, dan memiliki satu sisi yang sama panjang dengan
 satu sisi pada segitiga yang dua, bisa sisi yang berada pada dua sudut tadi atau
-menghadap salah satu sudut tadi, maka pada sisi - sisi selebihnya pada yang 
+menghadap salah satu sudut tadi, maka sisi - sisi selebihnya pada yang 
 pertama akan sama panjang dengan sisi - sisi selebihnya pada yang kedua, dan 
 sudut selebihnya pada yang pertama akan sama besar dengan sudut selebihnya pada
 yang kedua.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=east]{B} --++(70:4) node [anchor=south]{A}
+	--++(-45:5.32) node[anchor=west]{C} --++(180:5.135);
+\draw (0, 0) --++(70:3) node [anchor=east]{G} --++ (-34.53:4.98);
+\draw (0, 0) --++(70:4) --++(-55:4.59) node[anchor=north]{H};
+
+\draw (6, 3) node [anchor=east]{E} --++(70:4) node [anchor=south]{D}
+	--++(-45:5.32) node[anchor=west]{F} --++(180:5.135); 
+\end{tikzpicture}
+\end{center}
+
+
+Misalkan $ABC$ dan $DEF$ adalah dua buah segitiga dengan masing - masing dua 
+sudut $ABC$ dan $BCA$ sama dengan dua sudut $DEF$ dan $EFD$.  Yaitu $ABC$ sama
+besar dengan $DEF$ dan $BCA$ terhadap $EFD$. Dan misalkan kedua nya juga 
+memiliki satu sisi yang sama panjang. Pertama sisi yang berada pada sudut - sudut
+yang berpasangan sama tadi. Yakni $BC$ sama panjang dengan $EF$. Saya katakan bahwa
+sisi - sisi selebihnya pada keduanya juga memiliki sisi bersesuaian yang sama 
+panjang pada segitiga satunya. Yakni $AB$ sama panjang dengan $DE$ dan $AC$ 
+terhadap $DF$.  Dan sudut selebihnya juga akan sama besar pada keduanya. 
+Yakni $BAC$ sama dengan $EDF$.
+
+Karena jika $AB$ tidak sama dengan $DE$ maka yang satu adalah lebih besar. Misalkan
+$AB$ yang lebih besar, dan misalkan $BG$ dibuat sama dengan $DE$ [Prop. 1.3], dan
+misalkan $GC$ sudah dipertemukan.
+
+Dengan demikian, karena $GB$ sama panjang dengan $DE$, dan $BC$ sama panjang 
+dengan $EF$ dan masing - masing kedua garis lurus $GB$, $BC$ sama panjang dengan 
+kedua garis lurus $DE$, $EF$. Dan sudut $GBC$ sama besar dengan sudut  $DEF$.
+Dengan demikian sisi alas $GC$ sama panjang dengan sisi alas $DF$, dan segitiga
+$GBC$ sama dengan segitiga  $DEF$ dan sudut - sudut selebihnya yang menghadap
+sisi sisi yang sama panjang akan sama besar dengan sudut selebihnya yang 
+bersesuaian [Prop. 1.4]. Dengan demikian $GCB$ sama besar dengan $DFE$. Tetapi
+$DFE$ diasumsikan sama besar dengan $ACB$. Dengan demikian $BCG$ juga sama
+besar dengan $BCA$, yang lebih kecil sama besar dengan yang lebih besar.
+Hal yang benar - benar mustahil. Dengan demikian $AB$ tidak tidak sama dengan
+$DE$. Dengan demikian keduanya sama. Dan $BC$ kiga sama dengan $EF$. Sehingga
+masing - masing kedua garis lurus $AB$, $BC$ sama panjang dengan dua garis 
+lurus $DE$, $EF$. Dan sudut $ABC$ sama besar dengan sudut $DEF$. Dengan demikian
+sisi alas $AC$ sama panjang dengna sisi alas $DF$, dan sudut selebihnya $BAC$ 
+sama besar dengan sudut selebih nya $EDF$ [Prop. 1.4].
 
 
 
@@ -1237,79 +1280,79 @@ bertentangan sama besar satu dengan yang lain, dan sebuah diagonal membaginya ja
 \draw (-4, -2) -- (4, 2); 
 \end{tikzpicture}
 
-%Misalkan $ABCD$ ada sebuah jajaran genjang, dan $BC$ adalah diagonalnya. Saya katakan
-%bahwa untuk jajaran genjang $ABCD$, sisi sisi yang bertentangan dan sudut - sudut yang bertentangan
-%sama besar satu dengan yang lain, dan diagonal $BC$ membaginya menjadi dua bagian yang sama besar.
-%
-%Karena $AB$ sejajar dengan $CD$, dan ruas garis $BC$ jatuh memotong keduanya, sudut - sudut yang 
-%berhadapan $ABC$ dan $BCD$ sama besar satu dengan yang lain [1.29]. Dan karena $AC$ sejajar dengan
-%$BD$, dan $BC$ memotong keduanya, sudut - sudut yang berseberangan $ACB$ dan $CBD$ sama besar satu 
-%dengan yang lain [1.29]. Dengan demikian $ABC$ dan $BCD$ adalah dua buah segitiga yang memiliki
-%kedua sudut masing - masing $ABC$ dan $BCA$ sama besar dengan kedua sudut $BCD$ dan $CDB$, dan satu 
-%sisi sama besar, yaitu $BC$, yang di sini milik bersama kedua segitiga.
-%Dengan demikian sisi sisi lainnya akan sama besar satu dengan yang lain, 
-%dan satu sudut lainnya akan sama satu dengan yang lain [1.26]. Dengan demikian, sisi $AB$ 
-%sama besar dengan $CD$ , dan sisi $AC$ dengan $BD$. Lebih lanjut, sudut $BAC$ sama besar
-%dengan $CDB$. Dan karena $ABC$ sama besar dengan $BCD$, dan $CBD$ dengan $ACB$, keseluruhan
-%sudut segitiga $ABD$ dengan demikian sama dengan keseluruahn  sudut segitiga $ACD$
-%
-%\stepcounter{section} 
-%\section*{\centering \thesection}
-%Jajaran - jajaran genjang yang memiliki alas yang sama dan berada diantara dua
-%garis - garis sejajar yang sama , sama (besarnya) satu dengan yang lain.  
-%
-%\begin{tikzpicture}
-%\draw (-8, 2) node[anchor=south]{A}(-8, 2) -- (-5, 2) 
-%node [anchor=south]{D} (-5, 2) -- (2, 2) 
-%node [anchor=south]{E} (2, 2) -- (5, 2) node[anchor=south]{F};
-%\draw (-6, -2) node[anchor=north]{B}(-6, -2) -- (-3, -2) node [anchor=north]{C};
-%\draw (-6, -2) -- (-8, 2);
-%\draw (-3, -2) -- (-5, 2);
-%\draw (-6, -2) -- (2, 2);
-%\draw (-3, -2) -- (5, 2);
-%\draw (-3.75, -0.5) node[anchor=west]{G};
-%\end{tikzpicture} 
-%Misalkan $ABCD$ dan $EBCF$ adalah bidang - bidang jajaran genjang yang memiliki alas yang sama yaitu $BC$, 
-%dan berada diantara dua buah garis sejajar $AF$ dan $BC$. Saya katakan bahwa $ABCD$ sama dengan bidang
-%jajaran genjang $EBCF$.
-%
-%Karena $ABCD$ adalah sebauh jajaran genjang, $AD$ sama besar dengan $BC$ [1.34]. Dengan dengan alasan - alasan
-%yang sama, $EF$ juga sama dengan $BC$. Dengan demikian $AD$ juga sama dengan $EF$. Dan $DE$ adalah 
-%
-%\setcounter{chapter}{2}
-%\chapter*{\centering \chaptername{ \thechapter} 
-%Dasar - Dasar Aljabar Geometri}
-%\setcounter{section}{12}
-%\section*{\centering \thesection} 
-%
-%Pada segitiga tumpul, besar bujur sangkar dari sisi yang menghadap sudut tumpul
-% adalah lebih besar dari jumlah besar bujur sangkar - bujur sangkar sisi - sisi yang 
-%mengapit sudut tumpul sebanyak dua kali besar persegi panjang yang dibentuk
-%dari satu sisi yang yang mengapit sudut tumpul yang padanya garis lurus jatuh
-%secara tegak lurus, dan garis lurus yang memotong sisi luar (segitiga tersebut) secara tegak lurus 
-%kearah sudut tumpul.
-%
-%\begin{tikzpicture}
-%\draw [-, black] (-2, -2) -- (6, -2);
-%\draw (-2.25, -2.25) node {$D$};
-%\draw (6.25, -2.25) node {$C$};
-%\draw [-, black] (-2, -2) -- (-2, 3);
-%\draw (-2.25, 3.25) node {$B$};
-%\draw [-, black] (0, -2) -- (-2, 3);
-%\draw (0.0, -2.25) node {$A$};
-%\draw [-, black] (6, -2) -- (-2, 3);
-%\end{tikzpicture} 
-%
-%Misalkan $ABC$ adalah segitiga tumpul, dengan sudut $BAC$ adalah sudut tumpul.
-%Misalkan $BD$ ditarik dari titik $B$ tegak lurus terhadap $CA$ [Prop 1.12]. Saya
-%katakan bahwa bujur sangkar $BC$ adalah lebih besar dari jumlah bujur sangkar $BA$
-%dan bujur sangkar $AC$, sebanyak dua kali persegi panjang yang dibentuk $CA$ dan $AD$.
-%
-%Karena garis lurus $CD$ sudah dipotong pada sebarang titik, $A$, bujur sangkar para $DC$
-%dengan demikian sama dengan jumlah dari jumlah bujur sangkar $CA$ dan $AD$, dan dua kali
-%persegi panjang yang dibentuk $CA$ dan $AD$ [Prop.2.4]. Misalkan bujur  sangkar $DB$
-%ditambahkan kepada keduanya
-%
+Misalkan $ABCD$ ada sebuah jajaran genjang, dan $BC$ adalah diagonalnya. Saya katakan
+bahwa untuk jajaran genjang $ABCD$, sisi sisi yang bertentangan dan sudut - sudut yang bertentangan
+sama besar satu dengan yang lain, dan diagonal $BC$ membaginya menjadi dua bagian yang sama besar.
+
+Karena $AB$ sejajar dengan $CD$, dan ruas garis $BC$ jatuh memotong keduanya, sudut - sudut yang 
+berhadapan $ABC$ dan $BCD$ sama besar satu dengan yang lain [1.29]. Dan karena $AC$ sejajar dengan
+$BD$, dan $BC$ memotong keduanya, sudut - sudut yang berseberangan $ACB$ dan $CBD$ sama besar satu 
+dengan yang lain [1.29]. Dengan demikian $ABC$ dan $BCD$ adalah dua buah segitiga yang memiliki
+kedua sudut masing - masing $ABC$ dan $BCA$ sama besar dengan kedua sudut $BCD$ dan $CDB$, dan satu 
+sisi sama besar, yaitu $BC$, yang di sini milik bersama kedua segitiga.
+Dengan demikian sisi sisi lainnya akan sama besar satu dengan yang lain, 
+dan satu sudut lainnya akan sama satu dengan yang lain [1.26]. Dengan demikian, sisi $AB$ 
+sama besar dengan $CD$ , dan sisi $AC$ dengan $BD$. Lebih lanjut, sudut $BAC$ sama besar
+dengan $CDB$. Dan karena $ABC$ sama besar dengan $BCD$, dan $CBD$ dengan $ACB$, keseluruhan
+sudut segitiga $ABD$ dengan demikian sama dengan keseluruahn  sudut segitiga $ACD$
+
+\stepcounter{section} 
+\section*{\centering \thesection}
+Jajaran - jajaran genjang yang memiliki alas yang sama dan berada diantara dua
+garis - garis sejajar yang sama , sama (besarnya) satu dengan yang lain.  
+
+\begin{tikzpicture}
+\draw (-8, 2) node[anchor=south]{A}(-8, 2) -- (-5, 2) 
+node [anchor=south]{D} (-5, 2) -- (2, 2) 
+node [anchor=south]{E} (2, 2) -- (5, 2) node[anchor=south]{F};
+\draw (-6, -2) node[anchor=north]{B}(-6, -2) -- (-3, -2) node [anchor=north]{C};
+\draw (-6, -2) -- (-8, 2);
+\draw (-3, -2) -- (-5, 2);
+\draw (-6, -2) -- (2, 2);
+\draw (-3, -2) -- (5, 2);
+\draw (-3.75, -0.5) node[anchor=west]{G};
+\end{tikzpicture} 
+Misalkan $ABCD$ dan $EBCF$ adalah bidang - bidang jajaran genjang yang memiliki alas yang sama yaitu $BC$, 
+dan berada diantara dua buah garis sejajar $AF$ dan $BC$. Saya katakan bahwa $ABCD$ sama dengan bidang
+jajaran genjang $EBCF$.
+
+Karena $ABCD$ adalah sebauh jajaran genjang, $AD$ sama besar dengan $BC$ [1.34]. Dengan dengan alasan - alasan
+yang sama, $EF$ juga sama dengan $BC$. Dengan demikian $AD$ juga sama dengan $EF$. Dan $DE$ adalah 
+
+\setcounter{chapter}{2}
+\chapter*{\centering \chaptername{ \thechapter} 
+Dasar - Dasar Aljabar Geometri}
+\setcounter{section}{12}
+\section*{\centering \thesection} 
+
+Pada segitiga tumpul, besar bujur sangkar dari sisi yang menghadap sudut tumpul
+ adalah lebih besar dari jumlah besar bujur sangkar - bujur sangkar sisi - sisi yang 
+mengapit sudut tumpul sebanyak dua kali besar persegi panjang yang dibentuk
+dari satu sisi yang yang mengapit sudut tumpul yang padanya garis lurus jatuh
+secara tegak lurus, dan garis lurus yang memotong sisi luar (segitiga tersebut) secara tegak lurus 
+kearah sudut tumpul.
+
+\begin{tikzpicture}
+\draw [-, black] (-2, -2) -- (6, -2);
+\draw (-2.25, -2.25) node {$D$};
+\draw (6.25, -2.25) node {$C$};
+\draw [-, black] (-2, -2) -- (-2, 3);
+\draw (-2.25, 3.25) node {$B$};
+\draw [-, black] (0, -2) -- (-2, 3);
+\draw (0.0, -2.25) node {$A$};
+\draw [-, black] (6, -2) -- (-2, 3);
+\end{tikzpicture} 
+
+Misalkan $ABC$ adalah segitiga tumpul, dengan sudut $BAC$ adalah sudut tumpul.
+Misalkan $BD$ ditarik dari titik $B$ tegak lurus terhadap $CA$ [Prop 1.12]. Saya
+katakan bahwa bujur sangkar $BC$ adalah lebih besar dari jumlah bujur sangkar $BA$
+dan bujur sangkar $AC$, sebanyak dua kali persegi panjang yang dibentuk $CA$ dan $AD$.
+
+Karena garis lurus $CD$ sudah dipotong pada sebarang titik, $A$, bujur sangkar para $DC$
+dengan demikian sama dengan jumlah dari jumlah bujur sangkar $CA$ dan $AD$, dan dua kali
+persegi panjang yang dibentuk $CA$ dan $AD$ [Prop.2.4]. Misalkan bujur  sangkar $DB$
+ditambahkan kepada keduanya
+
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
 Richard Fitzpatrick.
