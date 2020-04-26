@@ -16,6 +16,12 @@
 \definecolor{OliveGreen}{rgb}{0,0.6,0}
 \definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71}
 \definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0} 
+\usepackage{hyperref}
+\hypersetup{
+%    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+%    linkcolor=blue,  %choose some color if you want links to stand out
+}
 
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
@@ -25,9 +31,6 @@
 \author{Euclid dari Alexandria}
 \maketitle
 \tableofcontents
-\newcommand\chap[1]{%
-\chapter*{#1}%
-  \addcontentsline{toc}{chapter}{section}{#1}}
 \pagenumbering{arabic}
 \pagestyle{empty}
 \setcounter{chapter}{1}
@@ -91,7 +94,7 @@ sudut - sudutnya tidak siku - siku, jajaran genjang adalah yang sudut - sudut
 dan sisi - sisi yang berhadapan sama besar tetapi tidak siku - siku dan tidak 
 semua sisi sama panjang, dan persegiempat lainnya yang tidak dalam kategori tersebut
 disebut dengan trapezium.
-\item Garis - garis paralel adalah garis - garis lurus yang jika berada dalam 
+\item Garis - garis sejajar adalah garis - garis lurus yang jika berada dalam 
 bidang yang sama dan dipanjangkan hingga tak terhingga ke masing - masing arah
 tidak bertemu satu dengan yang lain.  
 \end{enumerate}
@@ -104,7 +107,12 @@ tidak bertemu satu dengan yang lain.
 \item Dan memanjangkan sebuah ruas garis dengan panjang tertentu tanpa terputus.
 \item Dan dengan pusat dan jari -jari dapat dibuat sebuah lingkaran.
 \item Dan bahwa semua sudut siku - siku sama besar.
-\item Dan jika suatu garis lurus memotong dua buah garis lurus yang lain dan membentuk sudut - sudut dalam pada sisi yang sama yang jumlah besar sudutnya lebih kecil dari dua  sudut siku - siku, maka dua garis lurus yang di sisi lainnya, jika dipanjangkan sampai tak terhingga, akan bertemu di sisi tersebut, dan dua garis lurus yang berada di sisi sudut dalam yang lebih kecil dari dua sudut siku siku tidak akan pernah bertemu jika dipanjangkan di sisi tersebut.
+\item Dan jika suatu garis lurus memotong dua buah garis lurus yang lain dan 
+membentuk sudut - sudut interior sehadap yang jumlah besar 
+sudutnya lebih kecil dari dua  sudut siku - siku, maka kedua garis lurus yang 
+dipotong tadi, jika dipanjangkan sampai tak terhingga, akan bertemu di sisi 
+tersebut (sisi yang jumlah sudut interior sehadap sama dengan dua sudut siku), 
+dan tidak akan bertemu di sisi satunya.
 \end{enumerate}
 
 \begin{center}
@@ -119,7 +127,8 @@ tidak bertemu satu dengan yang lain.
 \end{enumerate}
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk menggambarkan segitiga sama sisi pada sebuah ruas garis.
 \begin{center}
 \begin{tikzpicture}
@@ -155,7 +164,8 @@ Dengan demikian, segitiga $ABC$ adalah sama sisi, dan dibangun dari
 satu ruas gari $AB$. Yang adalah hal yang kita butuhkan.  
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 
 Untuk menempatkan sebuah ruas garis yang sama dengan ruas garis tertentu
 pada satu titik tertentu (sebagai salah satu ujungnya).
@@ -211,7 +221,8 @@ Ilustrasi lain
 \end{center}
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 
 Pada dua buah ruas garis yang tidak sama panjang, cara untuk
 memotong dari ruas garis yang lebih besar ruas garis yang sama panjang dengan
@@ -253,7 +264,8 @@ dan $C$, ruas garis $AE$ yang sama panjang dengan $C$ telah dipotong dari
 $AB$. Hal yang mana yang perlu kita lakukan.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 
 Jika pada dua buah segitiga, yang pertama  memiliki dua buah sisi yang sama 
 panjang dengan dua buah sisi segitiga yang satunya, dan pada keduanya sudut
@@ -303,7 +315,8 @@ segitiga tersebut adalah sama, dan sudut - sudut selebihnya yang menghadap
 sisi - sisi panjang tadi akan sama besar. Hal yang perlu dibuktikan.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 
 Pada segitiga sama sisi, sudut - sudut alas sama besar satu dengan yang lain, 
 dan jika sisi - sisi yang sama panjang dipanjangkan lagi maka sudut - sudut 
@@ -355,7 +368,9 @@ masing - masing dipanjangkan maka sudut - sudut dibawah sisi alas akan sama
 besar satu dengan yang lain. Hal yang perlu dibuktikan.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
+
 Jika sebuah segitiga memiliki dua buah sudut yang sama besar satu dengan yang 
 lain, maka sisi - sisi yang menghadap sudut - sudut yang sama besar tersebut
 akan sama panjang satu dengan yang lain.
@@ -389,7 +404,8 @@ satu dengan yang lain maka sisi - sisi yang menghadap sudut - sudut yang sama
 besar akan juga sama panjang satu dengan yang lain. Hal yang perlu dibuktikan.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Pada satu garis lurus , dua buah garis lurus yang lain yang masing - masing 
 sama panjang dengan dua buah garis lurus yang lain lagi, tidak bisa dibuat 
 bertemu pada titik yang berbeda di sisi yang sama dari garis lurus, tetapi
@@ -428,7 +444,8 @@ bertemu pada titik yang berbeda di sisi yang sama dari garis lurus, tetapi
 memiliki titik - titik ujung yang sama pada garis lurus tersebut.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Jika pada dua buah segitiga,  segitiga yang pertama memiliki dua buah sisi 
 yang sama panjang dengan segitiga yang kedua, dan juga alas kedua segitiga 
 tersebut sama besar, maka pada kedua segitiga sudut - sudut 
@@ -475,7 +492,8 @@ sama panjang maka sudut yang diapit oleh sisi yang sama panjang tadi akan
 sama besar.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk membagi jadi dua bagian sama besar sudut rectilinear tertentu.
 \begin{center}
 \begin{tikzpicture}
@@ -509,7 +527,8 @@ Dengan demikian, sudut rectiliniear $BAC$ tadi sudah dibagi menjadi dua bagian
 sama besar oleh garis lurus $AF$. Yang adalah hal yang ingin dilakukan.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk memotong satu buah garis dengan panjang tertentu menjadi dua buah bagian 
 sama panjang.
 
@@ -542,7 +561,8 @@ Dengan demikian ruas garis garis $AB$ sudah dipotong menjadi dua bagian panjang
 pada titik $D$. Yang adalah hal yang dibutuhkan.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk membuat sebuah garis yang membentuk sudut siku (tegak lurus) terhadap satu
 garis lurus tertentu dari satu titik tertentu pada garis lurus tertentu itu.
 \begin{center}
@@ -584,7 +604,8 @@ $AB$ pada titik $C$ yang ada padanya. Hal yang kita perlukan.
 
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk menggambarkan satu garis lurus yang tegak lurus terhadap garis
 lurus tak terhingga tertentu dari satu titik yang tidak berada pada
 garis tertentu tersebut.  
@@ -630,7 +651,8 @@ $AB$. Yang adalah hal yang diperlukan.
 
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Jika sebuah garis lurus berdiri pada sebuah garis lain membentuk sudut - sudut, maka
 sudut - sudut yang dibentuk adalah dua buah sudut siku - siku , atau sudut sudut yang
 jumlahnya sama dengan dua buah sudut siku - siku.
@@ -672,7 +694,8 @@ sudut yang berjumlah dua buah sudut siku - siku. Yang adalah hal yang ingin
 kita tunjukkan.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 
 Jika dua buah garis lurus yang tidak berada pada sisi yang sama, membentuk
 sudut sudut yang berdampingan yang jumlahnya adalah dua buah sudut siku - siku
@@ -715,7 +738,8 @@ garis lurus tersebut adalah lurus satu terhadap yang lain. Yang adalah hal yang
 perlu kita tunjukkan.  
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Jika dua buah garis lurus saling memotong satu dengan yang lain maka sudut - 
 sudut yang bertolak belakang  sama besar satu dengan yang lain.
 \begin{center}
@@ -744,9 +768,10 @@ Jadi, jika dua garis lurus memotong satu sama lain maka sudut - sudut yang
 bertolak belakang sama besar dengan yang lain. Hal yang perlu kita tunjukkan.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk segitiga, jika salah satu sisi diperpanjang, besar sudut 
-exterior adalah lebih besar dari sudut interior yang tidak bersisian.
+exterior adalah lebih besar dari sudut interior yang tidak bersebelahan.
 
 \begin{center}
 \begin{tikzpicture}
@@ -767,7 +792,7 @@ exterior adalah lebih besar dari sudut interior yang tidak bersisian.
 \end{center}
 Misalkan $ABC$ adalah segitiga, dan misalkan salah satu sisinya $BC$ telah 
 diperpanjang sampai $D$.  Saya katakan bahwa sudut eksterior $ACD$ lebih besar 
-dari sudut interior yang tidak bersisian $CBA$ dan $BAC$.
+dari sudut interior yang tidak bersebelahan $CBA$ dan $BAC$.
 
 Misalkan garis lurus $AC$ dipotong menjadi dua pada titik $E$ [Prop. 1.10]. 
 Dan $BE$ sudah dipertemukan dan misalkan garis itu diperpanjang sebagai 
@@ -791,10 +816,11 @@ bahwa $BCG$ - yaitu, $ACD$ - juga lebih besar dari $ABC$.
 
 Dengan demikian untuk segitiga, jika salah satu sisi diperpanjang, 
 besar sudut eksterior adalah lebih besar dari sudut interior yang 
-tidak bersisian.  
+tidak bersebelahan.  
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk semua segitiga, jumlah dua buah sudut manapun lebih kecil dari
 dua jumlah dua buah sudut siku - siku.
 \begin{center}
@@ -810,7 +836,7 @@ sudut manapun segitiga $ABC$ lebih kecil dari jumlah dua buah sudut siku - siku.
 Misalkan $BC$ sudah diperpanjang sampai ke $D$.
 
 Dan karena sudut $ACD$ adalah sudut eksterior segitiga $ABC$, maka sudut 
-tersebut lebih besar dari sudut interior yang tidak bersisian 
+tersebut lebih besar dari sudut interior yang tidak bersebelahan 
 $ABC$ [Prop. 1.16]. 
 Misalkan $ACB$ sudah ditambahkan pada keduanya. Dengan demikian jumlah 
 sudut - sudut $ACD$ dan $ACB$ lebih besar dari jumlah sudut - sudut $ABC$ dan 
@@ -825,7 +851,8 @@ lebih kecil dari dua buah sudut siku - siku. Hal yang perlu dibuktikan.
 
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk semua segitiga, sisi yang lebih panjang menghadap sudut yang lebih
 besar.
 
@@ -844,7 +871,7 @@ Disebabkan karena $AC$ lebih besar dari $AB$, misalkan $AD$ dibuat sama
 dengan $AB$ [Prop 1.3], dan misalkan $BD$ sudah terhubung.
 
 Dan karena sudut $ADB$ adalah sudut exterior dari segitiga $BCD$, maka ia
-akan lebih besar dari sudut interior yang tidak bersisian $DCB$ [Prop 1.16].
+akan lebih besar dari sudut interior yang tidak bersebelahan $DCB$ [Prop 1.16].
 Tetapi $ADB$ sama dengan $ABD$, karena sisi $AB$ juga sama panjang dengan 
 sisi $AD$ [Prop 1.15]. Dengan demikian $ABD$ juga lebih besar dari $ACB$.
 Dengan demikian $ABC$ jauh lebih besar dari $ACB$.
@@ -853,7 +880,8 @@ Dengan demikian, pada setiap segitiga, sisi yang lebih besar menghadap sudut
 yang lebih besar. Yang adalah hal yang perlu dibuktikan.
 
 \stepcounter{section}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Pada semua segitiga, sudut yang lebih besar menghadap sisi yang lebih panjang.
 \begin{center}
 \begin{tikzpicture}
@@ -877,7 +905,8 @@ Dengan demikian , pada semua segitga, sudut yang lebih besar menghadap sisi yang
 lebih panjang. Hal yang perlu dibuktikan.
 
 \stepcounter{section}
-\section*{\centering \thesection}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Pada semua segitiga, jumlah dua buah sisinya lebih besar dari sisi selebihnya.
 
 \begin{center}
@@ -914,7 +943,8 @@ Sebab itu, pada semua segitiga, jumlah dua buah sisinya lebih besar dari sisi
 selebihnya. Hal yang perlu ditunjukkan.  
 
 \stepcounter{section}
-\section*{\centering \thesection}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Jika dari ujung - ujung satu sisi segitiga dua buah garis lurus ditarik dan 
 bertemu di dalam segitiga tersebut, jumlah kedua garis lurus tadi akan lebih
 kecil dari jumlah dua sisi segitiga lainnya, tetapi akan membentuk sudut
@@ -949,7 +979,7 @@ Dengan demikian jumlah $BA$ dan $AC$ jauh lebih besar dari jumlah $BD$
 dan $DC$.
 
 Lagi, karena pada semua segitiga sudut exterior lebih besar dari sudut - sudut
-interior yang tidak bersisian [Prop. 1.16], pada segitiga $CDE$ sudut exterior
+interior yang tidak bersebelahan [Prop. 1.16], pada segitiga $CDE$ sudut exterior
 $BDC$ dengan demikian lebih besar dari $CED$. Karenanya, dengan alasan yang
 sama sudut exterior $CEB$ dari segitiga $ABE$ juga lebih
 besar dari $BAC$. Tetapi $BDC$ sudah ditunjukkan lebih besar dari $CEB$. Dengan
@@ -963,7 +993,8 @@ yang lebih besar. Hal yang perlu kita tunjukkan.
 
 
 \stepcounter{section}
-\section*{\centering \thesection}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk membuat sebuah segitiga dari tiga buah garis lurus dimana panjang
 sisi - sisi segitiga sama dengan ketiga garis lurus. Perlu dipastikan bahwa
 jumlah dua buah garis mana saja lebih besar dari selebihnya, dengan 
@@ -1028,7 +1059,8 @@ Contoh lain
 
 
 \stepcounter{section}
-\section*{\centering \thesection}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk membentuk sebuah sudut rectilinear yang sama besar dengan sudut 
 rectilinear tertentu pada satu titik pada satu garis lurus tertentu.
 
@@ -1067,7 +1099,8 @@ $DCE$, sudah dibuat pada titik $A$ pada garis lurus $AB$. Yang adalah hal
 yang perlu dilakukan.
 
 \stepcounter{section}
-\section*{\centering \thesection}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Jika pada dua buah segitiga , yang pertama memiliki dua buah sisi yang sama 
 panjang  dengan dua buah sisi pada segitiga yang kedua, tetapi pada yang pertama 
 sisi - sisi tadi mengapit sudut yang lebih besar daripada sudut yang diapit oleh 
@@ -1126,7 +1159,8 @@ yang kedua , maka segitiga yang pertama juga akan memiliki sisi alas
 yang lebih panjang yang kedua. Yang adalah hal yang perlu ditunjukkan.
 
 \stepcounter{section}
-\section*{\centering \thesection}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Jika dua buah segitiga , yang pertama memiliki dua buah sisi yang
 sama panjang dengan dua buah sisi pada segitiga yang kedua, tetapi
 yang pertama memiliki sisi alas yang lebih panjang dari yang kedua, 
@@ -1163,7 +1197,8 @@ lebih besar daripada sudut yang diapit oleh sisi yang bersesuaian
 pada segitiga yang kedua. Hal yang perlu ditunjukkan.
 
 \stepcounter{section}
-\section*{\centering \thesection}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Jika dua buah segitiga yang pertama memiliki dua buah sudut yang sama besar
 dengan yang segitiga yang kedua, dan memiliki satu sisi yang sama panjang dengan
 satu sisi pada segitiga yang dua, bisa sisi yang berada pada dua sudut tadi atau
@@ -1213,7 +1248,7 @@ Hal yang benar - benar mustahil [G.U. 5]. Dengan demikian $AB$ tidak tidak sama 
 $DE$. Dengan demikian keduanya sama. Dan $BC$ juga sama dengan $EF$. Sehingga
 masing - masing kedua garis lurus $AB$, $BC$ sama panjang dengan dua garis 
 lurus $DE$, $EF$. Dan sudut $ABC$ sama besar dengan sudut $DEF$. Dengan demikian
-sisi alas $AC$ sama panjang dengna sisi alas $DF$, dan sudut selebihnya $BAC$ 
+sisi alas $AC$ sama panjang dengan sisi alas $DF$, dan sudut selebihnya $BAC$ 
 sama besar dengan sudut selebih nya $EDF$ [Prop. 1.4].
 
 Lagi, misalkan sisi - sisi yang menghadap sudut - sudut yang sama besar adalah
@@ -1224,8 +1259,9 @@ $EF$. Lebih lanjut lagi, sudut selebihnya $BAC$ sama besar dengan sudut
 selebihnya $EDF$.
 
 Karena jika $BC$ tidak sama panjang dengan $EF$ maka salah satu pasti lebih besar.
-Misalkan $BC$ adalah yang lebih besar. Misalkan $BH$ sudah dibuat sama panjang
-dengan $EF$ [Prop.1.3], dan misalkan $AH$ sudah dihubungkan. Dan karena $BH$ sama
+Misalkan $BC$ adalah yang lebih besar. 
+Misalkan $BH$ sudah dibuat sama panjang dengan $EF$ [Prop.1.3], 
+dan misalkan $AH$ sudah dihubungkan. Dan karena $BH$ sama
 panjang dengan $EF$ dan $AB$ terhadap $DE$, masing - masing kedua garis lurus 
 $AB$, $BH$ sama panjang dengan kedua garis lurus $DE$, $EF$. Dan sudut yang
 diapit keduanya sama besar. Dengan demikian sisi alas $AH$ sama panjang dengan 
@@ -1234,7 +1270,7 @@ menghadap sisi - sisi yang sama panjang sama besar dengan sudut bersesuaian
 selebihnya [Prop. 1.4]. Dengan demikian sudut $BHA$ sama besar dengan sudut
 $EFD$. Tetapi sudut $EFD$ sama besar dengan sudut $BCA$. Dengan demikian pada 
 segitiga $AHC$, sudut eksterior $BHA$ sama besar dengan sudut interior yang tidak
-bersisian $BCA$. Hal yang benar - benar mustahil [Prop. 1.16]. Dengan demikian 
+bersebelahan $BCA$. Hal yang benar - benar mustahil [Prop. 1.16]. Dengan demikian 
 $BC$ tidak tidak sama dengan $EF$. Dengan demikian sama. Dan $AB$ juga sama
 panjang dengan $DE$. Dengan demikian masing - masing kedua garis lurus 
 $AB$, $BC$ sama panjang dengan kedua garis lurus $DE$, $EF$. Dan keduanya mengapit
@@ -1250,24 +1286,108 @@ pertama akan sama panjang dengan sisi - sisi selebihnya pada yang kedua, dan
 sudut selebihnya pada yang pertama akan sama besar dengan sudut selebihnya pada
 yang kedua. Hal yang perlu ditunjukkan.  
 
-\setcounter{section}{29}
-\section*{\centering \thesection} 
-Sebuah ruas garis yang jatuh memotong ruas - ruas garis yang sejajar akan membuat
-sudut - sudut yang berselang seling sama besar, sudut luar sama dengan sudut dalam
-yang bertentangan, dan jumlah dari sudut - sudut pada sisi yang sama sama dengan
-besar 2 buah sudut siku - siku.  
-
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika sebuah garis lurus memotong dua buah garis lurus lain dan membuat sudut - 
+sudut yang berseberangan sama besar  satu dengan yang lain, kedua garis lurus 
+tersebut sejajar satu dengan yang lain.
+\begin{center}
 \begin{tikzpicture}
-\draw(-2, 4) node[anchor=south]{E} (-2, 4) -- (3, -2) node[anchor=north]{F};
-\draw (-4, 3) node[anchor=east]{A}(-4, 3) -- (4, 3) node [anchor=west]{B};
-\draw (-4, -1) node[anchor=east]{C}(-4, -1) -- (4, -1) node [anchor=west]{D};
-\end{tikzpicture} 
+\draw (0, 3) node [anchor=south]{A} -- 
+	(6, 3) node [anchor=south]{B} -- (9, 2) node[anchor=west]{G};
+\draw (0, 1) node [anchor=north]{C} --
+	(6, 1) node [anchor=north]{D} -- (9, 2);
+\draw (4, 4) -- (1, 0);
+\draw (3, 3) node [anchor=south]{E};
+\draw (2, 1) node [anchor=north]{F};
+\end{tikzpicture}
+\end{center} 
+Misalkan garis lurus $EF$, jatuh memotong dua buah garis lurus $AB$ dan $CD$, 
+membentuk sudut - sudut berseberangan $AEF$ dan $EFD$ sama besar satu dengan 
+yang lain. Saya katakan garis lurus $AB$ dan $AC$ adalah sejajar.
 
-Misalkan ruas garis $EF$ jatuh memotong ruas - ruas gais $AB$ dan $CD$. 
-Saya katakan bahwa $EF$ membuat sudut - sudut yang berselang seling 
-$AGH$ dan $GHD$ sama besar, sudut luar $EGB$ sama besar dengan sudut dalam
-yang bertentangan $GHD$, dan jumlah dari sudut - sudut dalam yang berada 
-pada sisi yang sama $BGH$ dan $GHD$, sama dengan dua buah sudut siku - siku.
+Karena jika tidak, jika diperpanjang, $AB$ dan $CD$ pasti akan bertemu; apakah
+di arah $B$ dan $D$, atau pada arah $A$ dan $C$ [Def. 1.23]. Misalkan keduanya
+sudah diperpanjang, dan misalkan misalkan keduanya bertemu pada arah 
+$B$ dan $D$ pada titik $G$. Sehingga, untuk segitiga $GEF$, sudut eksterior
+$AEF$ sama besar dengan sudut interior tak bersebelahan $EFG$. Hal yang tidak
+mungkin [Prop. 1.16]. Dengan demikian, jika diperpanjang $AB$ dan $CD$ tidak
+akan bertemua pada arah $B$ dan $D$. Hal yang sama bisa ditunjukkan tidak 
+akan ada pertemuan keduanya pada arah $A$ dan $C$. Tetapi garis - garis lurus
+yang tidak bertemu di arah manapun adalah sejajar [Def. 1.23]. Dengan 
+demikian $AB$ dan $CD$ sejajar.
+
+Dengan demikian, jika sebuah garis lurus memotong dua garis lurus yang lain dan
+membentuk sudut yang berseberangan yang sama besar satu dengan yang lain, maka
+kedua garis tersebut adalah sejajar. Hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika sebuah garis lurus memotong dua garis lurus yang lain dan membentuk
+sudut eksterior yang sama besar dengan sudut interior yang tidak besebelahan
+yang sehadap, atau membentuk jumlah dua sudut interior pada sisi 
+yang sama dengan dua buah sudut siku - siku, maka kedua garis lurus
+tadi sejajar satu dengan yang lain.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 3) node [anchor=south]{A} -- 
+	(6, 3) node [anchor=south]{B};
+\draw (0, 1) node [anchor=north]{C} --
+	(6, 1) node [anchor=north]{D};
+\draw (1, 4) node [anchor=south]{E} -- (4, 0) node [anchor=north]{F};
+\draw (2, 3) node [anchor=south]{G};
+\draw (3.5, 1) node [anchor=south]{H};
+\end{tikzpicture}
+\end{center} 
+Karena misalkan $EF$ memotong garis lurus $AB$ dan $CD$, membentuk sudut 
+eksterior $EGB$ yang sama besar dengan sudut interior yang tidak bersebelahan
+$GHD$, atau jumlah sudut - sudut interior yang sehadap $BGH$ 
+dan $GHD$, sama dengan dua buah sudut siku - siku. Saya katakan $AB$ sejajar 
+dengan $CD$.
+
+Disebabkan , untuk kasus pertama, $EGB$ sama besar dengan $GHD$, tetapi $EGB$
+juga sama besar dengan $AGH$ [Prop. 1.15], $AGH$ dengan demikian juga sama
+besar dengan $GHD$. Dan keduanya adalah sudut yang berseberangan. Dengan
+demikian $AB$ sejajar dengan $CD$ [Prop.1.27].
+
+Lagi, karena (pada kasus kedua), jumlah besar sudut $BGH$ dan $GHD$ sama 
+dengan dua buah sudut siku - siku, dan jumlah $AGH$ dan $BGH$ dengan demikian
+sama dengan dua buah sudut siku - siku  [Prop. 1.13], jumlah $AGH$ dan
+dan $BGH$dengan demikian sama dengan jumlah $BGH$ dan $GHD$. Misalkan $BGH$
+sudah dikurangkan dari keduanya. Dengan demikian sisa $AGH$ sama denga
+sisa $GHD$. Dan keduanya adalah sudut yang berseberangan, dengan demikian
+$AB$ sejajar dengan $CD$ [Prop. 1.27].
+
+Dengan demikian, jika sebuah garis lurus memotong dua garis lurus yang lain 
+dan membentuk sudut eksterior yang sama besar dengan sudut interior yang tidak 
+besebelahan yang sehadap, atau membentuk jumlah dua sudut interior pada sisi 
+yang sama dengan dua buah sudut siku - siku, maka kedua garis lurus
+tadi sejajar satu dengan yang lain. Yang merupakan hal yang perlu ditunjukkan.
+
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Sebuah ruas garis yang jatuh memotong ruas - ruas garis yang sejajar akan membuat
+sudut - sudut berseberangan sama besar, sudut eksterior sama besar dengan sudut
+interior yang tidak bersisian, dan jumlah sudut - sudut interior yang sehadap
+sama dengan dua buah sudut siku - siku.
+
+\begin{center}
+\begin{tikzpicture}
+\draw(-3, 4) node[anchor=south]{E} --++ (330:1.6)  node [anchor=west]{G} --++ (330:4) node[anchor=west]{H} --++(330:1.6) node[anchor=west]{F};
+\draw (-4, 3) node[anchor=east]{A}(-4, 3) -- (4, 3) node [anchor=west]{B};
+\draw (-4, 1) node[anchor=east]{C}(-4, 1) -- (4, 1) node [anchor=west]{D};
+\end{tikzpicture} 
+\end{center}
+
+Misalkan garis lurus $EF$ jatuh memotong garis - garis sejajar $AB$ dan $CD$. 
+Saya katakan bahwa $EF$ membuat sudut - sudut yang berseberangan
+$AGH$ dan $GHD$ sama besar, sudut eksterior $EGB$ sama besar dengan sudut interior
+yang tak bersisian $GHD$, dan jumlah dari sudut - sudut interior yang sehadap
+$BGH$ dan $GHD$, sama dengan dua buah sudut siku - siku.
 
 Karena jika $AGH$ tidak sama besar dengan $GHD$ maka salah satunya pasti
 lebih besar. Misalkan $AGH$ adalah yang lebih besar. Misalkan $BGH$ 
@@ -1275,9 +1395,61 @@ ditambahkan kepada keduanya. Maka jumlah dari $AGH$ dan $BGH$ akan
 lebih besar dari jumlah dari $BGH$ dan $GHD$. Tetapi besar dari $AGH$
 dan $BGD$ harus sama dengan dua buah sudut siku - siku [1.13]. Jadi
 jumlah $BGH$ dan $GHD$ juga lebih kecil dari dua buah sudut siku - siku.
+Tetapi garis - garis lurus yang dipanjangkan sampai tak terhingga dari
+sudut - sudut interior yang lebih kecil dari dua buah sudut siku - siku 
+akan bertemu [Post 5]. Jadi, $AB$ dan $CD$ jika dipanjangkan sampai tak
+terhingga dari sisi yang sudut interior sehadap lebih kecil dari dua sudut
+siku. Tetapi keduanya tidak bertemu dengan mengacu pada asumsi keduanya
+adalah garis sejajar [Def. 1.23]. Dengan demikian $AGH$ bukan tidak sama
+besar dengan $GHD$. Keduanya sama besar. Tetapi $AGH$ sama besar dengan
+$EGB$ [Prop. 1.15]. Dan $EGB$ dengan demikian sama besar dengan $GHD$.
+Misalkan $BGH$ sudah ditambahkan kepada keduanya. Dengan demikian jumlah
+$EGB$ dan $BGH$ sama dengan jumlah $BGH$ dan $GHD$. Tetapi jumlah
+$EGB$ dan $BGH$ sama dengan dua sudut siku [Prop. 1.13]. Dengan demikian
+jumlah $BGH$ dan $GHD$ juga sama dengan dua buah sudut siku - siku.
 
-\setcounter{section}{31}
-\section*{\centering \thesection} 
+Dengan demikian, sebuah ruas garis yang jatuh memotong ruas - ruas garis 
+yang sejajar akan membuat sudut - sudut berseberangan sama besar, sudut 
+eksterior sama besar dengan sudut interior yang tidak bersisian, dan jumlah 
+sudut - sudut interior yang sehadap sama dengan dua buah sudut siku - siku.
+Hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Garis - garis lurus yang sejajar terhadap satu garus lurus yang sama
+juga sejajar satu dengan yang lain.  
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor = east] {A} --++ (0:6) node [anchor = west] {B};
+\draw (0, -2) node [anchor = east] {E} --++ (0:6) node [anchor = west] {F};
+\draw (0, -4) node [anchor = east] {C} --++ (0:6) node [anchor = west] {D};
+\draw (4, 1)--++(250:1) node[anchor = south east]{G} 
+	--++(250:2.1) node[anchor = south east]{H}
+	--++(250:2.2) node[anchor = south east]{K}
+	--++(250:1);
+\end{tikzpicture}
+\end{center}
+
+Misalkan masing - masing garis lurus $AC$ dan $CD$ sejajar dengan $EF$. Saya
+katakan $AB$ juga sejajar dengan $CD$.
+
+Sebab misalkan garis lusur $GK$ jatuh memotong ($AB$, $CD$, dan $EF$).
+
+Dan karena garis lurus $GK$ sudah jatuh memotong garis - garis lurus sejajar
+$AB$ dan $EF$, sudut $AGK$ dengan demikian sama dengan sudut $GHF$ 
+[Prop. 1.29]. Lagi, karena garis lurus $GK$ memotong garis - garis sejajar
+$EF$ dan $CD$, sudut $GHF$ sama besar dengan $GKD$. [Prop. 1.29]. Tetapi $AGK$
+sudah ditunjukkan juga sama dengan $GHF$. Dengan demikian $AGK$ juga
+sama besar dengan $GKD$. Dan keduanya adalah sudut yang berseberangan.
+Dengan demikian $AB$ sejajar dengan $CD$ [Prop. 1.27].
+
+Dengan demikian, garis - garis lurus yang sejajar terhadap satu garus lurus 
+yang sama juga sejajar satu dengan yang lain. Hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection}
 Untuk menggambarkan sebuah ruas garis yang sejajar terhadap sebuah ruas 
 garis tertentu yang melalui sebuah titik tertentu.
 
@@ -1293,15 +1465,18 @@ dan melalui titik $A$.
 
 Misalkan titik $D$ adalah titik yang berada di $BC$, and $AD$ terhubung. 
 Dan misalkan (sudut) $DAE$, yang sama besar dengan sudut $ADC$, telah dibuat 
-pada ruas garis $SA$ dengan titik A barada diujungnya [1.23]. Dan misalkan garis
-lurus $AF$ adalah perpanjangan $EA$.
+pada ruas garis $SA$ dengan titik A berada diujungnya [1.23]. Dan misalkan garis
+lurus $AF$ sudah dipanjangkan dari $EA$.
 
-Dan karena ruas garis $AD$, jatuh didalam  kedua ruas garis $BC$ dan $EF$, membuat 
+Dan karena ruas garis $AD$, jatuh memotong kedua ruas garis $BC$ dan $EF$, membuat 
 sudut - sudut yang berseberangan $EAD$ dan $ADC$ sama besar, $EAF$ dengan demikian
-sejajar dengan $BC$ [1.27] 
+sejajar dengan $BC$ [1.27]
+
+Dengan demikian, garis lurus $EAF$ sudah digambar sejajar dengan garis lurus $BC$
+melalui titik $A$. Yang adalah hal yang perlu kita lakukan.
 
 \setcounter{section}{34}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
 Pada bidang - bidang jajaran genjang, sisi - sisi dan sudut - sudut yang saling
 bertentangan sama besar satu dengan yang lain, dan sebuah diagonal membaginya jadi dua bagian yang sama besar.  
 
@@ -1330,7 +1505,7 @@ dengan $CDB$. Dan karena $ABC$ sama besar dengan $BCD$, dan $CBD$ dengan $ACB$, 
 sudut segitiga $ABD$ dengan demikian sama dengan keseluruahn  sudut segitiga $ACD$
 
 \stepcounter{section} 
-\section*{\centering \thesection}
+\section*{\centering Proposisi \thesection}
 Jajaran - jajaran genjang yang memiliki alas yang sama dan berada diantara dua
 garis - garis sejajar yang sama , sama (besarnya) satu dengan yang lain.  
 
@@ -1356,7 +1531,7 @@ yang sama, $EF$ juga sama dengan $BC$. Dengan demikian $AD$ juga sama dengan $EF
 \chapter*{\centering \chaptername{ \thechapter} 
 Dasar - Dasar Aljabar Geometri}
 \setcounter{section}{12}
-\section*{\centering \thesection} 
+\section*{\centering Proposisi \thesection} 
 
 Pada segitiga tumpul, besar bujur sangkar dari sisi yang menghadap sudut tumpul
  adalah lebih besar dari jumlah besar bujur sangkar - bujur sangkar sisi - sisi yang 
