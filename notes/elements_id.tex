@@ -1372,7 +1372,7 @@ tadi sejajar satu dengan yang lain. Yang merupakan hal yang perlu ditunjukkan.
 \addcontentsline{toc}{section}{Proposisi \thesection}
 Sebuah ruas garis yang jatuh memotong ruas - ruas garis yang sejajar akan membuat
 sudut - sudut berseberangan sama besar, sudut eksterior sama besar dengan sudut
-interior yang tidak bersisian, dan jumlah sudut - sudut interior yang sehadap
+interior yang tidak bersebelahan, dan jumlah sudut - sudut interior yang sehadap
 sama dengan dua buah sudut siku - siku.
 
 \begin{center}
@@ -1386,7 +1386,7 @@ sama dengan dua buah sudut siku - siku.
 Misalkan garis lurus $EF$ jatuh memotong garis - garis sejajar $AB$ dan $CD$. 
 Saya katakan bahwa $EF$ membuat sudut - sudut yang berseberangan
 $AGH$ dan $GHD$ sama besar, sudut eksterior $EGB$ sama besar dengan sudut interior
-yang tak bersisian $GHD$, dan jumlah dari sudut - sudut interior yang sehadap
+yang tak bersebelahan $GHD$, dan jumlah dari sudut - sudut interior yang sehadap
 $BGH$ dan $GHD$, sama dengan dua buah sudut siku - siku.
 
 Karena jika $AGH$ tidak sama besar dengan $GHD$ maka salah satunya pasti
@@ -1410,7 +1410,7 @@ jumlah $BGH$ dan $GHD$ juga sama dengan dua buah sudut siku - siku.
 
 Dengan demikian, sebuah ruas garis yang jatuh memotong ruas - ruas garis 
 yang sejajar akan membuat sudut - sudut berseberangan sama besar, sudut 
-eksterior sama besar dengan sudut interior yang tidak bersisian, dan jumlah 
+eksterior sama besar dengan sudut interior yang tidak bersebelahan, dan jumlah 
 sudut - sudut interior yang sehadap sama dengan dua buah sudut siku - siku.
 Hal yang perlu ditunjukkan.
 
@@ -1475,10 +1475,98 @@ sejajar dengan $BC$ [1.27]
 Dengan demikian, garis lurus $EAF$ sudah digambar sejajar dengan garis lurus $BC$
 melalui titik $A$. Yang adalah hal yang perlu kita lakukan.
 
-\setcounter{section}{34}
+\stepcounter{section}
 \section*{\centering Proposisi \thesection} 
-Pada bidang - bidang jajaran genjang, sisi - sisi dan sudut - sudut yang saling
-bertentangan sama besar satu dengan yang lain, dan sebuah diagonal membaginya jadi dua bagian yang sama besar.  
+\addcontentsline{toc}{section}{Proposisi \thesection}
+
+Pada semua segitiga, jika salah satu sisi diperpanjang, maka sudut exterior 
+sama dengan jumlah dua sudut interior yang tidak bersebelahan, dan jumlah 
+dari tiga sudut eksterior sama dengan dua sudut siku - siku.
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=north]{B} --++ (60:3) node [anchor=south] {A} 
+	--++ (300:3) node [anchor=north] {C} --++ (180:{2*3*cos(60)});
+\draw ({2*3*cos(60)}, 0) --++ (0: 2) node[anchor=north]{D};
+\draw [gray, dashed] (0, 0) --++ (60:.5) --++(300:.5) --++(180:{2*.5*cos(60)});
+\draw [gray, dashed] ({2*3*cos(60)}, 0) circle(.5);
+\draw [gray, dashed] ({2*3*cos(60)}, 0) circle({2*.5*cos(60)});
+\draw [gray, dashed] ({2*3*cos(60) + .5 }, 0) circle(.5);
+\draw [gray, dashed] ({2*3*cos(60)}, 0) --++ (60:.5) --++ (300:.5);
+\draw ({2*3*cos(60)}, 0) --++ (60:3) node[anchor=south]{E}; 
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ adalah sebuah segitiga, dan misalkan salah satu dari sisi - 
+sisinya $BC$ sudah dipanjangkan sampai ke $D$. Saya katakan bahwa sudut 
+eksterior $ACD$ sama dengan jumlah dua sudut yang tidak bersebelahan $CAB$ dan
+$ABC$, dan jumlah dari tiga sudut interior segitiga $ABC$, $BCA$, $CAB$, 
+sama dengan dua jumlah dua buah sudut siku - siku.
+
+Sebab misalkan $CE$ sudah digambarkan melalui titik $C$ sejajar dengan garis
+lurus $AB$ [Prop. 1.31]
+
+Dan karena $AB$ sejajar dengan $CE$, dan $AC$ sudah jatuh memotong keduanya 
+sudut yang berseberangan $BAC$ dan $ACE$ sama besar satu dengan yang lain
+[Prop. 1.29]. Lagi, karena $AB$ sejajar dengan $CE$, dan garis lurus $BD$
+memotong keduanya, sudut eksterior $ECD$ sama dengan sudut interior yang 
+tidak berisian $ABC$ [Prop. 1.29]. Tetapi $ACE$ sudah ditunjukkan sama besar
+dengan $BAC$. Dengan demikian, jumlah keseluruhan sudut $ACD$ sama dengan
+jumlah dua sudut interior yang tidak bersebelahan $BAC$ dan $ABC$.
+
+Misalkan $ABC$ sudah ditambahkan pada keduanya. Dengan demikian jumlah
+$ACD$ dan $ACB$ sama dengan jumlah ketiga sudut $ABC$, $BCA$ dan $CAB$. Tapi
+jumlah $ACD$ dan $ABC$ sama dengan dua sudut siku - siku [Prop. 1.13].
+Dengan demikian jumlah $ACB$ dan $CBA$ dan $CAB$ juga sama dengan jumlah
+dua buah sudut siku - siku.
+
+Dengan demikian, pada semua segitiga, jika salah satu sisi dipanjangkan, sudut
+eksterion sama dengan jumlah sudut - sudut interior yang tidak bersisian, dan 
+jumlah ketiga sudut interior sama dengan jumlah dua buah sudut siku - siku.
+Hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Garis - garis lurus yang menghubungkan garis - garis lurus yang sama panjang dan 
+sejajar pada sisi - sisi yang sama adalah juga saling sama panjang dan sejajar.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=north]{D} --++ (0:5) node [anchor=north]{C}
+	--++ (80:3) node[anchor=south]{A} --++(180:5) node [anchor=south]{B}
+	--++ (260:3);
+\draw ({3*cos(80)}, {3*sin(80)}) -- (5, 0);
+\end{tikzpicture}
+\end{center}
+
+Misalkan $AB$ dan $CD$ adalah garis - garis yang sama panjang dan sejajar, dan
+misalkan garis - garis lurus $AC$ dan $BD$ menghubungkannya pada sisi yang sama.
+Saya katakan bahwa $AC$ dan $BD$ juga sama panjang dan sejajar.
+
+Misalkan $BC$ sudah dihubungkan. Dan karena $AB$ sejajar dengan $CD$, dan $BC$ 
+sudah memotong keduanya, sudut yang berseberangan $ABC$ dan $BCD$ juga sama
+besar satu dengan yang lain [Prop. 1.29]. Dan karena $AB$ juga sama dengan 
+$CD$, dan $BC$ adalah umum untuk keduanya, kedua garis lurus $AB$, $BC$ sama
+panjang dengan kedua garis lurus $DC$, $CB$. Dan sudut $ABC$ sama dengan sudut
+$BCD$. Dengan demikian sisi alas $AC$ sama panjang dengan sisi alas $BD$, dan 
+segitiga $ABC$ sama dengan segitiga $DCB$, dan sudut - sudut yang selebihnya 
+yang menghadap sisi - sisi yang sama sama dengan sudut - sudut selebihnya yang 
+berhubungan. Dengan demikian, segitiga $ACB$ sama dengan segitiga $CDB$. Juga
+karena garis lurus $BC$ yang jatuh memotong kedua garis $AC$ dan $BD$ sudah
+membentuk sudut yang berseberangan ($ACB$ dan $CBD$) sama besar satu dengan 
+yang lain, $AC$ dengan demikian sejajar dengan $BD$ [Prop. 1.27]. Dan $AC$ 
+juga sudah ditunjukkan sama panjang dengan $BD$.
+
+Dengan demikian garis - garis lurus yang menghubungkan gari - garis lurus 
+yang sama panjang dan sejajar pada sisi - sisi yang sama adalah juga saling
+ sama panjang dan sejajar.  
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Pada bidang - bidang jajaran genjang, sisi - sisi dan sudut - sudut yang 
+saling berhadapan sama besar satu dengan yang lain, dan sebuah diagonal 
+membaginya jadi dua bagian yang sama besar.  
 
 \begin{tikzpicture}
 \draw (-3, 2) node[anchor=east]{A} -- (4, 2) node [anchor=west]{B};
@@ -1488,50 +1576,237 @@ bertentangan sama besar satu dengan yang lain, dan sebuah diagonal membaginya ja
 \draw (-4, -2) -- (4, 2); 
 \end{tikzpicture}
 
-Misalkan $ABCD$ ada sebuah jajaran genjang, dan $BC$ adalah diagonalnya. Saya katakan
-bahwa untuk jajaran genjang $ABCD$, sisi sisi yang bertentangan dan sudut - sudut yang bertentangan
-sama besar satu dengan yang lain, dan diagonal $BC$ membaginya menjadi dua bagian yang sama besar.
+Misalkan $ABCD$ ada sebuah jajaran genjang, dan $BC$ adalah diagonalnya. 
+Saya katakan bahwa untuk jajaran genjang $ABCD$, sisi sisi yang berhadapan 
+dan sudut - sudut yang berhadapan sama besar satu dengan yang lain, 
+dan diagonal $BC$ membaginya menjadi dua bagian yang sama besar.
 
-Karena $AB$ sejajar dengan $CD$, dan ruas garis $BC$ jatuh memotong keduanya, sudut - sudut yang 
-berhadapan $ABC$ dan $BCD$ sama besar satu dengan yang lain [1.29]. Dan karena $AC$ sejajar dengan
-$BD$, dan $BC$ memotong keduanya, sudut - sudut yang berseberangan $ACB$ dan $CBD$ sama besar satu 
-dengan yang lain [1.29]. Dengan demikian $ABC$ dan $BCD$ adalah dua buah segitiga yang memiliki
-kedua sudut masing - masing $ABC$ dan $BCA$ sama besar dengan kedua sudut $BCD$ dan $CDB$, dan satu 
-sisi sama besar, yaitu $BC$, yang di sini milik bersama kedua segitiga.
-Dengan demikian sisi sisi lainnya akan sama besar satu dengan yang lain, 
-dan satu sudut lainnya akan sama satu dengan yang lain [1.26]. Dengan demikian, sisi $AB$ 
-sama besar dengan $CD$ , dan sisi $AC$ dengan $BD$. Lebih lanjut, sudut $BAC$ sama besar
-dengan $CDB$. Dan karena $ABC$ sama besar dengan $BCD$, dan $CBD$ dengan $ACB$, keseluruhan
-sudut segitiga $ABD$ dengan demikian sama dengan keseluruahn  sudut segitiga $ACD$
+Karena $AB$ sejajar dengan $CD$, dan ruas garis $BC$ jatuh memotong keduanya, 
+sudut - sudut yang berseberangan $ABC$ dan $BCD$ sama besar satu sama lain 
+[Prop. 1.29]. Lagi karena $AC$ sejajar dengan $BD$, dan $BC$ memotong keduanya, 
+sudut - sudut yang berseberangan $ACB$ dan $CBD$ sama besar satu 
+dengan yang lain [Prop, 1.29]. Dengan demikian $ABC$ dan $BCD$ adalah dua buah 
+segitiga yang memiliki kedua sudut masing - masing $ABC$ dan $BCA$ sama besar 
+dengan kedua sudut $BCD$ dan $CDB$, dan satu sisi sama besar, yaitu $BC$, yang
+diapit sudut - sudut  tadi yang umum pada keduanya.
+Dengan demikian keduanya akan memiliki satu sisi - sisi yang berhubungan yang saling
+sama besar dan sudut sisanya sama besar dengan sudut sisa nya di segitiga yang satu
+[Prop. 1.26].  Dengan demikian, sisi $AB$ sama besar dengan $CD$ , dan sisi 
+$AC$ dengan $BD$. Lebih lanjut, sudut $BAC$ sama besar
+dengan $CDB$. Dan karena $ABC$ sama besar dengan $BCD$, dan $CBD$ dengan $ACB$, 
+keseluruhan sudut segitiga $ABD$ dengan demikian sama dengan keseluruhan  sudut 
+segitiga $ACD$.
 
-\stepcounter{section} 
-\section*{\centering Proposisi \thesection}
+Dengan demikian, pada bidang jajaran genjang, sisi - sisi yang berhadapan dan
+sudut - sudut yang berhadapan sama besar satu dengan yang lain.
+
+Dan, saya juga katakan bahwa sebuah diagonal memotong nya menjadi dua bagian 
+sama besar. Sebab karena $AB$ sama panjang $CD$ dan $BC$ umum, masing - masing 
+kedua garis lurus $AB$, $BC$ sama panjang dengan kedua garis lurus $DC$, $CB$. 
+Dan sudut $ABC$ sama besar dengan sudut $BCD$. Dengan demikian sisi alas $AC$ 
+juga sama panjang dengan $DB$, dan segitiga $ABC$ sama dengan segitiga $BCD$ 
+[Prop. 1.4].
+
+Dengan demikian, diaganoal $BC$ memotong jajaran genjang $ACDB$ menjadi dua 
+bagian sama besar. Yang adalah hal yang perlu kita tunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
 Jajaran - jajaran genjang yang memiliki alas yang sama dan berada diantara dua
-garis - garis sejajar yang sama , sama (besarnya) satu dengan yang lain.  
+garis - garis sejajar yang sama , sama besar satu dengan yang lain.  
 
-\begin{tikzpicture}
+\begin{center}
+%\begin{tikzpicture}
+\begin{tikzpicture}[scale=.75, every node/.style={scale=.8}]
 \draw (-8, 2) node[anchor=south]{A}(-8, 2) -- (-5, 2) 
 node [anchor=south]{D} (-5, 2) -- (2, 2) 
 node [anchor=south]{E} (2, 2) -- (5, 2) node[anchor=south]{F};
-\draw (-6, -2) node[anchor=north]{B}(-6, -2) -- (-3, -2) node [anchor=north]{C};
+\draw (-6, -2) node[anchor=north]{B}(-6, -2) 
+	-- (-3, -2) node [anchor=north]{C};
 \draw (-6, -2) -- (-8, 2);
 \draw (-3, -2) -- (-5, 2);
 \draw (-6, -2) -- (2, 2);
 \draw (-3, -2) -- (5, 2);
 \draw (-3.75, -0.5) node[anchor=west]{G};
 \end{tikzpicture} 
-Misalkan $ABCD$ dan $EBCF$ adalah bidang - bidang jajaran genjang yang memiliki alas yang sama yaitu $BC$, 
-dan berada diantara dua buah garis sejajar $AF$ dan $BC$. Saya katakan bahwa $ABCD$ sama dengan bidang
-jajaran genjang $EBCF$.
+\end{center} 
+Misalkan $ABCD$ dan $EBCF$ adalah bidang - bidang jajaran genjang yang berada
+pada  alas yang sama yaitu $BC$, dan berada diantara dua buah garis sejajar 
+$AF$ dan $BC$. Saya katakan bahwa $ABCD$ sama dengan bidang jajaran genjang 
+$EBCF$.
 
-Karena $ABCD$ adalah sebauh jajaran genjang, $AD$ sama besar dengan $BC$ [1.34]. Dengan dengan alasan - alasan
-yang sama, $EF$ juga sama dengan $BC$. Dengan demikian $AD$ juga sama dengan $EF$. Dan $DE$ adalah 
+Karena $ABCD$ adalah sebuah jajaran genjang, $AD$ sama besar dengan $BC$ 
+[1.34].  Dengan dengan alasan - alasan yang sama, $EF$ juga sama dengan 
+$BC$.  Dengan demikian $AD$ juga sama dengan $EF$. Dan $DE$ ada pada keduanya.
+Dengan demikian keseluruhan garis lurus $AE$ sama panjang dengan keseluruhan
+garis lurus $DF$. Dan $AB$ juga sama panjang dengan $DC$. Dengan demikian 
+kedua garis lurus $EA$, $AB$ sama panjang dengan kedua garis lurus $FD$, $DC$.
+Dan sudut $FDC$ sama besar dengan sudut $EAB$, sudut eksterior sama besar 
+dengan interior [Prop. 1.29](atau[Prop. 1.28]). Dengan demikian sisi alas $EB$ 
+sama panjang dengan sisi alas $FC$, dan segitiga $EAB$ sama dengan segitiga 
+$DFC$ [Prop. 1.4]. Misalkan $DGE$ telah dikurangi dari keduanya. Dengan demikian
+trapesium selebihnya $ABCGD$ sama dengan trapesium sisanya $EGCF$. Misalkan
+segitiga $GBC$ sudah ditambahkan pada keduanya. Dengan demikian, jajaran 
+genjang $ABCD$ sama besar dengan jajaran gencang $EBCF$.
+
+Dengan demikian, jajaran - jajaran genjang yang memiliki alas yang sama dan 
+berada diantara dua garis - garis sejajar yang sama , sama besarnya satu 
+dengan yang lain.  Yang adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Jajaran - jajaran genjang, yang berada pada alas yang sama panjang dan berada
+diantara garis - garis sejajar yang sama adalah sama besar satu dengan yang 
+lain.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor = north] {B} -- (1, 4) node [anchor = south] {A} 
+	--  (3, 4) node [anchor = south] {D} -- (2, 0) node [anchor = north] {C}
+	-- (0, 0); 
+\draw (8, 0) node [anchor = north] {F} -- (10, 0) node [anchor = north] {G} 
+	-- (9, 4) node [anchor = south] {H} -- (7, 4) node [anchor = south] {E}
+	-- (8, 0);
+\draw (0, 0) -- (7, 4);
+\draw (2, 0) -- (9, 4);
+\draw (1, 4) -- (9, 4);
+\draw (0, 0) -- (10, 0); 
+\end{tikzpicture}
+\end{center}
+Misalkan $ABCD$ dan $EFGH$ adalah bidang - bidang jajaran genjang yang memiliki
+sisi alas $BC$ dan $FG$ yang sama panjang, dan berada diantara dua buah garis
+sejajar yang sama $AH$ dan $BG$. Saya katakan bahwa jajaran genjang $ABCD$ sama
+besar dengan jajaran genjang $EFGH$.
+
+Karena misalkan $BE$ dan $CH$ sudah dihubungkan. Dan karena $BC$ sama panjang 
+dengan $FG$, tetapi $FG$ sama panjang dengan $EH$ [Prop. 1.34], $BC$ dengan 
+demikian sama besar dengan $EH$. Dan keduanya juga sejajar, dan $EB$ dan $HC$
+menghubungkan keduanya. Tetapi garis - garis lurus yang menghubungkan pada sisi 
+yang sama garis - garis lurus yang sejajar dan sama panjang adalah juga sejajar
+dan sama panjang satu dengan lain [Prop. 1.33]. [dengan demikian, $EB$ dan $HC$
+juga adalah sejajar dan sama panjang]. Dengan demikian, $EBCH$ adalah jajaran 
+genjang [Prop. 1.34], dan sama besar dengan $ABCD$. Karena ia memiliki sisi
+alas yang  sama, $BC$, (dengan $ABCD$), dan  ada diantara garis -  garis 
+sejajar yang sama (dengan $ABCD$) [Prop. 1.35]. Jadi, untuk alasan - alsan yang
+sama, $EFGH$ juga sama dengan jajaran genjang $EBCH$ [Prop. 1.34]. Jadi jajaran
+genjang $ABCD$ sama besar dengan $EFGH$.
+
+Jadi, jajaran - jajaran genjang, yang berada pada alas yang sama panjang dan
+ berada diantara garis - garis sejajar yang sama adalah sama besar satu 
+dengan yang lain.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Segitiga - segitiga yang memiliki sisi alas yang sama dan berada diantara
+garis - garis sejajar yang sama adalah sama besar satu dengan yang lain.
+\begin{center}
+\begin{tikzpicture}[scale=.75, every node/.style={scale=.8}]
+\draw (0, 0) node[anchor=north] {B} -- (3, 0) node[anchor=north]{C};
+\draw (0, 0) -- (1, 4) node [anchor = south] {A} -- (3, 0);
+\draw (0, 0) -- (7, 4) node [anchor = south] {D} -- (3, 0);
+\draw (0, 0) -- (-2, 4) node[anchor = south] {E};
+\draw (3, 0) -- (10, 4) node [anchor = south] {F};
+\draw (-2, 4) -- (10, 4);
+\end{tikzpicture}
+\end{center}
+Misalkan $ABC$ dan $DBC$ adalah dua buah segitiga yang memiliki sisi alas yang
+sama, $BC$, dan berada diantara dua garis sejajar yang sama $AD$ dan $BC$.
+Saya katakan segitiga $ABC$ sama dengan segitiga $DBC$.
+
+Misalkan $AD$ sudah dipanjangkan kedua arah $E$ dan $F$, misalkan garis lurus
+$BE$ sudah ditarik melalui $B$ sejajar dengan $CA$ [Prop. 1.31], dan 
+misalkan garis lurus $CF$ sudah ditarik melalui $C$ sejajar dengan $BD$ 
+[Prop. 1.31]. Dengan demikian, kedua  $EBCA$ dan $DBCF$ adalah jajaran genjang, 
+dan sama besar. Karena keduanya memiliki sisi alas yang sama, $BC$, dan berada
+diantara garis - garis sejajar yang sama $BC$ dan $EF$ [Prop. 1.35]. Dan
+segitiga $ABC$ adalah setengah dari jajaran genjang $EBCA$. Karena
+diagonal $AB$ memotong jajaran genjang $EBCA$ menjadi dua bagian yang sama 
+besar [Prop. 1.34]. Dan segitiga $DBC$ adalah setengah dari jajaran genjang 
+$DBCF$.
+Karena diagonal $DC$ memotong jajaran genjang $DBCF$ menjadi dua bagian yang 
+sama besar. [Dan setengah dari satu hal adalah sama besar satu dengan 
+yang lain].
+
+Dengan demikian, segitiga - segitiga yang memiliki sisi alas yang sama dan 
+berada diantara garis - garis sejajar yang sama adalah sama besar satu dengan 
+yang lain. Hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Segitiga - segitiga yang berada pada sisi alas yang sama besar dan berada 
+diantara garis - garis sejajar yang sama adalah sama besar satu dengan 
+yang lain.  
+\begin{center}
+\begin{tikzpicture}[scale=.9, every node/.style={scale=.9}]
+\draw(0, 0) node [anchor=north] {B} -- (3, 0) node [anchor=north] {C}
+	-- (4, 4) node [anchor=south] {A} -- (0, 0) 
+	-- (1, 4) node [anchor=south]{G} -- (4, 4);
+
+\draw (12, 0) node [anchor = north]{F} -- (9, 0) node [anchor=north]{E} 
+	-- (6, 4) node [anchor = south]{D} -- (12, 0) 
+	-- (9, 4) node [anchor=south]{H} --(6, 4);
+
+\draw (3, 0) -- (9, 0);
+\draw (4, 4) -- (6, 4);
+\end{tikzpicture}
+\end{center}
+Misalkan $EBC$ dan $DEF$ adalah segitiga - segitiga yang berada sisi alas yang
+sama besar $BC$ dan $EF$, dan berada diantara garis - garis sejajar yang sama
+$BF$ dan $AD$. Saya katakan segitiga $ABC$ sama besar dengan segitiga $DEF$.
+
+Sebab misalkan $AD$ sudah dipanjangkan kedua arah $G$ dan $H$, dan misalkan 
+garis lurus $BG$ sudah ditarik dari $B$ sejajar $CA$ [Prop. 1.31], dan misalkan
+garis lurus $HF$ sudah ditarik dari $F$ sejajar $DE$ [Prop. 1.31]. Dengan 
+demikian, $GBCA$ dan $DEFH$ masing - masing jajaran genjang. Dan $GBCA$ sama 
+besar dengan $DEFH$. Karena keduanya berada pada sisi alas yang sama besar 
+$BC$ dan $EF$, dan berada diantara garis - garis sejajar yang sama $BF$ dan 
+$GH$ [Prop. 1.36]. Dan segitiha $ABC$ adalah setengah dari jajaran genjang 
+$GBCA$. KArena diagonal $AB$ membaginya menjadi dua bagian sama bear 
+[Prop. 1.34]. Dan segitiga $FED$  adalah setengah jajaran genjang $DEFH$.
+Karena diagonal $DF$ memotongnya menjadi dua bagian sama besar. [Dan setengah
+dari hal - hal yang sama besar adalah sama besar satu dengan yang lain.]. 
+Dengan demikian, segitiga $ABC$ sama besar dengan segitiga $DEF$.
+
+Dengan demikian, segitiga - segitiga yang sama besar, dan berada memiliki 
+sisi alas yang sama
+dan menghadap sisi yang sama, adalah berada di antara garis - garis sejajar 
+yang sama.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Segitiga - segitiga yang sama besar yang berada pada sisi alas yang sama,
+dan yang berada pada sisi yang sama, juga berada diantara garis - garis sejajar
+yang sama.
+\begin{center}
+\begin{tikzpicture}[scale=.9, every node/.style={scale=.9}]
+\end{tikzpicture}
+\end{center}
+Misalkan $ABC$ dan $DBC$ adalah segitiga - segitiga yang sama besar yang berada 
+pada sisi alas yang sama $BC$, dan berada pada sisi yang sama. Saya katawan 
+bahwa keduanya berada diantara garis - garis sejajar yang sama.
+
+Karena misalkan $AD$ sudah dihubungkan. Saya katakan $AD$ dan $BC$ adalah 
+sejajar.
+
+Karena jika tidak, misalkan $AE$ sudah ditarik melalu titik $A$ sejajar dengan 
+garis lurus $BC$ [Prop. 1.31], dan mislkan $EC$ sudah dihubungkan. Dengan 
+demikian, segitiga $ABC$ sama besar dengan segitiga $EBC$. Karena keduanya
+berada pada alas yang sama $BC$, dan berada diantara garis - garis sejajar
+yang sama [Prop. 1.37]. Tetapi $ABC$ sama besar dengan $DBC$. Dengan demikian
+,$DBC$ sama besar dengan $EBC$, yang lebih besar sama besar dengan yang lebih
+kecil.
+
 
 \setcounter{chapter}{2}
 \chapter*{\centering \chaptername{ \thechapter} 
 Dasar - Dasar Aljabar Geometri}
 \setcounter{section}{12}
 \section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
 
 Pada segitiga tumpul, besar bujur sangkar dari sisi yang menghadap sudut tumpul
  adalah lebih besar dari jumlah besar bujur sangkar - bujur sangkar sisi - sisi yang 
