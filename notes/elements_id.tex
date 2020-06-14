@@ -2142,12 +2142,220 @@ Dengan demikian, jajaran genjang $KFLM$, sama besar dengan bidang
 rektilinear $ABCD$, sudah dibuat pada sudut $FKM$, yang sama besar
 dengan sudut $E$. Yang adalah hal yang perlu untuk dilakukan.
 
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Untuk menggambarkan bujur sangkar pada satu garis lurus tertentu.
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node [anchor=north west] {A} --++ (0:3) node[anchor=north]{B};
+\draw(0, 0) --++ (90:6) node[anchor=south]{C};
+\draw(0, 3) node [anchor=south west]{D} --++ (0:3) node [anchor=south]{C}
+	--++(270:3);
+\end{tikzpicture}
+\end{center}
+Misalkan $AB$ adalah garis lurus tertentu. Jadi diperlukan untuk menggambarkan
+bujur sangkan pada pada garis lurus $AB$.
+
+Misalkan $AC$ sudah ditarik dengan membentuk sudut siku - siku  pada garis 
+lurus $AB$ pada titik $A$ [Prop. 1.11], dan misalkan $AD$ sudah dibuat sama 
+panjang dengan $AB$ [Prop. 1.3]. Dan misalkan $DE$ sudah ditarik melalui 
+titik $D$ sejajar dengan $AB$ [Prop. 1.31], dan misalkan $BE$ sudah ditarik 
+melalui titik $B$ sejajar dengan $AD$ [Prop. 1.31]. Dengan demikian, $ADEB$
+adalah jajaran genjang. Dengna demikian, $AB$ sama panjang dengan $DE$, dan 
+$AD$ terhadap $BE$ [Prop. 1.34]. Tetapi, $AB$ sama panjang dengan $DE$.
+Dengan demikian, keempat sisi $BA$, $AD$, $DE$ dan $EB$ sama panjang satu 
+dengan lain. Dengan demikianm jajaran genjang $ADEB$ sama sisi. Sehingga saya
+katakan juga bahwa jajaran genjang ini bersudut siku - siku. Disebabkan karena
+garis lurus $AD$ memotong garis - garis sejajar $AB$ dan $DE$, jumlah 
+dari sudut - sudut $BAD$ dan $ADE$ sama dengan dua buah sudut siku - siku.
+Tetapi $BAD$ adalah sudut siku - siku. Dengan demikian, $ADE$ juga bersudut
+siku - siku. Dan untuk bidang - bidang jajaran genjang, sudut - sudut dan 
+sisi - sisi yang berhadapan sama besar satu dengan yang lain [Prop. 1.34].
+Dengan demikian, masing = masing sudut yang berhadapan $ABE$ dan $BED$ 
+adalah juga sudut siku - siku. Dengan demikian, $ADEB$ bersudut siku - siku.
+Dan juga sudah ditunjukkan bahwa bersisi sama panjang.
+
+Dengan demikian, $ADEB$ adalah bujur sangkar [Def. 1.22]. Dan digambarkan
+pada garis lurus $AB$.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Pada segitiga siku - siku, besar bujur sangkar pada sisi yang menghadap sudut 
+siku - siku sama besar dengan jumlah besar bujur jangkar - bujur sangkar pada 
+sisi - sisi yang mengapit sudut siku - siku.
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node [anchor=north east] {B} --++ ({atan(5/3)}:3) node[anchor=south] {A}
+	--++ ({atan(5/3) - 90}: 5) node [anchor=north west]{C} --++(180:{sqrt(5*5 + 3*3)});
+\draw(0, 0) --++(270: {sqrt(5*5 + 3*3)}) node [anchor=north]{D} 
+	--++ (0:{sqrt(5*5 + 3*3)}) node[anchor=north]{E}
+	--++ (90:{sqrt(5*5 + 3*3)});
+\draw (0, 0) --++({atan(5/3) + 90} : 3) node[anchor=east]{F}
+	--++ ({atan(5/3)}:3) node[anchor=south east]{G}
+	--++ ({atan(5/3)+270}:3)
+	--++ ({atan(5/3)}:5) node [anchor = south]{H}
+	--++ ({atan(5/3) + 270}:5) node[anchor=west]{K}
+	--++ ({atan(5/3) + 180}:5);
+\draw ({3*cos(atan(5/3))}, {3*sin(atan(5/3)) }) 
+	--++ (270: {3*sin(atan(5/3)) + sqrt(5*5 + 3*3)}) node [anchor=north]{L}
+	--++ (180: {3*cos(atan(5/3))})
+	-- ({3*cos(atan(5/3))}, {3*sin(atan(5/3))}) 
+	%--++ (0:{((sqrt(5*5 + 3*3) - 3*cos(atan(5/3))))});
+	--++ ({atan((sqrt(5*5 + 3*3) - 3*cos(atan(5/3)))/(3*sin(atan(5/3)) + sqrt(5*5 + 3*3))) - 90} :
+	{sqrt(pow((sqrt(5*5 + 3*3) - 3*cos(atan(5/3))), 2.0) + pow((3*sin(atan(5/3)) + sqrt(5*5 + 3*3)), 2))});
+\draw ({3*cos(atan(5/3) + 90)}, {3*sin(atan(5/3) + 90)}) 
+	-- ({sqrt(pow(5.0, 2.0) + pow(3.0, 2.0))}, 0) 
+	--++ ({atan(5/3)}:5) -- (0, 0);
+\end{tikzpicture}
+\end{center}
+Misalkan $ABC$ adalah segitiga siku - siku dengan sudut $BAC$ adalah siku - 
+siku.  Saya katakan bahwa besar bujur sangkar pada $BC$ sama dengan jumlah 
+dari besar bujur sangkar pada $BA$ dan besar bujur sangkar pada $AC$.
+
+Sebab misalkan, bujur sangkar $BDEC$ sudah digambarkan pada $BC$, dan bujur 
+sangkar $GB$ pada $AB$ dan $HC$ pada $AC$ [Prop. 1.46]. Dan misalkan $AL$ 
+sudah ditarik melalui titik $A$ sejajar dengan salah satu $BD$ atau $CE$ 
+[Prop. 1.31]. Dan misalkan $AD$ dan $FC$ sudah dihubungkan. Dan karena masing
+- masing sudut $BAC$ dan $BAG$ adalah sudut siku - siku, maka kedua garis 
+lurus $AC$ dan $BG$, tidak berada pada sisi yang sama, membentuk sudut - sudut 
+berdampingan dengan garis lurus $BA$ pada titik $A$, yang jumlahnya
+adalah dua buah sudut siku - siku. Dengan demikian, $CA$ lurus pada $AG$ 
+[Prop. 1.14]. Jadi, untuk alasan - alasan yang sama, $BA$ juga lurus pada $AH$.
+Dan sebab sudut $DBC$ sama besar dengan $FBA$, karena keduanya adalah sudut
+siku - siku, misalkan $ABC$ sudah ditambahkan pada keduanya. Dengan demikian, 
+keseluruhan $DBA$ sama besar dengan keseluruhan sudut $FBC$. Dan karena $DB$
+sama besar dengan $BC$, dan $FB$ terhadap $BA$, masing - masing kedua garis 
+lurus $DB$, $BA$ sama panjang dengan kedua garis lurus $CB$, $BF$.Dan sudut
+$DBA$ sama besar dengan sudut $FBC$, Dengan demikian, sisi alas $AD$ sama 
+besar dengan sisi alas $FC$, dan segitiga $ABD$ sama besar dengan segitita
+$FBC$ [Prop. 1.4]. Dan jajaran genjang $BL$ dua kali lebih besar dari segitiga
+$ABD$. Karena keduanya memiliki sisi alas yang sama, $BD$, dan berada diantara
+dua buah garis - garis sejajar yang sama $BD$ dan $AL$ [Prop. 1.41]. Dan
+besar bujur sangkar $GB$ adalah dua kali besar segitiga $FBC$. Karena 
+lagi keduanya memiliki alas yang sama, $FB$, dan berada diantara garis - garis
+sejajar yang sama, $FB$ dan $GC$ [Prop. 1.41]. Dan dua hal yang masing - masing 
+besar nya dua kali hal lain yang sama adalah sama besar satu dengan yang lain.
+Dengan demikian besar jajaran genjang $BL$ juga sama besar dengan besar 
+bujur sangkar $GB$. Juga, dengan cara yang sama, $AE$ dan $BK$ dihubungkan, 
+jajaran genjang $CL$ dapat ditunjukkan sama besar dengan bujur sangkar
+$HC$. Dengan demikian, keselurusan bujur sangkar $BDEC$ sama besar dengan
+jumlah dua buah bujur sangkar $GB$ dan $HC$. Dan bujur sangkar $BDEC$ digambar
+kan pada $BC$, dan masing - masing bujur sangkar $GB$ dan dan $HC$ pada
+$BA$ dan $AC$. Dengan demikian, besar bujur sangkar pada sisi $BC$ sama besar 
+dengan jumlah besar bujur sangkar pada sisi $BA$ dan besar bujur sangkar pada
+sisi $AC$.
+
+Dengan demikian, pada segitiga siku - siku, besar bujur sangkar pada sisi yang
+menghadap sudut siku - siku sama besar dengan jumlah dari besar bujur sangkar
+- bujur sangkar yang mengapit sudut siku - siku. Yang adalah hal yang perlu
+kita tunjukkan.  
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+
+Jika besar bujur sangkar pada satu sisi sebuah segitiga sama besar dengan 
+jumlah besar - besar bujur sangkar pada dua sisi selebihnya segitiga maka 
+sudut yang diapit oleh dua sisi - sisi selebihnya tersebut adalah sudut
+siku - siku.
+
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node [anchor = north] {A} --++ ({(atan(-3/7))}:3) node [anchor=north] {B};
+\draw(0, 0) --++({90 + atan(-3/7)}: 7) node [anchor=south] {C} --++ (270 : {sqrt(pow(3,2) + pow(7, 2)});
+\draw(0, 0) --++ ({180 + atan(-3/7)}:3) node [anchor=north]{D} --++ 
+	({atan(7/3) + atan(-3/7)} : {sqrt(3*3 + 7*7)});%%cotan = 1/tan, and cotan is x/y while tan is y/x
+\end{tikzpicture}
+\end{center}
+
+Sebab misalkan besar bujur sangkar pada satu sisi, $BC$, dari segitiga
+$ABC$ sama besar dengan jumlah besar bujur sangkar - bujur sangkar pada 
+sisi - sisi $BA$ dan $AC$. Saya katakan bahwa $BAC$ adalah sudut siku - siku.
+
+Sebab misalkan $AD$ sudah digambarkan dari titik $A$ dengan sudut siku
+siku terhadap garis lurus $AC$ [Prop. 1.11], dan misalkan $AD$ sudah dibuat
+sama panjang dengan $BA$ [Prop. 1.3], dan misalkan $DC$ sudah dihubungkan.
+Dikarenakan $DA$ sama panjang dengan $AB$, besar bujur sangkar pada $DA$
+dengan demikian sama dengan besar bujur sangkar pada $AB$. Misalkan bujur
+sangkar $AC$ sudah ditambahkan pade keduanya. Dengan demikian jumlah 
+besar bujur sangkar $DA$ dan bujur sangkar $AC$ sama besar dengan jumlah
+besar bujur sangkar $BA$ dan $AC$. Tetapi, besar bujur sangkar pada $DC$
+sama besar dengan jumlah besar bujur sangkar $DA$ dan $AC$. Karena $DAC$
+adalah sudut siku - siku [Prop. 1.47]. Tetapi, besar bujur sangkar pada
+$BC$ sama besar dengan besar bujur sangkar - bujur sangkar pada $BA$ dan
+$AC$. Sebab itu sudah diasumsikan sebelumnya. Dengan demikian, bujur 
+sangkar pada $DC$ sama besar dengan besar bujur sangkar pada $BC$. 
+Sehingga sisi $DC$ sama panjang dengan sisi $BC$. Dan karena $DA$ sama
+panjang dengan $AB$, dan $AC$ sama pada keduanya, kedua garis lurus 
+$DA$, $AC$ sama panjang dengan kedua garis lurus $BA$, $AC$. Dan sisi 
+alas $DC$ sama panjang dengan sisi alas $BC$. Dengan demikian, sudut
+$DAC$ sama besar dengan sudut $BAC$ [Prop. 1.8]. Tetapi $DAC$ adalah 
+sudut siku - siku. Dengan demikian $BAC$ juga adalah sudut siku - siku.
+
+Dengan demikian, jika besar bujur sangkar pada satu sisi segitiga
+sama besar dengan jumlah besar bujur sangkar - bujur sangkar pada
+sisi - sisi selebihnya, maka besar sudut yang diapit oleh sisi - sisi 
+selebihnya adalah sama dengan sudut siku - siku. Yang adalah hal yang 
+perlu kita tunjukkan.
 
 
-
-\setcounter{chapter}{2}
+\stepcounter{chapter}
 \chapter*{\centering \chaptername{ \thechapter} 
 Dasar - Dasar Aljabar Geometri}
+
+\begin{center}
+\textbf{Definisi - definisi}
+\end{center} 
+\begin{enumerate}
+\item Semua jajaran genjang rektangular (persegi panjang) dibatasi oleh
+dua garis lurus garis lurus yang mengapit sudut siku - siku.
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node[anchor=east]{A} --++ (0: 4) node [anchor=west]{B}
+	--++(270:5) node[anchor=west]{C} --++(180:4) node [anchor=east]{D}
+	--++(90:5);
+\draw(5, -2) node[anchor=west]{$AB$ dan $BC$ adalah garis yang dimaksud};
+\draw(5, -3) node[anchor=west]{$ABC$ adalah sudut yang dimaksud};
+\end{tikzpicture}
+\end{center}
+
+\item Dan pada semua bidang jajaran genjang, misalkan diambil satu buah 
+jajaran
+genjang internal yang diagonalnya bagian dari diagonal eksternal bersama 
+dengan dua komplemen nya , disebut dengan gnomon.  
+\end{enumerate} 
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Jika ada dua buah garis lurus, dan salah satunya dipotong - potong menjadi beberapa
+potongan, maka besar persegi panjang yang dibentuk oleh kedua garis lurus sama 
+dengan jumlah dari persegi panjang - persegi panjang yang dibentuk kedua garis 
+tadi ketika belum dipotong dengan potongan - potongan yang dibentuk sesudah 
+dipotong.
+
+\begin{center}
+\begin{tikzpicture}
+\end{tikzpicture}
+\end{center}
+
+Misalkan $A$ dan $BC$ adalah dua buah garis lurus, dan misalkan $BC$ dipotong,
+pada sembarang titik $D$ dan $E$. Saya katakan bahwa besar persegi panjang yang 
+dibentuk $A$ dan $BC$ sama dengan besar persegi panjang yang dibentuk $A$ 
+dan $BD$, ditambah $A$ dan $DE$ dan akhir oleh $A$ dan $EC$.
+
+Sebab misalkan $BF$ sudah ditarik di titik $B$ siku - siku dengan $BC$ 
+[Prop. 1.11], dan misalkan $BG$ sudah dibuat sama panjang dengan $A$ 
+[Prop. 1.3], dan misalkan $GH$ sudah ditarik melalui titik $G$, sejajar dengan
+$BC$ [Prop. 1.31], dan misalkan $DK$, $EL$ dan $CH$ sudah ditarik masing 
+- masing melalui titik $D$, $E$ dan $C$, sejajar terhadap $BG$ [Prop. 1.31].
+
+Jadi persegi panjang $BH$ sama besar dengan persegi panjang $BK$, $DL$, dan 
+$EH$. Dan $BH$ adalah persegi panjang yang dibentuk $A$ dan $BC$.
+
+
 \setcounter{section}{12}
 \section*{\centering Proposisi \thesection} 
 \addcontentsline{toc}{section}{Proposisi \thesection} 
