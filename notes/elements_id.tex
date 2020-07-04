@@ -108,11 +108,11 @@ tidak bertemu satu dengan yang lain.
 \item Dan dengan pusat dan jari -jari dapat dibuat sebuah lingkaran.
 \item Dan bahwa semua sudut siku - siku sama besar.
 \item Dan jika suatu garis lurus memotong dua buah garis lurus yang lain dan 
-membentuk sudut - sudut interior sehadap yang jumlah besar 
+membentuk sudut - sudut interior pada sisi yang sama yang jumlah besar 
 sudutnya lebih kecil dari dua  sudut siku - siku, maka kedua garis lurus yang 
 dipotong tadi, jika dipanjangkan sampai tak terhingga, akan bertemu di sisi 
-tersebut (sisi yang jumlah sudut interior sehadap sama dengan dua sudut siku), 
-dan tidak akan bertemu di sisi satunya.
+tersebut (sisi yang jumlah sudut interior pada sisi yang sama yang sama dengan 
+dua sudut siku), dan tidak akan bertemu di sisi satunya.
 \end{enumerate}
 
 \begin{center}
@@ -156,7 +156,7 @@ Dan karena $A$ adalah pusat dari lingkaran $CDB$, maka $AC$ sama dengan $AB$
 $BC$ sama dengan $BA$ [Def. 1.15]. Tetapi $CA$ juga sudah dibuktikan sama 
 dengan $AB$. Dengan demikian $CA$ dan $CB$ adalah sama dengan $AB$. Tetapi
 hal - hal yang nilainya sama dengan satu hal lain di luar keduanya adalah sama
-satu dengan yang lain [GU. 1]. Dengan demikian, $CA$ juga sama dengan $CB$.  
+satu dengan yang lain [G.U. 1]. Dengan demikian, $CA$ juga sama dengan $CB$.  
 Dengan demikian ketika garis lurus $CA$, $AB$ dan $BC$ sama satu dengan 
 yang lain.
 
@@ -484,7 +484,7 @@ seperti itu tidak bisa dibuat [Prop.1. 7]. Dengan demikian, sisi alas $BC$
 diterapkan ke sisi alas $EF$, masing - masing sisi $BA$ dan sisi  $AC$ tidak 
 bisa bertemu dengan $ED$ dan $EF$. Dengan demikian mereka harus bertemu.
 Dengan demikian sudut $BAC$ juga akan bertemu dengan $EDF$ dan sama besar 
-[GU. 4]
+[G.U. 4]
 
 Dengan demikian, jika dua buah segitiga masing - masing memiliki dua buah 
 sisi sama panjang dengan sisi lain, dan keduanya memiliki alas 
@@ -2162,7 +2162,7 @@ lurus $AB$ pada titik $A$ [Prop. 1.11], dan misalkan $AD$ sudah dibuat sama
 panjang dengan $AB$ [Prop. 1.3]. Dan misalkan $DE$ sudah ditarik melalui 
 titik $D$ sejajar dengan $AB$ [Prop. 1.31], dan misalkan $BE$ sudah ditarik 
 melalui titik $B$ sejajar dengan $AD$ [Prop. 1.31]. Dengan demikian, $ADEB$
-adalah jajaran genjang. Dengna demikian, $AB$ sama panjang dengan $DE$, dan 
+adalah jajaran genjang. Dengan demikian, $AB$ sama panjang dengan $DE$, dan 
 $AD$ terhadap $BE$ [Prop. 1.34]. Tetapi, $AB$ sama panjang dengan $DE$.
 Dengan demikian, keempat sisi $BA$, $AD$, $DE$ dan $EB$ sama panjang satu 
 dengan lain. Dengan demikianm jajaran genjang $ADEB$ sama sisi. Sehingga saya
@@ -2352,10 +2352,10 @@ dengan dua komplemen nya , disebut dengan gnomon.
 \stepcounter{section}
 \section*{\centering Proposisi \thesection} 
 \addcontentsline{toc}{section}{Proposisi \thesection} 
-Jika ada dua buah garis lurus, dan salah satunya dipotong - potong menjadi beberapa
-potongan, maka besar persegi panjang yang dibentuk oleh kedua garis lurus sama 
-dengan jumlah dari persegi panjang - persegi panjang yang dibentuk garis 
-yang tidak dipotong dengan potongan - potongan garis yang dipotong.
+Jika ada dua buah garis lurus, dan salah satunya dipotong - potong menjadi 
+beberapa potongan, maka persegi panjang yang dibentuk oleh kedua garis lurus
+ sama besar dengan jumlah dari persegi panjang - persegi panjang yang dibentuk
+ garis yang tidak dipotong dengan potongan - potongan garis yang dipotong.
 
 
 \begin{center}
@@ -2405,7 +2405,7 @@ Yang adalah hal yang perlu ditunjukkuan.
 \addcontentsline{toc}{section}{Proposisi \thesection} 
 
 Jika sebuah garis lurus dipotong disembarang titik, maka jumlah besar persegi
- panjang yang dibentuk oleh keseluruhan garis lurus dan potongan 
+ panjang yang dibentuk oleh garis lurus utuh dengan potongan 
 - potongannya, sama besar dengan dengan bujur sangkar yang dibentuk pada garis 
 lurus tersebut secara utuh. 
 \begin{center}
@@ -2444,12 +2444,104 @@ keseluruhan. Yang adalah hal yang perlu ditunjukkan.
 \section*{\centering Proposisi \thesection} 
 \addcontentsline{toc}{section}{Proposisi \thesection} 
 Jika sebuah garis lurus dipotong secara acak, maka persegi panjang yang dibentuk
-oleh garis lurus secara utuh dengan salah satu potongannya
+oleh garis lurus secara utuh dengan salah satu potongannya, adalah sama dengan besar
+dengan persegi panjang yang dibentuk oleh kedua potongan dengan besar bujur sangkar
+dari potongan yang pertama.
 \begin{center}
 \begin{tikzpicture}
+\draw (0, 5) node [anchor=south] {A} --++ (0:3) node [anchor=south] {C} 
+	--++ (0: 5) node[anchor=south] {B} --++ (270:5) node[anchor=north] {E}
+	--++ (180:5) node[anchor=north] {D} --++ (180:3) node[anchor=north]{F}
+	--++ (90:5);
+\draw (3, 5) --++(270:5);
+\end{tikzpicture}
+\end{center}
+Misalkan garis lurus $AB$ sudah dipotong secara acak pada titik $C$. Saya katakan 
+persegi panjang yang dibentuk $AB$ dan $BC$ sama besar dengan persegi panjang 
+yang dibentuk $AC$ dan $BC$, ditambah bujur sangkar pada $BC$.
+
+Sebab misalkan bujur sangkar $CDEB$ sudah digambarkan pada $CB$ [Prop. 1.46], 
+dan misalkan $ED$ sudah ditarik melalui $F$, dan misalkan $AF$ sudah 
+ditarik dari $A$, sejajar dengan $CD$ atu $BE$ [Prop.1.31]. Sehingga besar
+persegi panjang $AE$ sama besar dengan persegi panjang $AD$ dan besar 
+bujur sangkar $CE$. Dan $AE$ adalah persegi panjang yang dibentuk oleh
+$AB$ dan $BC$, Karena dia dibentuk oleh $AB$ dan $BE$,dan $BE$ sama panjang
+dengan $BC$. Dan $AD$ adalah persegi panjang yang oleh $AC$ dan $CB$. Karena
+$DC$ sama panjang dengan $CB$. Dan $DB$ adalah bujur sangkar pada $CB$. Dengan
+demikian, besar persegi panjang yang dibentuk oleh $AB$ dan $BC$ sama besar 
+dengan besar persegi panjang yang dibentuk $AC$ dan $CB$ ditambah besar bujur
+sangkar pada $BC$.
+
+Dengan demikian, jika sebuah garis lurus dipotong pada satu titik secara acak, 
+maka persegi panjang yang dibentuk oleh keseluruhan garis dengan salah satu
+potongannya sama besar dengan persegi panjang yang dibentuk oleh kedua potongan 
+dengan bujur sangkar dari potongan yang disebutkan sebelumnya. Yang adalah hal 
+yang perlu ditunjukkan.  
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Jika sebuah garis lurus dipotong secara acak, maka bujur sangkar yang dibentuk
+oleh garis tersebut ketika belum dipotong sama besar dengan jumlah besar 
+bujur sangkar - bujur sangkar
+yang dibentuk oleh potongan - potongannya dan dua kali besar persegi panjang 
+yang dibentuk oleh potongan - potongan tersebut.
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=north] {D} --++ (0:5) node [anchor=north]{F} 
+	--++ (0:3) node [anchor=north] {E} --++ (90:5) node[anchor=west] {K} 
+	--++ (90:3) node [anchor=south] {B} --++ (180:3) node[anchor=south]{C}
+	--++ (180:5) node[anchor=south] {A} --++ (270:3) node[anchor=east]{H}
+	--++(0:5) node[anchor=north]{G} --++ (0:3) --++(90:3)
+    --++(225:{8*sqrt(2)}) -- ++ (90:5) --++ (0:5) --++ (90:3) --++ (270:8);
 \end{tikzpicture}
 \end{center}
 
+Sebab misalkan garis lurus $AB$ sudah dipotong secara acak, pada titik $C$, Saya
+katakan bahwa bujur sangkar pada $AB$ sama besar dengan jumlah dari 
+bujur sangkar - bujur sangkar pada $AC$ dan $CB$, dan dua kali persegi panjang
+yang dibentuk $AC$ dan $CB$.
+
+Sebab misalkan bujur sangkar $ADEB$ sudah digambarkan pada $AB$ [Prop. 1.46], dan
+misalkan $BD$ sudah dihubungkan, dan misalkan $CF$ sudah ditarik dari $C$ sejajar
+dengan $AD$ atau $EB$ [Prop.1.31], dan misalkan $HK$ sudah ditarik melalui $G$, 
+sejajar dengan $AB$ atau $DE$ [Prop. 1.31]. Dan karena $CF$ sejajar dengan $AD$, 
+dan $DB$ sudah memotong keduanya, sudut eksterior $CGB$ sama besar dengan sudut
+interior yang tidak bersebelahan $ADB$ [Prop.1.29]. Tapi, $ADB$ sama besar dengan
+$ABD$, karena $BA$ sudah sama panjang dengan $AD$ [Prop.1.5]. Dengan demikian 
+sudut $CGB$ juga sama besar dengan sudut $GBC$. Sehingga sisi $BC$ sama panjang
+dengan sisi $CG$ [Prop. 1.6]. Tetapi $CB$ sama panjang dengan $GK$, dan $CG$ 
+juga sama dengan $KB$ [Prop. 1.34]. Dengan demikian $GK$ juga sama panjang dengan 
+$KB$. Maka $CGKB$ adalah sama sisi. Dengan demikian saya katakan bahwa dia juga
+bersudut siku - siku. Karena $CG$ sejajar $BK$ dan garis lurus $CB$ memotong 
+keduanya, sudut - sudut $KBC$ dan $CGB$ dengan demikian sama dengan dua buah sudut
+siku - siku [Prop. 1.29]. Tetapi $KBC$ adalah siku - siku. Dengan demikian
+$BCG$ juga adalah siku - siku. Dengan demikian sudut - sudut yang berhadapan
+$CGK$ dan $GKB$ juga adalah sudut siku - siku [Prop. 1.34]. Dengan demikian
+$CGKB$ adalah siku - siku. Dan juga sudah ditunjukkan bahwa dia juga sama sisi. 
+Dengan dimikian dia adalah bujur sangkar. Dan dia berada pada $CB$. 
+Juga dengan alasan - alasan yang sama $HF$ juga adalah bujur sangkar. Dan  dia 
+berada pada $HG$, yang juga mengatakan ia ada pada $AC$ [Prop. 1.34]. Dengan 
+demikian masing - masing $HF$ dan $KC$  berada pada $AC$ dan $CB$. Dan 
+persegi panjang $AG$ sama besar dengan persegi panjang $GE$ [Prop. 1.43]. Dan 
+$AG$ adalah persegi panjang yang dibentuk $AC$ dan $CB$. 
+Karena $GC$ sama panjang dengan $CB$. Dengan demikian, $GE$ juga sama besar 
+dengan persegi panjang yang dibentuk $AC$ dan $CB$. Dengan demikian, persegi 
+panjang $AG$ dan $GE$ sama dengan dua kali persegi panjang yang dibentuk
+$AC$ dan $CB$. Dan $HF$ dan $CK$ adalah bujur sangkar - bujur sangkar pada 
+masing - masing $AC$ dan $CB$. Dengan demikian, keempat bidang $HF$, $CK$, 
+$AG$, dan $GE$, sama besar dengan jumlah besar bujur sangkar - bujur sangkar
+pada $AC$ dan $BC$, dan dua kali persegi panjang yang dibentuk $AC$ dan 
+$CB$. Tetapi, bidang - bidang $HF$, $CK$, $AG$ dan $GE$ adalah sama dengan
+keseluruhan $ADEB$, yang adalah bujur sangkar pada $AB$. Dengan demikian, 
+bujur sangkar pada $AB$ sama besar dengan bujur sangkar - bujur sangkar pada 
+$AC$ dan $CB$, dan dua kali persegi panjang yang dibentuk $AC$ dan $CB$.
+
+Jadi jika sebuah garis lurus dipotong secara acak, maka bujur sangkar pada
+garis tersebut secara utuh sama besar dengan jumlah dari bujur sangkar -
+bujur sangkar dari potongan - potongannya, dan dua kali  persegi panjang
+yang dibentuk potongan - potongan tersetbut. Hal yang perlu ditunjukkan.
 
 \setcounter{section}{12}
 \section*{\centering Proposisi \thesection} 
