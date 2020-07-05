@@ -2398,7 +2398,8 @@ Dengan demikian, jika dua buah garis lurus, satu nya dipotong menjadi beberapa
 potongan, maka persegi panjang yang dibentuk oleh kedua garis itu, sama
 besar dengan jumlah dari persegi panjang - persegi panjang yang dibentuk 
 garis yang tidak dipotong dengan potongan - potongan garis yang dipotong.
-Yang adalah hal yang perlu ditunjukkuan.
+Yang adalah hal yang perlu ditunjukkuan.\footnote {Proposisi ini adalah
+bentuk geometri dari identitas aljabar $a(b + c + d +...) = ab +ac + ad + ...$}
 
 \stepcounter{section}
 \section*{\centering Proposisi \thesection} 
@@ -2437,7 +2438,9 @@ $AB$.
 Dengan demikian, jika sebuah garis lurus dipotong secara acak, maka jumlah besar
 persegi panjang yang dibentuk oleh keseluruhan garis lurus dengan potongan -
 porongannya sama besar dengan besar bujur sangkar pada garis tersebut secara 
-keseluruhan. Yang adalah hal yang perlu ditunjukkan.
+keseluruhan. Yang adalah hal yang perlu ditunjukkan.\footnote{Proposisi
+ini adalah bentuk geometri dari identitas aljabar $ab + ac = a^2 jika
+a  = b + c$}
  
 
 \stepcounter{section}
@@ -2476,7 +2479,8 @@ Dengan demikian, jika sebuah garis lurus dipotong pada satu titik secara acak,
 maka persegi panjang yang dibentuk oleh keseluruhan garis dengan salah satu
 potongannya sama besar dengan persegi panjang yang dibentuk oleh kedua potongan 
 dengan bujur sangkar dari potongan yang disebutkan sebelumnya. Yang adalah hal 
-yang perlu ditunjukkan.  
+yang perlu ditunjukkan.\footnote{Proposisi ini adalah bentuk geometri dari
+identitas aljabar $(a+b)a = ab + a^2$}
 
 \stepcounter{section}
 \section*{\centering Proposisi \thesection} 
@@ -2542,6 +2546,205 @@ Jadi jika sebuah garis lurus dipotong secara acak, maka bujur sangkar pada
 garis tersebut secara utuh sama besar dengan jumlah dari bujur sangkar -
 bujur sangkar dari potongan - potongannya, dan dua kali  persegi panjang
 yang dibentuk potongan - potongan tersetbut. Hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Jika sebuah garis lurus dipotong menjadi potongan yang sama panjang dan yang
+tidak sama panjang, maka persegi panjang yang dibentuk oleh potongan - potongan
+yang sama panjang dari garis tersebut secara keseluruhan, ditambah bujur sangkar
+pada selisih antara potongan yang sama panjang dengan yang tidak sama panjang, 
+sama besar dengan bujur sangkar dari setengah dari garis lurus tersebut.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=north] {F} --++ (0:5) node [anchor=north east] {L}
+	--++ (0:5) node [anchor=north west]{M} --++ (90:4) node [anchor=south west]{B}
+	--++ (180:4) node [anchor=south]{D} --++ (180:1) node [anchor=south]{C}
+	--++ (180:5) node [anchor=south]{A} --++ (270:4);
+\draw (5, -1) node [anchor=north]{E} --++ (0:1) node [anchor=north]{G}
+	--++ (0:4) node [anchor=north west]{F} --++(90:1);
+\draw (5, -1) --++ (90:5) --++ (0:1) --++ (270:5);;
+\draw (5, -1) --++ (45:{5*sqrt(2)});
+\draw [dashed] (6, -.8) arc(-90:180:.8);
+\draw (6, -.8) node [anchor=east]{P};
+\draw (6, +.8) node [anchor=south west]{O};
+\draw (5.2, -.3) node {N};
+\draw (6, 0) node[anchor=south east] {H};
+\end{tikzpicture}
+\end{center}
+Sebab misalkan garis lurus $AB$ sudah dipotong, sama panjang pada $C$, dan 
+dengan tidak sama panjang pada $D$. Saya katakan bahwa persegi panjang yang
+dibentuk oleh  $AD$ dan $DB$, ditambah bujur sangkar pada $CD$, adalah sama 
+besar dengan bujur sangkar pada $CB$.  
+
+Sebab misalkan bujur sangkar $CEFB$ sudah digambarkan pada $CB$ [Prop. 1.46], 
+dan misalkan $BE$ sudah dihubungkan, dan misalkan $DG$ sudah ditarik melalui 
+$D$, sejajar dengan $CE$ atau $BF$ [Prop. 1.31], dan lagi misalkan $KM$ sudah 
+ditarik melalui $H$, sejajar dengan $AB$ atau $EF$ [Prop. 1.31], dan lagi
+misalkan $AK$ sudah ditarik melalui $A$, sejajar dengan $CL$ atau $BM$ 
+[Prop. 1.31].
+Dan dikarenakan komplementer $CH$ sama besar dengan komplementer $HF$ 
+[Prop. 43], 
+misalkan
+bujur sangkar $DM$ sudah ditambahkan pada keduanya. Dengan demikian persegi 
+panjang
+$CM$ sama besar dengan dengan persegi panjang $DF$. Tetapi, persegi panjang 
+$CM$ 
+sama besar dengan persegi panjang $AL$, karena $AC$ juga sama panjang $CB$ 
+[Prop. 1.36].  Oleh sebab itu persegi panjang $AL$  juga sama besar dengan 
+persegi panjang $DF$.
+Misalkan persegi panjang $CH$ sudah ditambahkan kepada keduanya. Dengan 
+demikian keseluruhan bujur sangkar $AH$ sama besar dengan gnomon $NOP$. 
+Tetapi $AH$ adalah persegi panjang yang dibentuk $AD$ dan $DB$. Karena $DH$
+sama panjang dengan $DB$. Dengan demikian gnomon $NOP$ juga sama besar dengan 
+persegi panjang yang dibentuk $AD$ dan $DB$. Misalkan $LG$, yang sama besar
+dengan bujur sangkar pada $CD$, sudah ditambahkan pada keduanya. Dengan 
+demikian gnomon $NOP$ dan bujur sangkar $LG$ sama besar dengan persegi panjang
+yang dibentuk $AD$ dan $DB$ dan bujur sangkar pada $CD$. Tetapi gnomon $NOP$
+dan bujur sangkar $LG$ sama besar dengan keseluruhan bujur sangkar $CEFB$, yang
+ada pada $CB$. Dengan demikian, persegi panjang yang dibentuk $AD$ dan $DB$
+ditambah bujur sangkar pada $CD$, sama besar dengan bujur sangkar pada $CB$.
+
+Dengan demikian, jika sebuah garis lurus dipotong menjadi potongan yang sama 
+panjang dan yang tidak sama panjang, maka persegi panjang yang dibentuk oleh 
+potongan - potongan yang sama panjang dari garis tersebut secara keseluruhan, 
+ditambah bujur sangkar pada selisih antara potongan yang sama panjang dengan 
+yang sama tidak panjang, sama besar dengan bujur sangkar dari setengah dari 
+garis lurus tersebut. Yang adalah hal yang perlu ditunjukkan.
+\footnote{Proposisi ini adalah bentuk
+geometri dari identitas aljabar $ab + [(a+b)/2-b]^2 = [(a+b)/2]^2$ }
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+
+Jika sebuah garis lurus dibagi menjadi dua bagian yang sama besar, 
+dipanjangkan dengan sebuah garis lurus yang memiliki panjang tertentu, maka
+persegi panjang yang dibentuk oleh keseluruhan garis setelah dipanjangkan 
+ dengan garis yang digunakan untuk memanjangkannya, ditambah dengan bujur 
+sangkar pada setengah garis lurus yang awal, sama besar dengan bujur sangkar 
+oleh setengah garis lurus yang awal ditambah garis lurus yang 
+digunakan untuk memanjangkannya.
+
+\begin{center}
+\begin{tikzpicture}
+\draw (5, 0) node [anchor=north]{E} --++ (0:5) node [anchor=north]{G} 
+	--++ (0:2) node [anchor=north]{F} --++ (90:5) node [anchor=west]{M}
+	--++ (90:2) node [anchor=south]{D} --++ (180:2) node [anchor=south]{B}
+	--++ (180:5) node [anchor=south]{C} --++ (180:5) node [anchor=south] {A}
+	--++ (270:2) node [anchor=north]{K} --++ (0:5) node [anchor=south east]{L}
+	--++ (0:5) node [anchor=south east]{H} --++ (0:2);
+\draw (5, 0) --++ (45:{7*sqrt(2)});
+\draw (5, 0) --++ (90:7);
+\draw (10,0) --++ (90:7);
+\draw [dashed](10, 4.2) node [anchor=east]{P} arc(-90:90:.8) 
+	node [anchor=south west]{O}
+	arc (90:180:.8) node [anchor=north]{N};
+\end{tikzpicture}
+\end{center}
+
+Misalkan sembarang garis $AB$ sudah dipotong menjadi dua bagian yang sama
+besar pada $C$, dan misalkan garis lurus $BD$ sudah ditambahkan pada ujung
+$B$. Saya katakan bahwa persegi panjang yang dibentuk oleh $AD$ dan $BD$, 
+ditambah bujur sangkar pada $CB$, sama besar dengan bujur sangkar pada $CD$.
+
+Sebab misalkan bujur sangkar $CEFD$ sudah digambarkan pada $CD$ [Prop. 1.46],
+dan misalkan $DE$ sudah dipertemukan, dan misalkan $BG$ sudah ditarik melalui
+$B$ sejajar dengan $EC$ atau $DF$ [Prop. 1.31], dan misalkan $KM$ sudah ditarik
+melalui titik $H$, sejajar dengan $AB$ atau $EF$ [Prop. 1.31], dan akhirnya
+misalkan $AK$ sudah ditarik melalui $A$, sejajar dengan $CL$ atau 
+$DM$ [Prop. 1.31].
+
+Dengan demikian, karena $AC$ sama panjang dengan $CB$, persegi panjang $AL$ 
+juga sama panjang dengan persegi panjang $CH$ [Prop. 1.36]. Tetapi, persegi
+panjang $CH$ sama panjang dengan persegi panjang $HF$ [Prop. 1.43]. Dengan 
+demikian persegi panjang $AL$ juga sama panjang dengan persegi panjang $HF$.
+Misalkan persegi panjang $CM$ sudah ditambahkan pada keduanya. Dengan demikian,
+keseluruhan persegi panjang $AM$ sama panjang dengan gnomon $NOP$.  Tetapi $AM$
+adalah persegi panjang yang dibentuk oleh $AD$ dan $DB$. Karena $DM$ sama 
+panjang dengan $DB$. Dengan demikian, gnomon $NOP$ juga sama besar dengan 
+persegi panjang yang dibentuk $AD$  dan $DB$. Misalkan $LG$, yang 
+sama besar dengan bujur sangkar pada $BC$, sudah ditambahkan pada keduanya.
+Dengan demikian, persegi panjang yang dibentuk $AD$ dan $DB$ ditambah bujur
+sangkar pada $CB$, sama besar dengan gnomon $NOP$ dan bujur sangkar pada
+$LG$. Tetapi gnomon $NOP$ dan bujur sangkar $LG$ sama besar dengan keseluruhan
+bujur sangkar $CEFD$, yang adalah bujur sangkar pada $CB$. Dengan demikian,
+persegi panjang yang dibentuk $AD$ dan $DB$, ditambah dengan bujur sangkar 
+pada $CB$, sama besar dengan bujur sangkar pada $CD$
+
+Dengan demikian jika sebuah garis lurus dibagi menjadi dua bagian yang sama 
+besar, dan dipanjangkan dengan sebuah garis lurus yang memiliki panjang tertentu, 
+maka persegi panjang yang dibentuk oleh keseluruhan garis setelah dipanjangkan 
+ dengan garis yang digunakan untuk memanjangkannya, ditambah dengan bujur 
+sangkar pada setengah garis lurus yang awal, sama besar dengan bujur sangkar 
+oleh setengah garis lurus yang awal ditambah garis lurus yang 
+digunakan untuk memanjangkannya. Yang adalah hal yang perlu ditunjukkan.
+\footnote{Proposisi ini adalah bentuk
+geometri dari identitas aljabar $(2a + b)b + a^2 = (a + b)^2 $ }
+
+\stepcounter{section}
+\section*{\centering Proposisi 
+\thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+
+Jika sebuah garis lurus dibagi dua disatu titik tertentu secara acak, maka jumlah
+dari bujur sangkar dari keseluruhan garis dengan bujur sangkar salah satu 
+potongan, sama besar dengan jumlah dua kali jumlah persegi panjang yang dibentuk
+keseluruhan garis dengan potongan tadi dengan besar bujur sangkar pada potongan
+sisanya.
+
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node [anchor=north]{D} --++ (0:7) node [anchor=north]{N} 
+	--++ (0:2) node [anchor=north]{E} --++ (90:7) node [anchor=west]{F} 
+	--++ (90:2) node [anchor=south]{B} --++ (180:2) node [anchor=south]{C}
+	--++ (180:7) node [anchor=south]{A} --++ (270:2) node [anchor=east] {H}
+	--++ (270:7);
+\draw(0, 0) --++ (45:{9*sqrt(2)});
+\draw(0, 7) --++ (0:7) node[anchor=north west]{G} --++ (0:2);
+\draw(7, 0) --++ (90:9);
+\draw[dashed] (7, 6.2) node[anchor=east]{M} arc (-90:90:.8) node[anchor=south west]{L}
+	arc(90:180:.8) node [anchor=north]{K};
+\end{tikzpicture}
+\end{center}
+
+Sebab misalkan sembarang garis $AB$ sudah dibagi dua secara acak di satu titik 
+$C$. Saya katakan bahwa jumlah dari bujur sangkar pada $AB$ dan bujur sangkar 
+pada $BC$ sama besar dengan jumlah dua kali persegi panjang yang dibentuk 
+$AB$ dan $BC$, dan bujur sangkar pada $CA$.
+
+Sebab misalkan bujur sangkar $ADEB$ sudah digambarkan pada $AB$ [Prop. 1.46], dan
+misalkan sisa dari bidang - bidang sudah digambarkan.
+
+Selanjutnya, karena persegi panjang $AG$ sama besar dengan  persegi panjang $GE$
+[Prop. 1.43], misalkan bujur sangkar $CF$ sudah ditambahkan pada keduanya. Dengan
+demikian keseluruhan bujur sangkar $AF$ sama besar dengan keseluruhan bujur sangkar 
+$CE$. Dengan demikian, persegi panjang $AF$ ditambah persegi panjang $CE$ adalah
+dua kali persegi panjang $AF$. Tetapi persegi panjang $AF$ ditambah persegi panjang
+$CE$ sama besar dengan gnomon $KLM$ ditambah bujur sangkar $CF$. Dengan demikian
+gnomon $KLM$ dan bujur sangkar $CF$ adalah dua kali persegi panjang $AF$. Tetapi
+dua kali bujur sangkar $AF$ juga adalah dua kali persegi panjang yang dibentuk 
+oleh $AB$ dan $BC$. Karena $BF$ sama panjang dengan $BC$. Dengan demikian 
+gnomon $KLM$ dan bujur sangkar $CF$ sama besar dengan dua kali persegi panjang 
+yang dibentuk $AB$ dan $BC$. Misalkan $DG$, yang adalah bujur sangkar pada $AC$
+, sudah ditambahkan pada keduanya. Dengan demikian gnomon $KLM$ dan bujur sangkar
+- bujur sangkar $BG$ dan $GD$, sama besar dengan dua kali persegi panjang yang
+dibentuk $AB$ dan $BC$ dan bujur sangkar pada $AC$. Tetapi, gnomon $KLM$ dan
+bujur sangkar - bujur sangkar $BG$ dan $GD$ sama besar dengan keseluruhan dari
+bujur sangkar $ADEB$ dan bujur sangkar $CF$, yang masing - masing adalah bujur 
+sangkar - bujur sangkar pada $AB$ dan $BC$. Dengan demikian, jumlah 
+bujur sangkar - bujur sangkar pada $AB$ dan $BC$ sama besar dengan dua kali
+persegi panjang yang dibentuk $AB$ dan $BC$, dan bujur sangkar pada
+$AC$.
+
+Dengan demikian, jika sebuah garis lurus dibagi dua disatu titik tertentu 
+secara acak, maka jumlah dari bujur sangkar dari keseluruhan garis dengan 
+bujur sangkar salah satu potongan, sama besar dengan jumlah dua kali jumlah 
+persegi panjang yang dibentuk
+keseluruhan garis dengan potongan tadi dengan besar bujur sangkar pada potongan
+sisanya. Yang adalah hal yang perlu ditunjukkan. 
+\footnote{Proposisi ini adalah bentuk
+geometri dari identitas aljabar $(a + b)^2 + a^2 = 2(a + b)a + b^2 $ }
 
 \setcounter{section}{12}
 \section*{\centering Proposisi \thesection} 
