@@ -43,3 +43,36 @@ how to get home early?
 https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/dot-cross-products/v/vector-dot-product-and-vector-length
 
 now in
+
+
+
+
+Prop 2.14
+VT ^ 2= VS^2 + ST^2 - 2VS*ST*COS(VST)
+5*sqrt(2) = ? + 4^2 - 2VS*16*COS(VST)
+
+
+VS^2 = VT^2 + ST^2 - 2ST*VT*COS(STV)
+VS^2 = (5*SQRT(2))^2 + 4^2 + 2*4*5*SQRT(2)*COS(55)
+
+ST^2 = VS^2 + VT^2 -  2*VS*ST*COS(TVS)
+VS^2 + VT^2 - ST^2 = 2*VS*ST*COS(TVS)
+
+VS^2 + VT^2 - ST^2 = COS(TVS)
+-----------------
+2*VS*ST
+
+
+
+VT^2 + ST^2 - 2VT*ST*COS(55) + VT^2 - ST^2 = COS(TVS)
+------------------------------------------
+2*VS*ST
+
+
+2*50 - 2*5*SQRT(2)*4*COS(55) 
+---------------------------------------------------------= COS(TVS)
+2*SQRT((5*SQRT(2))^2 + 4^2 - 2*4*5*SQRT(2)*COS(55))*4
+
+
+
+

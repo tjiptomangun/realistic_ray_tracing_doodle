@@ -2038,15 +2038,15 @@ tertentu dalam sudut rektilinear tertentu.
 %	--++ ({-30+(180-45)}:5) node [anchor=south]{C}
 %	--++ ({(-30+(180-45))+(180-90)}:5);
 
-\draw (0, 12) node [anchor=east]{A} --++ (-30:{2*5*cos(75)}) node[anchor=north]{B}
+\draw (0, 9) node [anchor=east]{A} --++ (-30:{2*5*cos(75)}) node[anchor=north]{B}
 	--++ ({-30 + (180-75)}: 5) node [anchor=south]{D}
 	--++ ({-30 + (180-75) + (180 - 30)}:5);
 
-\draw (0, 12) --++ (-30:{2*5*cos(75)}) 
+\draw (0, 9) --++ (-30:{2*5*cos(75)}) 
 	--++ ({-30 + (180-75) - 45}: {2.5/cos(45)}) node[anchor=west]{C}
 	--++ ({-30 + (180-75) - 45 + 90}: {2.5/cos(45)});
 
-\draw (8, 12) --++ (215:1) node [anchor=west]{E}--++ ({215+(180-60)}:1)
+\draw (8, 9) --++ (215:1) node [anchor=east]{E}--++ ({215+(180-60)}:1)
 %%	--++ ({215 + (180-60) + (180-60)} : 1)
 ;
 
@@ -2121,7 +2121,7 @@ juga sama besar dengan dua buah sudut siku - siku. Dengan demikian kedua
 garis lurus, $KH$ dan $HM$, tidak berada pada sisi yang sama, membentuk
 sudut bersebelahan dengan garis lurus $GH$ pada arah $H$ pada nya, yang jumlah
 nya juga sama besar dengan dua buah sudut siku - siku. Dengan demikian
-$KH$ lurus terhadap $HM$ [Prop. 1.14]. Dan sebab garis lurus $KH$ jatuh
+$KH$ lurus terhadap $HM$ [Prop. 1.14]. Dan sebab garis lurus $HG$ jatuh
 memotong garis - garis sejajar  $KM$ dan $FG$, sudut berseberangan $MHG$ dan
 $HGF$ sama besar satu dengan yang lain [Prop. 1.29]. Misalkan $HGL$ sudah
 ditambahkan pada keduanya. Dengan demikian jumlah $MHG$ dan $HGL$ sama besar
@@ -2499,7 +2499,7 @@ yang dibentuk oleh potongan - potongan tersebut.
 	--++ (0:3) node [anchor=north] {E} --++ (90:5) node[anchor=west] {K} 
 	--++ (90:3) node [anchor=south] {B} --++ (180:3) node[anchor=south]{C}
 	--++ (180:5) node[anchor=south] {A} --++ (270:3) node[anchor=east]{H}
-	--++(0:5) node[anchor=north]{G} --++ (0:3) --++(90:3)
+	--++(0:5) node[anchor=north west]{G} --++ (0:3) --++(90:3)
     --++(225:{8*sqrt(2)}) -- ++ (90:5) --++ (0:5) --++ (90:3) --++ (270:8);
 \end{tikzpicture}
 \end{center}
@@ -2692,8 +2692,8 @@ geometri dari identitas aljabar $(2a + b)b + a^2 = (a + b)^2 $ }
 
 Jika sebuah garis lurus dibagi dua disatu titik tertentu secara acak, maka jumlah
 dari besar bujur sangkar pada keseluruhan garis dengan besar bujur sangkar salah satu 
-potongan, sama besar dengan jumlah dua kali jumlah besar persegi panjang yang dibentuk
-keseluruhan garis dengan salah satu potongan tadi dengan besar bujur sangkar pada potongan
+potongan, sama besar dengan jumlah dua kali besar persegi panjang yang dibentuk
+keseluruhan garis dengan salah satu potongan tadi ditambah besar bujur sangkar pada potongan
 sisanya.
 
 \begin{center}
@@ -2742,9 +2742,9 @@ $AC$.
 
 Dengan demikian, jika sebuah garis lurus dibagi dua disatu titik tertentu 
 secara acak, maka jumlah dari besar bujur sangkar dari keseluruhan garis dengan 
-besar bujur sangkar salah satu potongan, sama besar dengan jumlah dua kali jumlah 
-persegi panjang yang dibentuk
-keseluruhan garis dengan potongan tadi dengan besar bujur sangkar pada potongan
+besar bujur sangkar salah satu potongan, sama besar dengan jumlah dua kali 
+besar persegi panjang yang dibentuk
+keseluruhan garis ditambah potongan tadi dengan besar bujur sangkar pada potongan
 sisanya. Yang adalah hal yang perlu ditunjukkan. 
 \footnote{Proposisi ini adalah bentuk
 geometri dari identitas aljabar $(a + b)^2 + a^2 = 2(a + b)a + b^2 $ }
@@ -2756,7 +2756,8 @@ geometri dari identitas aljabar $(a + b)^2 + a^2 = 2(a + b)a + b^2 $ }
 Jika sebuah garis lurus dipotong secara acak, maka empat kali dari besar
 persegi panjang yang dibentuk oleh keseluruhan garis dengan salah satu
 potongannya, ditambah dengan besar bujur sangkar pada potongan sisanya, 
-sama besar dengan besar bujur sangkar pada keseluruhan garis lurus tersebut.
+sama besar dengan besar bujur sangkar pada keseluruhan garis lurus tersebut
+setelah dipanjangkan dengan potongan pertama tadi.
 
 \begin{center} 
 \begin{tikzpicture}
@@ -2777,13 +2778,14 @@ sama besar dengan besar bujur sangkar pada keseluruhan garis lurus tersebut.
 Sebab misalkan sembarang garis $AB$ sudah dipotong secara acak pada titik $C$.
 Saya katakan empat kali besar persegi panjang yang dibentuk $AB$ dan $BC$, 
 ditambah besar bujur sangkar pada $AC$, sama besar dengan besar bujur
-sangkar pada $AB$ dan $BC$ secara utuh.
+sangkar pada $AB$ dipanjangkan dengan $BC$.
 
-Sebab misalkan $BD$ sudah ditarik memanjangkan (dengan lurus garis lurus $AB$)
+Sebab misalkan $BD$ sudah ditarik memanjangkan ($AB$ secara lurus)
 , dan misalkan $BD$ sudah dibuat sama panjang dengan $CB$ [Prop. 1.3], dan
 misalkan bujur sangkar $AEFD$ sudah digambarkan pada $AD$ [Prop. 1.46], dan 
-misalkan bidang - bidang selebihnya sudah di gambarkan (Garis $ED$ dari $E$ ke $D$, $CH$ dan $BL$ sejajar
-dengan $AE$, Dan melalui $K$ tarik $MN$ dan melalui $Q$ tarik $OP$, keduanya sejajar dengan $AD$).
+misalkan bidang - bidang selebihnya sudah di gambarkan (Garis $ED$ dari $E$ 
+ke $D$, $CH$ dan $BL$ sejajar dengan $AE$, Dan melalui $K$ tarik $MN$ dan 
+melalui $Q$ tarik $OP$, keduanya sejajar dengan $AD$).
 
 Dengan demikian, karena $CB$ sama panjang dengan $BD$, tetapi $CB$ juga 
 sama panjang $GK$ [Prop. 1.34], dan $BD$ sama panjang dengan $KN$ [Prop. 1.34],
@@ -2796,16 +2798,25 @@ pada $CK$ juga sama besar dengan besar bujur sangkar pada $RN$. Karena keduanya
 adalah jajaran genjang kompelementer jajaran genjang $CP$ [Prop. 1.43].
 Dengan demikian besar bujur sangkar $KD$ juga sama besar dengan besar bujur 
 sangkar pada $GR$. Dengan demikian keempat bujur sangkar $DK$, $CK$, $GK$, dan
-$RN$ adalah sama besar satu dengan yang lain. Dengan demikian, keempatnya sekaligus
-adalah empat kali lipat besar bujur sangkar $CK$. Dan lagi, karena $CB$ sama
-panjang dengan $BD$, tetapi $BD$ sama panjang dengan $BK$ (sudut $AED$ dan $ADE$ sama besar karena $AE$ sama panjang dengan $AD$ [Prop. 1.8], dan sudut $BKD$ juga sama besar dengan sudut $ADE$ karena $BK$ sejajar $AE$ dan $ED$ memotong keduanya, penerjemah [Prop 1.28])- dan juga $CG$ - dan
+$RN$ adalah sama besar satu dengan yang lain. Dengan demikian, keempatnya 
+sekaligus adalah empat kali lipat besar bujur sangkar $CK$. Dan lagi, karena 
+$CB$ sama panjang dengan $BD$, tetapi $BD$ sama panjang dengan $BK$ 
+(sudut $AED$ dan 
+$ADE$ sama besar karena $AE$ sama panjang dengan $AD$ [Prop. 1.8], dan sudut 
+$BKD$ juga sama besar dengan sudut $ADE$ karena $BK$ sejajar $AE$ dan $ED$ 
+memotong keduanya, penerjemah [Prop 1.28])- dan juga $CG$ - dan
 $CB$ sama panjang dengan $GK$ - dan juga $GQ$ - $CG$ dengan demikian juga 
 sama panjang dengan $GQ$. Dan karena $CG$ sama panjang dengan $GQ$, dan $QR$
-sama panjang dengan $RP$, persegi panjang $AG$ sama besar dengan persegi panjang $MQ$, dan persegi panjang $QL$ sama besar dengan persegi panjang $RF$[Prop. 1.36]. Tetapi persegi panjang $MQ$ sama besar dengan persegi panjang $QL$. Karena keduanya adalah komplementer pada jajaran genkang $ML$ [Prop. 1.43]. Dengan 
+sama panjang dengan $RP$, persegi panjang $AG$ sama besar dengan persegi panjang 
+$MQ$, dan persegi panjang $QL$ sama besar dengan persegi panjang $RF$[Prop. 1.36]. 
+Tetapi persegi panjang $MQ$ sama besar dengan persegi panjang $QL$. Karena 
+keduanya adalah komplementer pada jajaran genkang $ML$ [Prop. 1.43]. Dengan 
 demikian, keempat persegi panjang $AG$, $MG$, $QL$m dan $RF$ adalah sama besar
-satu dengan yang lain. Dengan demikian jumlah besar keempatnya sama dengan empat kali lipat besar persegi panjang $AG$. Dan juga sudah ditunjukkan keempat
+satu dengan yang lain. Dengan demikian jumlah besar keempatnya sama dengan empat 
+kali lipat besar persegi panjang $AG$. Dan juga sudah ditunjukkan keempat
 bujur sangkar $CK$, $KD$, $GR$ dan $RN$ jika digabungkan besarnya adalah empat
-kali besar bujur sangkar $CK$. Dengan demikian, jika kedelapan bidang digabungkan, yang membentuk gnomon $STU$, adalah empat kali besar bersegi panjang $AK$.
+kali besar bujur sangkar $CK$. Dengan demikian, jika kedelapan bidang digabungkan, 
+yang membentuk gnomon $STU$, adalah empat kali besar bersegi panjang $AK$.
 Dan karena $AK$ adalah persegi panjang yang dibentuk oleh $AB$ dan $BD$, karena
 $BK$ sama panjang dengan $BD$, empat kali besar persegi panjang yang di bentuk
 oleh $AB$ dan $BD$ adalah empat kali persegi panjang $AK$. Dengan demikian
@@ -2817,20 +2828,26 @@ pada $AC$, sama besar dengan gnomon $STU$, ditambah dengan
 bujur sangkar $OH$. Tetapi gnomon $STU$ dan bujur sangkar $OH$ sama dengan keseluruhan
 bujur sangkar $AEFD$, yang adalah bujur sangkar pada $AD$. Dengan demikian,
 empat kali besar persegi panjang yang dibentuk $AB$ dan $BD$, ditambah dengan 
-besar bujur sangkar pada $AC$, sama dengan besar bujur sangkar pada $AD$. Dan $BD$ sama panjang dengan $BC$. Dengan demikian, empat kali persegi panjang yang dibentuk 
-$AB$ dan $BC$, ditambah dengan bujur sangkar pada $AC$, sama besar dengan bujur sangkar pada $AD$, yang adalah bujur sangkar digambarkan pada $AB$ dan $BC$. 
+besar bujur sangkar pada $AC$, sama dengan besar bujur sangkar pada $AD$. Dan $BD$ 
+sama panjang dengan $BC$. Dengan demikian, empat kali persegi panjang yang dibentuk 
+$AB$ dan $BC$, ditambah dengan bujur sangkar pada $AC$, sama besar dengan bujur 
+sangkar pada $AD$, yang adalah bujur sangkar digambarkan pada $AB$ dan $BC$. 
 
 Dengan demikian, jika sebuah garis lurus dipotong secara acak, maka empat kali besar
-persegi panjang yang dibentuk oleh keseluruhan garis dengan salah satu potongannya, ditambah dengan besar bujur sangkar dari potongan selebihnya, sama besar dengan besar
-bujur sangkar pada garis tersebut secara utuh  \footnote{Proposisi ini adalah versi geometri dari identitas aljabar $4(a + b)a + b^2 = [(a + b) + a]^2$} .
+persegi panjang yang dibentuk oleh keseluruhan garis dengan salah satu potongannya, 
+ditambah dengan besar bujur sangkar dari potongan selebihnya, sama besar dengan besar
+bujur sangkar pada keseluruhan garis tadi setelah dipanjangkan dengan potongan
+pertama tadi \footnote{Proposisi ini adalah versi 
+geometri dari identitas aljabar $4(a + b)a + b^2 = [(a + b) + a]^2$} .
 Yang adalah hal perlu ditunjukkan.
 
 \stepcounter{section}
 \section*{\centering Proposisi \thesection} 
 \addcontentsline{toc}{section}{Proposisi \thesection}
 
-Jika sebuah garis lurus dipotong menjadi bagian - bagian yang besar dan tidak
-sama panjang, maka jumlah dari besar bujur sangkar - bujur sangkar pada 
+Jika sebuah garis lurus dipotong menjadi bagian - bagian yang sama panjang 
+dan tidak sama panjang, maka jumlah dari besar bujur sangkar - bujur sangkar 
+pada 
 potongan - potongan yang
 tidak sama panjang keseluruhan garis adalah dua kali jumlah dari jumlah besar
 bujur sangkar pada setengah keseluruhan garis dan besar bujur sangkar pada
@@ -2906,7 +2923,8 @@ Dengan demikian, jumlah dari besar bujur sangkar pada $AD$ dan besar bujur
 sangkar pada $DB$ adalah dua kali besar jumlah bujur sangkar pada $AC$ dan 
 dan besar bujur sangkar pada $CD$.
 
-Dengan demikian, jika sebuah garis lurus dipotong menjadi bagian - bagian yang besar dan tidak
+Dengan demikian, jika sebuah garis lurus dipotong menjadi bagian - bagian 
+yang sama panjang dan tidak
 sama panjang, maka jumlah dari besar bujur sangkar - bujur sangkar pada 
 potongan - potongan yang
 tidak sama panjang keseluruhan garis adalah dua kali jumlah dari jumlah besar
@@ -3029,8 +3047,9 @@ potongannya adalah sama besar dengan besar bujur sangkar pada potongan sisanya.
 	--++ (270: 8) node [anchor=north]{K};
 \draw [dashed, gray] (0, -4) --++ (0: {sqrt(8*8 + 4*4)})
 	--++ (90:{sqrt(8*8 + 4*4)}) --++ (180:4);
-\draw [dotted, gray] ({sqrt(8*8 + 4*4) - 4}, -4) --++ (0: 4)
+\draw [dash dot, gray] ({sqrt(8*8 + 4*4) - 4}, -4) --++ (0: 4)
 	--++(90:4) --++(180:4);
+\draw [dash dot, gray] (0, {sqrt(8*8 + 4*4) - 4}) --++ (315: {sqrt((8*8 + 4*4)*2)});
 \end{tikzpicture}
 \end{center}
 
@@ -3087,9 +3106,10 @@ Pada segitiga tumpul, besar bujur sangkar dari sisi yang menghadap sudut tumpul
  adalah lebih besar dari jumlah besar bujur sangkar - bujur sangkar sisi - sisi 
 yang mengapit sudut tumpul sebanyak dua kali besar persegi panjang yang 
 dibentuk dari satu sisi yang yang mengapit sudut tumpul yang padanya garis lurus 
-jatuh secara tegak lurus, dan garis lurus yang memotong sisi luar 
-(segitiga tersebut) dari garis tegak lurus kearah sudut tumpul.
+jatuh secara tegak lurus dari sudut segitiga yang didepannya, dengan garis lurus yang memotong dari luar 
+(segitiga tersebut) dari titik jatuh garis tegak lurus kearah sudut tumpul.
 
+\begin{center}
 \begin{tikzpicture}
 \draw [-, black] (-2, -2) -- (6, -2);
 \draw (-2.25, -2.25) node {$D$};
@@ -3100,6 +3120,7 @@ jatuh secara tegak lurus, dan garis lurus yang memotong sisi luar
 \draw (0.0, -2.25) node {$A$};
 \draw [-, black] (6, -2) -- (-2, 3);
 \end{tikzpicture} 
+\end{center}
 
 Misalkan $ABC$ adalah segitiga tumpul, dengan sudut $BAC$ adalah sudut tumpul.
 Misalkan $BD$ ditarik dari titik $B$ tegak lurus terhadap $CA$ [Prop 1.12]. Saya
@@ -3127,8 +3148,10 @@ menghadap sudut tumpul adalah lebih besar dari jumlah besar bujur sangkar -
 bujur sangkar sisi - sisi 
 yang mengapit sudut tumpul sebanyak dua kali besar persegi panjang yang 
 dibentuk dari satu sisi yang yang mengapit sudut tumpul yang padanya garis lurus 
-jatuh secara tegak lurus, dan garis lurus yang memotong sisi luar 
-(segitiga tersebut) dari garis tegak lurus kearah sudut tumpul\footnote{Proposisi
+jatuh secara tegak lurus dari sudut di depannya, dan garis lurus yang 
+memotong dari luar 
+(segitiga tersebut) dari titik jatuh garis tegak lurus kearah sudut 
+tumpul\footnote{Proposisi
 sama dengan	rumus kosinus yang terkenal 
 $BC^2 = AB^2 + AC^2 - 2\ AB\  AC\cos BAC, \text{karena}  \cos BAC = -AD/AB$}. 
 Yang adalah hal yang perlu ditunjukkan.
@@ -3137,6 +3160,135 @@ Yang adalah hal yang perlu ditunjukkan.
 \section*{\centering Proposisi \thesection} 
 \addcontentsline{toc}{section}{Proposisi \thesection} 
 
+Pada segitiga lancip, besar bujur sangkar pada sisi yang menghadap sudut 
+lancip, adalah lebih kecil dari jumlah besar bujur sangkar - bujur sangkar 
+pada sisi yang mengapit sudut lancip sebesar dua kali besar persegi panjang
+yang dibentuk salah satu sisi yang mengapit sudut lancip tadi, yang padanya sebuah
+garis tegak lurus jatuh dari sudut dihadapannya, dengan garis lurus yang dipotong dari dalam segitiga oleh
+garis tegak lurus tadi ke arah sudut lancip.
+
+\begin{center}
+\begin{tikzpicture}[scale=.8, every node/.style={scale=.8}]
+\draw (0, 0) node [anchor=north east]{B} 
+	--++ (0: 7) node [anchor=north west]{C}
+	--++ (137:6) node [anchor=south]{A} 
+	--++ (270:{6*sin(137)}) node [anchor=north east]{D};
+\draw (0, 0) --++ 
+	({atan(6*sin(137)/(7+6*cos(137)))}: 
+	{sqrt(pow(6*sin(137), 2) + pow(7+6*cos(137), 2))});
+\draw [dashed, gray](0, 0) --++ (270:7) --++ (0:7)
+	--++ (90:7); 
+\draw [dashed, gray](0, -7) --++ (90:{(7+6*cos(137))})
+	--++ (0: {(7+6*cos(137))}) --++ (270: {(7+6*cos(137))}); 
+\draw [dashed ,gray]({7+6*cos(137)}, 0) --++(270: {7 - (7+6*cos(137)})
+	--++ (0: {7 - (7+6*cos(137))});
+\draw [dashed, gray](0, -7) --++ (45: {7*sqrt(2)});
+\draw [dash dot, gray] ({7 + 6 *cos(137)}, {6*sin(137)}) 
+	--++ (180:{6*sin(137)}) --++ (270: {6 * sin(137)}) --(0, 0);
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ adalah segitiga lancip, yang salah sudut nya $B$ adalah sudut
+lancip. Dan misalkan $D$ sudah ditarik dari titik $A$, tegak lurus terhadap 
+$BC$ [Prop 1.12]. Saya katakan bahwa besar bujur sangkar pada $AC$ adalah 
+lebih kecil dari jumlah besar bujur sangkar - bujur sangkar pada $CB$ dan 
+$BA$ sebesar dua kali persegi panjang yang dibentuk $CB$ dan $BD$.
+
+Sebab karena garis lurus $CB$ sudah dipotong secara acak pada $D$, jumlah 
+besar bujur sangkar pada $CB$ dan bujur sangkar pada $BD$ dengan demikian
+sama dengan dua kali besar persegi panjang $CB$ dan $BD$ ditambah  bujur 
+sangkar pada $DC$ [Prop. 2.7]. Misalkan bujur sangkar $DA$ sudah ditambahkan
+pada keduanya. Dengan demikian jumlah besar bujur sangkar - bujur sangkar pada
+$CB$, $BD$ dan $DA$ adalah dua kali persegi panjang yang dibentuk $CB$ dan 
+$BD$, dan jumlah besar bujur sangkar - bujur sangkar pada $AD$ dan $DC$. 
+Tetapi, besar bujur sangkar pada $AB$ adalah sama dengan jumlah besar bujur
+sangkar - bujur sangkar pada $BD$ dan $DA$. Karena sudut pada titik $D$ adalah
+sudut siku - siku [Prop. 1.47]. Dan besar bujur sangkar pada $AC$ adalah
+sama besar dengan jumlah besar bujur sangkar - bujur sangkar pada $AD$ dan 
+$DC$ [Prop. 1.47]. Dengan demikian, jumlah besar bujur sangkar - bujur sangkar
+pada $CB$ dan $BA$ adalah sama besar dengan besar bujur sangkar pada $AC$, dan
+dua kali persegi panjang yang dibentuk $CB$ dan $BD$. Dengan demikian, besar
+bujur sangkar pada $AC$ adalah lebih kecil dari jumlah besar bujur sangkar 
+- bujur sangkar pada $CB$ dan $BA$ sebesar dua kali persegi panjang yang
+dibentuk $CB$ dan $BD$.
+
+Dengan demikian, pada segitiga lancip, besar bujur sangkar pada sisi yang
+menghadap sudut lancip adalah lebih kecil dari jumlah besar bujur sangkar - 
+bujur sangkar pada sisi - sisi yang mengapit sudut lancip sebesar dua kali
+besar persegi panjang yang dibentuk salah satu sisi yang mengapit sudut
+lancip tadi, yang padanya sebuah garis tegak lurus jatuh dari sudut 
+dihadapannya, dengan garis lurus yang dipotong dari dalam segitiga oleh garis
+tegak lurus tadi ke arah sudut lancip \footnote{Proposisi ini adalah sama 
+dengan rumus consinus yang terkenal 
+$AC^2 = AB^2 + BC^2 - 2\cdot AB\cdot BC\cdot cos(ABC)$}.
+
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection} 
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Untuk menggambarkan sebuah bujur sangkar yang  sama besar dengan bidang 
+rektilinear tertentu.
+
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node [anchor=north] {S}
+	--++ (-10:4) node [anchor=north]{T}
+	--++ (70:5)  node [anchor=west]{U}%%the inner angle is 100
+	--++ (160:5) node [anchor=east]{V}%%the inner angle is 90 
+%%	--++ (270:
+%%https://tex.stackexchange.com/questions/22340/good-workaround-for-pgfmath-tikz-definition-of-inverse-cosine
+	--++ ({acos((2*50 - 2*5*sqrt(2)*4*cos(55))/(2*sqrt(50+16 - 40*sqrt(2)*cos(55))*4))}: 
+		5);	
+		 %%{sqrt(25*2 + 4*4 + 2*4*5*sqrt(2)*cos(55))}); %% = 
+			%%using cosine vs = sqrt(vt^2 + st^2 - 2vt*st*cos(55))
+			%%8.20071206371003 
+\draw[dashed, gray ](0, 0) --++ (-10:6) --++ (170:2) 
+	--++ (250:2) --++ (70:9) --++ (250:2) --++ (340:2)
+	--++ (160:7) --++ (295:{5*sqrt(2)}) --++ (115:8)
+	--++ (295:{8 - 5*sqrt(2)}) --++ (160:1);
+%%	--++ ({asin(-4/(sqrt(2)*5)}: 4);
+
+
+\end{tikzpicture}
+\end{center}
+
+Misalkan ada $A$ adalah bidang rektilinear tertentu. Jadi diperlukan untuk
+menggambar sebuah bujur sangkar yang sama besar dengan bidang rektilinear
+$A$
+
+Sebab misalkan persegi panjang $BD$ dengan sudut siku - siku, sama besar  
+dengan bidang rektilinear $A$ sudah dibuat [Prop. 1.45]. Jadi,
+jika $BE$  sama panjang dengan $ED$ maka bidang yang diperlukan sudah 
+digambarkan. Karena bujur sangkar $BD$ sama besar dengan bidang $A$, sudah
+digambarkan. Dan jika tidak, maka salah satu garis lurus tersebut $BE$ 
+atau $ED$ lebih panjang dari yang lain. Misalkan $BE$ adalah yang lebih
+panjang, dan misalkan sudah dipanjangkan sampai $F$, dan misalkan $EF$ 
+sudah dibuat sama panjang dengan $ED$ [Prop. 1.3]. Dan misalkan $BF$ sudah
+dibagi dua sama panjang pada titik $G$ [Prop. 1.10]. Dan dengan pusat $G$, 
+dan jari - jari nya adalah salah satu garis lurus $GB$ atau $GF$, misalkan
+setengan lingkaran $BHF$ sudah digambarkan. Dan misalkan $DE$ sudah 
+dipanjangkan sampai $H$. Dan misalkan $GH$ sudah dihubungkan.
+
+Dengan demikian, karena garis lurus $BF$ sudah dipotong sama panjang pada
+$G$ dan secara tidak sama panjang pada $E$, persegi panjang yang dibentuk
+$BE$ dan $EF$ ditambah bujur sangkar $EG$, dengan demikian sama besar denga
+bujur sangkar pada $GF$ [Prop. 2.5]. Dan $GF$ sama panjang dengan $GH$. 
+Dengan demikian, persegi panjang yang dibentuk oleh $BE$ dan dan $EF$, 
+ditambah bujur sangkar pada $GE$, sama besar dengan bujur sangkar pada
+$GH$. Dan jumlah dari besar bujur sangkar - bujur sangkar pada $HE$ dan $EG$
+sama besar dengan bujur sangkar pada $GH$ [Prop[. 1.47]. Dengan demikian, 
+persegi panjang yang dibentuk $BE$ dan $EF$, ditambah bujur sangkar pada $GE$,
+sama besar dengan jumlah besar bujur sangkar - bujur sangkar pada $HE$ dan
+$EG$. Misalkan bujur sangkar $GE$ sudah diambil dari keduanya. Dengan demikian, 
+persegi panjang yang tersisa yang dibentuk $BE$ dan $EF$ sama besar dengan 
+dengan bujur sangkar pada $EH$. Tetapi, $BD$ adalah persegi panjang yang 
+dibentuk oleh $BE$ dan $EF$. Karena $EF$ sama panjang dengan $ED$. Dengan 
+demikian, jajaran genjang $BD$ sama besar dengan  bujur sangkar pada $HE$.
+Dan $BD$ sama besar dengan bidang rektilinear $A$. Dengan demikian, bidang
+rektilinear $A$ juga sama besar dengan bujur sangkar pada $EH$.
+
+Dengan demikian, bujur sangkar, yang digambarkan pada $EH$ sudah dibentuk, 
+sama besar dengan bidang rektilinear $A$. Yang adalah hal yang perlu dilakukan.  
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
 Richard Fitzpatrick.
