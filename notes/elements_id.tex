@@ -7,6 +7,7 @@
 \usepackage{color, colortbl}
 \usepackage{tikz}
 \usepackage[bahasa]{babel}
+\usetikzlibrary{calc}
 
 \hbadness=999999
 \vbadness=999999
@@ -23,6 +24,46 @@
 %    linkcolor=blue,  %choose some color if you want links to stand out
 }
 
+\makeatletter
+
+%%\pgfmathdeclarefunction{newasin}{1}{%
+%%    \begingroup%
+%%        \expandafter\pgfmath@x#1pt\relax%
+%%        \pgfmath@xa\pgfmath@x%
+%%        \ifdim\pgfmath@x<0pt\relax%
+%%            \pgfmath@x-\pgfmath@x%
+%%        \fi%
+%%        \pgfmath@x1000\pgfmath@x%
+%%        \afterassignment\pgfmath@gobbletilpgfmath@%
+%%        \expandafter\c@pgfmath@counta\the\pgfmath@x\relax\pgfmath@%
+%%        \pgfmath@x-\csname pgfmath@acos@\the\c@pgfmath@counta\endcsname pt\relax%
+%%        \advance\pgfmath@x90pt\relax%
+%%        \ifdim\pgfmath@xa<0pt\relax%
+%%            \pgfmath@x-\pgfmath@x%
+%%        \fi%
+%%        \pgfmath@returnone\pgfmath@x%
+%%    \endgroup%
+%%}
+%%
+%%\pgfmathdeclarefunction{newacos}{1}{%
+%%    \begingroup%
+%%        \expandafter\pgfmath@x#1pt\relax%
+%%        \pgfmath@xa\pgfmath@x%
+%%        \ifdim\pgfmath@x<0pt\relax%
+%%            \pgfmath@x-\pgfmath@x%
+%%        \fi%
+%%        \pgfmath@x1000\pgfmath@x%
+%%        \afterassignment\pgfmath@gobbletilpgfmath@%
+%%        \expandafter\c@pgfmath@counta\the\pgfmath@x\relax\pgfmath@%
+%%        \expandafter\pgfmath@x\csname pgfmath@acos@\the\c@pgfmath@counta\endcsname pt\relax%
+%%        \ifdim\pgfmath@xa<0pt\relax%
+%%            \pgfmath@x-\pgfmath@x%
+%%            \advance\pgfmath@x by180pt\relax%
+%%        \fi%
+%%        \pgfmath@returnone\pgfmath@x%
+%%    \endgroup%
+%%}
+%%
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
 \begin{document}
@@ -35,11 +76,13 @@
 \pagestyle{empty}
 \setcounter{chapter}{1}
 \chapter*{\centering \chaptername{ \thechapter} 
+\addcontentsline{toc}{chapter}{Buku \thechapter}
 Dasar - Dasar dari Geometri Bidang Datar Yang Melibatkan Garis Lurus}
 %\chapter{Dasar - Dasar dari Geometri Bidang Datar Yang Melibatkan Garis Lurus}
 
 
 \begin{center}
+\addcontentsline{toc}{section}{Definisi - definisi}
 \textbf{Definisi - definisi}
 \end{center} 
 \begin{enumerate}
@@ -100,6 +143,7 @@ tidak bertemu satu dengan yang lain.
 \end{enumerate}
 
 \begin{center}
+\addcontentsline{toc}{section}{Postulat - postulat}
 \textbf{Postulat - postulat}
 \end{center}
 \begin{enumerate}
@@ -116,10 +160,11 @@ dua sudut siku), dan tidak akan bertemu di sisi satunya.
 \end{enumerate}
 
 \begin{center}
-\textbf{Gagasan - Gagasan Umum}
+\addcontentsline{toc}{section}{Gagasan - gagasan Umum}
+\textbf{Gagasan - gagasan Umum}
 \end{center}
 \begin{enumerate}
-\item Hal - hal yang nilai nya sama dengan satu hal lain diluar keduanya adalah sama satu dengan yang lain. 
+\item Hal - hal yang nilai nya sama dengan satu hal lain di luar keduanya adalah sama satu dengan yang lain. 
 \item Dan jika hal - hal yang sama masing - masing ditambahkan ke hal yang lain yang sama, maka hasil nya sama satu dengan yang lain. 
 \item Dan jika hal - hal yang sama masing - masing dikurangi dengan hal yang lain yang sama, maka hasil nya sama satu dengan yang lain. 
 \item Dan hal - hal yang berhimpit satu dengan yang lain adalah sama.
@@ -351,7 +396,7 @@ panjang $AF$ sama dengan $AG$ dan di dalamnya $AB$ sama dengan $AC$, maka panjan
 ruas garis sisanya $BF$ sama dengan $CG$ [G.U.3]. Tetapi $FC$ juga sudah kita
 tunjukkan sama dengan $GB$. Jadi kedua garis lurus $BF$, $FC$ adalah sama dengan
 dua garis lurus $CG$, $GB$, masing - masing, dan sudut $BFC$ sama besar dengan 
-sudut $CGB$, dan sisi alas ada $BC$ adalah milik keduanya. Dengan demikian 
+sudut $CGB$, dan sisi alas ada $BC$ adalah sama. Dengan demikian 
 segitiga $BFC$ akan sama dengan segitiga $CGB$ dan sudut - sudut sisanya yang
 menghadap sisi - sisi yang sama besar akan sama besar dengan 
 sudut - sudut sisanya yang bersesuaian [Prop 1.4]. Dengan demikian $FBC$ sama
@@ -2303,9 +2348,11 @@ perlu kita tunjukkan.
 
 \stepcounter{chapter}
 \chapter*{\centering \chaptername{ \thechapter} 
+\addcontentsline{toc}{chapter}{Buku \thechapter}
 Dasar - Dasar Aljabar Geometri}
 
 \begin{center}
+\addcontentsline{toc}{section}{Definisi - definisi}
 \textbf{Definisi - definisi}
 \end{center} 
 \begin{enumerate}
@@ -3234,20 +3281,65 @@ rektilinear tertentu.
 \draw(0, 0) node [anchor=north] {S}
 	--++ (-10:4) node [anchor=north]{T}
 	--++ (70:5)  node [anchor=west]{U}%%the inner angle is 100
-	--++ (160:5) node [anchor=east]{V}%%the inner angle is 90 
-%%	--++ (270:
-%%https://tex.stackexchange.com/questions/22340/good-workaround-for-pgfmath-tikz-definition-of-inverse-cosine
-	--++ ({acos((2*50 - 2*5*sqrt(2)*4*cos(55))/(2*sqrt(50+16 - 40*sqrt(2)*cos(55))*4))}: 
-		5);	
-		 %%{sqrt(25*2 + 4*4 + 2*4*5*sqrt(2)*cos(55))}); %% = 
+	--++ (160:5) node [anchor=east]{V};%%the inner angle is 90 
+	%--++ (%%{acos((50 - 2*5*sqrt(2)*4*cos(55))/(2*sqrt(66 - ( 40*sqrt(2)*cos(55) ) )*4))}: 5);	
+	%	(260.6: {sqrt(25*2 + 4*4 - 2*4*5*sqrt(2)*cos(55))}); %% = 
 			%%using cosine vs = sqrt(vt^2 + st^2 - 2vt*st*cos(55))
 			%%8.20071206371003 
+%%\pgfmathparse{acos((pow(5*sqrt(2),2) + 4*4 - 2*4*5*sqrt(2)*cos(55) + 4*4 - pow(5*sqrt(2), 2))/(2*5*sqrt(2)* 4))}
+%%	\let\result\pgfmathresult
+%%\pgfmathparse{(pow(5*sqrt(2),2) + 4*4 - 2*4*5*sqrt(2)*cos(55) + 4*4 - pow(5*sqrt(2), 2))/(2*5*sqrt(2)* 4)}
+%%	\let\return\pgfmathresult
+%%\pgfmathparse{(pow(5*sqrt(2),2) + 4*4 - 2*4*5*sqrt(2)*cos(55) + 4*4 - pow(5*sqrt(2), 2))}
+%%	\let\numerator\pgfmathresult
+\pgfmathparse {sqrt(25*2 + 4*4 - 2*4*5*sqrt(2)*cos(55))}
+	\let\rectheight\pgfmathresult
+\draw(0, 0) 
+			%node [anchor=south west] {\result} %%90.45206 
+			--++ ({acos( (pow(5*sqrt(2),2) + 4*4 - 2*4*5*sqrt(2)*cos(55) + 4*4 - pow(5*sqrt(2), 2))/(2*5*sqrt(2)* 4)) - 10}: 
+			{sqrt(25*2 + 4*4 - 2*4*5*sqrt(2)*cos(55))}) ;
+\draw (2.5, 2.5) node {A};
 \draw[dashed, gray ](0, 0) --++ (-10:6) --++ (170:2) 
 	--++ (250:2) --++ (70:9) --++ (250:2) --++ (340:2)
 	--++ (160:7) --++ (295:{5*sqrt(2)}) --++ (115:8)
-	--++ (295:{8 - 5*sqrt(2)}) --++ (160:1);
-%%	--++ ({asin(-4/(sqrt(2)*5)}: 4);
+	--++ (295:{8 - 5*sqrt(2)}) --++ (160:1); 
 
+\draw [dashed, gray](0, -8)
+	--++ (0:{5*sqrt(2)*sin(55)})
+	--++ (270:2)
+	--++ (180:{5*sqrt(2)*sin(55)})
+	--++ (90:2);
+\draw [dashed, gray](0, -10) 
+	--++ (270: {(2.5*5)/\rectheight}) 
+	--++ (0:\rectheight) 
+	--++ (90: {(2.5*5)/\rectheight});
+\draw (0, -8) node[anchor=east]{B} 
+	--++ (0:{5*sqrt(2)*sin(55)}) node [anchor=south west]{E};
+\draw (0, -8) --++ (270: 2)
+	--++ (270: {(2.5*5)/\rectheight}) node [anchor=east]{C}
+	--++ (0:\rectheight) node [anchor=west]{D}
+	--++ (90: {(2.5*5)/\rectheight})
+	--++ (90:2);
+
+
+\pgfmathparse{(2.5*5)/\rectheight}
+	\let\recttwowidth\pgfmathresult
+\draw (\rectheight, -8) 
+	--++(0:{\recttwowidth + 2}) node [anchor=west]{F};
+
+\pgfmathparse{2 + \recttwowidth}
+	\let\rectwidth\pgfmathresult
+\draw ({(\rectheight + \rectwidth)}, -8) arc(0:180:{(\rectheight + \rectwidth)/2});
+\draw (\rectheight, -8) --++ (90:4.9) node [anchor=south]{H};
+
+\pgfmathparse{\rectheight - ((\rectheight + \rectwidth)/2) }
+	\let\triwidth\pgfmathresult
+
+\draw ({(\rectheight + \rectwidth)/2}, -8) node [anchor=north]{G}
+	--++ ({atan(4.9/\triwidth)}:{sqrt(4.9*4.9 + \triwidth*\triwidth)});
+
+\draw [dash dot, gray] (\rectheight, -3.1) --++ (0: 4.9) --++(270:4.9)
+	--++(180:4.9) --++ (90: 4.9);
 
 \end{tikzpicture}
 \end{center}
@@ -3289,6 +3381,600 @@ rektilinear $A$ juga sama besar dengan bujur sangkar pada $EH$.
 
 Dengan demikian, bujur sangkar, yang digambarkan pada $EH$ sudah dibentuk, 
 sama besar dengan bidang rektilinear $A$. Yang adalah hal yang perlu dilakukan.  
+
+\stepcounter{chapter}
+\chapter*{\centering \chaptername{ \thechapter} 
+\addcontentsline{toc}{chapter}{Buku \thechapter}
+Dasar - Dasar Geometri Bidang Datar Yang Melibatkan Lingkaran 
+}
+
+\begin{center}
+\addcontentsline{toc}{section}{Definisi - definisi}
+\textbf{Definisi - definisi}
+\end{center} 
+\begin{enumerate}
+\item Beberapa lingkaran yang sama besar adalah yang diameter - diameter mereka
+sama besar, atau jarak dari pusat ke garis keliling (busur) sama besar 
+(yakni yang berjari - jari sama besar).
+\item Garis lurus dikatakan menyinggung sebuah lingkaran jika garis lurus 
+tersebut bertemu dengan lingkaran tersebut dan jika diperpanjang tidak 
+memotong lingkaran tersebut.
+\item Beberapa lingkaran dikatakan menyinggung  satu dengan yang lain jika
+saling bertemu tetapi tidak saling memotong.
+\item Dalam sebuah lingkaran, garis - garis lurus dikatakan sama jaraknya 
+dari pusat, jika garis - garis tegak lurus yang ditarik pada mereka dari
+pusat adalah sama panjang.
+\item Dan dikatakan lebih jauh jika garis dari pusat lingkaran jatuh tegak
+lurus padanya dengan jarak yang lebih besar.
+\item Temberang dari sebuah lingkaran adalah bidang yang dibentuk oleh
+sebuah garis lurus (disebut alas busur atau tali busur) dan sebuah busur 
+lingkaran.
+\item Dan sudut sebuah tembereng adalah sudut yang dibentuk oleh 
+sebuah garis lurus dan sebuah busur.
+\item Dan sudut di dalam sebuah tembereng adalah sudut yang dibentuk oleh
+dua garis lurus pada satu titik pada busur tembereng, yang kedua garis tadi
+masing - masing ditarik dari ujung - ujung tali busur tembereng.
+\item Dan ketika garis - garis lurus membentuk sebuah sudut yang memotong 
+beberapa busur, sudut tersebut dikatakan berdiri di atas busur tersebut.
+\item Dan juring dari sebuah lingkaran adalah bidang yang dibentuk oleh
+garis - garis lurus yang mengapit sebuah sudut di pusat lingkaran  dan busur 
+tersebut dipotong oleh kedua garis tersebut.
+\item Tembereng yang serupa dari sebuah lingkaran adalah yang memiliki sudut - 
+sudut yang sama besar, atau yang didalamnya sudut - sudut sama besar satu 
+dengan yang lain.
+\end{enumerate}
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Untuk menemukan pusat dari sebuah lingkaran.
+\begin{center}
+\begin{tikzpicture}
+\pgfmathparse{sqrt(4*4-3*3)}
+	\let\baselength\pgfmathresult
+\draw (0, 0) node [anchor=east]{F} --++ (0:.1) --++ (180:.2) --++ (0:.1) 
+	circle(4) 
+	--++ (90:4) node[anchor=south]{C} --++ (270:8) node [anchor=north]{E};
+\draw (0, -3) node [anchor=north east]{D} 
+	--++(180:\baselength) node [anchor=east]{A}
+	--(1, 0) node [anchor=south]{G} -- (0, -3)
+	--++ (0:\baselength) node [anchor=west]{B} -- (1, 0);
+\end{tikzpicture}
+\end{center}
+Misalkan $ABC$ lingkaran yang dimaksud. Jadi dibutuhkan untuk menemukan pusat
+dari lingkaran $ABC$.
+
+Misalkan sembarang garis $AB$ sudah ditarik melalui $ABC$, dan misalkan $AB$
+sudah dibagi di tengah sama panjang di $D$ [Prop. 1.9]. Dan misalkan $DC$ sudah
+ditarik dari $D$ dengan sudut siku - siku ke $AB$ [Prop. 1.11]. Dan misalkan
+$CD$ sudah ditarik melalui $E$. Dan misalkan $CE$ sudah di potong ditengah pada
+$F$ [Prop. 1.9]. Saya katakan bahwa titik $F$ adalah pusat dari lingkaran $ABC$.
+
+Sebab jika tidak maka, jika memungkinkan, misalkan $G$ adalah pusat dari 
+lingkaran, dan misalkan $GA$, $GD$ dan $GB$ sudah dihubungkan. Dan karena $AD$
+sama panjang dengan $DB$, dan $DG$ milik bersama keduanya, kedua garis lurus
+$AD$, $DG$ sama panjang dengan kedua garis lurus $BD$, $DG$. Dan sisi alas $GA$
+sama panjang dengan $GB$. Karena keduanya adalah jari - jari. 
+Dengan demikian sudut $ADG$ sama besar dengan sudut $GDB$
+[Prop. 1.8]. Dan jika sebuah garis lurus berdiri diatas garis lurus yang lain
+membentuk dua buah sudut bersisian yang sama besar, masing - masing sudut yang
+sama besar tersebut adalah sudut siku - siku [Def. 1.10]. Dengan demikian, 
+$GDB$ adalah sudut siku - siku. Dan $FDB$ juga adalah sudut siku - siku. Dengan
+demikian $FDB$ sama besar dengan $GDB$, yang lebih besar sama besar dengan yang
+lebih kecil. Hal tidak mungkin. Maka titik $G$ tidak berada pada pusat 
+lingaran $ABC$. Dengan cara dapat ditunjukkan tidak ada  titik - titik yang 
+lain selain $F$.
+
+
+\begin{center}\textbf{Dalil}\end{center}
+
+Dengan demikian, sudah diumumkan, bahwa jika sembarang garis lurus pada sebuah
+lingkaran memotong garis lurus lain tepat ditengah dan pada sudut siku - siku,
+maka pusat dari lingkaran ada pada  garis pertama tadi. Yang adalah hal yang
+perlu dilakukan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Jika dua buah titik diambil secara acak pada busur sebuah lingkaran maka garis
+lurus yang menghubungkan titik - titik tersebut akan berada di dalam lingkaran
+tersebut.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor= south east]{D} circle (3);
+\draw (0, 0) --++ (200: 3) node [anchor=east]{A} 
+%%\draw (-1, -1) 
+	arc(190:300:2.6) node [anchor=north] {B}-- (0, 0)
+	--++ (250:3) node [anchor=south east]{F} 
+	--++ (250:.235) node [anchor=north west]{E};
+\draw ({3*sin(45)}, {3*cos(45)}) node [anchor = south west]{C};
+\end{tikzpicture}
+\end{center} 
+Misalkan $ABC$ adalah sebuah lingkaran, dan misalkan dua buah titik $A$ dan $B$
+sudah diambil secara acak pada busur nya. Saya katakan bahwa garis lurus yang 
+menghubungkan $A$ dan $B$ berada di dalam lingkaran.
+
+Sebab misalkan tidak, jika mungkin, misalkan garis tersebut berada di luar 
+lingkaran tersebut, seperti $AEB$ pada gambar. Dan misalkan pusat lingkaran 
+$ABC$ sudah ditemukan [Prop. 3.1], dan misalkan pusatnya adalah pada titik $D$.
+Dan misalkan $DA$ dan $DB$ sudah dihubungkan, dan misalkan $DFE$ sudah ditarik.
+
+Dengan demikian, karena $DA$ sama panjang dengan $DB$, sudut $DAE$ dengan 
+demikian sama besar dengan sudut $DBE$ [Prop. 1.5]. Dan karena pada segitiga
+$DAE$ satu sisi $AE$ dipanjangkan menjadi $AEB$, sudut $DEB$ dengan demikian 
+lebih besar dari sudut $DAE$ [Prop. 1.16]. Dan $DAE$ sama besar dengan $DBE$ 
+[Prop. 1.5]. Dengan demikian, $DEB$ lebih besar dari $DBE$, dan sudut yang
+lebih besar akan menghadap sisi yang lebih panjang [Prop. 1.19]. Dengan
+demikian, $DB$ lebih panjang dari $DE$. Dan $DB$ sama panjang dengan $DF$. 
+Dengan demikian, $DF$ harusnya lebih besar dari $DE$, yang lebih panjang lebih
+pendek dari yang seharusnya yang lebih pendek. Hal yang tidak mungkin. Dengan
+demikian, garis lurus yang menghubungkan $A$ dan $B$ tidak akan berada di luar
+lingkaran. Jadi, dengan cara yang sama, kita dapat buktikan juga garis tersebut
+juga tidak berada pada busur. Dengan demikian, garis tersebut akan berada di 
+dalam lingkaran.
+
+Jadi, jika dua buah titik secara acak diambil pada busur sebuah lingkaran, maka
+garis lurus yang menghubungkan kedua titik tersebut akan berada di dalam 
+lingkaran. Yang adalah hal yang perlu ditunjukkan. [Selanjutnya garis
+yang menghubungkan dua buah titik pada busur sebuah lingkaran disebut
+tali busur].
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Pada sebuah lingkaran, jika sembarang tali busur yang melalui pusat lingkaran
+memotong di tengah sembarang tali busur lainnya yang tidak melalui pusat 
+lingkaran, maka garis pertama memotong garis yang kedua secara tegak lurus.
+Dan sebaliknya, jika ia memotongnya secara tegak lurus maka ia memotong garis
+tersebut menjadi dua bagian yang sama besar.
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=south west]{E} circle (3) 
+	--++ (220:3) node [anchor=east]{A}
+	--++ (0: {3*cos(220)*-1}) node [anchor=north west]{F}
+	--++ (0: {3*cos(220)*-1}) node [anchor=west]{B}
+	--++ (140:3)
+	--++ (90:3) node [anchor=south]{C}
+	--++ (270:6) node [anchor=north]{D};
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ adalah sebuah lingkaran, dan di dalamnya, misalkan sembarang 
+tali busur melalui pusat lingkaran, $CD$, memotong di tengah sembarang tali
+busur lain yang tidak melalui pusat lingkaran, $AB$, pada titik $F$. 
+Saya katakan bahwa $CD$ juga memotong $AB$ secara tegak lurus.
+
+Sebab misalkan pusat dari lingkaran $ABC$ sudah ditemukan [Prop. 3.1], dan 
+misalkan berada pada titik $E$, dan misalkan $EA$ dan $EB$ sudah dihubungkan.
+
+Dan karena $AF$ sama panjang dengan $FB$, dan $FE$ sama, kedua sisi
+$AFE$ sama panjang dengan kedua sisi $BFE$. Dan sisi alas $EA$ sama panjang 
+dengan sisi alas $EB$. Dengan demikian, sudut $AFE$ sama besar dengan sudut
+$BFE$ [Prop. 1.8]. Dan bila sebuah garis lurus berdiri di atas garis lurus lain
+dan membentuk sudut - sudut yang bersisian yang sama besar, kedua sudut yang
+sama besar itu adalah sudut siku - siku [Def. 1.10]. Dengan demikian, $AFE$ dan
+$BFE$ masing - masing adalah sudut siku - siku. Dengan demikian, garis lurus
+$CD$, yang melalui pusat lingkaran dan memotong ditengah garis lurus $AB$, yang
+tidak melalui pusah lingkaran, juga memotong $AB$ secara tegak lurus.
+
+Dan juga misalkan $CD$ memotong $AB$ secara tegak lurus. Saya katakan bahwa
+dia juga memotong $AB$ ditengah. Yang juga menyatakan, $AF$ sama panjang dengan
+$FB$.
+
+Karena, dengan susunan yang sama, karena $EA$ sama panjang dengan $EB$, sudut
+$EAF$ juga sama besar dengan sudut $EBF$ [Prop. 1.5]. Dan sudut siku $AFE$ juga
+sama besar dengan sudut siku $BFE$. Dengan demikian, $EAF$ dan $EFB$ adalah dua
+buah segitiga dengan dua buah sudut pada yang satu sama besar dengan dua buah
+sudut pada segitiga yang satunya, dan satu sisi pada yang satu sama panjang 
+dengan satu sisi pada yang lainnya, yakni sisi yang adalah sama 
+$EF$, yang menghadap sudut - sudut yang sama pada keduanya. Dengan demikian, 
+sisi - sisi selebihnya juga sama panjang pada kedua segitiga [Prop. 1.26]. 
+Dengan demikian, $AF$ sama panjang dengan $FB$.
+
+Dengan demikian, pada sebuah lingkaran, jika sembarang garis lurus yang 
+melalui pusat lingkaran memotong di tengah sembarang garis lurus lainnya yang 
+tidak melalui pusat lingkaran, maka garis pertama memotong garis yang kedua 
+secara tegak lurus.  Dan sebaliknya, jika ia memotongnya secara tegak lurus 
+maka ia memotong garis tersebut menjadi dua bagian yang sama besar. Yang adalah
+hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Pada sebuah lingkaran, jika dua buah tali busur, tidak melalui pusat lingkaran,
+saling memotong satu dengan yang lain, maka keduanya tidak akan saling memotong 
+yang lainnya tepat di tengah. (Walaupun salah satu bisa memotong yang lainnya 
+tepat di tengah).
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=south]{F} circle(3)
+	--++ (270: 1.5) node [anchor=north]{E}
+	--++ (340:2.14) node [anchor=west]{C}
+	--++ (160:5.3) node [anchor=east] {A}
+	--++ (340:5.3 - 2.14)
+	--++ (220:1.8) node [anchor=north east]{B}
+	--++ (40:5.53) node [anchor=south west] {D};
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABCD$ adalah sebuah lingkaran, dan di dalamnya misalkan dua buah 
+garis lurus, $AC$ dan $BD$, yang tidak melalui pusat, saling memotong di titik
+$E$. Saya katakan bahwa keduanya tidak saling memotong yang lainnya tepat
+di tengah.
+
+Sebab, jika mungkin, misalkan keduanya saling memotong di tengah, sehingga $AE$
+sama panjang dengan $EC$, dan $BE$ sama panjang dengan $ED$. Dan misalkan 
+pusat lingkaran $ABCD$ sudah ditemukan [Prop. 3.1], dan misalkan pusat yang
+dimaksud adalah titik $F$, dan misalkan $FE$ sudah dihubungkan.
+
+Dengan demikian, garis yang melalui pusat, $FE$, memotong garis lain yang
+tidak melalui pusat, $AC$, maka akan memotongnya juga secara siku - siku 
+[Prop. 3.3]. Dengan demikian $FEA$ adalah sudut siku - siku. Dan lagi, karena
+garis $FE$ memotong di tengah garis lainnya $BD$, maka ia memotongnya secara
+siku - siku [Prop. 3.3]. Dengan demikian $FEB$ adalah sudut siku - siku. 
+Tetapi $FEA$ sudah ditunjukkan tadi sebagai sudut siku - siku. Dengan demikian
+$FEA$ sama besar dengan $FEB$, yang lebih kecil sama besar dengan yang
+lebih besar atau bagian sama besar dengan keseluruhan
+Yang adalah mustahil (Karena keduanya disebutkan berpotongan).
+ Dengan demikian, $AC$ dan $BD$ tidak saling memotong di tengah.
+
+Dengan demikian, pada sebuah lingkaran, jika dua buah tali busur, tidak 
+melalui pusat lingkaran,
+saling memotong satu dengan yang lain, maka keduanya tidak akan saling memotong 
+yang lainnya tepat di tengah. (Walaupun salah satu bisa memotong yang lainnya 
+tepat di tengah).  Yang adalah hal yang perlu ditunjukkan.  
+
+\begin{center}
+\textbf{Dalil}
+\end{center}
+Jika dua tali busur lingkaran saling memotong di tengah, maka keduanya adalah 
+diameter lingkaran.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Jika dua buah lingkaran saling berpotongan, maka titik pusat keduanya adalah  
+tidak sama.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) circle (3);
+\draw (2, -1) circle (3.5); 
+\draw (-2.85, .9) node [anchor=east]{A};
+\draw (-1, -2.7) node [anchor=north east]{B};
+\draw (1.4, 2.5) node[anchor=south west]{C};
+\draw (-1.3, 0) node [anchor=east]{D};
+\draw (-.5, -.5) node[anchor=east]{E}--++ (315:3) node [anchor=west]{F}
+	--++(315:2.32) node [anchor=north west]{G};
+\draw (-.5, -.5) -- (1.685, 2.49);
+\end{tikzpicture}
+\end{center}
+
+Misalkan dua buah lingkaran $ABC$ dan $CDG$ saling memotong di titik $B$ dan 
+titik $C$. Saya katakan bahwa pusat keduanya adalah titik yang berbeda.
+
+Sebab jika mungkin, misalkan $E$ jadi pusat keduanya, dan misalkan $EC$ sudah 
+dihubungkan, dan misalkan $EFG$ sudah ditarik melalui kedua lingkaran secara
+acak. Dan karena titik $E$ adalah pusat lingkaran $ABC$, $EC$ sama panjang 
+dengan $EF$. Lagi, karena titik $E$ adalah pusat lingkaran $CDG$, $EC$ sama
+panjang dengan $EG$. Tetapi $EC$ sudah ditunjukkan sama panjang dengan $EF$.
+Dengan demikian, $EF$ sama panjang dengan $EG$, yang lebih pendek sama panjang
+dengan yang lebih panjang atau bagian sama besar dengan keseluruhan. 
+Yang adalah hal mustahil. Dengan demikian, titik $E$
+bukanlah pusat kedua lingkaran $ABC$ dan $CDG$.
+
+Dengan demikian, jika dua buah lingkaran saling memotong maka keduanya tidak
+memiliki titik pusat yang sama. Yang adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika dua buah lingkaran saling bersinggungan , maka keduanya memiliki titik 
+pusat yang berbeda.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) circle (3) node [anchor=north east] {F};
+\draw (1, -1) circle ({3+sqrt(2)});
+\draw (0, 0) --++ (135:3) node [anchor=south east]{C}
+	--++ (180+135:3) --++ (340:3.) node [anchor=south west]{E}
+	--++(340:2.65) node[anchor=west]{B};
+\draw (0, -3) node [anchor=north]{D};
+\draw (0, -5.5) node {A};
+\end{tikzpicture}
+\end{center}
+Sebab misalkan dua buah lingkaran $ABC$ dan $CDE$ bersinggungan di titik $C$.
+Saya katakan bahwa titik pusat keduanya adalah berbeda.
+
+Sebab jika memungkinkan, misalkan $F$ adalah pusat keduanya, dan $FC$ sudah 
+dihubungkan, dan misalkan $FEB$  secara sembarang sudah ditarik melalui 
+keduanya.
+
+Karena itu, karena titik $F$ adalah pusat dari lingkaran $ABC$, $FC$ sama 
+panjang dengan $FB$. Lagi, karena titik $F$ adalah pusat lingkaran $CDE$, $FC$
+sama panjang dengan $FE$. Tetapi $FC$ sudah ditunjukkan sama panjang dengan
+$FB$. Dengan demikian $FE$ sama panjang dengan $FB$, bagian sama panjang dengan
+keseluruhan. Yang adalah hal yang tidak mungkin. Dengan demikian, titik $F$
+bukanlah titik pusat milik kedua $ABC$ dan $CDE$.
+
+Dengan demikian, jika dua buah lingkaran saling bersinggungan, maka keduanya
+memiliki titik pusat yang berbeda. Yang adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika sembarang garis, yang bukan pusat dari lingkaran, berada pada diameter
+lingkaran, dan beberapa garis lurus memancar (sebagai garis lurus) dari titik 
+tersebut ke arah busur lingkaran, maka garis (pancaran) yang terpanjang adalah 
+yang padanya titik pusat lingkaran berada, dan yang terpendek adalah garis 
+sisa dari diameter. Dan untuk garis - garis pancaran yang
+lain\footnote{Kira - kira, dengan peninjauan sudut}, garis yang lebih dekat 
+dengan garis yang melalui pusat lingkaran akan 
+lebih panjang dari garis yang lebih jauh lingkaran. Dan hanya akan ada dua 
+garis yang sama panjang yang memancar dari titik tersebut ke busur lingkaran, 
+satu ke masing - masing arah dari garis lurus terpendek.  
+\begin{center}
+\begin{tikzpicture}
+\draw(0, 0) node [anchor=north east]{E} circle(4) 
+	--++(0:4) node[anchor=west]{D}
+	--++(180:8) node[anchor=east]{A};
+\draw(0, 0) --++(120:4) node[anchor=south east]{B} 
+	--(1, 0) node[anchor=south west]{F};
+\draw(0, 0) --++(100:4) node [anchor=south east]{C} -- (1, 0);
+\draw(0, 0) --++(70:4) node [anchor=south]{G} -- (1, 0);
+\draw(0, 0) --++(-70:4) node[anchor=north]{H} -- (1, 0);
+\draw[dashed](0, 0) --++ (-80:4) node[anchor=north]{K}; 
+\draw(1, 0) --+ (266: {sqrt(4*4 + 1*1 - 2*4*1*cos(-80))});
+
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABCD$ adalah sebuah lingkaran, dan misalkan $AD$ adalah diameternya, 
+dan misalkan sembarang titik $F$, yang bukan titik pusat lingkaran, sudah 
+diletakkan pada $AD$. Misalkan $E$ adalah pusat lingkaran. Dan misalkan 
+beberapa garis lurus, $FB$, $FC$, $FG$, memancar dari $F$ ke busur lingkaran.
+Saya katakan bahwa $FA$ adalah garis lurus terpanjang, $FD$ garis terpendek,
+dan yang lain,  $FB$ lebih panjang dari $FC$, dan $FC$ lebih panjang dari 
+$FG$.
+
+Sebab misalkan $BE$, $CE$, dan $GE$ sudah dihubungkan. Dan karena untuk setiap
+segitiga, jumlah panjang dua buah sisi akan lebih besar dari panjang satu sisi 
+selebihnya [Prop. 1.20], jumlah $EB$ dan $EF$ dengan demikian lebih panjang 
+dari
+$BF$. Dan $AE$ sama panjang dengan $BE$ [dengan demikian, $BE$ dan $EF$ sama
+panjang dengan $AF$]. Dengan demikian, $AF$ lebih panjang dari $BF$. Lagi,
+karena $BE$ sama panjang dengan $CE$, dan $FE$ ada pada keduanya, masing
+kedua garis lurus $BE$, $EF$ sama panjang dengan kedua garis lurus $CE$, $EF$.
+Tetapi, sudut $BEF$ juga lebih besar dari sudut $CEF$ \footnote{Hal ini tidak
+dibuktikan, hanya dengan menggunakan gambar sebagai referensi}. Dengan 
+demikian, sisi alas $BF$ juga lebih besar dari sisi alas $CF$ [Prop. 1.24]. 
+Jadi, untuk alasan - alasan yang sama, $CF$ juga  lebih besar dari $FG$.
+
+Lagi, karena $GF$ dan $FE$ lebih panjang dari $EG$ [Prop. 1.20], dan $EG$ sama
+panjang dengan $ED$, $GF$ dan $FE$ dengan demikian lebih panjang dari $ED$.
+Misalkan $EF$ sudah diambil dari keduanya. Dengan demikian $GF$ lebih panjang
+dari $FD$. Dengan demikian, $FA$ adalah garis lurus terpanjang dan $FD$ adalah
+yang terpendek, dan $FB$ lebih panjang dari $FC$ dan $FC$ lebih panjang dari 
+$FG$.
+
+Saya juga katakan dari titik $F$ hanya ada dua garis lurus sama panjang
+yang memancar ke arah busur lingkaran $ABCD$, satu di masing - masing sisi
+dari garis lurus terpendek $FD$. Sebab misalkan sudut $FEH$, sama besar dengan
+sudut $GEF$, sudah dibuat pada garis lurus $EF$, di titik $E$ [Prop. 1.23]. 
+Dan misalkan $FH$ sudah dihubungkan. Oleh karena itu, disebabkan $GE$ sama 
+panjang dengan $EH$, dan $EF$ ada pada keduanya, masing - masing kedua garis 
+lurus $GE$, $EF$ sama panjang dengan kedua garis lurus $HE$, $EF$. Dan sudut 
+$GEF$ sama besar dengan sudut $HEF$. Dengan demikian sisi alas $FG$ sama 
+panjang  dengan sisi alas $FH$ [Prop. 1.4]. Jadi saya katakan bahwa garis lain
+sama panjang dengan $FG$ tidak akan  memancar ke busur lingkaran dari titik 
+$F$. Sebab misalkan ada, misalkan $FK$ adalah garis tersebut. Dan karena $FK$
+sama panjang dengan $FG$, tetapi $FH$ juga sama panjang dengan $FG$, $FK$ 
+dengan demikian juga sama panjang dengan $FH$, yang lebih dekat dengan garis
+yang melalui pusat lingkaran sama panjang dengan garis yang lebih jauh. Hal
+yang tidak mungkin. Dengan demikian, garis lain yang sama panjang dengan $GF$
+tidak akan memancar dari titik $F$ ke busur lingkaran. Jadi hanya ada satu
+yang bisa.
+
+Dengan demikian, jika sembarang garis, yang bukan pusat dari lingkaran, 
+berada pada diameter lingkaran, dan beberapa garis lurus memancar 
+(sebagai garis lurus) dari titik tersebut ke arah busur lingkaran, 
+maka garis (pancaran) yang terpanjang adalah 
+yang padanya titik pusat lingkaran berada, dan yang terpendek adalah garis sisa dari diameter. Dan untuk garis - garis 
+pancaran yang lain, garis yang 
+lebih dekat 
+dengan garis yang melalui pusat lingkaran akan 
+lebih panjang dari garis yang lebih jauh lingkaran. Dan hanya akan ada dua 
+garis yang sama panjang yang memancar dari titik tersebut ke busur lingkaran, 
+satu ke masing - masing arah dari garis lurus terpendek.  
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika sebuah titik diletakkan di luar sebuah lingkaran, dan beberapa garis lurus
+ditarik dari titik tersebut ke beberapa titik di busur lingkaran, salah satu
+nya melewati lingkaran dan melalui pusat lingkaran, maka untuk garis - garis
+yang memancar ke arah bagian yang cekung dari busur lingkaran, yang terpanjang
+adalah yang melalui titik pusat lingkaran. Untuk garis - garis yang memancar
+ke arah bagian yang cembung dari lingkaran, yang terpendek adalah yang berada
+diantara titik tersebut dari diameter.  Untuk yang lainya, garis yang lebih
+dekat \footnote{Kira - kira, dengan peninjauan sudut} garis terpendek selalu
+lebih pendek dari garis yang lebih jauh. Dan hanya akan ada dua garis lurus 
+yang sama panjang yang memancar dari titik tersebut ke arah busur lingkaran,
+satu ke masing - masing sisi garis terpendek.
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) node [anchor=north] {M} circle(4) 
+	--++ (30:4) node [anchor=south west]{G} 
+	-- ({8*cos(30)}, {8*sin(30)}) node[anchor=west]{D}
+	--++ (210:12) node [anchor=east]{A};
+\draw (0, 0) --++ (190: 4) node [anchor=east]{E}
+	-- ({8*cos(30)}, {8*sin(30)});
+\draw (0, 0) --++ (36.5: 4) node [anchor=south west]{K};
+\draw (0, 0) --++ (170: 4) node [anchor=east]{F}
+	-- ({8*cos(30)}, {8*sin(30)});
+\draw (0, 0) --++ (43.8: 4) node [anchor=south west]{L};
+\draw (0, 0) --++ (150: 4) node [anchor=east]{C}
+	-- ({8*cos(30)}, {8*sin(30)});
+\draw (0, 0) --++ (51.5: 4) node [anchor=south west]{H};
+\draw (0, 0) --++ (23: 4) node [anchor=south west]{B}
+	-- ({8*cos(30)}, {8*sin(30)}); 
+\draw [dashed](0, 0) --++ (15: 4) node [anchor=south west]{N};
+\draw ({4*cos(15)}, {4*sin(15)})
+	-- ({8*cos(30)}, {8*sin(30)});
+
+
+
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ adalah sebuah lingkaran, dan misalkan sembarang titik $D$ sudah
+ditempatkkan di luar lingkaran $ABC$, dan darinya misalkan beberapa garis lurus, $DA$, $DE$, $DF$, dan $DC$, sudah ditarik melalui lingkaran, dan misalkan 
+$DA$ sudah melalui pusat lingkaran. Saya katakan bahwa untuk garis - garis 
+yang memancar ke arah bagian cekung lingkaran, $AEFC$, yang terpanjang adalah
+yang melalui pusat lingkaran, yakni $AD$, dan bahwa $DE$ lebih panjang dari
+$DF$, dan $DF$ dari $DC$. Dan untuk garis - garis yang memancar ke bagian
+cembung lingkaran $HLGK$, yang terpendek adalah yang berada di antara titik 
+tersebut dan diameter $AG$, yakni $DG$, dan garis - garis yang lebih dekat 
+dengan garis pancaran terpendek $DG$ ini akan selalui lebih pendek dari yang
+lebih jauh dari $DG$, sehingga $DK$ lebih pendek dari $DL$, dan $DL$ dari $DH$.
+
+Sebab misalkan pusat dari lingkaran sudah ditemukan [Prop. 3.1], dan misalakan
+itu adalah titik $M$ [Prop. 3.1]. Dan misalkan $ME$, $MF$, $MC$, $MK$, $ML$
+dan $MH$ sudah dihubungkan.
+
+Dan karena $AM$ sama panjang dengan $EM$, misalkan $MD$ sudah ditambahkan
+pada keduanya. Dengan demikian, $AD$ sama panjang dengan $EM$ dan $MD$. Tetapi
+$EM$ dam $MD$ lebih panjang dari $ED$ [Prop. 1.20]. Dengan demikian $AD$ juga
+lebih panjang dari $ED$. Lagi, karena $ME$ sama panjang dengan $MF$, dan $MD$
+sama, masing - masing garis lurus $EM$, $MD$ sama panjang dengan
+garis lurus $FM$, $MD$. Dan sudut $EMD$ lebih besar dari sudut $FMD$ 
+\footnote{Hal ini tidak dibuktikan, hanya dengan pengamatan gambar}. Dengan
+demikian, sisi alas $ED$ lebih panjang dari sisi alas $FD$ [Prop. 1.24]. 
+Sehingga, dengan cara yang sama, dapat ditunjukkan $FD$ juga lebih panjang 
+dari $CD$. Dengan demikian, $AD$ adalah garis yang terpanjang, dan $DE$
+lebih panjang dari $DF$, dan $DF$ dari $DC$.
+
+Dan karena $MK$ dan $KD$ lebih panjang dari $MD$ [Prop. 1.20], dan $MG$ sama
+panjang dengan $MG$ sama panjang dengan $MK$, ruas garis selebihnya $KD$ 
+dengan demikian lebih panjang dari ruas garis selebihnya $GD$. Dengan demikian
+$GD$ lebih pendek dari $KD$. Dan karena pada segitiga $MLD$, kedua garis lurus
+interior $MK$, $KD$ digambarkan pada salah satu sisi - sisi, $MD$, maka $MK$
+dan $KD$ lebih pendek dari $ML$ dan $LD$ [Prop. 1.21]. Dan $MK$ sama panjang
+dengan $ML$. Dengan demikian, ruas garis selebihnya $DK$ lebih pendek dari
+ruas garis selebihnya $DL$. Jadi, dengan cara yang sama, dapat ditunjukkan
+bahwa $DL$ juga lebih pendek dari $DH$. Dengan demikian, $DG$ adalah garis
+lurus yang terpendek, dan $DK$ lebih pendek dari $DL$, dan $DL$ dari $DH$.
+
+Saya juga katakan bahwa hanya ada dua garis lurus yang sama panjang yang 
+memancar dari $D$ ke arah busur lingkaran, satu untuk masing - masing sisi
+garis terpendek, $DG$. Misalkan sudut $DMB$, sama besar dengan sudut $KMD$,
+sudah ditarik pada garis lurus $MD$, dengan titik $M$ padanya [Prop. 1.23],
+dan misalkan $DB$ sudah dihubungkan. Dan karena $MK$ sama panjang dengan $MK$,
+dan $MD$ sama, masing - masing kedua garis lurus $KM$, $MD$ sama panjang 
+dengan kedua garis lurus $BM$, $MD$. Dan sudut $KMD$ sama besar dengan sudut
+$BMD$. Dengan demikian, sisi alas $DK$ sama panjang dengan sisi alas $DB$ 
+[Prop. 1.4]. Jadi, saya katakan bahwa tidak ada garis lurus lain yang akan sama
+panjang dengan $DK$ yang akan memancar ke busur lingkaran dari titik $D$. 
+Sebab jika mungkin, misalkan garis lurus tersebut memancar, dan misalkan itu
+adalah $DN$. Karena itu, karena $DK$ sama panjang dengan $DN$, tetapi $DK$
+sama panjang dengan $DB$, maka $DB$ demikian sama panjang dengan $DN$, 
+sehingga garis lurus yang lebih dekat dengan garis lurus terpendek $DG$ sama
+panjang dengan garis lain yang lebih jauh. Hal demikian sudah ditunjukkan 
+tidak mustahil. Dengan demikian, tidak ada lebih daru dua garis lurus yang 
+sama panjang yang memancar ke arah busur lingkaran $ABC$ dari titik $D$, satu
+dari masing - masing sisi garis lurus terpendek $DG$.
+
+
+Dengan demikian, jika sebuah titik diletakkan di luar sebuah lingkaran, 
+dan beberapa garis lurus
+ditarik dari titik tersebut ke beberapa titik di busur lingkaran, salah satu
+nya melewati lingkaran dan melalui pusat lingkaran, maka untuk garis - garis
+yang memancar ke arah bagian yang cekung dari busur lingkaran, yang terpanjang
+adalah yang melalui titik pusat lingkaran. Untuk garis - garis yang memancar
+ke arah bagian cembung dari lingkaran, yang terpendek adalah yang berada di
+antara titik tersebut dan diameter.  Untuk yang lainya, garis yang lebih
+dekat garis terpendek selalu
+lebih pendek dari garis yang lebih jauh. Dan hanya akan ada dua garis lurus 
+yang sama panjang yang memancar dari titik tersebut ke arah busur lingkaran,
+satu ke masing - masing sisi garis terpendek. Yang adalah hal yang harus
+ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika sebuah titik diletakkan di dalam sebuah lingkaran, dan beberapa garis 
+garis yang sama panjang memancar dari titik tersebut ke beberapa titik di
+busur lingkaran, maka titik yang diletakkan tadi adalah pusat lingkaran.
+
+Misalkan $ABC$ adalah sebuah lingkaran, dan $D$ adalah sebuah titik di 
+dalamnya, dan misalkan lebih dari dua garis lurus yang sama panjang $DA$, 
+$DB$, dan $DC$, memancar dari $D$ ke arah busur lingkaran $ABC$. Saya katakan 
+titik $D$ adalah pusat dari lingkaran $ABC$.
+
+\begin{center}
+\begin{tikzpicture}
+\pgfmathparse{sqrt(4*4+4*4 - 2*16*cos(220 - 150))}
+	\let\ablength\pgfmathresult
+\pgfmathparse{acos((4*4 + \ablength * \ablength - 4*4)/(2*4*\ablength))}
+	\let\dabdir\pgfmathresult
+\pgfmathparse{sqrt(4*4 + (\ablength/2) * (\ablength/2) - 2*4*(\ablength/2)*cos(\dabdir))}
+	\let\aelength\pgfmathresult
+\pgfmathparse{acos((\aelength*\aelength + (\ablength/2) * (\ablength/2) - 4*4)/(2*\aelength*(\ablength/2)))}
+	\let\aeddir\pgfmathresult
+
+\pgfmathparse{sqrt(4*4+4*4 - 2*16*cos(150 - 55))}
+	\let\cblength\pgfmathresult
+\pgfmathparse{acos((4*4 + \cblength * \cblength - 4*4)/(2*4*\cblength))}
+	\let\dbfdir\pgfmathresult
+\pgfmathparse{sqrt(4*4 + (\cblength/2) * (\cblength/2) - 2*4*(\cblength/2)*cos(\dbfdir))}
+	\let\fdlength\pgfmathresult
+\pgfmathparse{acos((\fdlength*\fdlength + (\cblength/2) * (\cblength/2) - 4*4)/(2*\fdlength*(\cblength/2)))}
+	\let\bfddir\pgfmathresult
+
+\draw (0, 0) node[anchor=north west]{D} circle(4);
+\draw (0, 0) --++ (220:4) node [anchor=north east]{A}
+	--++ ({220+180}:4)
+	--++ (150:4) node [anchor=south east]{B}
+	--++ ({150+180} :4)
+	--++ (55:4) node [anchor=south west]{C};
+%\draw (0, 0) --++ (220:4) --++ ({acos(4*4 + \ablength *\ablength - 4*4)/(2*4*8)}: {\ablength});
+%\draw (0, 0) --++ (220:4) --++ ({acos((4*4 + \ablength *\ablength - 4*4)/(2*4*\ablength))+40 }: {\ablength});
+\draw (0, 0) --++ (220:4) --++ ({\dabdir + 40 }: {\ablength});
+\draw (0, 0) --++ (220:4) --++ ({\dabdir + 40 }: {\ablength/2}) node [anchor=south west]{E}
+  --++ ({\aeddir + \dabdir + 40 + 180}:\aelength + 4) node [anchor=west]{G}
+  --++ ({\aeddir + \dabdir + 40}:8) node [anchor=east]{K};
+\draw (0, 0) --++ (150:4) --++ ({\dbfdir + 150 + 180} : \cblength);
+\draw (0, 0) --++ (150:4) --++ ({\dbfdir + 150 + 180} : \cblength/2) node [anchor=south west]{F}
+  --++ ({150 + \dbfdir + \bfddir}:\fdlength + 4) node [anchor=north]{H}
+  --++ ({150 + \dbfdir + \bfddir - 180}:8) node [anchor=south]{L}; 
+\end{tikzpicture}
+\end{center}
+
+Sebab misalkan $AB$ dan $BC$ sudah dihubungkan, dan masing - masing keduanya 
+sudah di potong ditengah pada titik $E$ dan $F$ [Prop 1.10]. Dan $ED$ dan $FD$
+sudah dihubungkan, dan misalkan keduanya sudah ditarik sampai ke titik - titik
+$G$, $K$, $H$, dan $L$.
+
+Dengan demikian, karena $AE$ sama panjang dengan $EB$, dan $ED$ umum, masing - 
+masing kedua garis lurus $AE$, $ED$ sama panjang dengan kedua garis lurus $BE$,
+$ED$. Dan sisi alas $DA$ sama panjang dengan sisi alas $DB$. Dengan demikian,
+sudut $AED$ sama besar dengan sudut $BED$ [Prop. 1.8]. Dengan demikian, masing - masing sudut $AED$ dan $BED$ adalah sudut siku - siku [Def. 1.10]. Dengan 
+demikian, $GK$ membagi $AB$ sama panjang dan secara tegak lurus. Dan karena
+jika sembarang garis lurus di dalam sebuah lingkaran, memotong garis lurus lain
+sama panjang dan secara siku - siku, maka pusat lingkaran berada di garis
+pertama tadi [Prop. 3.1], titik pusat lingkaran dengan demikian ada di garis
+$GK$.  Dengan alasan - alasan yang sama, pusat dari lingkaran $ABC$ juga ada di
+garis $HL$. Dan garis lurus $GK$ dan $HL$ tidak memiliki titik temu yang lain
+selain di titik $D$. Dengan demikian, titik $D$ adalah pusat dari lingkaran
+$ABC$.
+
+Dengan demikian, jika sebuah titik diletakkan di dalam sebuah lingkaran, dan
+lebih dari dua buah garis sama panjang memancar dari titik tersebut ke busur
+lingkaran, maka titik tersebut sudah diletakkan di titik pusat lingkaran. Yang
+adalah hal yang perlu ditunjukkan.
+
+
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
 Richard Fitzpatrick.
