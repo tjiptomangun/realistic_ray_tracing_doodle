@@ -3713,9 +3713,9 @@ yang padanya titik pusat lingkaran berada, dan yang terpendek adalah garis
 sisa dari diameter. Dan untuk garis - garis pancaran yang
 lain\footnote{Kira - kira, dengan peninjauan sudut}, garis yang lebih dekat 
 dengan garis yang melalui pusat lingkaran akan 
-lebih panjang dari garis yang lebih jauh lingkaran. Dan hanya akan ada dua 
-garis yang sama panjang yang memancar dari titik tersebut ke busur lingkaran, 
-satu ke masing - masing arah dari garis lurus terpendek.  
+lebih panjang dari garis yang lebih jauh dari yang melalui pusat lingkaran. 
+Dan hanya akan ada dua garis yang sama panjang yang memancar dari titik 
+tersebut ke busur lingkaran, satu ke masing - masing sisi dari garis terpendek.  
 \begin{center}
 \begin{tikzpicture}
 \draw(0, 0) node [anchor=north east]{E} circle(4) 
@@ -3782,13 +3782,15 @@ Dengan demikian, jika sembarang garis, yang bukan pusat dari lingkaran,
 berada pada diameter lingkaran, dan beberapa garis lurus memancar 
 (sebagai garis lurus) dari titik tersebut ke arah busur lingkaran, 
 maka garis (pancaran) yang terpanjang adalah 
-yang padanya titik pusat lingkaran berada, dan yang terpendek adalah garis sisa dari diameter. Dan untuk garis - garis 
+yang padanya titik pusat lingkaran berada, dan yang terpendek adalah garis 
+sisa dari diameter. Dan untuk garis - garis 
 pancaran yang lain, garis yang 
 lebih dekat 
 dengan garis yang melalui pusat lingkaran akan 
-lebih panjang dari garis yang lebih jauh lingkaran. Dan hanya akan ada dua 
+lebih panjang dari garis yang lebih jauh dari garis yang melalui pusat lingkaran. 
+Dan hanya akan ada dua 
 garis yang sama panjang yang memancar dari titik tersebut ke busur lingkaran, 
-satu ke masing - masing arah dari garis lurus terpendek.  
+satu ke masing - masing sisi arah dari garis lurus terpendek.  
 
 \stepcounter{section}
 \section*{\centering Proposisi \thesection}
@@ -4191,6 +4193,106 @@ menyinggung dari dalam.
 Dengan demikian, sebuah lingkaran tidak menyinggung lingkaran lainnya
 di lebih dari satu titik baik dari dalam maupun dari luar. Yang adalah
 hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Dalam sebuah lingkaran, garis - garis yang sama panjang, memiliki
+jarak yang sama jauh dari pusat, dan garis - garis yang sama jauh
+dari titik pusat sama panjang satu dengan yang lain.
+\begin{center}
+\begin{tikzpicture}
+\draw (0, 0) circle(5) node [anchor = south east] {E};
+\draw ({5*cos(145)}, {5*sin(145)}) node [anchor=south east]{B}
+	--++ (288.1:8) node [anchor = north]{A};
+\draw ({5*cos(75)}, {5*sin(75)}) node [anchor=south]{D}
+	--++ (291.9:8) node [anchor = north west]{C};
+\draw (0, 0) --++ ({288.1 - 90}: {sqrt(5*5- 4*4)}) node [anchor=east]{F};
+\draw (0, 0) --++ ({291.9 + 90}: {sqrt(5*5- 4*4)}) node [anchor=west]{G};
+\draw (0, 0) --++ ({asin(4/5) + 288.1 - 90}: 5);
+\draw (0, 0) --++ (-{asin(4/5) + 291.9 + 90}: 5);
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABCD$ adalah sebuah lingkaran, dan misalkan $AB$ dan $CD$ 
+adalah garis sama panjang yang ada di dalam lingkaran. Saya katakan
+$AB$ dan $CD$ sama jauh dari pusat lingkaran.
+
+Sebab misalkan pusat lingkaran $ABCD$ sudah ditemukan [Prop. 3.1] dan misalkan
+itu adalah $E$. Dan misalkan $EF$ dan $EG$ sudah ditarik dari titik $E$, tegak
+lurus terhadap masing - masing $AB$ dan $CD$ [Prop.1.12]. Dan misalkan $AE$ dan
+$EC$ sudah dihubungkan.
+
+Oleh karena garis lurus $EF$ melalui pusat lingkaran, memotong garis lurus 
+,$AB$,  yang tidak melalui pusat lingkaran, secara tegak lurus, maka akan 
+membaginya dua di tengan [Prop.3.3]. Dengan demikian, $AF$ sama panjang dengan
+$FB$. Jadi, panjang $AB$ adalah dua kali $AF$. Juga untuk alasan yang sama, 
+$CD$, dua kali panjang $AF$. Dan $AB$ sama panjang dengan $CD$. Dengan demikian,
+$AF$ juga sama panjang dengan dengan $CG$. Dan karena $AE$ sama panjang dengan
+$EC$, besar bujur sangkar pada (kuadrat) $AE$ juga sama besar dengan kuadrat 
+(besar bujur sangkar pada) $EC$. Tetapi, jumlah besar bujur sangkar - bujur 
+sangkar pada $AF$ dan $EF$ sama dengan besar bujur sangkar pada $AE$. Karena
+sudut $F$ adalah sudut siku - siku [Prop. 1.47]. Dan jumlah besar bujur sangkar
+pada $EG$ dan $EC$ sama dengan besar bujur sangkar pada $EC$. Karena sudut $G$
+adalah sudut sikut - siku [Prop. 1.47]. Dengan demikian, jumlah besa bujur 
+sangkar pada $AF$ dan $FE$ sama dengan besar jumlah besa bujur sangkar pada
+$CG$ dan $GE$, yang mana besar bujur sangkar pada $AF$ sama besar dengan besar
+bujur sangkar pada $CG$. Karena $AF$ sama panjang dengan $CG$. Dengan demikian, 
+besar bujur sangkar - bujur sangkar selebihnya pada $AF$ dan pada $EG$ sama
+besar. Dengan demikian, $EF$ sama panjang dengan $EG$, Dan garis lurus - garis
+lurus pada sebuah lingkaran dikatakan sama jauh dari pusat lingkaran jika garis
+lurus - garis lurus yang tegak lurus yang ditarik dari pusat lingkaran sama 
+panjang [Def. 3.4]. Dengan demikian $AB$ dan $CD$ sama jauh dari pusat.
+
+Jadi, misalkan $AB$ dan $CD$ (tali busur - tali busur) yang sama jauh dari pusat 
+lingkaran. Yakni $EF$ sama panjang dengan $EG$. Saya katakan $AB$ juga sama 
+panjang dengan $CD$.
+
+Karena, dengan menggunakan gambar dan susunan yang sama, kita dapat tunjkukan
+bahwa $AB$ dua kali panjang $AF$, dan $CD$ dua kali panjang $CG$. Dan karena
+$AE$ sama panjang $CE$, besar bujur sangkar pada $AE$ sama besar dengan besar
+bujur sangkar pada $CE$. Tetapi jumlah besar bujur sangkar - bujur sangkar pada
+$EF$ dan $FA$ sama dengan besar bujur sangkar pada $AE$ [Prop. 1.47]. Dan jumlah
+besar bujur sangkar - bujur sangkar pada $EG$ dan $GC$ sama dengan besar bujur
+sangkar pada $CE$ [Prop. 1.47]. Dengan demikian jumlah besar bujur sangkar - 
+bujur sangkar pada $EF$ dan $FA$ sama dengan jumlah besar bujur sangkar - bujur
+sangkar pada $EG$ dan $CF$, yang mana bujur sangkar $EF$ sama besar dengan bujur
+sangkar $EG$. Dengan demikian, $AF$ sama panjang dengan $CG$. Dan $AB$ dua kali
+panjang $AF$, dan $CD$ dua kali panjang $CG$. Dengan demikian, $AB$ sama panjang
+dengan $CD$.
+
+Dengan demikian, Dalam sebuah lingkaran, garis - garis yang sama panjang, 
+memiliki jarak yang sama jauh dari pusat, dan garis - garis yang sama jauh
+ dari titik pusat sama panjang satu dengan yang lain. Yang adalah hal yang perlu
+ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Di dalam sebuah lingkaran, garis yang paling panjang adalah sebuah diameter, 
+dan untuk garis - garis lainnya, garis yang lebih dekat dengan pusat lingkaran
+adalah lebih panjang dari garis yang lebih jauh dari pusat lingkaran.
+\begin{center}
+\begin{tikzpicture}
+\end{tikzpicture}
+\end{center}
+Misalkan $ABCD$ adalah sebuah lingkaran, dan misalkan $AD$ adalah diameter nya,
+dan $E$ adalah pusat. Dan misalkan $BC$ yang lebih dekat dengan diameter $AD$ 
+(ke pusat juga), dan $FG$ yang lebih jauh. Saya katakan bahwa $AD$ adalah garis
+lurus yang paling panjang, dan $BC$ lebih panjang dari $FG$.
+
+Sebab misalkan $EH$ dan $EK$ sudah ditarik dari pusat $E$, secara siku - siku 
+terhadap masing - masing $GC$ dan $FG$ [Prop. 1.12]. Dan karena $BC$ lebih dekat
+dengan pusat lingkaran dan $FG$ sangat jauh, $EK$ dengan demikian lebih panjang
+dari $EH$ [Def. 3.5]. Misalkan $EL$ dibuat sama panjang dengan $EH$ [Prop. 1.3].
+Dan $LM$ sudah ditarik dari $L$, tegak lurus terhadap $EK$ [Prop. 1.11], dan 
+misalkan $LM$ sudah ditarik sampai $N$. Dan misalkan $ME$, $EN$, $FE$, dan $EG$
+sudah dihubungkan.
+
+Dan karena $EH$ sama panjang dengan $EL$, $BC$ juga sama panjang dengan $MN$
+[Prop. 3.1]. Dan lagi, karena $AE$ sama panjang dengan $EM$, dan $ED$ sama 
+panjang dengan $EN$, $AD$ dengan demikian sama panjang dengan $ME$ dan $EN$.
+
 
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
