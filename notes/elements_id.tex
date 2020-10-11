@@ -4364,11 +4364,215 @@ perlu dibuktikan.
 \section*{\centering Proposisi \thesection}
 \addcontentsline{toc}{section}{Proposisi \thesection}
 
+Sebuah garis lurus yang ditarik secara tegak lurus dari ujung diameter sebuah 
+lingkaran, akan berada di luar lingkaran. Dan garis lain tidak akan bisa
+diselipkan dalam spasi  antara garis lurus tegak lurus tadi dengan busur 
+lingkaran. Dan sudut dari setengah lingkaran dan garis lurus tadi lebih besar 
+dari sudut lancip rektilinear apa pun, dan sudut selebihnya akan lebih kecil 
+dari sudut lancip rektilinear apa pun.
+
 \begin{center}
 \begin{tikzpicture}
+	\pgfmathparse{sqrt(3*3 + 3.5*3.5 - 2*3*3.5*cos(35))}
+	\let\aglen\pgfmathresult
+	\pgfmathparse{acos((3*3 - 3.5*3.5 - \aglen*\aglen)/(2*3.5*\aglen))}
+	\let\dgaangle\pgfmathresult
+	\draw(0, 0) node[anchor=west]{D} circle(3) 
+	--++ (90:3) node[anchor=south]{B}
+	--++ (270:6) node [anchor=north]{A} 
+	--++ (180:4) node [anchor=east]{E};
+	\draw(0, 0) --++ (200:3) node[anchor=east]{C}
+	-- (0, -3);
+	\draw(0, 0) --++ (235:2.9) node[anchor=south east]{H}
+	--++(235:.6) node[anchor=south east]{G} --++ ({235+\dgaangle}: \aglen)
+	--++({235+\dgaangle+180}:5) node[anchor=south]{F};
 \end{tikzpicture}
 \end{center}
 
+Misalkan $ABC$ adalah lingkaran disekitar pusat $D$ dengan diameter $AB$. Saya 
+katakan bahwa garis lurus yang ditarik dari ujung $A$ secara tegak lurus 
+terhadap $AB$ [Prop. 1.11], akan jatuh di luar lingkaran.
+
+Sebab jika tidak, jika memungkinkan, misalkan garis tersebut jatuh di dalam 
+lingkaran, seperti $CA$ pada gambar, misalkan $DC$ sudah dihubungkan.
+
+Karena $DA$ sama panjang dengan $DC$, sudut $DAC$ juga sama besar dengan sudut
+$ACD$ [Prop. 1.5]. Dan $DAC$ adalah sudut sikut - siku. Dengan demikian, $ACD$
+juga adalah sudut siku - siku. Jadi, dalam segitiga $ACD$, dua sudut $DAC$ dan
+$ACD$ sama dengan besar dua sudut siku - siku. Yang adalah tidak mungkin [Prop.
+1.17]. Dengan demikian, garis lurus yang ditarik dari titik $A$, secara tegak
+lurus terhadap $BA$, tidak akan jatuh di dalam lingkaran. Jadi dengan cara yang
+sama. kita dapat tunjukkan garis tersebut tidak akan jatuh pada busur lingkaran.
+Dengan demikian, garis tersebut akan jatuh di luar lingkaran.
+
+Misalkan garis tegak lurus yang kita maksud seperti garis $AE$ pada gambar. Jadi
+, saya katakan bahwa gari lurus lainnya tidak akan bisa diselipkan di spasi
+antara garis lurus $AE$ dan busur $CHA$.
+
+Sebab, jika memungkinkan, misalkan garis tersebut sudah diselipkan seperti $FA$
+pada gambar, dan misalkan $DG$ sudah ditarik dari titik $D$, tegak lurus 
+terhadap $FA$ [Prop. 1.12]. Dan karena $AGD$ adalah sudut siku - siku, dan $DAG$
+lebih kecil dari sudut siku - siku, $AD$ dengan demikian lebih besar dari $DG$
+[Prop. 1.19]. Dan $DA$ sama panjang dengan $DH$. Dengan demikian, $DH$ lebih 
+besar dari $DG$, yang lebih pendek menjadi lebih panjang. Yang adalah 
+hal yang tidak mungkin. Dengan demikian, garis lurus lain tidak bisa diselipkan
+di ruang antara garis lurus $AE$ dan busur lingkaran.
+
+Dan juga saya katakan bahwa sudut setengah lingkaran yang diapit oleh garis 
+lurus $BA$ dan busur $CHA$ adalah lebih besar dari sudut lancip rektilinear
+manapun, dan sudut selebihnya yang diapit busur $CHA$ dan garis lurus $AE$ lebih
+kecil dari sudut lancip rektilinear apa pun.
+
+Sebab jika sembarang sudut lancip rektilinear lebih besar dari sudut yang diapit 
+garis lurus $BA$ dan busur $CHA$, atau lebih kecil dari sudut yang diapit 
+oleh busur $CHA$ dan garis lurus $AE$, maka sebuah garis lurus dapat diselipkan 
+di spasi antara busur $CHA$ dan garis $AE$ - apapun yang akan membentuk sebuah 
+sudut yang diapit oleh garis - garis lurus lebih besar dari sudut yang diapit 
+garis lurus $BA$ dan busur $CHA$, atau lebih kecil dari sudut yang dibentuk
+oleh busur $CHA$ dan garis lurus $AE$. Tetapi garis lurus tersebut pasti tidak 
+bisa diselipkan seperti itu. Dengan demikian, sebuah sudut lancip yang dibentuk
+oleh garis - garis lurus tidak bisa lebih besar dari sudut yang dibentuk oleh 
+garis lurus $BA$ dan busur $CHA$, juga tidak bisa lebih kecil dari sudut yang
+dibentuk oleh busur $CHA$ dan garis lurus $AE$.  
+
+\begin{center}\textbf{Dalil}\end{center}
+Jadi, dari sini, sudah dinyatakan, bahwa sebuah garis lurus yang ditarik secara
+tegak lurus ke ujung salah satu ujung diameter sebuah lingkaran, menyinggung 
+lingkaran [dan bahwa garis lurus itu menyinggung lingkaran pada satu titik, 
+karena sudah dibuktikan bahwa sebuah garis lurus yang bertemu sebuah lingkaran 
+di dua titik jatuh di dalam lingkaran [Prop. 3.2]]. Yang adalah hal yang perlu 
+ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk menarik sebuah garis lurus yang menyinggung sebuah lingkaran dari satu
+titik tertentu.
+\begin{center}
+\begin{tikzpicture}
+	\pgfmathparse{}
+	\draw (0, 0) node[anchor=west]{E} circle(2) 
+	--++ (90:2) node[anchor=north east]{D}
+	--++ (90:2) node[anchor=south]{A};
+	\draw(0, 0) circle(4); 
+	\draw(0, 2) --++(180:{sqrt(4*4 - 2*2)}) node[anchor=east]{F}
+	--++ ({asin(-2/4)}:2) node [anchor=east]{B}
+	--++ ({asin(-2/4)}:2);
+	\draw(0, 4) --++({asin(-2/4)-90}:{sqrt(4*4 - 2*2)});
+	\draw(2, 0) node[anchor=west]{C};
+	\draw(4, 0) node[anchor=west]{G};
+\end{tikzpicture}
+\end{center}
+Misalkan $A$ adalah sebuah titik tertentu, dan $BCD$ adalah sebuah lingkaran 
+tertentu. Jadi diperlukan untuk menarik sebuah garis lurus yang menyinggung 
+lingkaran $BCD$ dari titik $A$.
+
+Misalkan pusat lingkaran $BCD$ sudah ditemukan di $E$ [Prop. 3.1], dan misalkan
+$AE$ sudah dihubungkan. Dan misalkan lingkaran $AFG$ sudah digambarkan dengan 
+pusat di $E$ dengan $EA$ sebagai jari - jari. Dan misalkan $DF$ sudah ditarik
+dari titik $D$ tegak lurus dengan $EA$ [Prop. 1.11]. Dan misalkan $EF$ dan
+$AB$ sudah dihubungkan. Saya katakan garis lurus $AB$ sudah ditarik dari titik
+$A$ menyinggung lingkaran $BCD$.
+
+Karena $E$ adalah pusat dari lingkaran $BCD$ dan $AFG$, $EA$ dengan demikian 
+sama panjang dengan $EF$, dan $ED$ sama panjang dengan $EB$. Dengan demikian
+masing - masing kedua garis lurus $AE$, $EB$ sama panjang dengan kedua garis
+lurus $FE$ dan $ED$. Dan keduanya memiliki sudut yang umum di $E$. Dengan 
+demikian, sisi alas $DF$ sama panjang dengan sisi alas $AB$, dan segitiga $DEF$
+sama dan sebangun dengan segitiga $EBA$, dan sudut - sudut selebihnya di satu
+segitiga sama besar dengan sudut - sudut selebinya yang bersesuaian di segitiga 
+yang satunya [Prop. 1.4]. Dengan demikian sudut $EDF$ sama besar dengan sudut 
+$EBA$. Dan $EDF$ adalah sudut siku - siku. Dengan demikian, $EBA$ juga adalah
+sudut siku - siku. Dan $EB$ adalah jari - jari. Dan sebuah garis lurus
+yang ditarik secara tegak lurus terhadap ujung diameter sebuah lingkaran, 
+menyinggung lingkaran tersebut [Prop. 3.16.dalil]. Dengan demikian, $AB$ 
+menyinggung lingkaran $BCD$.
+
+Dengan demikian, garis lurus $AB$ sudah ditarik menyinggung lingkaran $BCD$ dari
+titik $A$. Yang adalah hal yang perlu dilakukan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika suatu garis lurus menyinggung sebuah lingkaran, dan sebuah garis lurus 
+lain dihubungkan dari pusat lingkaran ke titik persinggungan tadi, maka garis
+yang dihubungkan dari lingkaran tadi akan tegak lurus terhadap garis singgung.
+\begin{center}
+\begin{tikzpicture}
+	\pgfmathparse{3*tan(40)}
+	\let\cg\pgfmathresult
+	\pgfmathparse{sqrt(3*3 + \cg*\cg)}
+	\let\gf\pgfmathresult
+	\draw(0, 0) node[anchor=east]{F} circle(3) 
+	--++ (320:3) node[anchor=west]{C} 
+	--++({320+90}:\cg) node[anchor=west]{G}
+	--++({320+90}:1) node[anchor=south west]{D};
+	\draw(0, 0) --++(0:3) node[anchor=south east]{B}
+	--++(0: {\gf-3}) --++ ({320-90}:5) node[anchor=north west]{E};
+	\draw({3*cos(150)}, {3*sin(150)}) node[anchor=east]{A};
+\end{tikzpicture}
+\end{center}
+Misalkan garis lurus $DE$ menyinggung lingkaran $ABC$ di titik $C$, dan 
+misalkan 
+pusat lingkaran $ABC$ sudah ditemukan di $F$ [Prop. 3.1], dan misalkan $FC$ 
+sudah
+dihubungkan dari titik $F$ ke $C$. Saya katakan bahwa $FC$ tegak lurus terhadap
+$DE$.
+
+Sebab jika tidak, misalkan $FG$ sudah ditarik dari $F$, tegak lurus terhadap 
+$DE$ [Prop. 1.12].
+
+Dengan demikian, karena $FGC$ siku - siku, maka sudut $FCG$ adalah sudut lancip 
+[Prop. 1.17]. Dan sudut yang lebih besar akan menghadap sisi yang lebih panjang 
+[Prop. 1.19]. Dengan demikian, $FC$ lebih panjang dari $FG$. Dan $FC$ sama 
+panjang dengan $FB$ [Karena keduanya jari - jari]. Dengan demikian, $FB$ juga 
+lebih panjang daripada $FG$, garis yang lebih pendek juga adalah yang lebih
+panjang. Hal yang mustahil. Dengan demikian, $FG$ tidak tegak lurus terhadap 
+$DE$.  Juga dengan cara yang sama dapat ditunjukkan tidak ada garis lain yang 
+tegak lurus terhadap $DE$ dari $F$ selain $FC$. Dengan demikian, $FC$ tegak 
+lurus terhadap $DE$.
+
+Dengan demikian, jika sebuah garis lurus menyinggung sebuah lingkaran, dan garis
+lurus yang lain dihubungkan dari pusat lingkaran ke titik persinggungan, maka
+garis lurus yang dihubungkan tersebut akan tegak lurus terhadap garis singgung.
+Yang adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika suatu garis lurus menyinggung sebuah lingkaran, dan sebuah garis lurus 
+ditarik dari titik persinggungan secara tegak lurus terhadap garis singgung [ke
+dalam lingkaran], maka pusat lingkaran akan berada garis lurus yang ditarik 
+tadi.
+\begin{center}
+\begin{tikzpicture}
+	\draw(0, 0) circle(3);
+	\draw(0, -3) node[anchor=north]{C} --++(90:6) node[anchor=south]{A};
+	\draw(0, -3) --++(70:{(sin(90)/sin(70))*3}) node[anchor=south]{F};
+	\draw(-3, -3) node[anchor=east]{D} --++ (0:6) node[anchor=west]{E};
+	\draw(-3, 0) node[anchor=east]{B};
+\end{tikzpicture}
+\end{center}
+Sebab misalkan suatu garis lurus $DE$ menyinggung lingkaran $ABC$ di titik $C$.
+Dan misalkan $CA$ sudah ditarik dari $C$ dengan sudut siku - siku terhadap $DE$
+[Prop. 1.11]. Saya katakan bahwa pusat dari lingkaran ada di garis $AC$.
+
+Sebab jika tidak, jika mungkin, misalkan $F$ adalah pusat lingkaran dan 
+misalkan $CF$ sudah dihubungkan.
+
+Karena itu, karena suatu garis lurus $DE$ menyinggung lingkaran $ABC$, dan $FC$
+sudah dihubungkan dari pusat lingkaran ke titik persinggungan, $FC$ dengan 
+demikian tegak lurus terhadap $DE$ [Prop. 3.18]. Dengan demikian, $FCE$ adalah 
+sudut siku - siku. Dan $ACE$ juga siku - siku. Dengan demikian $FCE$ sama besar
+dengan $ACE$, yang lebih kecil juga sama besar dengan yang lebih besar. Hal 
+yang sungguh mustahil. Dengan demikian, $F$ tidak berada di pusat lingkaran 
+$ABC$. Juga, dengan cara yang sama, dapat kita tunjukkan tidak ada garis lain
+selain di garis $AC$.
+
+Dengan demikian, jika suatu garis menyinggung sebuah lingkaran, dan sebuah 
+garis lurus ditarik dari titik singgung, secara tegak lurus terhadap garis
+singgung, maka pusat dari lingkaran akan berada pada garis lurus yang ditarik 
+itu. Yang adalah hal yang perlu ditunjukkan.
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
 Richard Fitzpatrick.
