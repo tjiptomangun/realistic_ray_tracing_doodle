@@ -4437,7 +4437,7 @@ dibentuk oleh busur $CHA$ dan garis lurus $AE$.
 
 \begin{center}\textbf{Dalil}\end{center}
 Jadi, dari sini, sudah dinyatakan, bahwa sebuah garis lurus yang ditarik secara
-tegak lurus ke ujung salah satu ujung diameter sebuah lingkaran, menyinggung 
+tegak lurus ke ujung diameter sebuah lingkaran, menyinggung 
 lingkaran [dan bahwa garis lurus itu menyinggung lingkaran pada satu titik, 
 karena sudah dibuktikan bahwa sebuah garis lurus yang bertemu sebuah lingkaran 
 di dua titik jatuh di dalam lingkaran [Prop. 3.2]]. Yang adalah hal yang perlu 
@@ -4560,7 +4560,8 @@ Dan misalkan $CA$ sudah ditarik dari $C$ dengan sudut siku - siku terhadap $DE$
 Sebab jika tidak, jika mungkin, misalkan $F$ adalah pusat lingkaran dan 
 misalkan $CF$ sudah dihubungkan.
 
-Karena itu, karena suatu garis lurus $DE$ menyinggung lingkaran $ABC$, dan $FC$
+Karenanya, disebabkan suatu garis lurus $DE$ menyinggung lingkaran $ABC$, 
+dan $FC$
 sudah dihubungkan dari pusat lingkaran ke titik persinggungan, $FC$ dengan 
 demikian tegak lurus terhadap $DE$ [Prop. 3.18]. Dengan demikian, $FCE$ adalah 
 sudut siku - siku. Dan $ACE$ juga siku - siku. Dengan demikian $FCE$ sama besar
@@ -4573,6 +4574,174 @@ Dengan demikian, jika suatu garis menyinggung sebuah lingkaran, dan sebuah
 garis lurus ditarik dari titik singgung, secara tegak lurus terhadap garis
 singgung, maka pusat dari lingkaran akan berada pada garis lurus yang ditarik 
 itu. Yang adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Di dalam sebuah lingkaran, sudut di pusat lingkaran adalah dua kali besar sudut
+di busur lingkaran, jika sudut - sudut tersebut memiliki alas busur yang sama.
+
+\begin{center}
+	\pgfmathparse{25} \let\slt\pgfmathresult
+	\pgfmathparse{2.5}\let\rds\pgfmathresult
+	\pgfmathparse{60} \let\bec\pgfmathresult
+	\pgfmathparse{\bec/2} \let\bef\pgfmathresult
+	\pgfmathparse{\bef/2} \let\aec\pgfmathresult
+	\pgfmathparse{sqrt(2*(\rds*\rds) - 2*(\rds*\rds)*cos(180 - 2*\aec)}
+	\let\ac\pgfmathresult
+\begin{tikzpicture} 
+%%	\draw(0, 0) node [anchor=south] {E} circle(\rds);
+%%	\draw({\rds*cos(270-\bef+\slt)}, {\rds*sin(270-\bef+\slt)}) 
+%%		node[anchor=north]{B}--++({180-(90+\bef)+\slt}:\rds) 
+%%		--++ ({270+\slt}:\rds) node[anchor=north]{F}
+%%		--++ ({90+\slt}:\rds)
+%%		--++ ({(270+\bef)+\slt}:\rds) node [anchor=north]{C}
+%%		--++ ({(180 + (270+\aec))+\slt}:\ac) node[anchor=south]{A}
+%%		--++ ({(270 - \aec)+\slt}:\ac); 
+%%	\draw(0, 0)--++(90+\slt:\rds);
+%%	\draw({\rds*cos(270-\bef+\slt)}, {\rds*sin(270-\bef+\slt)}) --
+%%		({\rds*(cos(20 + \slt))}, {\rds*(sin(20 + \slt))}) 
+%%		node[anchor=west]{D} 
+%%		--++ ({180 + (20+\slt)}:{2*\rds}) node[anchor=east]{G};
+%%	\draw({\rds*cos(270+\bef+\slt)}, {\rds*sin(270+\bef+\slt)}) --
+%%		({\rds*(cos(20 + \slt))}, {\rds*(sin(20 + \slt))}) ; 
+%%
+	\draw(0, 0) node [anchor=south] {E} circle(\rds);
+	\draw({\rds*cos(270-\bef+\slt)}, {\rds*sin(270-\bef+\slt)}) 
+		node[anchor=north]{B}--++({180-(90+\bef)+\slt}:\rds) 
+		--++ ({270+\slt}:\rds) node[anchor=north]{F}
+		--++ ({90+\slt}:{2*\rds}) --++ ({270+\slt}:\rds)
+		--++ ({(270+\bef)+\slt}:\rds) node [anchor=north]{C}
+		--++ ({(180 + (270+\aec))+\slt}:\ac) node[anchor=south]{A}
+		--++ ({(270 - \aec)+\slt}:\ac); 
+
+	\draw(6, 0) node [anchor=south] {E} circle(\rds);
+	\draw({6+(\rds*cos(270-\bef+\slt))}, {\rds*sin(270-\bef+\slt)}) 
+		node[anchor=north]{B}--++({180-(90+\bef)+\slt}:\rds) 
+		--++ ({(270+\bef)+\slt}:\rds) node [anchor=north]{C};
+	\draw({6+(\rds*cos(270-\bef+\slt))}, {\rds*sin(270-\bef+\slt)}) --
+		({6+(\rds*(cos(20 + \slt)))}, {\rds*(sin(20 + \slt))}) 
+		node[anchor=west]{D} 
+		--++ ({180 + (20+\slt)}:{2*\rds}) node[anchor=east]{G};
+	\draw({6+(\rds*cos(270+\bef+\slt))}, {\rds*sin(270+\bef+\slt)}) --
+		({6+(\rds*(cos(20 + \slt)))}, {\rds*(sin(20 + \slt))}) ;
+	\draw({6+(\rds*cos(90+\slt))}, {\rds*(sin(90+\slt))}) node[anchor=south]{A};
+
+\end{tikzpicture}
+\end{center} 
+
+\begin{center}
+\begin{tikzpicture} 
+	\pgfmathparse{25} \let\slt\pgfmathresult
+	\pgfmathparse{2.5}\let\rds\pgfmathresult
+	\pgfmathparse{60} \let\bec\pgfmathresult
+	\pgfmathparse{\bec/2} \let\bef\pgfmathresult
+	\pgfmathparse{\bef/2} \let\aec\pgfmathresult
+	\pgfmathparse{sqrt(2*(\rds*\rds) - 2*(\rds*\rds)*cos(180 - 2*\aec)}
+	\let\ac\pgfmathresult
+	\draw(0, 0) node [anchor=south] {E} circle(\rds);
+	\draw({\rds*cos(270-\bef+\slt)}, {\rds*sin(270-\bef+\slt)}) 
+		node[anchor=north]{B}--++({180-(90+\bef)+\slt}:\rds) 
+		--++ ({270+\slt}:\rds) node[anchor=north]{F}
+		--++ ({90+\slt}:\rds)
+		--++ ({(270+\bef)+\slt}:\rds) node [anchor=north]{C}
+		--++ ({(180 + (270+\aec))+\slt}:\ac) node[anchor=south]{A}
+		--++ ({(270 - \aec)+\slt}:\ac); 
+	\draw(0, 0)--++(90+\slt:\rds);
+	\draw({\rds*cos(270-\bef+\slt)}, {\rds*sin(270-\bef+\slt)}) --
+		({\rds*(cos(20 + \slt))}, {\rds*(sin(20 + \slt))}) 
+		node[anchor=west]{D} 
+		--++ ({180 + (20+\slt)}:{2*\rds}) node[anchor=east]{G};
+	\draw({\rds*cos(270+\bef+\slt)}, {\rds*sin(270+\bef+\slt)}) --
+		({\rds*(cos(20 + \slt))}, {\rds*(sin(20 + \slt))}) ; 
+
+%%	\draw(0, 0) node [anchor=south] {E} circle(\rds);
+%%	\draw({\rds*cos(270-\bef+\slt)}, {\rds*sin(270-\bef+\slt)}) 
+%%		node[anchor=north]{B}--++({180-(90+\bef)+\slt}:\rds) 
+%%		--++ ({270+\slt}:\rds) node[anchor=north]{F}
+%%		--++ ({90+\slt}:{2*\rds}) --++ ({270+\slt}:\rds)
+%%		--++ ({(270+\bef)+\slt}:\rds) node [anchor=north]{C}
+%%		--++ ({(180 + (270+\aec))+\slt}:\ac) node[anchor=south]{A}
+%%		--++ ({(270 - \aec)+\slt}:\ac); 
+%%
+%%	\draw(6, 0) node [anchor=south] {E} circle(\rds);
+%%	\draw({6+(\rds*cos(270-\bef+\slt))}, {\rds*sin(270-\bef+\slt)}) 
+%%		node[anchor=north]{B}--++({180-(90+\bef)+\slt}:\rds) 
+%%		--++ ({(270+\bef)+\slt}:\rds) node [anchor=north]{C};
+%%	\draw({6+(\rds*cos(270-\bef+\slt))}, {\rds*sin(270-\bef+\slt)}) --
+%%		({6+(\rds*(cos(20 + \slt)))}, {\rds*(sin(20 + \slt))}) 
+%%		node[anchor=west]{D} 
+%%		--++ ({180 + (20+\slt)}:{2*\rds}) node[anchor=east]{G};
+%%	\draw({6+(\rds*cos(270+\bef+\slt))}, {\rds*sin(270+\bef+\slt)}) --
+%%		({6+(\rds*(cos(20 + \slt)))}, {\rds*(sin(20 + \slt))}) ;
+%%
+\end{tikzpicture}
+\end{center}
+Misalkan $ABC$ adalah sebuah lingkaran, dan misalkan $BEC$ adalah sudut di pusat
+lingkaran, dan $BAC$ adalah sudut di busur lingkaran. Dan misalkan keduanya
+memiliki alas di busur yang sama seperti pada $BC$. Saya katakan bahwa sudut
+$BEC$ adalah dua kali besar sudut $BAC$.
+
+Sebab misalkan sudah dihubungkan, misalkan $AE$ sudah ditarik sampai $F$.
+
+Jadi, karena $EA$ sama panjang dengan $EB$, sudut $EAB$ juga sama besar
+dengan sudut $EBA$. Dengan demikian, sudut $EAB$ dan $EBA$ dua kali besar 
+sudut $EAB$, Dan besar $BEF$ sama dengan jumlah besar $EAB$ dan $EBA$ 
+[Prop. 1.32]. Dengan demikian, $BEF$ dua kali besar $EAB$. Jadi, dengan alasan 
+- alasan yang sama, $FEC$ juga dua kali besar $EAC$. Dengan demikian, 
+keseluruhan sudut $BEC$ dua kali sudut $BAC$.
+
+Misalkan garis lurus lain sudah ditarik sedemikian, dan misalkan ada sudut lain
+,$BDC$. Dan $DE$ sudah dihubungkan, dan misalkan sudah ditarik sampai $G$.
+Jadi, dengan cara yang sama, dapat kita tunjukkan $GEC$ dua kali besar $EDC$,
+, dan juga $GEB$ dua kali $EDB$. Dengan demikian, jika $GEB$ diambil dari $GEC$
+maka hasilnya adalah jumlah jika dua kali $EDB$ diambil dari dua kali $EDC$. 
+Sedangkan jika $EDB$ diambil dari $EDC$ maka sisanya adalah sudut $BDC$. Maka
+besar sudut sisa jika $GEB$ diambil dari $GEC$ adalah dua kali $BDC$. Tetapi 
+sisa $GEB$ diambil $GEC$ adalah $BEC$. Jadi besar sudut $BEC$ adalah dua kali 
+besar sudut $BDC$.
+
+Dengan demikian, di dalam sebuah lingkaran, sudut di pusat lingkaran adalah
+dua kali besar sudut di busur lingkaran, jika sudut - sudut tersebut memiliki
+alas busur yang sama. Yang adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Di dalam sebuah lingkaran, sudut yang berada dalam satu tembereng, sama besar
+satu dengan yang lain. 
+\begin{center}
+\begin{tikzpicture}
+	\draw(0, 0)circle(3) node [anchor=south]{F};
+	\draw(0, 0) 
+	--({3*cos(200)}, {3*sin(200}) node[anchor=east]{B}
+	--({3*cos(340)}, {3*sin(340)}) node[anchor=west]{D}
+	--(0, 0);
+	\draw ({3*cos(200)}, {3*sin(200}) 
+	-- ({3*cos(130)}, {3*sin(130)}) node[anchor=south]{A}
+	--({3*cos(340)}, {3*sin(340)}); 
+	\draw ({3*cos(200)}, {3*sin(200}) 
+	-- ({3*cos(10)}, {3*sin(10)}) node[anchor=south west]{E}
+	--({3*cos(340)}, {3*sin(340)}); 
+	\draw (0, -3) node[anchor=north]{C};
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABCD$ adalah sebuah lingkaran, dan $BAD$ dan $BED$ adalah sudut - 
+sudut dalam satu tembereng $BAED$. Saya katakan sudut - sudut pada $BED$ dan 
+$BAD$ sama besar satu dengan yang lain.
+
+Sebab misalkan pusat lingkaran $ABCD$ sudah ditemukan [Prop. 3.1], dan misalkan
+itu ada di titik $F$. Dan misalkan $BF$ dan $FD$ sudah dihubungkan.
+
+Dan karena sudut $BFD$ ada di pusat, dan $BAD$ ada di busur lingkaran, dan 
+keduanya memiliki alas busur yang sama di $BCD$, sudut $BFD$ dengan demikian
+dua kali sudut $BAD$ [Prop. 3.20]. Jadi dengan alasan - alasan yang sama, $BFD$
+juga dua kali besar $BED$. Dengan demikian, $BAD$ sama besar dengan $BED$.
+
+Dengan demikian, di dalam sebuah lingkaran, sudut - sudut di dalam tembereng 
+yang sama, sama besar satu dengan yang lain. Yang adalah hal yang perlu ditunjukkan.
+
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
 Richard Fitzpatrick.
