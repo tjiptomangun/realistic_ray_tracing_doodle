@@ -1526,7 +1526,7 @@ melalui titik $A$. Yang adalah hal yang perlu kita lakukan.
 
 Pada semua segitiga, jika salah satu sisi diperpanjang, maka sudut exterior 
 sama dengan jumlah dua sudut interior yang tidak bersebelahan, dan jumlah 
-dari tiga sudut eksterior sama dengan dua sudut siku - siku.
+dari tiga sudut interior sama dengan dua sudut siku - siku.
 
 \begin{center}
 \begin{tikzpicture}
@@ -4677,6 +4677,20 @@ di busur lingkaran, jika sudut - sudut tersebut memiliki alas busur yang sama.
 %%
 \end{tikzpicture}
 \end{center}
+
+\begin{center}
+\begin{tikzpicture} 
+	\pgfmathparse{2.5}\let\rds\pgfmathresult
+	\pgfmathparse{50}\let\bec\pgfmathresult
+	\draw (0, 0) node [anchor=south]{E} circle (\rds);
+	\draw ({\rds*cos(270 - (\bec/2))}, {\rds*sin(270 - (\bec/2))}) 
+		node[anchor=north]{B}
+	--++ ({180 - (90 + (\bec/2))}: \rds)
+	--++ ({270+(\bec/2)}:\rds) node[anchor=north]{C}
+	--++ ({270+(\bec/2)+ 180}:{2*\rds}) node[anchor=south]{D}
+	-- ({\rds*cos(270 - (\bec/2))}, {\rds*sin(270 - (\bec/2))});
+\end{tikzpicture}
+\end{center}
 Misalkan $ABC$ adalah sebuah lingkaran, dan misalkan $BEC$ adalah sudut di pusat
 lingkaran, dan $BAC$ adalah sudut di busur lingkaran. Dan misalkan keduanya
 memiliki alas di busur yang sama seperti pada $BC$. Saya katakan bahwa sudut
@@ -4686,15 +4700,15 @@ Sebab misalkan sudah dihubungkan, misalkan $AE$ sudah ditarik sampai $F$.
 
 Jadi, karena $EA$ sama panjang dengan $EB$, sudut $EAB$ juga sama besar
 dengan sudut $EBA$. Dengan demikian, sudut $EAB$ dan $EBA$ dua kali besar 
-sudut $EAB$, Dan besar $BEF$ sama dengan jumlah besar $EAB$ dan $EBA$ 
+sudut $EAB$. Dan besar $BEF$ sama dengan jumlah besar $EAB$ dan $EBA$ 
 [Prop. 1.32]. Dengan demikian, $BEF$ dua kali besar $EAB$. Jadi, dengan alasan 
 - alasan yang sama, $FEC$ juga dua kali besar $EAC$. Dengan demikian, 
 keseluruhan sudut $BEC$ dua kali sudut $BAC$.
 
-Misalkan garis lurus lain sudah ditarik sedemikian, dan misalkan ada sudut lain
-,$BDC$. Dan $DE$ sudah dihubungkan, dan misalkan sudah ditarik sampai $G$.
+Misalkan garis lurus lain sudah ditarik sedemikian, dan misalkan ada sudut lain,
+ $BDC$. Dan $DE$ sudah dihubungkan, dan misalkan sudah ditarik sampai $G$.
 Jadi, dengan cara yang sama, dapat kita tunjukkan $GEC$ dua kali besar $EDC$,
-, dan juga $GEB$ dua kali $EDB$. Dengan demikian, jika $GEB$ diambil dari $GEC$
+ dan juga $GEB$ dua kali $EDB$. Dengan demikian, jika $GEB$ diambil dari $GEC$
 maka hasilnya adalah jumlah jika dua kali $EDB$ diambil dari dua kali $EDC$. 
 Sedangkan jika $EDB$ diambil dari $EDC$ maka sisanya adalah sudut $BDC$. Maka
 besar sudut sisa jika $GEB$ diambil dari $GEC$ adalah dua kali $BDC$. Tetapi 
@@ -4741,6 +4755,104 @@ juga dua kali besar $BED$. Dengan demikian, $BAD$ sama besar dengan $BED$.
 
 Dengan demikian, di dalam sebuah lingkaran, sudut - sudut di dalam tembereng 
 yang sama, sama besar satu dengan yang lain. Yang adalah hal yang perlu ditunjukkan.
+
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk semua persegi empat di dalam sebuah lingkaran, jumlah besar sudut - sudut
+yang berhadapan sama dengan besar dua buah sudut siku - siku.
+
+\begin{center}
+\begin{tikzpicture}
+	\pgfmathparse{2.5}\let\rds\pgfmathresult
+	\pgfmathparse{50}\let\brad\pgfmathresult
+	\pgfmathparse{150}\let\arad\pgfmathresult
+	\pgfmathparse{220}\let\drad\pgfmathresult
+	\pgfmathparse{290}\let\crad\pgfmathresult
+	\draw(0, 0) circle(\rds);
+	\draw({\rds*cos(\brad)}, {\rds*sin(\brad)}) node [anchor=south]{B} --
+	({\rds*cos(\arad)}, {\rds*sin(\arad)}) node [anchor=south east]{A} --
+	({\rds*cos(\drad)}, {\rds*sin(\drad)}) node [anchor=north east]{D} --
+	({\rds*cos(\crad)}, {\rds*sin(\crad)}) node [anchor=north]{C} --
+	({\rds*cos(\brad)}, {\rds*sin(\brad)}) --
+	({\rds*cos(\drad)}, {\rds*sin(\drad)}) --
+	({\rds*cos(\crad)}, {\rds*sin(\crad)}) --
+	({\rds*cos(\arad)}, {\rds*sin(\arad)}) ;
+\end{tikzpicture} 
+\end{center}
+
+Misalkan $ABCD$ adalah sebuah lingkaran, dan $ABCD$ adalah persegi empat yang
+berada di dalam nya. Saya katakan bahwa jumlah besar dua sudut yang 
+berhadapan sama besar dengan besar dua buah sudut siku - siku.
+
+Misalkan $AC$ dan $BD$ sudah dihubungkan.
+
+Maka, karena ketiga sudut dari sembarang segitiga sama besar dengan besar
+dua buah sudut siku - siku [Prop. 1.32], ketiga sudut $CAB$, $ABC$, $BCA$ dari
+segitiga $ABC$ dengan demikian sama besar dengan dua buah sudut siku - siku. 
+Dan $CAB$ sama besar dengan $BDC$ karena keduanya ada di dalam tembereng yang
+sama $BADC$ [Prop. 3.21]. Dan $ACB$ sama besar dengan $ADB$. Karena keduanya
+ada di dalam tembereng yang sama $ADCB$ [Prop. 3.21]. Dengan demikian, 
+keseluruhan $ADC$ sama besar dengan jumlah $BAC$ dan $ACB$. Misalkan $ABC$ 
+sudah 
+ditambahkan pada keduanya. Dengan demikian, jumlah $ABC$, $BAC$ dan $ACB$ sama
+besar dengan jumlah $ABC$ dan $ADC$. Tetapi, $ABC$, $BAC$ dan $ACB$ sama besar 
+dengan dua buah sudut siku - siku [Prop. 1.32]. Dengan demikian, 
+jumlah sudut $ABC$ dan $ADC$ juga sama dengan besar dua buah sudut siku - siku.
+Dengan cara yang sama, dapat kita tunjukkan bahwa sudut $BAD$ dan $DCB$ sama 
+dengan besar dua buah sudut siku - siku.
+
+Dengan demikian, untuk semua persegi empat di dalam lingkaran, jumlah dari dua
+buah sudut yang berhadapan sama dengan besar dua buah sudut siku - siku. Yang 
+adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Dua temberang lingkaran yang serupa tetapi tidak berimpit tidak dapat
+dibuat pada dan di sisi yang sama dari sebuah tali busur.
+\begin{center}
+\begin{tikzpicture}
+	\pgfmathparse{10.1}\let\rdsa\pgfmathresult
+	\pgfmathparse{5.21}\let\rdsb\pgfmathresult
+	\pgfmathparse{50}\let\anglea\pgfmathresult
+	\pgfmathparse{110}\let\angleb\pgfmathresult
+	\pgfmathparse{90 - \anglea/2}\let\bpos\pgfmathresult
+	\pgfmathparse{90 + \anglea/2}\let\apos\pgfmathresult
+	\pgfmathparse{90 - \anglea/16}\let\cpos\pgfmathresult
+	\pgfmathparse{atan((\rdsa*sin(\cpos)- \rdsa*sin(\apos))/
+		(\rdsa*cos(\cpos) - \rdsa*cos(\apos)))}
+	\let\tanca\pgfmathresult
+	\pgfmathparse{\tanca + 180}\let\tanac\pgfmathresult
+
+	\draw ({\rdsa*cos(\bpos)}, {\rdsa*sin(\bpos)}) node[anchor=north west]{B} arc ({\bpos}:{\apos}:\rdsa) node[anchor=north east]{A};
+	\draw ({\rdsa*cos(\bpos)}, {\rdsa*sin(\bpos)}) arc ({90-\angleb/2}: {90+\angleb/2}: \rdsb); 
+	\draw ({\rdsa*cos(\bpos)}, {\rdsa*sin(\bpos)}) --
+	({\rdsa*cos(\cpos)}, {\rdsa*sin(\cpos)}) node[anchor=south]{C} --
+	({\rdsa*cos(\apos)}, {\rdsa*sin(\apos)});
+	\draw ({\rdsa*cos(\apos)}, {\rdsa*sin(\apos)}) --++
+	(\tanca:7.25) node[anchor=south]{D} --
+	({\rdsa*cos(\bpos)}, {\rdsa*sin(\bpos)})  --
+	({\rdsa*cos(\apos)}, {\rdsa*sin(\apos)});
+
+	
+\end{tikzpicture}
+\end{center}
+Sebab, jika mungkin, misalkan dua buah tembereng yang serupa, $ACB$ dan 
+$ADB$, sudah digambarkan pada dan di sisi yang sama dari 
+tali busur $AB$. Dan misalkan $ACD$ sudah ditarik melalui tembereng - tembereng
+tersebut, dan misalkan $CB$ dan $DB$ sudah dihubungkan.
+
+Sebab itu, karena tembereng $ACB$ serupa dengan tembereng $ADB$, dan 
+tembereng - tembereng yang serupa adalah tembereng - tembereng dengan sudut - 
+sudut yang sama besar [Def. 3.11], sudut $ACB$ dengan demikian sama besar 
+dengan sudut $ADB$, sudut eksterior sama besar dengan sudut interior. Yang
+adalah hal yang mustahil [Prop. 1.16].
+
+Dengan demikian, dua buah tembereng lingkaran yang serupa tetapi tidak berimpit
+tidak dapat dibuat pada dan di sisi yang sama dari sebuah tali busur.
+
 
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
