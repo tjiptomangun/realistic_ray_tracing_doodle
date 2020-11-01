@@ -3420,7 +3420,7 @@ beberapa busur, sudut tersebut dikatakan berdiri di atas busur tersebut.
 garis - garis lurus yang mengapit sebuah sudut di pusat lingkaran  dan busur 
 tersebut dipotong oleh kedua garis tersebut.
 \item Tembereng yang serupa dari sebuah lingkaran adalah yang memiliki sudut - 
-sudut yang sama besar, atau yang didalamnya sudut - sudut sama besar satu 
+sudut yang sama besar, atau yang pada busurnya sudut - sudut sama besar satu 
 dengan yang lain.
 \end{enumerate}
 
@@ -4852,6 +4852,129 @@ adalah hal yang mustahil [Prop. 1.16].
 
 Dengan demikian, dua buah tembereng lingkaran yang serupa tetapi tidak berimpit
 tidak dapat dibuat pada dan di sisi yang sama dari sebuah tali busur.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Tembereng - tembereng serupa sebuah lingkaran pada tali busur yang
+sama panjang sama besar satu dengan yang lain
+\begin{center}
+\begin{tikzpicture}
+	\draw (0, 0) node [anchor=north]{B} arc(30:90:5) 
+	node [anchor=south]{E} arc(90:150:5) node [anchor=north]{A}
+	--++(0:{2*5*cos(30)});
+
+	\draw (0, -5) node [anchor=north]{D} arc(30:110:5) 
+	node [anchor=south]{F} arc(110:150:5) node [anchor=north]{C}
+	--++(0:{2*5*cos(30)});
+
+	\draw (0, -5) arc(0:35:3) arc(35:90:2) arc(90:100:9.4) 
+		node[anchor=south]{G}
+	arc(100:133.5:9.4); 
+\end{tikzpicture}
+\end{center}
+Misalkan $AEB$ dan $CFD$ adalah tembereng - tembereng yang serupa pada sebuah
+lingkaran yang berada pada masing - masing tali busur yang sama panjang $AB$ 
+dan $CD$. Saya katakan tembereng $AEB$ sama besar dengan tembereng $CFD$.
+
+Sebab jika tembereng $AEB$ dihimpitkan pada tembereng $CFD$, dan titik $A$ di
+letakkan tepat di titik $C$, dan tali busur $AB$ pada tali busur $CD$, maka 
+titik $B$ akan juga akan berhimpit dengan titik $D$, dengan sarat $AB$ sama
+panjang dengan $CD$. Dan jika $AB$ berhimpit dengan $CD$ maka tembereng $AEB$
+juga akan berhimpit dengan tembereng $CFD$. Sebab jika tali busur $AB$ 
+berhimpit dengan tali busur $CD$, dan tembereng $AEB$ tidak berhimpit dengan 
+tembereng $CFD$, maka $CFD$ akan jatuh di dalam atau diluar nya\footnote{Pernyataan ini dihindari di proposisi 3.23}, atau sama sekali tidak bertemu seperti
+gambar $CGD$ dan sebuah lingkaran akan memotong lingkaran lainnya di lebih
+dari dua titik. Yang adalah hal yang tidak mungkin [Prop. 3.10]. Dengan 
+demikian, jika tali busur $AB$ diimpitkan dengan tali busur $CD$, tembereng
+$AEB$ tidak bisa tidak berimpit dengan $CFD$. Dengan demikian, akan berimpit,
+dan akan sama besar dengan nya [G.U. 4].
+
+Dengan demikian, tembereng - tembereng serupa dari sebuah lingkaran pada tali
+busur yang sama panjang, sama besar satu dengan yang lain. Yang adalah hal
+yang perlu dibuktikan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Cara menggambarkan lingkaran utuh dari sebuah tembereng lingkaran.
+\begin{center}
+\begin{tikzpicture}
+	\pgfmathparse{180 + atan((2*(sin(180) - sin(120)))/(2*(cos(180) - cos(120))))}\let\cabone\pgfmathresult 
+	\pgfmathparse {sqrt((2*(sin(180) - sin(120)))^2 + (2*(cos(180) - cos(120)))^2 )}\let\abone\pgfmathresult
+	\pgfmathparse {abs(2*(cos(180) - cos(120)))}\let\bdone\pgfmathresult
+	\pgfmathparse {abs(2*(sin(180) - sin(120)))}\let\adone\pgfmathresult
+
+	\draw(0, 0) node [anchor=south]{A} 
+		arc(120:180:2) node[anchor=east]{B}
+		arc(180:240:2) node[anchor=north]{C}
+		--++(90:{2*2*sin(120)})
+		--++(\cabone:\abone)
+		--++(0:\bdone) node[anchor=south west]{D}
+		--++(90:\adone)
+		--++({180+120}:2) node[anchor=west]{E}
+		--++(180:{2 - \bdone}) 
+		--++(0:{2 - \bdone}) --++(240:2);
+	\draw(4.5, 0) node[anchor=south]{A}
+		arc(90:180:2) node[anchor=east]{B}
+		arc(180:270:2) node[anchor=north]{C}
+		--++(90:2) node[anchor=west]{D}
+		--++(180:2) --++(0:2)
+		--++(90:2) --++ (225:{2*sqrt(2)});
+
+	\draw(9, 0) node [anchor=south]{A} 
+		arc(70:180:2) node[anchor=east]{B}
+		arc(180:290:2) node[anchor=north]{C}
+		--++(90:{1*2*sin(70)}) node[anchor=west]{D}
+		--++(90:{1*2*sin(70)})
+		--++({180 + atan((2*sin(70))/(2*(1+cos(70)))}: 
+		{sqrt(((2*sin(70)))^2 + (2*(1+cos(70)))^2)})
+		--++(0:{2*(1+cos(70))})
+		--++(180:{2*cos(70)}) node[anchor=north]{E}
+		--++(70:2);
+\end{tikzpicture}
+\end{center}
+Misalkan $ABC$ adalah tembereng lingkaran. Jadi diperlukan menggambarkan 
+lingkaran utuh yang padanya tembereng $ABC$ berada.
+
+Sebab misalkan $AC$ sudah dibagi dua sama besar di titik $D$ [Prop. 1.10], dan
+misalkan $DB$ sudah ditarik dari titik $D$, tegak lurus terhadap $AC$ 
+[Prop. 1.11]. Dan misalkan $AB$ sudah dihubungkan. Dengan demikian, sudut 
+$ABD$ bisa lebih besar, sama besar atau lebih kecil dari sudut $BAD$.
+
+Pertama - tama misalkan $ABD$ lebih besar dari $BAD$. Dan misalkan sudut 
+$BAE$, sama besar dengan sudut $ABD$, sudah digambarkan pada garis lurus
+$BA$, dengan titik $A$ terletak di garis itu [Prop. 1.23]. Dan misalkan
+$DB$ sudah ditarik sampai $E$, dan misalkan $EC$ sudah dihubungkan. Dengan
+demikian, karena sudut $ABE$ sama besar dengan sudut $BAE$, garis lurus $EB$
+dengan demikian sama panjang dengan garis lurus $EA$ [Prop. 1.16]. Dan karena
+$AD$ sama panjang dengan $CD$, dan $DE$ umum, masing - masing kedua garis 
+lurus $AD$, $DE$ sama panjang dengan $CD$, $DE$. Dan sudut $ADE$ sama besar
+dengan sudut $CDE$. Karena masing - masing adalah sudut siku - siku. Dengan
+demikian, sisi alas $AE$ sama panjang dengan sisi alas $CE$ [Prop. 1.4]. 
+Tetapi $AE$ sudah ditunjukkan sama panjang dengan $BE$. Dengan demikian $BE$
+juga sama panjang dengan $CE$. Dengan demikian, ketiga garis lurus $AE$, $EB$
+dan $CE$ sama panjang satu dengan lain. Dengan demikian, jika sebuah lingkaran
+digambarkan dengan pusat titik $E$, dan jari - jari  $AE$ atau $EB$ atau $EC$,
+garis tersebut juga akan melalui titik - titik di busur tembereng tersebut, 
+dan lingkaran yang dimaksud sudah utuh [Prop. 3.9]. Maka sebuah lingkaran
+sudah dibuat utuh dari sebuah tembereng nya. Dan jelas bahwa tembereng $ABC$
+lebih kecil dari separuh lingkaran, karena pusat lingkaran berada di luar
+tembereng tersebut.
+
+Dan, dengan cara yang sama, bahkan jika sudut $ABD$ sama besar dengan $BAD$,
+karena $AD$ akan sama panjang dengan masing - masing $BD$ [Prop. 1.6] dan $DC$,
+ketiga garis lurus $DA$, $DB$ dan $DC$ akan sama panjang satu dengan yang lain.
+Dan titik $D$ adalah pusat dari lingkaran utuh. Dan $ABC$ akan berwujud separuh
+lingkaran.
+
+Dan jika $ABD$ lebih kecil dari $BAD$, dan kita menggambarkan sudut $BAE$, sama
+besar dengan sudut $ABD$, pada garis lurus $BA$ dengan titik $A$ dilaluinya
+[Prop. 1.23], maka pusat lingkaran akan ada di $DB$, di dalam tembereng $ABC$.
+Dan tembereng $ABC$ akan berwujud lebih dari separuh lingkaran.
+
+Dengan demikian, sebuah lingkaran sudah di gambarkan utuh dari sebuah tembereng.
+Yang adalah hal yang perlu dilakukan.
 
 
 \begin{thebibliography}{9}
