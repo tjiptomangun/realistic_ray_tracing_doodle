@@ -4979,12 +4979,55 @@ Yang adalah hal yang perlu dilakukan.
 \stepcounter{section}
 \section*{\centering Proposisi \thesection}
 \addcontentsline{toc}{section}{Proposisi \thesection}
-
+Pada lingkaran - lingkaran yang sama besar, sudut - sudut yang sama besar berada pada alas busur yang sama besar, baik itu sudut - sudut pada busur atau pun sudut - sudut di titik pusat lingkaran.
 
 \begin{center}
 \begin{tikzpicture}
-\end{tikzpicture}
+\draw(0, 0) node[anchor=south]{G} circle(2.5) 
+	--++ (210: 2.5) node [anchor=east]{B}
+	--++ (0:{2*2.5*cos(30)}) node[anchor=west]{C} --(0, 0);
+\draw({2.5*cos(210)}, {2.5*sin(210)}) 
+	-- ({2.5*cos(110)}, {2.5*sin(110)}) node[anchor=south]{A}
+	-- ({2.5*cos(330)}, {2.5*sin(330});
+\draw({2.5*cos(270}, {2.5*sin(270}) node[anchor=north]{K};
+\draw (6, 0) node[anchor=south]{H} circle(2.5)
+	--++ (210: 2.5)node[anchor=east]{E}
+	--++ (0:{2*2.5*cos(30)}) node[anchor=west]{F} --(6, 0);
+\draw({6 + 2.5*cos(210)}, {2.5*sin(210)}) 
+	-- ({ 6 + 2.5*cos(20)}, {2.5*sin(20)}) node[anchor=west]{D}
+	-- ({6 + 2.5*cos(330)}, {2.5*sin(330});
+\draw({6 + 2.5*cos(270}, {2.5*sin(270)}) node[anchor=north]{L};
+	
+\end{tikzpicture}; 
 \end{center}
+
+Misalkan $ABC$ dan $DEF$ adalah lingkaran - lingkaran yang sama besar 
+dan di dalam masing - masing lingkaran misalkan $BGC$ dan $EHF$ adalah 
+sudut - sudut yang sama besar di pusat - pusat lingkaran tersebut, dan 
+$BAC$ dan $EDF$ adalah sudut - sudut yang sama besar di busur lingkaran.
+Saya katakan bahwa busur $BKC$ sama besar dengan busur $ELF$.
+
+Sebab misalkan $BC$ dan $EF$ sudah dihubungkan.
+
+Dan karena lingkaran $ABC$ dan $DEF$ sama besar, jari - jari keduanya
+sama panjang. Maka masing - masing kedua garis lurus $BG$ dan $GC$ 
+sama panjang dengan kedua garis lurus $EH$ dan $HF$. Dan sudut $G$
+sama besar dengan sudut $H$. Dengan demikian, sisi alas $BC$ sama 
+panjang dengan sisi alas $EF$ [Prop. 1.4]. Dan karena sudut $A$ sama
+besar dengan sudut $D$, tembereng $BAC$ dengan demikian serupa dengan
+tembereng $EDF$ [Def. 3.11]. Dan keduanya berada pada tali busur yang
+sama panjang. Dan tembereng yang serupa yang berada pada garis lurus
+yang sama panjang sama besar satu dengan yang lain [Prop. 3.24].
+Dengan demikian, tembereng $BAC$ sama besar dengan tembereng
+$EDF$. Dan keseluruhan lingkaran $ABC$ juga sama besar dengan
+keseluruhan lingkaran $DEF$. Dengan demikian, busur selebihnya $BKC$ 
+sama besar dengan busur selebihnya $ELF$.
+
+Dengan demikian, pada lingkaran - lingkaran yang sama besar, sudut - sudut yang sama besar berada alas busur yang sama besar, baik itu sudut
+pada pusat maupun sudut pada busur lingkaran.  Yang adalah hal yang 
+perlu ditunjukkan.
+
+
 
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
