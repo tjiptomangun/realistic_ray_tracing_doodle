@@ -4979,7 +4979,9 @@ Yang adalah hal yang perlu dilakukan.
 \stepcounter{section}
 \section*{\centering Proposisi \thesection}
 \addcontentsline{toc}{section}{Proposisi \thesection}
-Pada lingkaran - lingkaran yang sama besar, sudut - sudut yang sama besar berada pada alas busur yang sama besar, baik itu sudut - sudut pada busur atau pun sudut - sudut di titik pusat lingkaran.
+Pada lingkaran - lingkaran yang sama besar, sudut - sudut yang sama besar 
+berdiri pada alas busur yang sama besar, baik itu sudut - sudut pada busur atau pun 
+sudut - sudut di titik pusat lingkaran.
 
 \begin{center}
 \begin{tikzpicture}
@@ -5023,10 +5025,113 @@ $EDF$. Dan keseluruhan lingkaran $ABC$ juga sama besar dengan
 keseluruhan lingkaran $DEF$. Dengan demikian, busur selebihnya $BKC$ 
 sama besar dengan busur selebihnya $ELF$.
 
-Dengan demikian, pada lingkaran - lingkaran yang sama besar, sudut - sudut yang sama besar berada alas busur yang sama besar, baik itu sudut
-pada pusat maupun sudut pada busur lingkaran.  Yang adalah hal yang 
+Dengan demikian, pada lingkaran - lingkaran yang sama besar, sudut - 
+sudut yang sama besar berdiri pada alas busur yang sama besar, baik itu 
+di pusat maupun pada busur lingkaran.  Yang adalah hal yang 
 perlu ditunjukkan.
 
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+
+Pada lingkaran - lingkaran yang sama besar, sudut - sudut yang berdiri
+pada busur yang sama besar adalah sama besar satu dengan yang lain, baik
+sudut tersebut berada di pusat maupun di busur lingkaran.
+
+\begin{center}
+\begin{tikzpicture}
+	\draw(0, 0) node[anchor=south]{G} circle(2.5) --
+	({2.5*cos(200)}, {2.5*sin(200)}) node[anchor=east]{B} --
+	({2.5*cos(100)}, {2.5*sin(100)}) node[anchor=south]{A} --
+	({2.5*cos(330)}, {2.5*sin(330)}) node[anchor=west]{C} --
+	(0, 0) -- ({2.5*cos(300)}, {2.5*sin(300)}) node[anchor=north west]{K};
+
+	\draw(6, 0) node[anchor=south]{H} circle(2.5) --
+	({6 + 2.5*cos(200)}, {2.5*sin(200)}) node[anchor=east]{E} --
+	({6 + 2.5*cos(100)}, {2.5*sin(100)}) node[anchor=south]{D} --
+	({6 + 2.5*cos(330)}, {2.5*sin(330)}) node[anchor=west]{F} --
+	(6, 0);
+\end{tikzpicture} 
+\end{center}
+
+Sebab misalkan sudut $BGC$ dan $EHF$ berada pada masing - masing  pusat lingkaran di $G$ dan $H$, dan sudut - sudut $BAC$ dan $EDF$ ada di masing - masing busur
+lingkaran, berdiri pada busur - busur yang sama besar $BC$ dan $EF$, pada 
+lingkaran - lingkaran yang sama besar $ABC$ dan $DEF$. Saya katakan sudut
+$BGC$ sama besar dengan sudut $EHF$, dan sudut $BAC$ sama besar dengan sudut
+$EDF$.
+
+Sebab jika $BGC$ tidak sama besar dengan $EHF$, maka salah satu akan lebih besar.
+Misalkan $BGC$ adalah yang lebih besar, dan sudut $BGK$, sama besar dengan sudut
+$EHF$, sudah dibuat di garis lurus $BG$, dengan titik $G$ sebagai titik sudut
+[Prop. 1.23]. Tetapi sudut - sudut sama besar pada lingkaran - lingkaran yang
+sama besar akan berdiri pada busur - busur yang sama besar, jika berada di pusat
+lingkaran [Prop. 3.26]. Dengan demikian busur $BK$ sama besar dengan busur $EF$.
+Tetapi $EF$ sama besar dengan $BC$. Dengan demikian, $BK$ sama besar dengan $BC$.
+Yang berukuran kecil menjadi sama dengan yang berukuran lebih besar. Hal yang
+tidak mungkin. Dengan demikian, sudut $BGC$ tidak tidak sama besar dengan $EHF$.
+Dengan demikian keduanya sama besar. Dan sudut $A$ adalah setengan sudut $BFC$,
+dan sudut $D$ setengan $EHF$ [Prop. 3.20]. Dengan demikian, sudut di titik $A$
+juga sama besar dengan sudut di $D$.
+
+Dengan demikian, pada lingkaran - lingkaran yang sama besar, sudut - sudut yang
+berdiri pada busur - busur yang sama besar adalah sama besar satu dengan yang
+lain, baik jika berada di pusat maupun di busur lingkaran. Yang adalah hal yang
+perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Pada lingkaran - lingkaran yang sama besar, garis lurus - garis lurus yang sama
+panjang akan memotong busur - busur yang sama besar, dan busur yang lebih
+besar akan sama dengan busur yang lebih besar, dan yang lebih kecil akan sama
+besar dengan yang lebih kecil.  
+
+\begin{center}
+\begin{tikzpicture}
+	\draw(0, 0) node[anchor=south]{K} circle(2.5) --
+	({2.5*cos(210)}, {2.5*sin(210)}) node[anchor=east]{A} --
+	({2.5*cos(330)}, {2.5*sin(330)}) node[anchor=west]{B} --
+	(0, 0);
+	\draw ({2.5*cos(270)}, {2.5*sin(270)}) node[anchor=north]{G};
+	\draw ({2.5*cos(90)}, {2.5*sin(90)}) node[anchor=south]{C};
+
+	\draw(6, 0) node[anchor=south]{L} circle(2.5) --
+	({6 + 2.5*cos(210)}, {2.5*sin(210)}) node[anchor=east]{D} --
+	({6 + 2.5*cos(330)}, {2.5*sin(330)}) node[anchor=west]{E} --
+	(6, 0);
+	\draw ({6 + 2.5*cos(270)}, {2.5*sin(270)}) node[anchor=north]{H};
+	\draw ({6 + 2.5*cos(90)}, {2.5*sin(90)}) node[anchor=south]{F};
+
+\end{tikzpicture} 
+\end{center}
+
+Misalkan $ABC$ dan $DEF$ adalah lingkaran - lingkaran yang sama besar, dan 
+misalkan $AB$ dan $DE$ adalah garis - garis lurus yang sama panjang pada
+lingkaran - lingkaran ini, memotong masing - masing busur - busur yang lebih 
+besar $ACB$ dan $DFE$ dan masing - masing busur - busur yang lebih kecil 
+$AGB$ dan $DHE$. Saya katakan busur yang besar $ACB$ sama besar dengan busur
+yang lebih besar $DFE$, dan busur yang lebih kecil $AGB$ sama besar dengan
+$DHE$.
+
+Sebab misalkan pusat - pusat lingkaran $K$ dan $L$ sudah ditemukan [Prop. 3.1],
+dan misalkan $AK$, $KB$, $DL$ dan $LE$ sudah dihubungkan.
+
+Dan karena $ABC$ dan $DEF$ adalah lingkaran - lingkaran yang sama besar, maka
+jari - jari keduanya juga sama besar [Def. 3.1]. Dengan demikian, masing -
+masing kedua garis lurus $AK$, $KB$ sama panjang dengan kedua gari lurus $DL$
+dan $LE$. Dan alas $AB$ sama panjang dengan alas $DE$. Dengan demikian, sudut
+$AKB$ sama besar dengan sudut $DLE$ [Prop. 1.8]. Dan sudut - sudut sama besar
+berdiri pada busur - busur sama besar jika keduanya berada pada pusat - pusat
+lingkaran [3.29]. Dengan demikian busur $AGB$ sama dengan $DHE$. Dan keseluruhan
+lingkaran $ABC$ juga sama besar dengan keseluruhan lingkaran $DEF$. Dengan
+demikian busur selebihnya $ACB$ juga sama besar dengan busur selebihnya $DFE$/
+
+
+Dengan demikian, pada lingkaran - lingkaran sama besar, garis lurus yang sama
+panjang memotong busur - busur yang sama besar, busur yang lebih besar sama besar
+dengan busur yang lebih besar, dan busur yang lebih kecil sama besar dengan
+busur yang lebih kecil. Yang adalah hal yang perlu ditunjukkan.
 
 
 \begin{thebibliography}{9}
