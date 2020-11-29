@@ -5133,6 +5133,163 @@ panjang memotong busur - busur yang sama besar, busur yang lebih besar sama besa
 dengan busur yang lebih besar, dan busur yang lebih kecil sama besar dengan
 busur yang lebih kecil. Yang adalah hal yang perlu ditunjukkan.
 
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Dalam lingkaran - lingkaran yang sama besar, garis lurus - garis lurus yang
+sama panjang akan menghadap busur - busur yang sama besar.
+\begin{center}
+\begin{tikzpicture}
+	\draw(0, 0) circle(2.5) node[anchor=south]{K} 
+	-- ({2.5*cos(220)}, {2.5*sin(220)}) node[anchor=east]{B}
+	-- ({2.5*cos(320)}, {2.5*sin(320)}) node[anchor=west]{C}
+	-- (0, 0);
+	\draw(0, -2.5) node[anchor=north]{G};
+	\draw(0, 2.5) node[anchor=south]{A};
+
+	\draw(6, 0) circle(2.5) node[anchor=south]{L} 
+	-- ({6 + 2.5*cos(220)}, {2.5*sin(220)}) node[anchor=east]{E}
+	-- ({6 + 2.5*cos(320)}, {2.5*sin(320)}) node[anchor=west]{F}
+	-- (6, 0);
+	\draw(6, -2.5) node[anchor=north]{H};
+	\draw(6, 2.5) node[anchor=south]{D};
+\end{tikzpicture} 
+\end{center}
+Misalkan $ABC$ dan $DEF$ adalah lingkaran - lingkaran yang sama besar, dan 
+di dalamnya misalkan busur - busur yang sama besar $BGC$ dan $EHF$ sudah 
+dipisahkan. Dan 
+misalkan garis lurus - garis lurus $BC$ dan $EF$ sudah dihubungkan. Saya 
+katakan $BC$ sama panjang dengan $EF$.
+
+Sebab misalkan pusat - pusat lingkaran sudah ditemukan [Prop. 3.1], dan 
+misalkan berada di $K$ dan $L$. Dan misalkan $BK$, $KC$, $EL$ dan $LF$ sudah
+dihubungkan.
+
+Dan karena busur $BGC$ sama besar dengan busur $EHF$, sudut $BKC$ sama besar
+dengan sudut $ELF$ [Prop. 3.27]. Dan karena lingkaran $ABC$ dan $DEF$ sama
+besar, jari - jari nya sama panjang. Maka masing - masing kedua garis lurus 
+$BK$, $KC$ sama panjang dengan kedua garis lurus $EL$, $LF$. Dan juga
+mengapit sudut - sudut yang sama besar. Dengan demikian, sisi alas $BC$
+juga sama panjang dengan sisi alas $EF$ [Prop. 1.4].
+
+Dengan demikian, pada lingkaran - lingkaran yang sama besar, garis lurus - garis
+lurus yang sama panjang akan menghadap busur - busur yang sama besar. Yang
+adalah hal yang perlu ditunjukkan.
+
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Membagi dua sebuah busur menjadi dua bagian sama besar.
+
+\begin{center}
+\begin{tikzpicture}
+	\draw(0, {4*sin(20)}) node[anchor=north]{C} 
+	-- ({4*cos(160)}, {4*sin(160)}) node[anchor=east]{A}
+	-- (0, 4) node[anchor=south]{D}
+	-- ({4*cos(20)}, {4*sin(20)}) node[anchor=west]{B}
+	-- (0, {4*sin(20)})
+	-- (0, 4);
+	\draw ({4*cos(160)}, {4*sin(160)}) node[anchor=east]{A}
+	arc (160:20:4);
+
+\end{tikzpicture} 
+\end{center}
+
+Misalkan $ADB$ adalah sebuah busur tertentu. Jadi diperlukan untuk
+membagi dua busur $ADB$ menjadi dua bagian sama besar.
+
+Misalkan $AB$ sudah dihubungkan, dan misalkan sudah dibagi sama panjang
+dititik $C$ [Prop. 1.10]. Dan misalkan $CD$ sudah ditarik dari titik $C$,
+secara siku - siku ke $AB$ [Prop. 1.11]. Dan misalkan $AD$, dan $DB$ sudah
+dihubungkan.
+
+Dan karena $AC$ sama panjang dengan $CB$, dan $CD$ milik keduanya, 
+masing - masing kedua garis lurus $AC$, $CD$ sama panjang dengan kedua garis
+lurus $BC$, $CD$. Dan masing - masing sudut $ACD$ sama besar dengan sudut $BCD$. Karena masing - masing adalah sudut siku - siku. Dengan demikian, sisi alas 
+$AD$ sama panjang dengan sisi alas $BD$ [Prop. 1.4]. Dan garis lurus - garis
+lurus yang sama panjang memotong busur - busur yang sama besar, busur yang 
+lebih besar sama dengan yang lebih besar , dan yang lebih kecil sama dengan yang
+lebih kecil [Prop. 1.28]. Dan busur $AD$ dan $DB$ masing - masing lebih kecil
+dari setengah lingkaran. Dengan demikian, busur $AD$ sama besar dengan busur
+$DB$.
+
+Dengan demikian, busur tersebut tadi sudah dibagi dua sama besar di titik $D$.
+Yang adalah hal yang perlu dilakukan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Pada sebuah lingkaran, sudut di dalam (pada busur) sebuah setengah lingkaran adalah sudut
+siku - siku, dan pada tembereng yang lebih besar dari setengah lingkaran 
+sudut nya lebih kecil dari sudut siku - siku (sudut lancip), dan pada tembereng
+yang lebih kecil dari setengah lingkaran sudutnya lebih besar dari sudut siku
+- siku. Dan lebih jauh, sudut dari (yang diapit oleh) sebuah tembereng yang 
+lebih besar dari setengah lingkaran adalah lebih besar dari sudut siku - siku,
+dan sudut
+dari (yang diapit) sebuah tembereng yang lebih kecil dari setengah lingkaran
+adalah lebih kecil dari sebuah sudut siku - siku.
+\begin{center}
+\begin{tikzpicture}
+	\draw(0, 0) 
+\end{tikzpicture} 
+\end{center}
+Misalkan $ABCD$ adalah sebuah lingkaran, dan misalkan $BC$ adalah diameternya,
+dan $E$ adalah pusat lingkaran. Dan misalkan $BA$, $AC$, $AD$, dan $DC$ sudah
+dihubungkan. Saya katakan bahwa sudut $BAC$ di dalam (pada busur) 
+setengah lingkaran $BAC$ adalah sudut siku - siku, dan sudut $ABC$ pada 
+tembereng $ABC$, yang lebih besar dari setengah lingkaran, adalah lebih kecil
+dari sebuah sudut siku - siku, dan sudut $ADC$ didalam tembereng $ADC$, yang
+lebih kecil dari setengah lingkaran, adalah lebih besar dari sudut siku - siku.
+
+Misalkan $AE$ sudah dihubungkan, dan misalkan $BA$ sudah ditarik sampai ke
+titik $F$.
+
+Dan karena $BE$ sama panjang dengan $EA$, sudut $ABE$ juga sama besar dengan
+sudut $BAE$ [Prop. 1.5]. Dan lagi, karena $CE$ sama panjang dengan $EA$, sudut
+$ACE$ juga sama besar dengan sudut $CAE$ [Prop. 1.5]. Dengan demikian, 
+keseluruhan sudut $BAC$ sama besar dengan kedua sudut $ABC$ dan $ACB$.
+Dan $FAC$, yang adalah sudut eksterior dari segitiga $ABC$, juga
+sama besar dengan kedua sudut $ABC$ dan $ACB$ [Prop. 1.32]. Dengan demikian,
+sudut $BAC$ juga sama besar dengan sudut $FAC$. Dengan demikian, keduanya
+adalah sudut siku - siku [Def. 1.10]. Dengan demikian, sudut $BAC$ di dalam
+temebereng setengah lingkaran $BAC$ adalah siku - siku.
+
+Dan karena kedua sudut $ABC$ dan $BAC$ dari sebuah segitiga $ABC$ lebih kecil 
+dari dua sudut siku - siku [Prop. 1.17], dan $BAC$ adalah sudut siku - siku, 
+sudut $ABC$ dengan demikian lebih kecil dari sudut siku - siku. Dan berada pada
+tembereng $ABC$, yang lebih besar dari setengah lingkaran.
+
+Dan karena $ABCD$ adalah persegi empat di dalam sebuah lingkaran, dan untuk
+persegi empat - persegi empat di dalam sebuah lingkaran, besar jumlah 
+sudut - sudut yang berhadapan sama dengan dua sudut siku - siku [Prop. 3.22]
+, jumlah sudut - sudut $ABC$ dan $ADC$ dengan demikian sama dengan dua buah 
+sudut siku - siku, dan sudut $ABC$ lebih kecil dari sudut siku - siku. Sudut
+selebihnya dengan demikian lebih besar dari sudut siku - siku. Dan sudut
+tersebut berada di dalam tembereng $ADC$, yang lebih kecil dari setengah
+lingkaran.
+
+Saya juga katakan bahwa sudut dari tembereng yang lebih besar, yakni sudut
+yang diapit busur $ABC$ dan garis lurus $AC$, adalah lebih besar dari sebuah
+sudut siku - siku, dan sudut dari tembereng yang lebih kecil, yakni yang diapit
+oleh busur $ADC$ dan garis lurus $AC$, lebih kecil dari sudut siku - siku.
+Dan ini tampak jelas. Karena sudut yang diapit oleh dua garis lurus $BA$ dan
+$AC$ adalah sudut siku - siku, sudut yang diapit oleh tembereng $ABC$ dan garis
+lurus $AC$ dengan demikian lebih besar dari sudut siku - siku. Dan lagi, karena
+sudut yang diapit oleh garis lurus - garis lurus $AC$ dan $AF$ sudut siku - 
+siku, sudut yang diapit oleh busur $ADC$ dan garis lurus $CA$ dengan demikian 
+lebih kecil dari sudut siku - siku.
+
+Dengan demikian, di dalam sebuah lingkaran, sudut di dalam tembereng setengah 
+lingkaran adalah sudut siku - siku, dan yang di dalam tembereng yang lebih 
+besar dari setengah lingkaran, sudut nya lebih kecil dari sudut siku - siku,
+dan sudut di dalam tembereng yang lebih kecil dari setengah lingkaran adalah
+lebih besar dari sudut siku - siku. Dan lebih jauh, sudut dari sebuah 
+temberang yang lebih besar dari setengh lingkaran adalah lebih besar dari 
+sudut siku - siku, dan sudut dari tembereng yang lebih kecil dari setengah
+lingkaran adalah lebih kecil dari sudut siku - siku. Yang adalah hal yang
+perlu ditunjukkan.  
+
 
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
