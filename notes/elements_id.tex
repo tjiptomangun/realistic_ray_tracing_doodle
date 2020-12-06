@@ -5231,7 +5231,21 @@ dari (yang diapit) sebuah tembereng yang lebih kecil dari setengah lingkaran
 adalah lebih kecil dari sebuah sudut siku - siku.
 \begin{center}
 \begin{tikzpicture}
-	\draw(0, 0) 
+	\pgfmathparse 
+	{atan((3*sin(140) - 3*sin(210))/(3*cos(140) - 3*cos(210)) )}
+	\let\ebaangle\pgfmathresult
+	\draw(0, 0) circle(3) node[anchor=north west]{E}
+	--++(30:3) node[anchor=south west]{C}
+	--++(210:6) node[anchor=north east]{B}
+	--({3*cos(140)}, {3*sin(140}) node[anchor=east]{A}
+	--++({atan((3*sin(140) - 3*sin(210))/(3*cos(140) - 3*cos(210)) )}:2) 
+		node[anchor=south]{F}
+	--++({180+\ebaangle}:2)
+	--({3*cos(30)}, {3*sin(30)})
+	--(0, 0) --(140:3)
+	--({3*cos(80)}, {3*sin(80)}) node[anchor=south]{D}
+	--({3*cos(30)}, {3*sin(30)});
+
 \end{tikzpicture} 
 \end{center}
 Misalkan $ABCD$ adalah sebuah lingkaran, dan misalkan $BC$ adalah diameternya,
@@ -5289,6 +5303,67 @@ temberang yang lebih besar dari setengh lingkaran adalah lebih besar dari
 sudut siku - siku, dan sudut dari tembereng yang lebih kecil dari setengah
 lingkaran adalah lebih kecil dari sudut siku - siku. Yang adalah hal yang
 perlu ditunjukkan.  
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika sembarang garis menyinggung sebuah lingkaran, dan sembarang garis lain 
+ditarik, dari garis singgung ke dalam lingkaran, memotong lingkaran menjadi
+dua bagian, maka sudut yang dibentuk oleh garis lurus dengan garis
+singgung akan sama besar dengan sudut pada tembereng lingkaran yang 
+berseberangan (dari sudut pertama tadi).
+
+\begin{center}
+\begin{tikzpicture}
+	\draw(0, 0) circle(3);
+	\draw(-3, -3) node [anchor=east]{E} --
+	(0, -3) node[anchor=north]{B} --
+	(3, -3) node[anchor=west]{F}
+	(0, -3) -- ({3*cos(320)}, {3*sin(320)}) node[anchor=west]{C} --
+	({3*cos(50)}, {3*sin(50)}) node[anchor=west]{D}--
+	(0, -3) --
+	(0, 3) node[anchor=south]{A} --
+	({3*cos(50)}, {3*sin(50)});
+	
+
+\end{tikzpicture} 
+\end{center}
+
+Sebab misalkan sembarang garis $EF$ menyinggung lingkaran $ABCD$ di titik $B$,
+dan misalkan garis lain $BD$ sudah ditarik dari titik $B$ ke dalam lingkaran 
+$ABCD$ dan membagi lingkaran menjadi dua. Saya katakan bahwa sudut yang 
+dibentuk $BD$ dengan garis singgung $EF$ akan sama besar dengan yang dibentuk 
+tembereng yang berseberangan. Yakni, sudut $FBD$ akan sama besar dengan sudut
+yang dibentuk tembereng di $BAD$, dan sudut sudut $EBD$ akan sama besar dengan 
+sudut yang dibentuk tembereng di $DCB$.
+
+Sebab misalkan $BA$ sudah ditarik dari $B$, tegak lurus terhadap $EF$ [Prop.
+11]. Dan misalkan titik $C$ sudah diambil secara acak di busur $BD$. Dan
+misalkan $AD$, $DC$ dan $CB$ sudah dihubungkan.
+
+Dan karena sembarang garis $EF$ menyinggung lingkaran $ABCD$ di titik $B$, dan
+$BA$ sudah ditarik dari titik pertemuan, dengan tegak lurus terhadap garis 
+singgung, pusat dari lingkaran akan berada pada $BA$ [Prop. 3.19]. Dengan 
+demikian, $BA$ adalah diameter dari lingkaran $ABCD$. Dengan demikian, sudut
+$ADC$, yang ada dalam setengah lingkaran, adalah sudut siku - siku [Prop. 3.31].
+Dengan demikian, sudut selebihnya dari segitiga $ADB$,  $BAD$ dan $ABD$ sama
+besar dengan sudut siku - siku [Prop. 1.32]. Dan $ABF$ juga siku - siku.
+Dengan demikian $ABF$ sama dengan $BAD$ dan $ABD$. Misalkan $ABD$ sudah
+dikurangkan dari keduanya. Dengan demikian, sudut selebihnya $DBF$ sama besar
+dengan sudut $BAD$ di tembereng yang berseberangan dari lingkaran. Dan karena
+$ABCD$ adalah persegi empat di dalam lingkaran, jumlah sudut - sudut yang 
+berhadapan adalah sama dengan dua buah sudut siku - siku [Prop. 3.22].
+Dan $DBF$ dan $DBE$ juga sama dengan dua sudut siku - siku [Prop. 1.13].
+Dengan demikian $DBF$ dan $DBE$ sama besar dengan $BAD$ dan $BCD$, yang mana
+$BAD$ sudah ditunjukkan sama besar dengan $DBF$. Dengan demikian, sudut sisanya
+$DBE$ sama besar dengan sudut $DCB$ di tembereng lingkaran yang berseberangan.
+
+Dengan demikian, jika sembarang garis lurus menyinggung sebuah lingkaran, dan 
+garis lurus lain ditarik dari titik singgung ke dalam lingkaran, membagi
+lingkaran menjadi dua, maka sudut - sudut yang dibentuk garis lurus dengan 
+garis singgung akan sama besar dengan sudut - sudut pada tembereng - tembereng
+yang berseberangan pada lingkaran. Yang adalah hal yang perlu ditunjukkan.
+
 
 
 \begin{thebibliography}{9}
