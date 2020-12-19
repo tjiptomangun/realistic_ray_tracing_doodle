@@ -5372,6 +5372,36 @@ sama besar dengan sudut rektilinear tertentu, pada garis lurus tertentu.
 
 \begin{center}
 \begin{tikzpicture}
+	\pgfmathparse {3*cos(30)/sin(120} \let\abpersinh \pgfmathresult
+	\draw(0, 1) --++ (0:1.5) node[anchor=west]{C} --++(110:1.5);
+	\draw(0, 0) node [anchor=east]{D}
+	--++ (0:1.5) node [anchor=south]{A}
+	--++(250:{1.5*cos(20)}) node [anchor=east]{F}
+	--++({250 + 90}:{1.5*sin(20)}) node [anchor=west]{G}
+	--++({270 - 40}:{1.5}) node [anchor=north east]{B}
+	--++({250+180}:{1.5*cos(20)*2})
+	--++(270:1.5) circle(1.5) --++ (270:1.5) node[anchor=north]{E}
+	--++(160: {sqrt((2*(pow(1.5, 2)))-2*1.5*1.5*cos(40))});
+	\draw(5.5, 1) --++ (180:1.5) node[anchor=east]{C} --++(90:1.5);
+	\draw(5.5, -3) node[anchor=north]{B} 
+	--++(90:1.5) node[anchor=west]{F} --++(0:.1) --++ (180:.2)
+	--++(0:.1) circle(1.5) --++ (90:1.5) node[anchor=south]{A}
+	--++(180:1.5) node[anchor=east]{D} --++ (0:1.5)
+	--++({270-50}: {3*sin(40)}) node [anchor=east]{E}
+	--++({270+40}: {3*sin(50)});
+	\draw(9.5, 1) --++ (180:1.5) node[anchor=east]{C} --++(120:1.5);
+	\draw(10.5, 0) node[anchor=west]{D}
+	--++ (180:1.5) node[anchor=south]{A} 
+	--++(-120:{1.5*cos(30)}) node[anchor= east]{F}
+	--++(-30:{1.5*sin(30)}) node[anchor=west]{G}
+	--++({270 - 60}: 1.5) node[anchor=east]{B}
+	--++({-120+180} : {2*1.5*cos(30)})
+	--++(270:1.5) circle(1.5)
+	--++(270:1.5) node[anchor=north]{E}
+	--++(90:3) 
+	--++ ({-120-40}: {\abpersinh*sin(20)}) node[anchor=east]{H}
+	--++ ({-120 - 40 + 60}: {\abpersinh*sin(40)});
+	
 \end{tikzpicture} 
 \end{center}
 
