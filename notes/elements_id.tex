@@ -5475,6 +5475,69 @@ Dengan demikian, tembereng $AHB$ sebuah lingkaran, dengan sudut pada busurnya sa
 besar dengan sudut $C$, sudah digambarkan pada garis lurus $AB$. Yang adalah
 hal yang perlu dilakukan.
 
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk memotong sebuah tembereng, yang memiliki sudut pada busur yang sama besar
+dengan sudut rektilinier tertentu dari sebuah lingkaran.
+
+\begin{center}
+\begin{tikzpicture}
+	\draw(6, -3) --++ (180:2)
+	--++(25:2);
+	\draw(5, -3) node[anchor=south] {D};
+
+	\draw (0, 0) circle(3)
+	({3*cos(180)}, {3*sin(180)}) node[anchor=east]{B}
+	--++(90:2) node[anchor=east]{F}
+	--++(270:4) node[anchor=east]{E}
+	--++(90:2) --++ (65:2.53) node [anchor=south east]{C}
+	--++({65+180+75}:{(2.53/sin(25))*sin(80)}) node [anchor=west]{A}
+	--++({65+180+75+25+180}:{(2.53/sin(25))*sin(75)});
+\end{tikzpicture} 
+\end{center}
+
+Misalkan $ABC$ adalah sebuah lingkaran, dan $D$ adalah sudut rektilinear tertentu.
+Jadi diperlukan untuk memotong sebuah tembereng, yang memiliki sudut pada busur
+sama besar dengan sudut rektilinier $D$, dari lingkaran $ABC$.
+
+Misalkan $EF$ sudah digambarkan menyinggung $ABC$ pada titik $B$\footnote{Dengan 
+cara, dengan menemukan pusat dari $ABC$ [Prop. 3.1], menarik garis lurus dari titik
+pusat ke titik $B$, dan kemudian menarik $EF$}. Dan misalkan sudut
+$FBC$, sama besar dengan sudut $D$, sudah dibuat pada garis lurus $FB$, dengan titik
+$B$ pada nya [Prop. 1.23].
+
+Karena itu, karena garis lurus $EF$ menyinggung lingkaran $ABC$, dan $BC$ sudah
+ditarik memotong lingkaran dari titik $B$, sudut $FBC$ dengan demikian sama besar
+dengan sudut yang dibentuk tembereng di seberang sudut $FBC$ yakni 
+tembereng $BAC$ [Prop 3.32]. Tetapi, $FBC$ sama besar dengan $D$. Dengan demikian, 
+sudut (pada busur) di dalam tembereng $BAC$ juga sama besar dengan sudut $D$.
+
+Dengan demikian, tembereng $BAC$, dengan sudut pada busur sama besar dengan sudut
+rektilinear $D$, sudah dipotong dari lingkaran $ABC$. Yang adalah hal yang perlu
+dilakukan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika dua buah garis lurus di dalam lingkaran memotong satu dengan yang lain, maka
+persegi panjang yang dibentuk oleh potongan - potongan garis yang pertama akan sama
+besar dengan persegi panjang yang dibentuk oleh potongan - potongan garis yang kedua.
+\begin{center}
+\begin{tikzpicture}
+\end{tikzpicture} 
+\end{center}
+Sebab misalkan kedua garis lurus $AC$ dan $BD$, di dalam lingkaran $ABCD$, saling
+memotong di titik $E$. Saya katakan persegi panjang yang dibentuk oleh $AE$ dan $EC$
+sama besar dengan persegi panjang yang dibentuk oleh $DE$ dan $EB$.
+
+Faktanya, jika $AC$ dan $BD$ melalui pusat lingkaran (seperti pada diagram di sisi 
+kiri di atas), sehingga $E$ adalah pusat dari lingkaran $ABCD$, maka jelas bahwa
+$AE$, $EC$, $DE$ dan $EB$ sama panjang, persegi panjang yang dibatasi oleh $AE$
+dan $EC$ juga sama besar dengan persegi panjang yang dibatasi oleh $DE$ dan $EB$.
+
+Jadi misalkan $AC$ dan $DB$ tidak melalui pusat lingkaran seperti pada  
+
 
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
