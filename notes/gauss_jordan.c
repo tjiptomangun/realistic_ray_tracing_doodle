@@ -101,8 +101,12 @@ int reduce(double *input, int num_row, int num_col) {
 	free(temp);
 	return procrow;	
 }
-
+#include <math.h>
 int main(int argc, char **argv) {
+	double actan = atan((2*sin(300.0/180.0) - 2*sin(150.0/180.0))/
+		(2*cos(300.0/180.0) - 2*cos(150.0/180.0)));
+	double bdtan = atan((2*sin(240.0/180.0) - 2*sin(10.0/180.0))/
+		(2*cos(240.0/180.0) - 2*cos(10.0/180.0)));
 	double test[4][4] = {
 							{0.0, 0.0, 3.0, 1.0}, 
 							{0.0, 1.0, 2.0, 1.0}, 
@@ -118,11 +122,24 @@ int main(int argc, char **argv) {
 							{2.0, 4.0,  -5.0, 6.0, -5.0, -1.0} 
 						};
 
+	double test_test_again[2][3] = {
+				{1.0,  -1.0*actan, 0},
+				{1.0,  -1.0*bdtan, 0}
+	};
+
+
 	reduce((double *)test, 4, 4);	
     print_matrix((double *)test, 4, 4);
 
 	reduce((double *)test_again, 5, 6);	
     print_matrix((double *)test_again, 5, 6);
+
+	fprintf(stdout,"actan %f\n",  actan);
+	fprintf(stdout,"bdtan %f\n",  bdtan);
+
+	reduce((double *)test_test_again, 2, 3);	
+    print_matrix((double *)test_test_again, 2, 3);
+
 /*
 	for (i = 0; i < 4; i ++){
 		for(j = 0; j < 4; j ++){

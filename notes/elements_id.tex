@@ -5525,6 +5525,33 @@ persegi panjang yang dibentuk oleh potongan - potongan garis yang pertama akan s
 besar dengan persegi panjang yang dibentuk oleh potongan - potongan garis yang kedua.
 \begin{center}
 \begin{tikzpicture}
+\pgfmathparse{sqrt(pow(2*cos(300) - 2*cos(150), 2) + 
+					pow(2*sin(300) - 2*sin(150), 2)
+				} \let \aclength \pgfmathresult
+\pgfmathparse {atan((2*sin(300) - 2*sin(150))/(2*cos(300) - 2*cos(150)))} 
+					\let \actan \pgfmathresult
+\pgfmathparse {sqrt(pow(2*cos(240) - 2*cos(10), 2) + 
+				pow(2*sin(240) - 2*sin(10), 2)
+				} \let\dblength \pgfmathresult
+\pgfmathparse {atan((2*sin(240) - 2*sin(10))/(2*cos(240) - 2*cos(10)))} 
+					\let \dbtan \pgfmathresult
+\draw(-6, 0) node[anchor=south]{E} circle(2);
+\draw({-6 + 2*cos(150)}, {2*sin(150)}) node [anchor=south east]{A} --++
+	({150+180}:4) node[anchor=north west]{C};
+\draw({-6 + 2*cos(10)}, {2*sin(10)}) node[anchor=west]{D} 
+	--++ ({180+10}:4) node[anchor=east]{B};
+\draw(0, 0) node[anchor=south]{F} circle(2);
+\draw({2*cos(150)}, {2*sin(150)}) node[anchor=south east]{A}
+	-- ({2*cos(300)}, {2*sin(300)}) node[anchor=north west]{C};
+\draw({2*cos(10)}, {2*sin(10)}) node[anchor=west]{D}
+	--({2*cos(240)}, {2*sin(240)}) node[anchor=east]{B};
+\draw({2*cos(150)}, {2*sin(150)}) 
+	--++(\actan: {\aclength/2}) node[anchor=north east]{G}
+	--(0, 0);
+\draw({2*cos(240)}, {2*sin(240)})
+	--++(\dbtan: {\dblength/2}) node[anchor=north west]{H}
+	--(0, 0);
+
 \end{tikzpicture} 
 \end{center}
 Sebab misalkan kedua garis lurus $AC$ dan $BD$, di dalam lingkaran $ABCD$, saling
@@ -5536,7 +5563,46 @@ kiri di atas), sehingga $E$ adalah pusat dari lingkaran $ABCD$, maka jelas bahwa
 $AE$, $EC$, $DE$ dan $EB$ sama panjang, persegi panjang yang dibatasi oleh $AE$
 dan $EC$ juga sama besar dengan persegi panjang yang dibatasi oleh $DE$ dan $EB$.
 
-Jadi misalkan $AC$ dan $DB$ tidak melalui pusat lingkaran seperti pada  
+Jadi misalkan $AC$ dan $DB$ tidak melalui pusat lingkaran seperti pada gambar
+kedua dari kiri, dan misalkan pusat dari $ABCD$ sudah ditemukan [Prop. 3.1] , 
+dan misalkan pusat itu berada di titik $F$. Dan misalkan $FG$ dan $FH$ sudah 
+ditarik dari $F$, tegak lurus terhadap masing - masing garis  lurus $AC$ dan
+$DB$ [Prop. 1.12]. Dan misalkan $FB$, $FC$,  dan $FE$ sudah dihubungkan.
+
+Dan karena sembarang garis lurus ,$GF$, melalui pusat lingkaran, memotong 
+secara tegak lurus garis lurus lainnya yang tidak melalui pusat lingkaran,
+ $AC$, maka garis $GF$ memotong $AC$ menjadi dua bagian yang sama panjang
+[Prop. 3.3]. Dengan demikian, $AG$ sama panjang dengan $GC$. Karena itu,
+karena garis lurus $AC$ dipotong sama  panjang di titik $G$, dan secara tidak
+sama panjang di titik $E$, besar persegi panjang yang dibentuk oleh $AE$ 
+dan $EC$ ditambah besar bujur sangkar pada $EG$ sama besar dengan besar bujur
+sangkar pada $GC$ [Prop. 2.5]. Misalkan bujur sangkar pada $GF$ sudah 
+ditambahkan pada keduanya. Dengan demikian, besar persegi panjang yang dibentuk
+$AE$ dan $EC$ ditambah jumlah besar bujur sangkar pada $GE$ dan bujur sangkar 
+pada $GF$ sama besar dengan jumlah besar busar bujur sangkar pada $CG$ dan 
+bujur sangkar pada $GF$. Tetapi, besar bujur sangkar pada $FE$  sama besar
+dengan jumlah besar bujur sangkar pada $EG$ dan bujur sangkar pada $GF$ 
+[Prop. 1.47], dan besar bujur sangkar pada $FC$ sama besar dengan jumlah besar
+bujur sanggkar pada  $CG$ dan $GF$ [Prop. 1.47]. Dengan demikian, persegi 
+panjang yang dibentuk $AE$ dan $EC$ ditambah besar bujur sangkar pada $FE$ sama
+besar dengan besar bujur sangkar pada $FC$. Dan $FC$ sama panjang dengan $FB$.
+Dengan demikian, besar persegi panjang yang dibentuk $AE$ dan $EC$ ditambah
+bujur sangkar pada $FE$ sama besar dengan besar bujur sangkar pada $FB$. Jadi
+dengan alasan - alasan yang sama, besar persegi panjang yang dibentuk $DE$ dan
+$EB$ ditambah besar bujur sangkar pada $FE$ sama besar dengan besar bujur 
+sangkar pada $FB$. Dan besar besar persegi panjang $AE$ dan $EC$ ditambah 
+bujur sangkar $FE$ juga ditunjukkan sama besar dengan $FB$. Dengan demikian
+persegi panjang $AE$ dan $EC$ ditambah bujur sangkar $FE$ sama besar dengan
+persegi panjang $DE$ dan $EB$ ditambah bujur sangkar $FE$. Misalkan bujur 
+sangkar $FE$ sudah diambil dari keduanya. Dengan demikian sisanya, persegi 
+panjang yang dibentuk $AE$ dan $EC$ sama besar dengan persegi panjang
+yang dibentuk $DE$ dan $EB$.
+
+Dengan demikian, jika dua buah garis lurus didalam sebuah lingkaran saling
+memotong, maka persegi panjang yang dibentuk potongan pertama sama besar denga
+persegi panjang yang dibentuk potongan kedua, yang adalah hal yang perlu 
+ditunjukkan.
+
 
 
 \begin{thebibliography}{9}

@@ -21,7 +21,7 @@ notes: elements_id vector annex
 
 
 gauss_jordan: gauss_jordan.c
-	gcc -Wall -ggdb3 gauss_jordan.c -o gauss_jordan
+	gcc -Wall -ggdb3 gauss_jordan.c -lm -o gauss_jordan
 
 gauss_backsub2: gauss_backsub2.c
 	gcc -Wall -ggdb3 gauss_backsub2.c -o gauss_backsub2
