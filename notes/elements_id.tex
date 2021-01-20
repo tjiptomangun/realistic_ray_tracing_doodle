@@ -2707,11 +2707,11 @@ misalkan $AK$ sudah ditarik melalui $A$, sejajar dengan $CL$ atau
 $DM$ [Prop. 1.31].
 
 Dengan demikian, karena $AC$ sama panjang dengan $CB$, persegi panjang $AL$ 
-juga sama panjang dengan persegi panjang $CH$ [Prop. 1.36]. Tetapi, persegi
-panjang $CH$ sama panjang dengan persegi panjang $HF$ [Prop. 1.43]. Dengan 
-demikian persegi panjang $AL$ juga sama panjang dengan persegi panjang $HF$.
+juga sama besar dengan persegi panjang $CH$ [Prop. 1.36]. Tetapi, persegi
+panjang $CH$ sama besar dengan persegi panjang $HF$ [Prop. 1.43]. Dengan 
+demikian persegi panjang $AL$ juga sama besar dengan persegi panjang $HF$.
 Misalkan persegi panjang $CM$ sudah ditambahkan pada keduanya. Dengan demikian,
-keseluruhan persegi panjang $AM$ sama panjang dengan gnomon $NOP$.  Tetapi $AM$
+keseluruhan persegi panjang $AM$ sama besar dengan gnomon $NOP$.  Tetapi $AM$
 adalah persegi panjang yang dibentuk oleh $AD$ dan $DB$. Karena $DM$ sama 
 panjang dengan $DB$. Dengan demikian, gnomon $NOP$ juga sama besar dengan 
 persegi panjang yang dibentuk $AD$  dan $DB$. Misalkan $LG$, yang 
@@ -5535,6 +5535,9 @@ besar dengan persegi panjang yang dibentuk oleh potongan - potongan garis yang k
 				} \let\dblength \pgfmathresult
 \pgfmathparse {atan((2*sin(240) - 2*sin(10))/(2*cos(240) - 2*cos(10)))} 
 					\let \dbtan \pgfmathresult
+\pgfmathparse {(tan(\actan)*2*cos(300) - tan(\dbtan)*2*cos(10) + 2*sin(10) - 2*sin(300))/(tan(\actan) - tan(\dbtan))} \let\cx\pgfmathresult
+\pgfmathparse {tan(\dbtan)*(\cx - 2*cos(10)) + 2*sin(10)} \let \cy \pgfmathresult
+
 \draw(-6, 0) node[anchor=south]{E} circle(2);
 \draw({-6 + 2*cos(150)}, {2*sin(150)}) node [anchor=south east]{A} --++
 	({150+180}:4) node[anchor=north west]{C};
@@ -5550,8 +5553,13 @@ besar dengan persegi panjang yang dibentuk oleh potongan - potongan garis yang k
 	--(0, 0);
 \draw({2*cos(240)}, {2*sin(240)})
 	--++(\dbtan: {\dblength/2}) node[anchor=north west]{H}
-	--(0, 0);
-
+	--(0, 0) -- (\cx, \cy) node [anchor=north]{E}
+	--({2*cos(240)}, {2*sin(240)}) -- (0, 0)
+	--({2*cos(300)}, {2*sin(300)}); 
+%\draw (4, 4) node{cx = \cx};
+%\draw (4, 3) node{cy = \cy};
+%\draw (4, 2) node{actan = \actan};
+%\draw (4, 1) node{dbtan = \dbtan};
 \end{tikzpicture} 
 \end{center}
 Sebab misalkan kedua garis lurus $AC$ dan $BD$, di dalam lingkaran $ABCD$, saling
@@ -5599,11 +5607,204 @@ panjang yang dibentuk $AE$ dan $EC$ sama besar dengan persegi panjang
 yang dibentuk $DE$ dan $EB$.
 
 Dengan demikian, jika dua buah garis lurus didalam sebuah lingkaran saling
-memotong, maka persegi panjang yang dibentuk potongan pertama sama besar denga
+memotong, maka persegi panjang yang dibentuk potongan pertama sama besar dengan
 persegi panjang yang dibentuk potongan kedua, yang adalah hal yang perlu 
-ditunjukkan.
+ditunjukkan.  
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika sembarang titik diambil di luar sebuah lingkaran, dan dua buah garis 
+lurus ditarik dari garis tersebut ke arah lingkaran, dan satu nya memotong
+lingkaran, dan satunya lagi menyinggung lingkaran, maka persegi panjang
+yang dibentuk oleh keseluruhan garis yang memotong lingkaran dengan
+potongannya yang berada diluar lingkaran, antara titik dengan sisi 
+busur cembung, akan sama besar dengan bujur sangkar pada garis singgung.
+
+\begin{center}
+\begin{tikzpicture}
+\pgfmathparse {atan((2*sin(345)- (-2))/(2*cos(345)-(-3.5)))}
+	\let \tanda \pgfmathresult
+\pgfmathparse {sqrt(pow((2*sin(345)- (-2)),2) + pow((2*cos(345)-(-3.5)),2))}
+	\let \lenda \pgfmathresult
+
+\pgfmathparse {atan((2*sin(270)- (-2))/(2*cos(270)-(-3.5)))}
+	\let \tandb \pgfmathresult
+\pgfmathparse {sqrt(pow((2*sin(270)- (-2)),2) + pow((2*cos(270)-(-3.5)),2))}
+	\let \lendb \pgfmathresult
+
+\pgfmathparse {tan(\tanda)}
+	\let \slopda \pgfmathresult
+\pgfmathparse {tan(\tandb)}
+	\let \slopdb \pgfmathresult
+\pgfmathparse {tan(\tanda + 270)}
+	\let \slopef \pgfmathresult
+
+\pgfmathparse {((\slopda * -3.5) - \slopef * 0 + 0 - (-2))/(\slopda - \slopef)}
+	\let \daefx \pgfmathresult
+\pgfmathparse {\slopef*(\daefx - 0) + 0}
+	\let \daefy \pgfmathresult 
+
+\pgfmathparse {sqrt(pow((2*sin(345)-\daefy),2) + pow((2*cos(345)-\daefx),2))}
+	\let \lenfa \pgfmathresult
+
+\draw(-6, 0) node [anchor=west]{F} circle(2) 
+	--++ (70:2) node[anchor=south west]{A}
+	--++ ({180+70}:4) node[anchor=north west]{C}
+	--++ ({180+70}:{(2/(cos(70))) - 2}) node[anchor=north west]{D}
+	--++ (90:{2*tan(70)}) node[anchor=east]{B} --++ (0:2);
+
+\draw(0, 0) node[anchor=south]{E} circle(2);
+\draw(-3.5, -2) node [anchor=east]{D} 
+	--++(\tanda:2) node[anchor=south west]{C}
+	--++(\tanda:{\lenda - 2}) node[anchor=west]{A};
+\draw(-3.5, -2) 
+	--++(\tandb:\lendb) node[anchor=north]{B}
+	--++(90:2)
+	--(\daefx, \daefy) node[anchor=north]{F}
+	--++ ({\tanda + 180}: \lenfa)
+	--(0, 0);
+\draw [-, dashed, ashgrey] (-3.5, -2) -- (0, 0); 
+
+	%%--++({\tanda + 270}: 1) node[anchor=north]{F};
+\end{tikzpicture} 
+\end{center}
+
+Sebab misalkan sembarang titik $D$ sudah ditarik diluar lingkaran $ABC$,
+dan dua buah garis $DCA$ dan $DB$, ditarik dari $D$ ke arah lingkaran $ABC$.
+Misalkan $DCA$ memotong lingkaran dan misalkan $BD$ menyinggung lingkaran.
+Saya katakan bahwa persegi panjang yang dibentuk $AD$ dan $DC$ sama besar
+dengan bujur sangkar pada $DB$.
+
+$DCA$ pasti akan melalui pusat lingkaran atau tidak melalui pusat lingkaran.
+Misalkan pertama melalui pusat lingkaran, dan misalkan $F$ adalah pusat lingkaran
+$ABC$, dan misalkan $FB$ sudah dihubungkan. Dengan demikian, sudut $FBD$ adalah 
+sudut siku - siku [Prop. 3.18]. Dan karena garis lurus $AC$ dipotong sama
+panjang di titik $F$, misalkan $CD$ sudah ditambahkan. Dengan demikian,
+persegi panjang yang dibentuk oleh $AD$ dan $DC$ ditambah bujur sangkar pada $FC$
+sama besar dengan bujur sangkar pada $FD$ [Prop. 2.6]. Dan $FC$ sama panjang
+dengan $FB$. Dengan demikian persegi panjang yang dibentuk oleh $AD$ dan $DC$
+ditambah dengan bujur sangkar pada $FB$ sama besar dengan bujur sangkar pada
+$FD$. Dan bujur sangkar pada $FD$ sama besar dengan jumlah besar bujur sangkar 
+pada $FB$ ditambah bujur sangar pada $BD$ [Prop. 1.47]. Dengan demikian,
+persegi panjang yang dibentuk $AD$ dan $DC$ ditambah dengan bujur sangkar pada
+$FB$ sama besar dengan jumlah besar bujur sangkar pada $FB$ dan bujur sangkar
+pada $BD$. Misalkan besar bujur sangkar pada $FB$ sudah dikurangkan dari keduanya.
+Dengan demikian, bujur sangkar selebihnya yang dibentuk oleh $AD$ dan $DC$ sama
+besar dengan bujur sangkar pada garis singgung $DB$.
+
+Dan misalkan $DCA$ tidak melalui pusat lingkaran $ABC$, dan misalkan pusat $E$
+sudah ditemukan, dan misalkan $EF$ sudah ditarik dari $E$, tegak lurus dengan
+$AC$ [Prop. 1.12]. Dan misalkan $EB$, $EC$ dan $ED$ sudah dihubungkan. Sudut
+$EBD$ dengan demikian adalah sudut siku - siku [Prop. 3.38]. Dan karena sebuah
+garis lurus, $EF$, melalui pusat lingkaran, memotong garis lurus lain yang tidak
+melalui pusat lingkaran, $AC$, secara siku - siku, maka $EF$ juga membagi $AC$
+sama panjang [Prop. 3.3]. Dengan demikian $AF$ sama panjang dengan $FC$. Dan
+karena garis lurus $AC$ sama panjang pada titik $F$, misalkan $CD$ sudah 
+ditambahkan padanya. Maka, persegi panjang yang dibentuk $AD$ dan $DC$ ditambah
+bujur sangkar pada $FC$ sama besar dengan bujur sangkar pada $FD$ [Prop. 2.6]. 
+Misalkan bujur sangkar pada $FE$ sudah ditambahkan pada keduanya. Dengan 
+demikian, persegi panjang yang dibentuk oleh $AD$ dan $DC$ ditambah jumlah
+bujur sangkar pada $CF$ dan bujur sangkar pada $FE$ sama besar besar jumlah
+besar bujur sangkar pada $FD$ dan besar bujur sangkar pada $FE$. Tetapi
+bujur sangkar pada $EC$ sama besar dengan jumlah besar bujur sangkar pada 
+$CF$ dan bujur sangkar pada $FE$. Karena sudut $EFC$ adalah siku - siku
+[Prop. 1.47]. Dan besar bujur sangkar pada $ED$ sama besar dengan jumlah
+besar bujur sangkar pada  $DF$ dan bujur sangkar pada $FE$ [Prop. 1.47].
+Dengan demikian, besar persegi panjang yang dibentuk $AD$ dan $DC$ ditambah
+besar bujur sangkar pada $EC$ sama besar dengan bujur sangkar pada $ED$.
+Dan $EC$ sama panjang dengan $EB$. Dengan demikian, besar persegi panjang
+yang dibentuk $AD$ dan $DC$ ditambah besar bujur sangkar pada $EB$ sama dengan 
+besar bujur sangkar pada $ED$. Dan jumlah besar bujur sangkar pada $EB$ dan
+bujur sangkar pada $BD$ sama besar dengan bujur sangkar pada $ED$. Karena $EBD$
+adalah sudut siku - siku [Prop 1.47]. Dengan demikian, besar persegi panjang yang
+dibentuk $AD$ dan $DC$ ditambah besar bujur pada $EB$ sama besar dengan jumlah 
+besar bujur sangkar pada $EB$ dan besar bujur sangkar pada $BD$. Misalkan bujur
+sangkar $EB$ sudah diambil dari keduanya. Dengan demikian, persegi panjang yang
+dibentuk $AD$ dan $AC$ sama besar dengan besar persegi panjang pada  $BD$.
+
+Dengan demikian, juga sembarang titik diambil dari luar sebuah lingkaran, dan, 
+dua garis lurus ditarik dari titik tersebut ke arah lingkaran, satu garis memotong
+lingkaran, dan garis yang satu lagi menyinggung lingkaran, maka persegi panjang
+yang dibentuk oleh keseluruhan garis yang memotong lingkaran dan bagian garis 
+tersebut yang berada diluar lingkaran, antara titik dan busur cembung, sama 
+besar dengan besar bujur sangkar pada garis yang menyinggung lingkaran. Yang
+adalah hal yang perlu dibuktikan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Jika sembarang titik diambil diluar sebuah lingkaran, dan dua garis lurus
+ditarik dari titik tersebut ke arah lingkaran, dan satu garis memotong 
+lingkaran, dan garis lain bertemu dengan lingkaran, 
+dan besar 
+persegi panjang yang dibentuk oleh keseluruhan garis yang memotong 
+lingkaran, dan bagian garis tersebut yang berada di luar lingkaran, antara
+titik tersebut dan busur cembung linkaran, sama besar dengan besar bujur 
+sangkar pada garis lurus yang bertemu lingkaran, maka garis yang bertemu
+lingkaran akan menyinggung lingkaran.
+
+\begin{center}
+\begin{tikzpicture}
+\pgfmathparse {sqrt(25 + 16)} \let \dflen \pgfmathresult
+\pgfmathparse {sqrt(\dflen*\dflen - 2.5*2.5)} \let \delen \pgfmathresult
+\pgfmathparse {atan(\delen/2.5} \let \dfeang \pgfmathresult
+\pgfmathparse {90} \let \defang \pgfmathresult
+\pgfmathparse {180 - \defang - \dfeang} \let \fdeang \pgfmathresult
+\pgfmathparse {atan(4/-5)+180} \let \fdtilt \pgfmathresult
+\pgfmathparse {2.5*cos(300)} \let \ax \pgfmathresult
+\pgfmathparse {2.5*sin(300)} \let \ay \pgfmathresult
+\pgfmathparse {atan((\ay-4)/(\ax-(-5)))} \let \datilt \pgfmathresult
+\pgfmathparse {sqrt(pow(\ay - 4, 2) + pow(\ax -(-5),2))} \let \dalen \pgfmathresult
+
+\draw(0, 0) node [anchor=north west] {F} circle(2.5);
+\draw(-5, 4) node [anchor=east]{D} ;
+\draw(0, 0) --++ ({atan(4/-5)+180}:\dflen);
+\draw(0, 0) --++ ({\fdtilt - \dfeang }:2.5) node[anchor=south]{E}
+--++ ({\fdtilt - \dfeang +90}:\delen);
+\draw(-5, 4) --++ (\datilt: {2*\dalen/5}) node [anchor=north]{C}
+--++ (\datilt: {3*\dalen/5}) node [anchor=north east]{A};
+\draw(0, 0) --++ ({\fdtilt + \dfeang }:2.5) node[anchor=north east]{B}
+--++ ({\fdtilt + \dfeang - 90}:\delen);
 
 
+\end{tikzpicture} 
+\end{center}
+
+Misalkan sembarang titik $D$ sudah diambil di luar lingkaran $ABC$, dan 
+misalkan dua garis lurus, $DCA$ dan $DB$ ditarik dari $D$ ke arah lingkaran
+$ABC$, dan misalkan $DCA$ memotong lingkaran, dan misalkan $DB$ bertemu
+lingkaran. Dan misalkan persegi panjang yang dibentuk $AD$ dan $DC$ sama
+besar dengan bujur sangkar pada $DB$. Saya katakan $DB$ menyinggung 
+lingkaran $ABC$.
+
+Sebab misalkan sudah ditarik menyinggung $ABC$ [Prop. 3.17], dan misalkan pusat
+dari lingakaran $ABC$ sudah ditemukan, dan misalkan berada di titik $F$. Dan
+misalkan $FE$, $FB$ dan $FD$ sudah dihubungkan. Sudut $FED$ dengan demikian adalah
+sudut siku - siku [Prop. 3.18]. Dan karena $DE$ menyinggung lingkaran $ABC$, dan
+$DCA$ memotong lingkaran $ABC$, persegi panjang yang dibentuk oleh $AD$ dan
+$DC$ dengan demikian sama besar dengan besar bujur sangkar pada $DE$ [Prop. 3.36].
+Dan persegi panjang	yang dibentuk oleh $AD$ dan $DC$ juga sama besar dengan
+besar bujur sangkar pada $DB$. Dengan demikian, besar bujur sangkar pada $DE$
+sama besar dengan besar bujur sangkar pada $DB$. Dengan demikian $DE$ sama dengan 
+$DB$. Dan $FE$ juga sama panjang dengan $FB$. Dengan demikian masing - masing
+kedua garis lurus $DE$, $EF$ sama panjang dengan kedua garis lurus 
+$DB$, $BF$. Dan sisi alas keduanya adalah $FD$. Dengan demikian, sudut $DEF$
+sama besar dengan sudut $DBF$[Prop. 1.8]. Dan $DEF$ adalah sudut siku - siku.
+Dengan demikian, $DBF$ juga adalah sudut siku - siku. Dan jika $FB$ 
+dipanjangkan menjadi diameter. Dan garis lurus yang ditarik secara tegak lurus
+pada salah satu ujung diameter menyinggung lingkaran [Prop. 3.16.corr]. Dengan
+demikian $DB$ menyinggung lingkaran $ABC$. Dengan cara yang sama dapat 
+ditunjukaan, jika pusat lingkaran berada pada $AC$.
+
+Dengan demikian, juga sebuah titik diambil diluar sebuah lingkaran, dan
+dua garis lurus ditarik dari titik tersebut ke pusat lingkaran, dan salah
+satunya memotong lingkaran, dan yang lain bertemu dengan lingkaran, dan besar
+persegi panjang yang dibentuk oleh keseluruhan garis yang memotong lingkaran
+dengan potongannya yang berada di luar lingkaran (antara titik dengan 
+permukaan yang cembung), sama besar dengan besar bujur sangkar pada garis
+yang bertemu dengan lingkaran, maka garis yang bertemu dengan lingkaran 
+tersebut akan menyinggung lingkaran. Yang adalah hal yang perlu dibuktikan.
 
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
