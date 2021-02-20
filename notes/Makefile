@@ -1,4 +1,5 @@
-all: notes gauss_jordan gauss_backsub2 inverse_gaussjordan annex quaternion line_line_intersection
+all: notes gauss_jordan gauss_backsub2 inverse_gaussjordan annex quaternion line_line_intersection line_circle_intersection
+all: line_circle_intersection2
 annex: elements_id_annex.tex  
 	latex elements_id_annex.tex
 	pdflatex elements_id_annex.tex
@@ -30,6 +31,12 @@ inverse_gaussjordan: inverse_gaussjordan.c
 
 line_line_intersection: line_line_intersection.c
 	gcc -Wall -ggdb3 line_line_intersection.c -o line_line_intersection
+
+line_circle_intersection: line_circle_intersection.c
+	gcc -Wall -ggdb3 line_circle_intersection.c -lm -o line_cirle_intersection
+
+line_circle_intersection2: line_circle_intersection2.c
+	gcc -Wall -ggdb3 line_circle_intersection2.c -lm -o line_cirle_intersection2
 
 clean: vectors.tex
 	rm -f gauss_jordan gauss_backsub2 vectors.aux vectors.dvi vectors.log elements_id.aux elements_id.dvi elements_id.log elements_id.pdf vectors.pdf elements_id_annex.pdf kuliah_tentang_quaternion.dvi kuliah_tentang_quaternion.log kuliah_tentang_quaternion.pdf

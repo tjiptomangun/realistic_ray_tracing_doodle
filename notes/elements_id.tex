@@ -180,7 +180,7 @@ Untuk menggambarkan segitiga sama sisi pada sebuah ruas garis.
 \draw (-1.5, 0) circle (3);
 \draw (1.5, 0) circle (3);
 \draw (-4.5, 0) node [anchor=east]{D} (-1.5, 0) node [anchor=east]{A} (-1.5, 0) 
--- (1.5, 0) node[anchor=west]{B} (4.5, 0) node[anchor=west]{E} 
+-- (1.5, 0) node[anchor=west]{B} (4.5, 0) node[anchor=west]{E}  --++
 (0, 3.0)node[anchor=north]{C};
 \draw (-1.5, 0) -- ++(60:3) -- ++(-60:3);
 \end{tikzpicture}
@@ -5834,6 +5834,7 @@ jika busur lingkaran menyinggung setiap sudut dari bidang yang dibatasinya.
 \item Sebuah garis lurus dikatakan disisipkan kedalam sebuah lingkaran jika
 ujung - ujungnya berada pada busur lingkaran.
 \end{enumerate}
+
 \stepcounter{section}
 \section*{\centering Proposisi \thesection}
 \addcontentsline{toc}{section}{Proposisi \thesection}
@@ -5873,6 +5874,68 @@ $D$ juga sama panjang dengan $CA$
 Dengan demikian, $CA$, sama panjang dengan garis lurus $D$, sudah disisipkan 
 ke dalam lingkaran $ABC$. Yang adalah hal yang perlu dilakukan.
 
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk menggambarkan sebuah segitiga, dengan sudut - sudut sama besar dengan 
+sudut sebuah segitiga tertentu, di dalam sebuah lingkaran.
+\begin{center}
+\begin{tikzpicture}
+\pgfmathparse{sqrt(2*2.5*2.5 + 2*2.5*2.5*cos(110))}
+\let \delength \pgfmathresult
+\pgfmathparse {asin((sin(110)*2.5/\delength))}
+\let \fdeangle \pgfmathresult;
+\pgfmathparse {\fdeangle + 110 + 180}
+\let \defangle \pgfmathresult;
+\pgfmathparse {\defangle*sin(110)}
+\let \aclength \pgfmathresult;
+\draw (0, 0) circle(2.5);
+\draw ({2.5*cos(230)} , {2.5*sin(230)}) node[anchor=north]{A}
+--++ ({230 + 270}:3)node[anchor=south east]{G}
+--++ ({230+270+180} : 6) node[anchor=north west] {H};
+\draw (5.5, 2.5) node[anchor=south]{E} 
+ --++(300:2.5) node[anchor=west]{F}
+ --++(190:2.5) node[anchor=north east]{D}
+ --++({\fdeangle + 190 -180}:\delength);
+\draw ({2.5*cos(230)}, {2.5*sin(230)}) 
+%%-- (-0.059214, -2.4993)
+%%-- (1.17203, 2.20824)
+-- (2.07378, -1.39622)
+%% --++ ({230 +\defangle + 180}:2.5)
+node [anchor=west]{C}
+-- ({2.5*cos(230)}, {2.5*sin(230)}) 
+%%--++ ({(230+\fdeangle+180)}:2)
+-- (-0.691133, 2.40257) 
+node [anchor=south west]{B}
+-- (2.07378, -1.39622);
+
+\end{tikzpicture} 
+\end{center}
+Misalkan $ABC$ adalah sebuah lingkaran tertentu, dan $DEF$ sebuah segitiga
+tertentu. Jadi dibutuhkan menggambarkan/menyisipkan sebuah segitiga, dengan
+sudut - sudut yang sama besar dengan sudut - sudut segitiga $DEF$, di dalam
+lingkaran $ABC$ 
+
+Misalkan $GH$ sudah ditarik menyinggung lingkaran $ABC$ di titik $A$ 
+\footnote{lihat catatan kaki 3.34}. Dan misalkan sudut $HAC$, sama besar
+dengan sudut $DEF$, sudah dibuat pada garis lurus $AH$ denga titik $A$ berada
+di padanya, dan sudut $GAB$ sama besar dengan sudut  $DEF$, pada garis lurus
+$AG$, dengan titik $A$ ada pada nya [Prop. 1.23]. Dan misalkan $BC$ sudah 
+dihubungkan.
+
+Oleh karena nya, sebab sembarang garis lurus $AH$ menyinggung lingkaran 
+$ABC$, dan garis lurus $AC$ sudah ditarik memotong lingkaran dan titik 
+pertemuan $A$, sudut $HAC$ dengan demikian sama besar dengan sudur $ABC$
+pada tembereng berseberangan lingkaran [Prop. 3.32]. Tetapi, $HAC$ sama
+besar dengan $DEF$. Dengan demikian, sudut $ABC$ juga sama besar dengan sudut
+$DEF$. Jadi dengan alasan - alasan yang sama. $ACB$ juga sama besar dengan 
+$DFE$. Dengan demikian, sudut selebihnya $BAC$, sama besar dengan sudut 
+selebihnya $EDF$ [Prop. 1.32]. Dengan demikian, segititga $ABC$ dengan sudut- sudut sama besar dengan segitiga $DEF$, sudah digambarkan di dalam lingkaran
+$ABC$.
+
+Dengan demikian, sebuah segitiga, dengan sudut - sudut sama besar dengan 
+sebuah segitiga tertentus, sudah disisipkan/digambarkan di dalam lingkaran. Yang adalah hal yang perlu dilakukan.
+hal yang perlu dilakukan,
 
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
