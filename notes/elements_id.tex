@@ -946,7 +946,7 @@ tidak demikian kenyataannya. Dengan demikian $AC$ tidak lebih kecul dari
 $AB$. Tetapi juga telah ditunjukkan $AC$ tidak sama dengan $AB$. Dengan demikian
 $AC$ lebih besar dari $AB$.
 
-Dengan demikian , pada semua segitga, sudut yang lebih besar menghadap sisi yang
+Dengan demikian , pada semua segitiga, sudut yang lebih besar menghadap sisi yang
 lebih panjang. Hal yang perlu dibuktikan.
 
 \stepcounter{section}
@@ -1129,7 +1129,7 @@ $DCE$ pada titik tertentu $A$ pada garis lurus tertentu $AB$.
 
 Misalkan titik $D$ dan $E$ sudah diambil secara acak pada masing - masing
 pada garis lurus $CD$ dan $CE$, dan misalkan $DE$ sudah dihubungkan. 
-Dan misalkan segitga $AFG$ sudah di buat dari tiga buah garis lurus yang 
+Dan misalkan segitiga $AFG$ sudah di buat dari tiga buah garis lurus yang 
 masing - masing sama panjang dengan $CD$, $DE$ dan $CE$, sehingga $CD$ sama
 panjang dengan $AF$, $CE$ sama panjang dengan $AG$ dan lebih jauh $DE$ 
 sama panjang dengan $FG$ [Prop. 1.22].
@@ -1937,7 +1937,7 @@ Hal yang perlu ditunjukkan.
 \stepcounter{section}
 \section*{\centering Proposisi \thesection} 
 \addcontentsline{toc}{section}{Proposisi \thesection} 
-Untuk membuat sebuah jajaran genjang yang sama besar dengan sebuah segitga
+Untuk membuat sebuah jajaran genjang yang sama besar dengan sebuah segitiga
 pada sebuah sudut persegi tertentu.
 \begin{center}
 \begin{tikzpicture}
@@ -5898,13 +5898,9 @@ sudut sebuah segitiga tertentu, di dalam sebuah lingkaran.
  --++(190:2.5) node[anchor=north east]{D}
  --++({\fdeangle + 190 -180}:\delength);
 \draw ({2.5*cos(230)}, {2.5*sin(230)}) 
-%%-- (-0.059214, -2.4993)
-%%-- (1.17203, 2.20824)
 -- (2.07378, -1.39622)
-%% --++ ({230 +\defangle + 180}:2.5)
 node [anchor=west]{C}
 -- ({2.5*cos(230)}, {2.5*sin(230)}) 
-%%--++ ({(230+\fdeangle+180)}:2)
 -- (-0.691133, 2.40257) 
 node [anchor=south west]{B}
 -- (2.07378, -1.39622);
@@ -5919,7 +5915,7 @@ lingkaran $ABC$
 Misalkan $GH$ sudah ditarik menyinggung lingkaran $ABC$ di titik $A$ 
 \footnote{lihat catatan kaki 3.34}. Dan misalkan sudut $HAC$, sama besar
 dengan sudut $DEF$, sudah dibuat pada garis lurus $AH$ denga titik $A$ berada
-di padanya, dan sudut $GAB$ sama besar dengan sudut  $DEF$, pada garis lurus
+di padanya, dan sudut $GAB$ sama besar dengan sudut  $DFE$, pada garis lurus
 $AG$, dengan titik $A$ ada pada nya [Prop. 1.23]. Dan misalkan $BC$ sudah 
 dihubungkan.
 
@@ -5935,7 +5931,213 @@ $ABC$.
 
 Dengan demikian, sebuah segitiga, dengan sudut - sudut sama besar dengan 
 sebuah segitiga tertentus, sudah disisipkan/digambarkan di dalam lingkaran. Yang adalah hal yang perlu dilakukan.
-hal yang perlu dilakukan,
+hal yang perlu dilakukan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk menggambarkan sebuah segitiga yang membatasi sebuah lingkaran
+tertentu, dimana segitiga yang digambarkan memiliki sudut - sudut 
+yang sama besar dengan sudut - sudut sebuah segitiga tertentu.
+\begin{center}
+\begin{tikzpicture}
+\pgfmathparse {180-125} 
+\let \fdeangle \pgfmathresult
+\pgfmathparse{sqrt(1.5*1.5 + 1.25*1.25 - 2*1.5*1.25*cos(\fdeangle)}
+\let \felen \pgfmathresult
+\pgfmathparse {asin(1.5*sin(\fdeangle)/\felen)}
+\let \dfeangle\pgfmathresult
+\pgfmathparse {180 - \fdeangle - \dfeangle}
+\let \fedangle\pgfmathresult 
+\draw (0, 0) node[anchor=west]{K} circle(2.5) 
+	--++ (50:2.5) node[anchor=south west]{B};
+%%	--++ ({50+90}:3)
+%%	--++ ({50 + 90 + 180 }: 6.425);
+\draw (5, 4) node[anchor=north west]{E} 
+	--++ (25:1.5) node[anchor=south west] {D}
+    --++ (150:1.25) node[anchor=south east]{F}
+	--++ ({\dfeangle - 175}: \felen) 
+	--++({\dfeangle -175}: 1) node[anchor=north]{G}
+	--++({\dfeangle -175 + 180}: {1 + \felen + 1}) node[anchor=south]{H}; 
+\draw (0, 0) --++ ({180 - \fedangle + 50} : 2.5) node[anchor = south east]{A};
+%%--++ ({180 - \fedangle + 50 + 90}: 5);
+
+\draw (0, 0) --++ ({50 - (180 - \dfeangle)} : 2.5) node[anchor = north west]{C}
+--++ ({50 - (180 - \dfeangle) + 90}:3.425) node[anchor=south west]{N}
+--++ ({50 - (180 - \dfeangle) + 90 - \dfeangle + 180}:8.5) node[anchor=south west]{M}
+--++ ({50 - (180 - \dfeangle) + 90 - \dfeangle + 180 - \fedangle + 180}:9.89) node[anchor=north east]{L}
+--++ ({50 - (180 - \dfeangle) + 90 - \dfeangle + 180 - \fedangle + 180 - (180 - 125) + 180}:5) ;
+
+
+%--++ ({50 - (180 - \dfeangle) + 90 + 180}:9.8) node [anchor=north east]{L};
+\end{tikzpicture}
+\end{center}
+Misalkan $ABC$ adalah sebuah lingkaran tertentu, dan $DEF$ adalah 
+segitiga tertentu. Jadi diperlukan untuk menggambarkan sebuah 
+segitiga yang membatasi lingkaran $ABC$ dengan sudut -  sudut sama
+besar dengan sudut - sudut segitita $DEF$.
+
+Misalkan $EF$ sudah dipanjangkan ke masing - masing arah ke titik -
+titik $G$ dan $H$. Dan misalkan titik $K$ sebagai pusat lingkaran 
+$ABC$ sudah ditemukan [Prop. 3.1]. Dan misalkan garis lurus $KB$
+sudah ditarik, secara acak, memotong lingkaran $ABC$. Dan misalkan
+sudut $BKA$, sama besar dengan sudut $DEG$, sudah ditarik pada garis
+lurus $KB$ dengan titik $K$ berada padanya, dan sudut $BKC$, sama
+besar dengan $DFG$ [Prop. 1.23]. Dan misalkan masing - masing 
+garis lurus $LAM$, $MBN$, dan $NCL$ sudah ditarik melalui titik - 
+titik $A$, $B$ dan $C$, menyinggung lingkaran $ABC$.
+
+Dan karena $LM$, $MN$, dan $NL$ menyinggung lingkaran pada masing -
+masing titik $A$, $B$ dan $C$, dan $KA$, $KB$, dan $KC$ dihubungkan dari
+pusat lingkaran di $K$ ke masing - masing titik - titik $A$, $B$ dan $C$, sudut - sudut pada $A$, $B$ dan $C$ dengan demikian adalah sudut - 
+sudut siku - siku [Prop. 3.18]. Dan karena jumlah dari dari keempat 
+sudut segiempat $ABMK$ sama dengan empat buah sudut siku - siku, karena itu $ABMK$ dapat juga dibagi menjadi dua buah segitiga [Prop. 1.32], 
+dan sudut - sudut $KAM$ dan $KBM$ keduanya adalah sudut siku - siku, 
+jumlah kedua sudut selebihnya, $AKB$ dan $ABM$, dengan demikian sama 
+dengan dua buah sudut siku - siku. Dan $DEG$ dan $DEF$ juga sama besar
+dengan dua buah sudut siku - siku [Prop. 1.13]. Dengan demikian, $AKB$
+dan $AMB$ sama besar dengan $DEG$ dan $DEF$, dimana $AKB$ sama besar
+dengan $DEG$. Dengan demikian sudut selebihnya $AMB$ sama besar dengan
+sudut selebihnya $DEF$. Jadi, dengan cara yang sama, juga dapat 
+ditunjukkan bahwa $LNB$ sama besar dengan $DFE$. Dengan demikian, sudut
+selebihnya $MLN$ juga sama besar dengan sudut selebihnya $EDF$ 
+[Prop 1.32]. Dengan demikian, segitiga $LMN$ memiliki sudut - sudut yang
+sama besar dengan segitia $DEF$. Dan $LMN$ sudah digambarkan membatasi
+lingkaran $ABC$.
+
+Dengan demikian, sebuah segitiga, dengan sudut - sudut yang sama besar 
+dengan sudut - sudut segitiga tertentu, sudah digambarkan membatasi
+sebuah lingkaran tertentu. Yang adalah hal yang perlu dilakukan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk menggambarkan sebuah lingkaran di dalam sebuah segitiga.
+\begin{center} 
+\begin{tikzpicture} 
+\pgfmathparse {5}
+\let \cblen \pgfmathresult 
+\pgfmathparse {4}
+\let \calen \pgfmathresult 
+
+%%\pgfmathparse {180 - 135}
+%%\let \cbaangle \pgfmathresult 
+
+\pgfmathparse {180 - 135}
+\let \acbangle \pgfmathresult 
+
+%%\pgfmathparse {sqrt(4*4 + 5*5 - 2*4*5*cos(\acbangle))}
+\pgfmathparse {sqrt(4*4 + 5*5 - 2*4*5*cos(\acbangle))}
+\let \ablen \pgfmathresult
+
+\pgfmathparse {asin(\cblen*sin(\acbangle)/\ablen)}
+\let \bacaangle \pgfmathresult 
+
+%%\pgfmathparse {asin(\ablen*sin(\cbaangle)/\calen)}
+%%\let \acbangle \pgfmathresult 
+
+\pgfmathparse {asin(\calen*sin(\acbangle)/\ablen)}
+\let \cbaangle \pgfmathresult 
+
+\pgfmathparse {\acbangle/2}
+\let \fcdangle \pgfmathresult 
+\pgfmathparse {\cbaangle/2}
+\let \fbdangle \pgfmathresult 
+%%\pgfmathparse {tan(180 - \fcdangle)}
+\pgfmathparse {tan(180 - (\fcdangle))}
+\let \tanfcd \pgfmathresult
+\pgfmathparse {tan(\fbdangle)}
+\let \tanfbd \pgfmathresult 
+%%https://amsi.org.au/ESA_Senior_Years/SeniorTopic1/1b/1b_2content_5.html
+%% grad = (y - y0)/(x - x0)
+%% grad1 = (y - y1)/(x - x1)
+%% grad2 = (y - y2)/(x - x2)
+%% grad1(x - x1) = y - y1
+%% grad1(x - x1) + y1 = y 
+%% grad2(x - x2) = y - y2
+%% grad2(x - x2) + y2 = y 
+%% grad1(x - x1) + y1 = grad2(x - x2) + y2
+%% grad1*x - grad1*x1 + y1 = grad2*x - grad2*x2 + y2
+%% grad1*x - grad1*x1 = grad2*x - grad2*x2 + y2 - y1
+%% grad1*x - grad2*x =  grad1*x1 - grad2*x2 + y2 - y1
+%% (grad1 - grad2) * x = grad1*x1 - grad2*x2 + y2 - y1
+%% x = (grad1*x1 - grad2*x2 + y2 - y1)/(grad1 - grad2) 
+
+\pgfmathparse {(\tanfbd*(0) - \tanfcd * 5  + (-3) - (-3))/(\tanfbd - \tanfcd)} 
+\let \dx \pgfmathresult
+
+%% y = grad1(x - x1) + y1
+%% y = grad1*x - grad1*x1 + y1
+
+\pgfmathparse {\tanfbd*\dx -  3}
+\let \dy \pgfmathresult 
+
+\pgfmathparse {\dx}
+\let \fx \pgfmathresult 
+
+\pgfmathparse{-3}
+\let \fy \pgfmathresult 
+
+\pgfmathparse {\fx - \dx}
+\let \fdxdist \pgfmathresult 
+\pgfmathparse {\fy - \dy}
+\let \fdydist \pgfmathresult 
+\pgfmathparse {sqrt(\fdxdist * \fdxdist + \fdydist * \fdydist)}
+\let \fdlen \pgfmathresult 
+
+\draw(0, -3) node [anchor=east]{B} 
+	--++(0:\cblen) node[anchor=west]{C}
+	--++(135:\calen) node[anchor=south]{A};
+    
+\draw(0, -3) --++ (\cbaangle:\ablen);
+%%\draw(0, -3) --++ (\fcdangle:\calen);
+\draw(0, -3) -- (\dx, \dy);
+%%\draw(5, -3) --++ ({180 - \fbdangle}: \calen);
+\draw(5, -3) -- (\dx, \dy)  node [anchor=south]{D}
+ -- (\fx, \fy) node[anchor=north]{F}; 
+\draw(\dx, \dy)  --++ ({\cbaangle + 90 } : \fdlen) node [anchor=south east]{E}; 
+\draw(\dx, \dy)  --++ ({-\acbangle + 90 } : \fdlen) node[anchor=south west]{G}; 
+\draw(\dx, \dy) circle(\fdlen);
+\end{tikzpicture}
+\end{center}
+
+Misalkan $ABC$ adalah sebuah segitiga tertentu. Jadi diperlukan untuk 
+menggambarkan sebuah lingkaran di dalam segitiga $ABC$.
+
+Misalkan sudut - sudut $ABC$ dan $ACB$ sudah dibagi sama besar masing -
+masing oleh garis lurus $BD$ dan $CD$ [Prop. 1.9], dan misalkan keduanya
+saling bertemu di titik $D$, dan misalkan masing - masing $DE$, $DF$ dan 
+$DG$ sudah ditarik
+dari titik $D$, tegak lurus terhadap garis lurus $AB$, $BC$ dan $CA$
+[Prop. 1.12].
+
+Dan karena sudut $ABD$ sama besar dengan sudut $CBD$, dan juga sudut
+siku - siku $BED$ juga sama besar dengan sudut siku - siku $BFD$,
+$EBD$ dan $FBD$ dengan demikian adalah dua buah segitiga yang memiliki
+dua sudut saling sama besar dengan dua sudut, dan satu sisi saling 
+sama panjang dengan satu sisi - yakni yang menghadap salah satu sudut 
+yang sama besar, yang adalah sisi yang ada pada kedua segitiga yakni
+$BD$. Dengan demikian, keduanya juga kan memiliki sisi - sisi selebihnya
+yang sama besar [Prop. 1.26]. Dengan demikian, $DE$ sama panjang dengan
+$DF$. Jadi dengan alasan yang sama, $DG$  juga sama panjang dengan $DF$. 
+Maka, ketiga garis lurus $DE$, $DF$ dan $DG$ adalah sama panjang. Dengan
+demikian, lingkaran yang digambarkan dengan pusat di titik $D$, dan
+jari - jari salah satu $DE$, $DF$ atau $DG$, juga akan melalui titik - 
+titik selebihnya, dan akan menyinggung garis lurus $AB$, $BC$, dan $CA$, 
+dengan memandang sudut $E$, $F$ dan $G$ adalah sudut - sudut siku - siku. 
+Karena jika lingkaran tersebut memotong (salah satu) garis tersebut 
+maka garis tersebut adalah garis 
+lurus yang ditarik secara siku - siku terhadap diameter dari lingkaran,
+dari ujung nya, tetapi jatuh di dalam lingkaran. Yang adalah hal yang 
+mustahil [Prop. 3.16]. Jadi, lingkaran yang digambar dari titik pusat 
+$D$, dan jari - jarinya salah satu $E$, $F$, atau $G$, tidak memotong 
+garis lurus $AB$, $AC$, dan $CA$, jadi lingkaran tersebut hanya 
+menyinggung garis - garsi tersebut dan lingkaran tersebut dikatakan 
+dibatasi oleh segitiga $ABC$. Seperti yang sudah digambarkan, seperti
+$FGE$ pada gambar.
+
+Jadi, lingkaran $EFG$ sudah digambarkan di dalam lingkaran $ABC$. Yang
+adalah hal yang perlu dilakukan.  
 
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
