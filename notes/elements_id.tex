@@ -7,7 +7,7 @@
 \usepackage{color, colortbl}
 \usepackage{tikz}
 \usepackage[bahasa]{babel}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc, math}
 
 \hbadness=999999
 \vbadness=999999
@@ -6138,6 +6138,284 @@ $FGE$ pada gambar.
 
 Jadi, lingkaran $EFG$ sudah digambarkan di dalam lingkaran $ABC$. Yang
 adalah hal yang perlu dilakukan.  
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk menggambarkan lingkaran yang membatasi sebuah segitiga.
+\begin{center} 
+\begin{tikzpicture} 
+
+\tikzmath{
+	function lineGradsPointsIntersectX(\gradu, \xu, \yu, \gradv, \xv, \yv){
+		return ((tan(\gradu) * \xu - tan(\gradv) * \xv + \yv - \yu)/(tan(\gradu) - tan(\gradv)));
+	};
+	function lineGradsPointsIntersectY(\gradu, \xu, \yu, \x) {
+		return (tan(\gradu) * \x - tan(\gradu) * \xu + \yu);
+	};
+}
+
+\pgfmathparse {2.5}
+\let \bcleni \pgfmathresult
+
+\pgfmathparse {3}
+\let \caleni \pgfmathresult 
+
+\pgfmathparse {180 - 115 + (350 - 360)}
+\let \bcaanglei \pgfmathresult
+
+\pgfmathparse {sqrt(\bcleni*\bcleni + \caleni*\caleni - 2*\bcleni*\caleni*cos(\bcaanglei))}
+\let \ableni \pgfmathresult 
+
+\pgfmathparse {\bcleni*cos(350)}
+\let \cxi \pgfmathresult
+
+\pgfmathparse {\bcleni*sin(350)}
+\let \cyi \pgfmathresult
+
+\pgfmathparse {sin(\bcaanglei)/\ableni}
+\let \sinbcaperab \pgfmathresult
+
+\pgfmathparse {asin(\caleni * \sinbcaperab)}
+\let \abcanglei \pgfmathresult 
+
+\pgfmathparse {\ableni * cos(\abcanglei - 10)/2}
+\let \dxi \pgfmathresult
+
+\pgfmathparse {\ableni * sin(\abcanglei - 10)/2}
+\let \dyi \pgfmathresult 
+
+\pgfmathparse {\cxi + \caleni*cos(115)/2}
+\let \exi \pgfmathresult
+
+\pgfmathparse {\cyi + \caleni*sin(115)/2}
+\let \eyi \pgfmathresult 
+
+\pgfmathparse {lineGradsPointsIntersectX({\abcanglei - 10 - 90}, \dxi, \dyi, {115 + 90}, \exi, \eyi)}
+\let \fxi \pgfmathresult
+
+\pgfmathparse {lineGradsPointsIntersectY({\abcanglei - 10 - 90}, \dxi, \dyi, \fxi)}
+\let \fyi \pgfmathresult 
+
+\pgfmathparse {sqrt(\fxi* \fxi + \fyi *\fyi)}
+\let \fbleni \pgfmathresult 
+
+\pgfmathparse {\ableni * cos(\abcanglei - 10)}\
+\let \axi \pgfmathresult 
+
+\pgfmathparse {\ableni * sin(\abcanglei - 10)}
+\let \ayi \pgfmathresult 
+
+\pgfmathparse  {\fxi + 4 }
+\let \fxii \pgfmathresult 
+
+\pgfmathparse  {\fyi }
+\let \fyii \pgfmathresult 
+
+\pgfmathparse  {\fxi + 4 + 1.5*cos(180)}
+\let \bxii \pgfmathresult 
+
+\pgfmathparse  {\fyi}
+\let \byii \pgfmathresult 
+
+\pgfmathparse {atan((1.5*sin(80) + \fyi - \byii)/((1.5*cos(80) + \fxi + 4) - \bxii))}
+\let \cbaangleii \pgfmathresult
+
+\pgfmathparse {sqrt(pow(((1.5*cos(80) + \fxi + 4) - \bxii),2) +  pow((1.5*sin(80) + \fyi - \byii), 2))}
+\let \ablengthii \pgfmathresult 
+
+\pgfmathparse  {\fxi + 4 + 1.5*cos(0)}
+\let \cxii \pgfmathresult 
+
+\pgfmathparse  {\fyi}
+\let \cyii \pgfmathresult 
+
+\pgfmathparse  {\fxi + 4 + 1.5*cos(80}
+\let \axii \pgfmathresult 
+
+\pgfmathparse  {\fyi + 1.5*sin(80)}
+\let \ayii \pgfmathresult 
+
+\pgfmathparse{sqrt(pow(\axii - \cxii, 2) + pow(\ayii - \cyii, 2))}
+\let \aclengthii \pgfmathresult 
+
+\pgfmathparse{asin(\ablengthii*sin(\cbaangleii)/\aclengthii)}
+\let \acbangleii\pgfmathresult 
+
+\pgfmathparse {\bxii + \ablengthii * cos(\cbaangleii)/2}
+\let \dxii \pgfmathresult 
+
+\pgfmathparse {\byii + \ablengthii * sin(\cbaangleii)/2}
+\let \dyii \pgfmathresult 
+
+\pgfmathparse{\cxii + \aclengthii * cos(180 - \acbangleii)/2}
+\let \exii \pgfmathresult 
+
+\pgfmathparse{\cyii + \aclengthii * sin(180 - \acbangleii)/2}
+\let \eyii \pgfmathresult 
+
+\draw(0, 0) node[anchor=east]{B} --++ (350:\bcleni) node[anchor=west]{C}
+ --++ (115:\caleni) node[anchor=south]{A} -- (0, 0);
+
+\draw({\cxi + \caleni*cos(115)/2}, {\cyi + \caleni*sin(115)/2}) 
+node[anchor=west]{E} -- (\fxi, \fyi) node [anchor=north]{F};
+
+\draw({\ableni * cos(\abcanglei - 10)/2}, {\ableni * sin(\abcanglei - 10)/2}) 
+node[anchor=east] {D} -- (\fxi, \fyi) -- (\axi, \ayi); 
+\draw (0, 0) -- (\fxi, \fyi) -- (\cxi, \cyi); 
+\draw (\fxi, \fyi) circle(\fbleni); 
+\draw (\fxi + 4, \fyi) node[anchor=north]{F} circle(1.5)
+--++(180: {1.5}) node[anchor=east]{B};
+\draw (\fxi + 4, \fyi) --++ (0:1.5) node[anchor=west]{C}
+-- ({1.5*cos(80) + \fxi + 4}, {1.5*sin(80) + \fyi}) node[anchor=south]{A}
+-- (\bxii, \byii) node[anchor=east]{B}; 
+%%\draw({\fxii + 1.5*cos(80)}, {\fyii + 1.5*sin(80)})
+%%-- (\fxii, \fyii) node {$\ablenghtii* cos(\cbaangleii)*\bxii*\byii$}; 
+\draw({\fxii + 1.5*cos(80)}, {\fyii + 1.5*sin(80)})
+-- (\fxii, \fyii) ; 
+\draw (\dxii, \dyii) node[anchor=east]{D} -- (\fxii, \fyii); 
+\draw (\exii, \eyii) node[anchor=west]{E} -- (\fxii, \fyii); 
+\end{tikzpicture}
+\end{center}
+
+\begin{center} 
+\begin{tikzpicture} 
+\tikzmath{
+    function lineGradsPointsIntersectX(\gradu, \xu, \yu, \gradv, \xv, \yv){
+        return ((tan(\gradu) * \xu - tan(\gradv) * \xv + \yv - \yu)/(tan(\gradu) - tan(\gradv)));
+    };
+    function lineGradsPointsIntersectY(\gradu, \xu, \yu, \x) {
+        return (tan(\gradu) * \x - tan(\gradu) * \xu + \yu);
+    };
+}
+
+\pgfmathparse {1}
+\let \bxiii \pgfmathresult
+\pgfmathparse {1}
+\let \byiii \pgfmathresult
+
+\pgfmathparse {2}
+\let \axiii \pgfmathresult
+\pgfmathparse {3}
+\let \ayiii \pgfmathresult
+
+\pgfmathparse {6}
+\let \cxiii \pgfmathresult
+\pgfmathparse {2}
+\let \cyiii \pgfmathresult
+
+\pgfmathparse {sqrt(pow (\axiii - \bxiii, 2) + pow(\ayiii  - \byiii, 2))}
+\let \ablengthiii \pgfmathresult
+
+\pgfmathparse {sqrt(pow ( \cxiii - \axiii, 2) + pow (\cyiii - \ayiii, 2)}
+\let \calengthiii \pgfmathresult
+
+\pgfmathparse {sqrt(pow ( \cxiii - \bxiii, 2) + pow (\cyiii - \byiii, 2)}
+\let \cblengthiii \pgfmathresult
+
+\pgfmathparse {atan((\cyiii - \byiii)/(\cxiii - \bxiii))}
+\let \slantiii \pgfmathresult
+
+\pgfmathparse {atan((\ayiii - \byiii)/(\axiii - \bxiii))}
+\let \abgradiii \pgfmathresult 
+
+\pgfmathparse {atan((\ayiii - \byiii)/(\axiii - \bxiii)) - \slantiii}
+\let \abcangleiii \pgfmathresult
+
+\pgfmathparse {atan((\ayiii - \cyiii)/(\axiii - \cxiii)) - \slantiii}
+\let \bcaangleiii \pgfmathresult 
+
+\pgfmathparse {\bxiii + \ablengthiii * cos(\abgradiii)/2}
+\let \dxiii \pgfmathresult
+
+\pgfmathparse {\byiii + \ablengthiii * sin(\abgradiii)/2}
+\let \dyiii \pgfmathresult 
+
+\pgfmathparse {sqrt(pow(\dyiii - \byiii, 2) +  pow(\dxiii - \bxiii, 2)}
+\let \bdlengthiii \pgfmathresult 
+
+
+\pgfmathparse {\cxiii + \calengthiii * cos(\bcaangleiii + \slantiii + 180)/2}
+\let \exiii \pgfmathresult
+
+\pgfmathparse {\cyiii + \calengthiii * sin(\bcaangleiii + \slantiii + 180)/2}
+\let \eyiii \pgfmathresult 
+
+\pgfmathparse {lineGradsPointsIntersectX({\abcangleiii + \slantiii  - 90}, \dxiii, \dyiii, {\bcaangleiii + \slantiii  - 90}, \exiii, \eyiii)}
+\let \fxiii \pgfmathresult
+
+\pgfmathparse {lineGradsPointsIntersectY({\abcangleiii + \slantiii  - 90}, \dxiii, \dyiii, \fxiii)}
+\let \fyiii \pgfmathresult
+
+\pgfmathparse {sqrt(pow(\fyiii- \byiii,2) + pow(\fxiii - \bxiii ,2))}
+\let \fblengthiii \pgfmathresult
+
+
+
+\pgfmathparse {sqrt(pow(\eyiii - \cyiii, 2) +  pow(\exiii - \cxiii, 2)}
+\let \eclengthiii \pgfmathresult 
+
+\draw (\bxiii, \byiii) node [anchor=south east] {B} -- (\axiii, \ayiii) node[anchor=south]{A}
+ -- (\cxiii, \cyiii) node[anchor=west]{C} -- (\bxiii, \byiii);
+
+%%\draw (\dxiii, \dyiii) node[anchor=east]{D [\slantiii] [\abcangleiii] [\ablengthiii] [\bdlengthiii]}
+%%--++ ({\abcangleiii + \slantiii - 90}:1);
+
+
+\draw (\dxiii, \dyiii) node[anchor=south east]{D}
+--(\fxiii, \fyiii);
+
+%%\draw (\dxiii, \dyiii) node[anchor=east]{D} --++({\abcangleiii + \slantiii - 90}:1);
+
+
+%%\draw (\exiii, \eyiii) node[anchor=south west]{E [\bcaangleiii] [\calengthiii] [\eclengthiii]} --++({\bcaangleiii + \slantiii - 90}:1);
+\draw (\exiii, \eyiii) node[anchor=south west]{E} 
+--(\fxiii, \fyiii) circle(\fblengthiii) node [anchor=north]{F} -- (\axiii, \ayiii);
+
+\draw (\fxiii, \fyiii) -- (\bxiii, \byiii);
+\draw (\fxiii, \fyiii) -- (\cxiii, \cyiii);
+
+
+\end{tikzpicture}
+\end{center}
+Misalkan $ABC$ adalah sebuah segitiga. Jadi diperlukan untuk menggambarkan
+sebuah lingkaran yang membatasi segitiga $ABC$.
+
+Misalkan garis lurus - garis lurus $AB$ dan $AC$ sudah dipotong setengah pada
+masing - masing titik $D$ dan $E$ [Prop. 1.10]. Dan misalan $DF$ dan $EF$ sudah
+ditarik dari titik - titik $D$ dan $E$ secara tegak lurus terhadap masing - 
+masing $AB$ dan $AC$ [Prop. 1. 11]. Sehingga $DF$ dan $EF$ pasti bertemu di 
+dalam segitiga $ABC$, pada garis lurus $BC$ ataupun di luar $BC$.
+
+Misalkan, pertama - tama, titik pertemuannya ada di dalam segitiga $ABC$ pada
+titik $F$. dan misalkan $FB$, $FC$ dan $FA$ sudah dipertemukan. Dan karena
+$AD$ sama panjang dengan $DB$, dan $DF$ milik bersama tegak lurus pada keduanya,
+sisi alas $AF$ dengan demikian sama panjang dengan sisi alas $FB$ [Prop. 1.4].
+Jadi, dengan cara yang sama, dapat ditunjukkan bahwa $CF$ juga sama panjang 
+dengan  $AF$. Sehingga $FB$ sama panjang dengan $FC$. Dengan demikian, ketiga
+garis lurus $FA$, $FB$ dan $FC$ sama panjang satu dengan lainnya. Dengan 
+demikian lingkaran yang digambarkan dengan pusat di titik $F$, dan jari - jari 
+salah satu $A$, $B$ atau $C$, juga akan melalui titik - titik selebihnya. Dan 
+lingkaran tersebut juga telah membatasi segitiga $ABC$.
+
+Dan lagi, misalkan $DF$ dan $EF$ bertemu pada pada garis $BC$ di titik $F$, 
+seperti pada diagram kedua. Dan misalkan $AF$ sudah dihubungkan. Sehingga, 
+dengan cara yang sama dapat kita tunjukkan bahwa titik $F$ dalah pusat dari
+lingkaran yang mengelilingi segitiga $ABC$.
+
+Dan misalkan, misalkan $DF$ dan $EF$ bertemu di luar segitiga $ABC$, dan sekali
+lagi pada titik $F$, seperti pada diagram ketiga. Dan misalkan $AF$, $BF$ dan 
+$CF$ sudah dihubungkan. Dan lagi, larena $AD$ sama panjang dengan $DB$ dan $DF$
+milik keduanya dan tegak lurus dengan keduanya, sisi alas $AF$ dengan demikian
+sama panjang dengan sisi alas $BF$ [Prop. 1.4]. Jadi, dengan cara yang sama, 
+dapat ditunjukkan bahwa $CF$ juga sama panjang dengan $AF$. Sehingga $BF$ juga
+sama panjang dengan $FC$. Denga demikian, [lagi] lingkaran yang digambarkan pada
+titik pusat $F$ dengan jari - jari salah satu $FA$, $FB$ dan $FC$, juga akan
+melalui titik - titik selebihnya. Dan lingkaran tersebut akan membatasi segitiga
+$ABC$.
+
+Dengan demikian, sebuah lingkaran sudah digambarkan membatasi sebuah segitiga 
+tertentu. Yang adalah hal yang perlu dilakukan.  
 
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
