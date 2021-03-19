@@ -6417,6 +6417,51 @@ $ABC$.
 Dengan demikian, sebuah lingkaran sudah digambarkan membatasi sebuah segitiga 
 tertentu. Yang adalah hal yang perlu dilakukan.  
 
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk menggambarkan bujursangkar yang dibatassi sebuah lingkaran.
+
+\begin{center} 
+\begin{tikzpicture} 
+\draw (0, 0) circle(3) node [anchor=south west]{E} 
+ --++ (90:3) node [anchor=south]{A}
+ --++ (225: {3*sqrt(2)}) node[anchor=east]{B}
+ --++ (0:3) --++ (270:3) node[anchor=north]{C}
+ --++ (135:{3*sqrt(2)});
+\draw (0, 0) --++ (0:3) node[anchor=west]{D}
+ --++ (225:{3*sqrt(2)});
+\draw (3, 0) --++ (135: {3*sqrt(2)});
+\end{tikzpicture} 
+\end{center} 
+
+Misalkan $ABCD$ adalah lingkaran tertentu. Jadi diperlukan untuk 
+menggambarkan bujur sangkar di dalam lingkaran $ABCD$.  
+
+Misalkan dua buah diameter dari lingkaran $ABCD$, $AB$ dan $CD$ sudah 
+ditarik saling tegak lurus satu dengan yang lain \footnote{Dengan asumsi
+pusat lingkaran sudah ditemukan [Prop. 3.1], menarik garis melaluinya
+dari menarik garis lain yang melaluinya tegak lurus dengan diameter yang
+pertama}. Dan misalkan $AB$, $BC$, $CD$ dan $DA$ sudah dihubungkan.
+
+Dan karena $BE$ sama panjang dengan $ED$, karena $E$ adalah pusat 
+lingkaran, dan $EA$ adalah milik bersama dan tegak lurus dengan keduanya, 
+sisi alas $AB$ dengasn demikian sama panjang dengan sisi alas $AD$ [
+Prop. 1.4]. Jadi, untuk alasan yang sama, masing - masing $BC$ dan $CD$ 
+sama panjang dengan masing - masing $AB$ dan $AD$. Dengan demikian, 
+segiempat $ABCD$ juga memiliki sisi - sisi yang sama panjang. Jadi saya
+katakan juga segiempat teresebut siku - siku. Karena garis lurus
+$BD$ adalah diameter lingkaran $ABCD$, $BAD$ dengan demikian adalah 
+setengah lingkaran. Dengan demikian sudut $BAD$ adaalah sudut siku - siku
+[Prop. 3.31]. Jadi dengan alasan - alasan yang sama, sudut - sudut $ABC$,
+$BCD$, dan $CDA$ adalah sudut - sudut siku - siku. Dengan demikian, 
+sudut - sudut persegi empat $ABCD$ adalah siku - siku. Dan juga sudah 
+ditunjukkan sisi - sisinya juga sama panjang. Dengan demikian $ABDC$ adalah
+bujur sangkar [Def. 1.22]. Dan sudah digambarkan di dalam $ABCD$.
+
+Dengan demikian, bujur sangkar $ABCD$ sudah digambaran di dalam lingkaran
+yang dimaksud. Yang adalah hal yang perlu dilakukan.
+
 \begin{thebibliography}{9}
 \bibitem{fitzpatrick}
 Richard Fitzpatrick.
