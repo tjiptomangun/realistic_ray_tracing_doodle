@@ -6446,7 +6446,7 @@ pertama}. Dan misalkan $AB$, $BC$, $CD$ dan $DA$ sudah dihubungkan.
 
 Dan karena $BE$ sama panjang dengan $ED$, karena $E$ adalah pusat 
 lingkaran, dan $EA$ adalah milik bersama dan tegak lurus dengan keduanya, 
-sisi alas $AB$ dengasn demikian sama panjang dengan sisi alas $AD$ [
+sisi alas $AB$ dengan demikian sama panjang dengan sisi alas $AD$ [
 Prop. 1.4]. Jadi, untuk alasan yang sama, masing - masing $BC$ dan $CD$ 
 sama panjang dengan masing - masing $AB$ dan $AD$. Dengan demikian, 
 segiempat $ABCD$ juga memiliki sisi - sisi yang sama panjang. Jadi saya
@@ -6462,8 +6462,57 @@ bujur sangkar [Def. 1.22]. Dan sudah digambarkan di dalam $ABCD$.
 Dengan demikian, bujur sangkar $ABCD$ sudah digambaran di dalam lingkaran
 yang dimaksud. Yang adalah hal yang perlu dilakukan.
 
-\begin{thebibliography}{9}
-\bibitem{fitzpatrick}
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk menggambarkan bujur sangkar yang membatasi sebuah lingkaran.
+\begin{center} 
+\begin{tikzpicture} 
+\draw (0, 0) node[anchor=south east]{E} circle(2.5)
+--++(180:2.5) node[anchor=east]{B} --++ (90:2.5) node[anchor=south]{G}
+--++(0:2.5) node[anchor=south]{A} --++ (270:2.5) 
+--++ (0:2.5) node[anchor=west]{D} --++ (90:2.5) node[anchor=south]{F}
+--++ (180:2.5);
+\draw (0, 0) --++(270:2.5) node[anchor=north]{C} 
+--++ (0:2.5) node[anchor=north]{K} --++ (90:2.5);
+\draw (0, -2.5) --++ (180:2.5) node[anchor=north]{H}
+--++(90:2.5);
+\end{tikzpicture} 
+\end{center} 
+Misalkan $ABCD$ adalah sebuah lingkaran. Jadi diperlukan untuk menggambarkan
+bujur sangkar yang membatasi lingkaran $ABCD$.
+
+Misalkan dua buah diameter $ABCD$, $AC$ dan $BD$ sudah ditarik tegak lurus
+satu dengan yang lain\footnote{lihat catatan kaki proposisi sebelumnya}. Dan 
+misalkan $FG$, $GH$, $HK$ dan $KF$ sudah digambarkan melalui titik - titik
+$A$, $B$, $C$ dan $D$, masing - masing, menyinggung lingrakarn $ABCD$ \footnote{lihat catatan kaki prop 3.34}.
+
+Oleh karena itu,  disebabkan $FG$ menyinggung lingkaran $ABCD$, dan $EA$ sudah
+dihubungkan dari titik pusat di $E$ terhadap titik singgung $A$, sudut sudut di 
+$A$ dengan demikian adalah sudut siku - siku [Prop. 3.18]. Jadi dengan alasan - alasan yang sama,  sudut - sudut pada titik $B$, $C$, dan $D$ adalah juga sudut
+siku - siku. Dan karena sudut $AEB$ adalah sudut siku - siku, dan sudut $EBG$ juga
+adalah siku - siku, $GH$ dengan demikian sejajar dengan $AC$ [Prop. 1.29]. Jadi
+dengan alasan - alasan yang sama, $AC$ juga sejajar dengan $FK$ [Prop. 1.30].
+Jadi, dengan cara yang sama, kita daa tunjukkan $GF$ dan $HK$ sejajar demgan
+$BED$. Dengan demikian, $GK$, $GC$, $AK$, $FB$ dan $BK$ semuanya jajaran genjang.
+Dengan demikian, $GF$ sama panajng dengan $HK$ dan $GH$ [Prop. 1.34]. Dan karena
+$AC$ sama panjang dengan $BD$ , tetapi $AC$ juga sama panjang dengan $GF$ dan $HK$
+[Prop. 1/34][dan masing - masing $GH$ dan $FK$ dengan demikian sama panjang 
+dengan $GF$ dan $HK$], bidang persegi empat $FGHK$ dengan demikian sama sisi. Juga
+saya katakan bahwa $FGHK$ memiliki sudut - sudut siku - siku. Karena $GBEA$
+adalah jajaran genjang, $AEB$ adalah sudut siku - siku, $AGB$ dengan demikian
+juga adalah sudut siku - siku [Prop. 1.34]. Jadi, dengan cara yang sama dapat
+ditunjukkan bahwa sudu - sudut pada $H$, $K$, dan $F$ juga adalah sudut - sudut
+siku - siku. Dengan demikian, sudut - sudut $FGHK$ adalah sudut siku siku. Dan 
+juga sudah ditunjukkan sisi - sisi $FGHK$ sama panjang. Dengan demikian $FGHK$ 
+adalah bujur sangkar [Def. 1.22]. Dan sudah digambarkan membatasi lingkaran 
+$ABCD$.
+
+Dengan demikian, sebuah bujursangkar sudah digambarkan membatasi sebuah lingkaran.
+Yang adalah hal yang perlu dilakukan.
+
+
+\begin{thebibliography}{9} \bibitem{fitzpatrick}
 Richard Fitzpatrick.
 \textit{EUCLID’S ELEMENTS OF GEOMETRY , The Greek text of J.L Heiberg(1883 - 1885)}.
 Revised and corrected - 2008 
