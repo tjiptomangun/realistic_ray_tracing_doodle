@@ -6511,6 +6511,53 @@ $ABCD$.
 Dengan demikian, sebuah bujursangkar sudah digambarkan membatasi sebuah lingkaran.
 Yang adalah hal yang perlu dilakukan.
 
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk menggambarkan sebuah lingkaran di dalam bujur sangkar tertentu.
+\begin{center} 
+\begin{tikzpicture} 
+\draw (-2, 2) node[anchor=south east]{A} -- (0, 2) node[anchor=south]{E} 
+ -- (2, 2) node[anchor=south west]{D} --++(270:2) node[anchor=west]{K} 
+ --++ (270: 2) node[anchor=north west]{C} 
+ --++ (180: 2) node[anchor=north]{H}
+ --++ (180: 2) node[anchor=north east] {B}
+ --++ (90:2) node[anchor=east]{F} --++ (90:2);
+\draw (0, 0) circle(2) --++(0: 2);
+\draw (0, 0) node[anchor=south east]{G} --++(180: 2);
+\draw (0, 0) --++(90: 2);
+\draw (0, 0) --++(270: 2);
+\end{tikzpicture} 
+\end{center} 
+
+Misalkan ada sebuah bujur sangkar $ABCD$. Jadi dibutuhkan untuk menggambarkan
+sebuah lingkaran di dalam bujur sangkar $ABCD$.
+
+Misalkan $AD$ dan $AB$ masing - masing sudah dibagi sama panjang di titik $E$ 
+dan titik $F$ [Prop. 1.10]. Dan misalkan $EH$ sudah ditarik dari $E$, sejajar 
+dengan $AB$ atau $CD$, dan misallam $FK$ sudah ditarik dari $F$, sejajar dengan 
+$AD$ atau $BC$ [Prop. 1.31]. Dengan demikian, $AK$, $KB$, $AH$, $HD$, $AG$, $GC$, 
+$BG$ dan $GD$, masing - masing adalah jajaran genjang dari, dengan sisi - sisi
+yang berhadapan panjangnya sama [Prop. 1.34] . Dan karena $AD$ sama panjang 
+dengan $AB$ dan $AE$ adalah setengah $AD$, dan $AF$ setengah $AB$, $AE$ dengan 
+demikian sama panjang dengan $AF$. Juga sisi - sisi yang di depan nya juga sama
+panjang. Dengan demikian $FG$ sama panjang dengan $GE$. Jadi dengan cara yang
+sama dapat kita tunjukkan masing masing $GH$ dan $GK$ sama panjang dengan 
+$FG$ dan $GE$. Dengan demikian keempat garis lurus $GE$, $GF$, $GH$ dan $GK$ 
+sama panjang satu dngan yang lain. Dengan demikian, lingkaran dengan pusat di 
+$G$, dan jari - jari salah satu di $E$, $F$, $H$ atau $K$ juga akan melalui
+titik - titik lainnya. Dan akan menyinggung garis - garis $AB$, $BC$, $CD$ dan 
+$DA$, dengan mengetahui bahwa sudut - sudut pada $E$, $F$, $H$ dan $K$ adalah
+sudut siku - siku. Karena jika lingkaran memotong $AB$, $BC$, $CD$ atau $DA$, 
+maka garis lurus yang ditarik tegak lurus ke diameter lingkaran dari ujung
+diameter, akan jatuh di dalam lingkaran. Yang adalah hal yang tidak mungkin
+[Prop. 3.16]. Dengan demikian, lingkaran yang digambar dari titik $G$, dan jari
+- jadi  salah satu $E$ ,$F$, $H$, $K$ tidak akan memotong garis lurus $AB$, $BC$, 
+$CD$ atau $DA$. Dengan demikian lingkaran tersebut akan menyinggung garis - garis
+tersebut, dan sudah digambarkan di dalam bujur sangkar $ABCD$.
+
+Dengan demikian, sebuah lingkaran sudah digambarkan di dalam bujur sangkar 
+tertentu. Yang adalah hal yang perlu dilakukan.
 
 \begin{thebibliography}{9} \bibitem{fitzpatrick}
 Richard Fitzpatrick.
