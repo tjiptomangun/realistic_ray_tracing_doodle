@@ -6613,7 +6613,57 @@ Untuk menggambarkan segitiga sama sisi dengan sudut - sudut pada sisi alas
 dua kali lebih besar dari sisi selebihnya.
 \begin{center} 
 \begin{tikzpicture} 
+\pgfmathparse {(1 + sqrt(5))/2}
+\let \goldrat \pgfmathresult
+\pgfmathparse {2}
+\let \ac \pgfmathresult
+\pgfmathparse {\ac*\goldrat}
+\let \ab \pgfmathresult
+\pgfmathparse {\ab - \ac}
+\let \cb \pgfmathresult
+\pgfmathparse {50}
+\let \abdeg \pgfmathresult
+\pgfmathparse {2}
+\let \cd \pgfmathresult
+\pgfmathparse {\cd/sin(36)}
+\let \cdpersincad \pgfmathresult
+\pgfmathparse {sqrt(2*\ac*\ac + 2*\ac*\ac*cos(108)}
+\let \cdlength \pgfmathresult
+\pgfmathparse {\ac*sin(\abdeg)/2 - tan(\abdeg- 90)*\ac*cos(\abdeg)/2}
+\let \acpepcon \pgfmathresult
+\pgfmathparse {\abdeg - 36}
+\let \addeg \pgfmathresult
+\pgfmathparse {\addeg + 180 - 36}
+\let \dcdeg \pgfmathresult
+\pgfmathparse {\ab*cos(\addeg)+\cd*cos(\dcdeg)/2}
+\let \cdhalfx \pgfmathresult
+\pgfmathparse {\ab*sin(\addeg)+\cd*sin(\dcdeg)/2}
+\let \cdhalfy \pgfmathresult
+\pgfmathparse {\ac*cos(\abdeg)/2}
+\let \achalfx \pgfmathresult 
+\pgfmathparse {\ac*sin(\abdeg)/2}
+\let \achalfy \pgfmathresult
+\pgfmathparse {\cdhalfy - tan(\dcdeg + 90)*\cdhalfx}
+\let \cdpepcon \pgfmathresult
+\pgfmathparse {(\cdpepcon - \acpepcon)/(tan(\abdeg  - 90) - tan(\dcdeg + 90))}
+\let \fx \pgfmathresult
+\pgfmathparse {tan(\abdeg - 90)*\fx + \acpepcon}
+\let \fy \pgfmathresult
+\pgfmathparse {sqrt(\fx*\fx + \fy*\fy)}
+\let \frad \pgfmathresult
 
+
+\draw (0, 0) node[anchor=east]{A} --++ (\abdeg:\ac) node [anchor=south]{C}
+--++(\abdeg:\cb) node[anchor=west]{B};
+\draw (0, 0) circle (\ab);
+\draw [dashed, gray]({\ab*cos(\abdeg)}, {\ab*sin(\abdeg)}) circle(\ac);
+\draw ({\ab*cos(\abdeg)}, {\ab*sin(\abdeg)}) 
+--++({\abdeg + (72 - 180)}:\ac) node[anchor=west]{D} -- (0, 0); 
+\draw ({\ab*cos(\abdeg)}, {\ab*sin(\abdeg)}) 
+--++({\abdeg + (72 - 180)}:\ac) -- ({\ac*cos(\abdeg)}, {\ac*sin(\abdeg)});
+\draw [dashed, gray]({\achalfx}, {\achalfy}) --++ ({\abdeg - 90}:1.45);
+\draw [dashed, gray](\cdhalfx, \cdhalfy) --++ ({\dcdeg + 90}:1.45);
+\draw (\fx, \fy) circle(\frad);
 \end{tikzpicture} 
 \end{center} 
  
@@ -6625,7 +6675,7 @@ jari - jari $AB$. Dan misalkan garis lurus $BD$, sama panjang dengan
 garis lurus $AC$, karena tidak lebih besar dari diameter lingkaran $BDE$, 
 sudah di selipkan kedalam lingkaran $BDE$ [Prop. 4.1]. Dan misalkan $AD$
 dan $DC$ sudah dihubungkan. Dan misalkan lingkaran $ACD$ sudah digambarkan
-membatasi lingkaran $ACD$ [Prop. 4.5].
+membatasi segitiga $ACD$ [Prop. 4.5].
 
 Dan karena persegi panjang yang dibentuk $AB$ dan $BC$ sama besar dengan
 bujur sangkar pada $AC$, dan $AC$ sama panjang dengan $BD$,  peresegi
@@ -6635,7 +6685,7 @@ Dan karena titik $B$ sudah diambil di luar lingkaran $ACD$, dan dua buah
 garis lurus $BA$ dan $BD$ sudah menyebar dari $B$ ke lingkaran $ACD$, 
 dengan salah satu memotong lingkaran sedangkan yang lain bertemu 
 lingkaran, dan persegi panjang yang di bentuk $AB$ dan $BC$ sama besar 
-dengan bujur sangkar pada $BD$, dengan demikian menyinggung lingkaran 
+dengan bujur sangkar pada $BD$, $BD$ dengan demikian menyinggung lingkaran 
 $ACD$ [Prop. 3.37]. Karena itu, disebabkan $BD$ menyinggung lingkaran, 
 dan $DC$ sudah ditarik memotong lingkaran dari titik $D$, dan sudut $BDC$
 dengan demikian sama besar dengan sudut $DAC$ pada temberang yang 
@@ -6659,7 +6709,75 @@ masing - masing dua kali besar $DAB$.
 Dengan demikian, segitiga sama sisi $ABD$ sudah digambarkan dengan kedua
 sudut pada alas masing - masing besarnya dua kali sudut selebihnya. Yang
 adalah hal yang perlu dilakukan.
- 
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Cara menggambarkan sebuah segilima dengan sudut - sudut yang sama besar dan
+sisi - sisi yang sama panjang di dalam sebuah lingkaran.
+\begin{center} 
+\begin{tikzpicture} 
+\pgfmathparse {sqrt(pow((2*cos(270+36) - 2*cos(270 - 36)), 2) + 
+pow((2*sin(270+36)  - 2*sin(270 - 36)), 2))}
+\let \cdlength \pgfmathresult
+
+\draw ({5 + 2*cos(270-36)}, {2*sin(270 - 36)}) node[anchor=north east]{G} 
+-- ({5 + 2*cos(270 + 36)},  {2*sin(270+36}) node[anchor=north west]{H}
+-- ({5 + 2 * cos(90)}, {2*sin(90)}) node[anchor=south]{F}
+-- ({5 + 2*cos(270-36)}, {2*sin(270 - 36)});
+
+\draw (0, 0) circle(2);
+\draw ({2*cos(270-36)}, {2*sin(270 - 36)}) node[anchor=north east]{C} 
+-- ({2*cos(270 + 36)},  {2*sin(270+36}) node[anchor=north west]{D}
+-- ({2 * cos(90)}, {2*sin(90)}) node[anchor=south]{A}
+-- ({2*cos(270-36)}, {2*sin(270 - 36)}) 
+--++ (108:\cdlength) node[anchor=east]{B} 
+-- ({2*cos(270 + 36)},  {2*sin(270+36}) 
+--++ ({180 - 108}:\cdlength) node[anchor=west]{E}
+--({2*cos(270-36)}, {2*sin(270 - 36)})
+--++(108:\cdlength)
+--({2*cos(90)}, {2*sin(90)})
+--++ ({270+(108/2)}: \cdlength); 
+\end{tikzpicture} 
+\end{center}
+
+Misalkan $ABCDE$ adalah sebuah lingkaran tertentu. Jadi diperlukan 
+menggambarkan sebuah persegilima dengan sudut - sudut sama besar dan sisi - 
+sisi sama panjang di dalam lingkaran $ABCDE$.
+
+Misalkan segitiga sama sisi $FGH$ sudah dibuat dengan sudut $G$ dan $H$ dua
+kali besar sudut $F$ [Prop. 4.10]. Dan misalkan segitiga $ACD$ dengan sudut
+sudut sama besar dengan segitiga $FGH$ sudah digambarkan didalam lingkaran
+$ABCDE$, sedemikian rupa sehingan $CAD$ sama besar dengan sudut di $F$ dan
+masing - masing sudut $G$ dan $H$ sama besar dengan $ACD$ dan $CDA$ 
+[Prop. 4.2]. Dengan demikian, $ACD$ dan $CDA$ masing - masing dua kali 
+besar $CAD$. Jadi misalkan $ACD$ dan $CDA$ masing - masing
+sudah dibagi dua oleh garis - garis $CE$ dan $DB$ [Prop. 1.9]. Dan misalkan
+$AB$, $BC$, $DE$ dan $EA$ sudah dihubungkan.
+
+Dengan demikian, karena sudut - sudut $ACD$ dan $CDA$ masing masing dua kali
+besar  sudah $CAD$, dan masing - masing dibagi dua oleh garis lurus $CE$ dan 
+$DB$, kelima sudut $DAC$, $ACE$, $ECD$, $CDB$ dan $BDA$ sama besar satu
+dengan yang lain. Dan sudut - sudut yang sama besar berdiri di atas busur -
+busur yang sama besar juga [Prop. 3.26]. Dengan demikian, kelima busur $AC$, 
+$BC$, $CD$, $DE$ dan $EA$ juga sama besar satu dengan yang lain. Dan dalam 
+satu lingkaran garis - garis yang sama panjang menghadap ke busur - busur yang
+sama besar [Prop. 3.29].
+Dengan demikian, segilima $ABCDE$ memiliki sisi - sisi yang sama panjang. Dan
+saya juga katakan memiliki sudut - sudut yang sama besar. Karena busur $AB$ 
+sama besar dengan busur $DE$, misalkan $BCD$ sudah ditambahkan pada keduanya.
+Dengan demikian, keseluruhan busur $ABCD$ sama besar dengan keseluruhan 
+busur $EDCB$.  Dan sudut $AED$ berdiri di atas busur $ABCD$, dan sudut $BAE$
+berdiri di atas busur $EDCB$. Dengan demikian, sudut $BAE$ sama besar dengan
+sudut $AED$ [Prop. 3.27]. Jadi, dengan alasan - alasan yang sama, masing - 
+masing sudut $ABC$, $BCD$, $CDE$ juga sama besar dengan sudut - sudut $BAE$
+dan $AED$. Dengan demikian, persegilima $ABCD$ memiliki sudut - sudut yang
+sama besar. Dan juga sudah ditunjukkan memiliki sisi - sisi yang sama panjang.
+
+Dengan demikian, persegi lima yang memiliki sisi - sisi sama panjang dan 
+sudut- sudut sama besar sudah digambarkan di dalam lingkaran tertentu. Yang
+adalah hal yang perlu dilakukan.
+
 
 \begin{thebibliography}{9} \bibitem{fitzpatrick}
 Richard Fitzpatrick.
