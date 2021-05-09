@@ -6748,7 +6748,7 @@ sisi sama panjang di dalam lingkaran $ABCDE$.
 Misalkan segitiga sama sisi $FGH$ sudah dibuat dengan sudut $G$ dan $H$ dua
 kali besar sudut $F$ [Prop. 4.10]. Dan misalkan segitiga $ACD$ dengan sudut
 sudut sama besar dengan segitiga $FGH$ sudah digambarkan didalam lingkaran
-$ABCDE$, sedemikian rupa sehingan $CAD$ sama besar dengan sudut di $F$ dan
+$ABCDE$, sedemikian rupa sehingga $CAD$ sama besar dengan sudut di $F$ dan
 masing - masing sudut $G$ dan $H$ sama besar dengan $ACD$ dan $CDA$ 
 [Prop. 4.2]. Dengan demikian, $ACD$ dan $CDA$ masing - masing dua kali 
 besar $CAD$. Jadi misalkan $ACD$ dan $CDA$ masing - masing
@@ -6759,7 +6759,7 @@ Dengan demikian, karena sudut - sudut $ACD$ dan $CDA$ masing masing dua kali
 besar  sudah $CAD$, dan masing - masing dibagi dua oleh garis lurus $CE$ dan 
 $DB$, kelima sudut $DAC$, $ACE$, $ECD$, $CDB$ dan $BDA$ sama besar satu
 dengan yang lain. Dan sudut - sudut yang sama besar berdiri di atas busur -
-busur yang sama besar juga [Prop. 3.26]. Dengan demikian, kelima busur $AC$, 
+busur yang sama besar juga [Prop. 3.26]. Dengan demikian, kelima busur $AB$, 
 $BC$, $CD$, $DE$ dan $EA$ juga sama besar satu dengan yang lain. Dan dalam 
 satu lingkaran garis - garis yang sama panjang menghadap ke busur - busur yang
 sama besar [Prop. 3.29].
@@ -6777,6 +6777,167 @@ sama besar. Dan juga sudah ditunjukkan memiliki sisi - sisi yang sama panjang.
 Dengan demikian, persegi lima yang memiliki sisi - sisi sama panjang dan 
 sudut- sudut sama besar sudah digambarkan di dalam lingkaran tertentu. Yang
 adalah hal yang perlu dilakukan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+Untuk menggambarkan persegi lima yang memiliki sudut - sudut sama besar dan
+sisi - sisi yang sama panjang yang membatasi sebuah lingkaran.  
+\begin{center} 
+\begin{tikzpicture} 
+\pgfmathparse {sqrt(pow((2*cos(270+36) - 2*cos(270 - 36)), 2) + 
+pow((2*sin(270+36)  - 2*sin(270 - 36)), 2))}
+\let \cdlength \pgfmathresult 
+\draw (0, 0) circle(2) node[anchor=south west]{F};
+\draw [gray, dashed]({2*cos(270-36)}, {2*sin(270 - 36)}) node[anchor=north east]{C} 
+%% 36 is cad angle
+%% 72 is adc angle
+%% 108 is bcd angle (which is 36  + 72)
+-- ({2*cos(270 + 36)},  {2*sin(270+36})
+-- ({2 * cos(90)}, {2*sin(90)}) 
+-- ({2*cos(270-36)}, {2*sin(270 - 36)}) 
+--++ (108:\cdlength) 
+-- ({2*cos(270 + 36)},  {2*sin(270+36}) 
+--++ ({180 - 108}:\cdlength) 
+--({2*cos(270-36)}, {2*sin(270 - 36)})
+--++(108:\cdlength)
+--({2*cos(90)}, {2*sin(90)})
+--++ ({270+(108/2)}: \cdlength); 
+\draw ({2*cos(270-36)}, {2*sin(270 - 36)}) node[anchor=north east]{C} 
+	-- (0, 0)
+	--({2*cos(270 + 36)},  {2*sin(270+36}) node[anchor=north west]{D};
+\draw (0, 0)
+	-- ({2*cos(270 - 36 - 72)}, {2*sin(270 - 36 - 72)}) node[anchor=east]{B};
+\draw (0, 0)
+	--({2*cos(270 + 36 + 72)},  {2*sin(270+36 + 72}) node[anchor=west]{E};
+\draw (0, 0) -- ({2*cos(90)}, {2*sin (90)}) node [anchor=south]{A}; 
+
+
+\pgfmathparse {tan(270 - 36 + 90)}
+\let \gradcl \pgfmathresult
+\pgfmathparse {tan(270 + 36 -90)}
+\let \graddl \pgfmathresult 
+%%known two segment of line with each starting point and each gradiend
+%%find c1 and c2  first 
+%%eq.
+%%m1(x11 - x01)  = y11 - y01
+%%m1x11 - m1x01  = y11 - y01
+%%since x01 and y01 is know then the equation can be simplified with
+%%m1x11 - m1x01 + y01 = y11
+%%y01 - m1x01 = c1
+\pgfmathparse {2*sin(270 - 36) - 2*cos(270 - 36)*\gradcl }
+\let \constcl \pgfmathresult
+\pgfmathparse {2*sin(270 + 36) - 2*cos(270 + 36)*\graddl}
+\let \constdl \pgfmathresult
+\pgfmathparse {(\constdl - \constcl)/(\gradcl - \graddl)}
+\let \lx \pgfmathresult
+\pgfmathparse {\gradcl * \lx + \constcl}
+\let \ly \pgfmathresult 
+\pgfmathparse {2*cos(270+36)}
+\let \dx \pgfmathresult 
+\pgfmathparse {2*sin(270+36)}
+\let \dy \pgfmathresult 
+\pgfmathparse {2*cos(270-36)}
+\let \cx \pgfmathresult 
+\pgfmathparse {2*sin(270-36)}
+\let \cy \pgfmathresult 
+\pgfmathparse {sqrt((\dx - \lx)*(\dx - \lx) + (\dy - \ly)*(\dy - \ly))}
+\let \dllen \pgfmathresult
+\pgfmathparse {atan(\graddl)}
+\let \angledl \pgfmathresult
+\pgfmathparse {2*cos(270 - 36 - 72)}
+\let \bx \pgfmathresult 
+\pgfmathparse {2*sin(270 - 36 - 72)}
+\let \by \pgfmathresult
+\pgfmathparse {-1 * \gradcl}
+\let \gradck \pgfmathresult
+\pgfmathparse {sqrt(\lx*\lx + \ly*\ly)}
+\let \fllen \pgfmathresult
+
+\draw (\cx, \cy) 
+	-- (\lx, \ly) node[anchor=north] {L} -- (0, 0);
+\draw (\lx, \ly) -- (\dx, \dy) 
+	--++ (\angledl:\dllen) node[anchor=west]{M}
+	--++ ({\angledl + 72}:{\dllen*2}) node[anchor=south west]{G}
+	--++ ({\angledl + 2*72}:{\dllen*2}) node[anchor=south east]{H}
+	--++ ({\angledl + 3*72}:{\dllen*2}) node[anchor=south east]{K}
+	--++ ({\angledl + 4*72}:{\dllen});
+\draw (0, 0) -- ({\fllen*cos(270 - 72)}, {\fllen*sin(270 - 72)});
+	
+\end{tikzpicture} 
+\end{center}
+
+Misalkan $ABCDE$ adalah lingkaran tertentu. Jadi diperlukan untuk 
+menggambarkan persegilima dengan sisi - sisi yang sama panjang dan sudut
+sudut yang sama besar yang membatasi lingkaran $ABCDE$.
+
+Misalkan $A$, $B$, $C$, $D$ dan $E$ sudah diletakkan sebagai titik - titik
+dari persegilima yang dibatasi oleh lingkaran $ABCDE$ [Prop. 3.11], 
+sedemikian rupa sehingga busur - busur $AB$, $BC$, $CD$, $DE$, dan $EA$
+sama besar. Dan misalkan $GH$, $HK$, $KL$, $LM$ dan $MG$ sudah digambarkan
+menyinggung masing - masing titik $A$, $B$, $C$, $D$ dan $E$ \footnote{lihat catatan kaki [prop 3. 34]}. Dan misalkan $F$ adalah pusat dari 
+lingkaran $ABCDE$ sudah ditemukan [Prop. 3. 1]. 
+Dan misalkan $FB$, $FK$, $FC$, $FL$ dan $FD$ sudah dihubungkan.
+
+Dan karena garis lurus $KL$ menyinggung lingkaran $ABCDE$ di titik $C$, 
+dan $FC$ sudah ditarik dari titik pusat $F$ ke titik singgung $C$, $FC$
+dengan demikian tegak lurus terhadap $KL$ [Prop. 3.18]. Dengan demikian
+masing - masing sudut di $C$ adalah siku - siku. Jadi dengan alasan -
+alasan yang sama, sudut pada $B$ dan $D$ juga adalah sudut - siku - siku.
+Dan karena $FCK$ adalah siku - siku, besar bujur sangkar pada $FK$ 
+dengan demikian sama besar dengan jumlah besar bujur sangkar di $FC$ dan
+besar bujur sangkar di $CK$ [Prop. 1.47]. Jadi dengan alasan - alasan yang
+sama, bujur sangkar pada $FK$ juga sama besar dengan jumlah besar bujur
+sangkar di $FB$ dan besar bujur sangkar di $BK$. Sehingga jumlah besar 
+bujur sangkar di $FC$ dan besar bujur sangkar di $CK$ sama besar dengan 
+jumlah besar bujur sangkar di $FB$ dan besar bujur sangkar di $BK$, 
+yang mana besar bujur sangkar di $FC$ sama besar dengan bujur sangkar di
+$FB$. Dengan demikian besar bujur sangkar selebihnya di $CK$ juga sama 
+besar dengan besar bujur sangkar selebihnya di $BK$. Dengan demikian,
+$BK$ sama panjang dengan $CK$. Dan karena $FB$ sama panjang dengan $FC$, 
+dan $FK$ ada pada keduanya, kedua garis lurus $BF$, $FK$ sama panjang
+dengan  kedua garis lurus $CF$, $FK$. Dan sisi  alas $BK$ sama panjang
+dengan sisi alas $CK$. Dengan demikian sudut $BFK$ sama besar dengan
+sudut $KFC$ [Prop. 1.8]. Dan sudut $BKF$ sama besar dengan sudut $FKC$
+[Prop. 1.8]. Dengan demikian, besar sudut $BFC$ dua kali besar sudut 
+$KFC$, dan besar sudut $BKC$ adalah dua kali besar sudut $FKC$. Jadi 
+dengan alasan - alasan yang sama, besar sudut $CFD$ adalah dua kali besar
+sudut $CFL$, dan besar sudut $DLC$ juga dua kali besar sudut $FLC$. Dan
+karena busur $BC$ sama besar dengan busur $CD$, sudut $BFC$ juga sama
+besar dengan sudut $CFD$ [Prop. 3.27]. Dan besar sudut $BFC$  adalah dua
+kali besar sudut sudut $KFC$, dan besar sudut $DFC$ adalah dua kali 
+besar sudut $LFC$. Dengan demikian, besar sudut $KFC$ sama besar dengan
+besar sudut $LFC$. Dan sudut $FCK$ juga sama besar dengan sudut $FCL$.
+Jadi, $FKC$ dan $FLC$ adalah dua buah segitiga dengan dua buah sudut pada
+segitiga yang satu sama besar dengan dua buah sudut di segitiga yang 
+satunya, dan satu sisi pada segitiga yang satu sama panjang dengan sisi
+satu sisi pada segitiga yang satunya, yakni sisi bersama $FC$. Jadi 
+kedua nya juga memiliki sisi - sisi selebihnya yang masing - masing sama
+panjang dengan sisi - sisi selebihnya di segitiga satu lagi, dan sudut
+selebihnya di segitiga yang satu sama besar dengan sudut selebihnya di 
+segitiga yang lain [Prop. 1.26]. Dengan demikian, garis lurus $KC$ sama
+panjang dengan garis lurus $CL$, dan sudut $FKC$ sama besar dengan sudut
+$FLC$. Dan karena $KC$ sama panjang dengan $CL$, panjang $KL$ dengan 
+demikian adalah dua kali panjang $KC$. Jadi dengan alasan - alasan yang 
+sama dapat ditunjukkan bahwa panjang $HK$ adalah dua kali panjang $BK$.
+Dan $BK$ sama panjang dengan $KC$. Dengan demikian $HK$ juga sama panjang
+dengan $KL$. Jadi dengan cara yang sama, masing - masing $HG$, $GM$, $ML$
+dapat ditunjukkan sama panjang dengan masing - masing $HK$ dan $KL$. 
+Dengan demikian, $GHKLM$ adalah persegi lima sama sisi. Juga saya katakan 
+sudut - sudut nya sama besar. Sebab, karena sudut $FKC$ sama 
+besar sudut $FLC$, dan besar sudut $HKL$ sudah ditunjukkan dua kali besar 
+sudut $FKC$, dan besar $KLM$ dua kali besar sudut $FLC$, besar $HKL$ 
+dengan demikian juga sama besar dengan sudut $KLM$. Jadi, dengan cara
+yang sama, masing - masing $KHG$, $HGM$, dan $GML$ juga dapat ditunjukkan
+sama besar dengan masing - masing $HKL$ dan $KLM$. Dengan demikian, 
+kelima sudut $GHK$, $HKL$, $KLM$, $LMG$ dan $MGH$ juga sama besar satu
+dengan yang lain. Dengan demikian, persegi lima $GHKLM$ juga memiliki 
+sudut - sudut yang sama besar. Dan juga sudah ditunjukkan juga sama sisi
+dan sudah digambarkan membatasi lingkaran $ABCDE$.
+
+Dengan demikian, sebuah persegilima dengan sudut - sudut yang sama besar
+dan sisi - sisi yang sama panjang dan digambarkan membatasi sebuah 
+lingkaran sudah dibuat. Yang adalah hal yang perlu dilakukan.  
 
 
 \begin{thebibliography}{9} \bibitem{fitzpatrick}
