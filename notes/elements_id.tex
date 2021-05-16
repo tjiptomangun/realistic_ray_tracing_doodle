@@ -6976,12 +6976,12 @@ yang sama sisi dan sudut - sudut yang sama besar.
 --++ ({108 - 72}:3) node[anchor=south]{A} 
 --++ ({108 - 72*2}:3) node[anchor=west]{E}
 --++ ({108 - 72*3}:3);
-\draw (1.5, 0) -- (\fx, \fy);
+\draw (1.5, 0) -- (\fx, \fy)
 	-- (-1.5, 0);
 \draw (0.7, 2.6) node {F};
 \draw (\fx, \fy) --++ (90: \dflength);
 \draw (\fx, \fy) --++ ({90 - 72}: \dflength);
-\draw (\fx, \fy) --++ ({90 + 72}: \dflength);
+\draw (\fx, \fy) --++ ({90 + 72}: \dflength); 
 \draw (\fx, \fy) --++ (270: \dklength) node[anchor=north]{K};
 \draw (\fx, \fy) --++ ({270 - 72}: \dklength) node[anchor=east]{H};
 \draw (\fx, \fy) --++ ({270 - 2*72}: \dklength) node[anchor=south east]{G};
@@ -7022,8 +7022,9 @@ segitiga yang satu yang sama
 panjang dengan satu sisi pada segitiga yang lain, yakni sisi yang ada 
 pada keduanya 
 yaitu $FC$, yang menghadap ke salah satu sudut yang sama besar. Dengan 
-demikian kedua segitiga juga memiliki sisi - sisi selebihnya pada segitiga
-yang sama yang panjang dengan sisi - sisi selebihnya pada segitiga yang lain
+demikian kedua segitiga juga memiliki sisi - sisi selebihnya pada segitiga 
+yang satu yang sama yang panjang dengan sisi - sisi selebihnya pada 
+segitiga yang lain
 [Prop. 1.26]. Dengan demikian, garis tegak lurus $FH$ juga sama panjang dengan
 garis tegak lurus $FK$. Jadi, dengan cara yang sama, dapat ditunjukkan
 bahwa $FL$, $FM$, dan $FG$ masing - masing sama panjang dengan
@@ -7034,20 +7035,161 @@ $H$, $K$, $L$, atau $M$, juga akan melalui garis - garis selebihnya, dan
 akan menyinggung garis lurus - garis lurus $AB$, $BC$, $CD$, $DE$ dan $EA$,
 dengan mana sudut - sudut pada titik $G$, $H$, $K$, $L$, $M$ adalah sudut
 siku - siku. Karena jika tidak menyinggung, tetapi memotong garis - garis
-tersebut, maka konsekuensinya adalah garis lurus yang ditarik tegak dulur dari
+tersebut, maka konsekuensinya adalah garis lurus yang ditarik tegak lurus dari
 ujung - ujung  diameter jatuh di dalam lingkaran. Yang adalah hal yang 
 mustahil [Prop. 3.16]. Dengan demikian, lingkaran yang ditarik dari 
 titik pusat $F$ dan jari - jari salah satu $G$, $H$, $K$, $L$ atau $M$, 
-tidak memotong garis - gairs $AB$, $BC$, $CD$, $DE$ atau $EA$. Jadi lingkaran
+tidak memotong garis - garis $AB$, $BC$, $CD$, $DE$ atau $EA$. Jadi lingkaran
 tersebut hanya menyinggung garis - garis tersebut. Misalkan sudah digambarkan 
 seperti, $GHKLM$ seperti pada gambar.
 
 Jadi, sebuah lingkaran sudah digambarkan dibatasi oleh sebuah persegi lima yang sama sisi dan sudut - sudut yang sama besar. Yang adalah hal yang perlu 
+dilakukan.  
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Untuk menggambarkan sebuah lingkaran yang membatasi sebuah segilima yang 
+sama sisi dan sudut - sudut yang sama besar.
+
+\begin{center} 
+\begin{tikzpicture} 
+\pgfmathparse {sqrt(pow(3*(cos(270 + 36) - cos(270 - 36)), 2.0) +
+pow(3*(sin(270 + 36) - sin(270 - 36)), 2.0))}
+\let \cdlength \pgfmathresult
+\draw ({3*cos(270 - 36)}, {3*sin(270 - 36)}) node[anchor=north east]{C} --
+ ({3*cos(270 + 36)}, {3*sin(270 + 36)}) node[anchor=north west]{D} --++
+ (72:\cdlength) node[anchor=west]{E} --++
+ ({72*2}:\cdlength) node[anchor=south]{A} --++
+ ({72*3}:\cdlength) node[anchor=east]{B} --++
+ ({72*4}:\cdlength) -- (0, 0) -- 
+ ({3*cos(270 + 36)}, {3*sin(270 + 36)}) -- (0, 0)
+ ({3*cos(270 + 36 + 72)}, {3*sin(270 + 36 + 72)}) -- (0, 0)
+ ({3*cos(270 + 36 + 2*72)}, {3*sin(270 + 36 + 2*72)}) -- (0, 0)
+ ({3*cos(270 + 36 + 3*72)}, {3*sin(270 + 36 + 3*72)}) -- (0, 0)
+ node [anchor=south west]{F} circle (3);
+
+\end{tikzpicture} 
+\end{center}
+
+Misalkan $ABCDE$ adalah sebuah segilima yang sama sisi dan sudut - sudut yang
+sama besar. Jadi diperlukan untuk menggambarkan lingkaran yang membatasi 
+segilima $ABCDE$.
+
+Jadi, misalkan sudut - sudut $BCD$ dan $CDE$ masing - masing sudah dibagi dua 
+sama besar oleh garis - garis $CF$ dan $DF$ [Prop. 1.9]. Dan misalkan garis - 
+garis lurus $FB$, $FA$, dan $FE$ sudah ditarik dari titik $F$, yakni titik
+pertemuan $CF$ dan $DF$, ke titik - titik $B$, $A$ dan $E$. Jadi, dengan cara
+yang sama dengan proposisi sebelumnya, dapat ditunjukkan bahwa masing - masing
+ sudut $CBA$, $BAE$, dan $AED$ juga sudah dibagi sama besar oleh garis - garis
+ $FB$, $FA$ dan $FE$. Dan karena sudut $BCD$ sama besar dengan sudut $CDE$, dan
+$FCD$ setengah dari sudut $BCD$, dan $CDF$ setengah dari sudut $CDE$, $FCD$ 
+dengan demikian sama besar dengan $FDC$. Sehingga sisi $FC$ sama panjang 
+dengan sisi $FD$ [Prop. 1.6]. Jadi, dengan cara yang sama dapat ditunjukkan
+bahwa masing - masing $FB$, $FA$ dan $FE$ sama panjang dengan masing - masing
+$FC$ dan $FD$. Sehingga kelima garis lurus $FA$, $FB$, $FC$, $FD$ dan $FE$ sama
+panjang satu dengan yang lain. Dengan demikian, lingkaran yang ditarik dengan
+titik pusat $F$ dan jari - jari $FA$, $FB$, $FC$, $FD$, atau $FE$ juga akan 
+melalui titik - titik lain dan akan membatasi titik - titik tersebut. Misalkan
+sudah digambarkan dan misalakan lingkaran tersebut adalah $ABCDE$.
+
+Dengan demikian, sebuah lingkaran sudah digambarkan membatasi sebuah segilima 
+yang sama sisi dan memiliki sudut - sudut sama besar. Yang adalah hal yang 
+perlu dilakukan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Untuk menggambarkan segienam yang memiliki sisi - sisi yang sama panjang
+dan sudut - sudut yang sama besar di dalam sebuah lingkaran.
+\begin{center} 
+\begin{tikzpicture} 
+\draw(0, 0) circle(2.5);
+\draw(0, .2) node[anchor=south west]{G};
+\draw(0, 2.5) circle(2.5) node[anchor=south]{D};
+\draw({2.5*cos(30)}, {2.5*sin(30)}) node[anchor=west]{E}
+-- (0, 0) 
+-- ({2.5*cos(210)}, {2.5*sin(210)}) node[anchor=east]{B};
+\draw({2.5*cos(150)}, {2.5*sin(150)}) node[anchor=east]{C}
+-- (0, 0) 
+-- ({2.5*cos(330)}, {2.5*sin(330)}) node[anchor=west]{F};
+\draw(0, -2.5) node[anchor=north]{A} --++ (90:5);
+
+\draw(0, 2.5) circle(2.5) 
+ -- ({2.5*cos(30)}, {2.5*sin(30)})
+ -- ({2.5*cos(330)}, {2.5*sin(330)}) 
+ -- (0, -2.5) node[anchor=north]{A} 
+ -- ({2.5*cos(210)}, {2.5*sin(210)}) 
+ -- ({2.5*cos(150)}, {2.5*sin(150)}) 
+ -- (0, 2.5) circle(2.5);
+\draw (0, 5) node[anchor=south]{H};
+\end{tikzpicture} 
+\end{center} 
+
+Misalkan $ABCDEF$ adalah lingkaran tertentu. Jadi diperlukan untuk 
+menggambarkan segienam dengan sisi - sisi sama panjang dan sudut - sudut sama
+besar yang dibatasi oleh lingkaran $ABCDEF$.
+
+Misalkan diameter $AD$ dari lingkaran $ABCDEF$ sudah digambarkan
+\footnote{lihat catatan kaki Proposisi 4.6}, dan misalkan pusat $G$ dari 
+lingkaran sudah ditemukan [Prop. 3.1]. Dan misalkan lingkaran $EGCH$ sudah
+digambarkan dengan pusat $D$ dan jari - jari $DG$. Dan misalkan $EG$ dan $CG$
+sudah dihubungkan, dan misalkan keduanya sudah ditarik melalui lingkaran 
+$ABCDEF$ ke masing - masing sampai titik $B$ dan $F$. Dan misalkan $AB$, 
+$BC$, $CD$, $DE$, $EF$, dan $FA$ sudah dihubungkan. 
+Saya katakan bahwa segienam $ABCDEF$ adalah sama sisi dan memiliki sudut - 
+sudut yang sama besar.
+
+Sebab karena titik $G$ adalah pusat dari lingkaran $ABCDEF$, dan $GE$ sama 
+panjang dengan $GD$. Dan lagi, karena titik $D$ adalah pusat dari lingkaran
+$GCH$, $DE$ sama panjang dengan $DG$, Tetapi, $GE$ sudah ditunjukkan sama
+panjang dengan $GD$. Dengan demikian, $GE$ juga sama panjang dengan $ED$. 
+Dengan demikian, segitiga $EGD$ adalah sama sisi. Jadi, ketiga sudut $EGD$,
+$GDE$, dan $DEG$ juga sama besar satu dengan lain, karena sudut - sudut pada 
+alas segitiga sama sisi sama besar satu dengan yang lain [Prop. 1.5]. Dan 
+ketiga sudut pada sebuah segitiga sama besar dengan dua buah sudut siku - siku
+[Prop. 1.32]. Dengan demikian, sudut $EGD$ sama besar dengan satu pertiga
+dari dua sudut siku - siku. Jadi, dengan cara yang sama, $DGC$ juga dapat
+dapat ditunjukkan sama besar dengan satu pertiga dua sudut siku - siku. Dan
+karena garis lurus $CG$, berdiri diatas $EB$, membuat dua buah sudut 
+berdampingan $EGC$ dan $CGB$ yang sama besar dua sudut siku - siku 
+[Prop. 1.13], sudut selebihnya $CGB$ juga sama besar dengan sepertiga dua 
+sudut siku - siku. Dengan demikian sudut - sudut $EGD$, $DGC$, dan $CGB$ sama
+besar satu dengan yang lain. Dan karenanya sudut - sudut yang bertolak belakang
+dengan ketiganya $BGA$, $AGF$ dan $FGE$ juga sama besar 
+dengan masing - masing $EGD$, $DGC$, dan $CGB$ [Prop. 1.15]. Dengan demikian, 
+keenam sudut $EGD$, $DGC$, $CGB$, $BGA$, $AGF$ dan $FGE$ sama besar satu
+dengan yang  lain. Dan sudut - sudut yang sama besar berdiri di atas busur
+yang sama besar juga [Prop. 3.26]. Dengan demikian, keenam busur $AB$, $BC$, 
+$CD$, $DE$, $EF$ dan $FA$ sama besar satu dengan yang lain. Dan busur yang sama
+besar menghadap tali busur yang sama panjang [Prop. 3.29]. Dengan demikian, 
+keenam tali busur ($AB$, $BC$, $CD$, $DE$, $EF$ dan $FA$) sama panjang satu
+dengan yang lain. Dengan demikian segienam $ABCDEF$ adalah sama sisi. Jadi, 
+saya katakan juga memiliki sudut - sudut yang sama besar. Karena busur $FA$
+sama besar dengan busur $ED$, misalkan busur $ABCD$ sudah ditambahkan pada 
+keduanya. Dengan demikian, keseluruhan $FABCD$ sama besar dengan keseluruhan
+$EDCBA$. Dan sudut $FED$ berdiri pada busur $FABCD$, dan sudut $AFE$ pada
+busur $EDCBA$. Dengan demikian, sudut $AFE$ sama besar dengan sudut $DEF$
+[Prop. 3.27]. Dengan cara yang sama, juga dapat ditunjukkan sudut - sudut
+selebihnya dari segienam $ABCDEF$ secara individu sama besar dengan masing - 
+masing sudut - sudut $AFE$ dan $FED$. Dengan demikian, segienam $ABCDEF$ 
+memiliki sudut - sudut sama besar. Dan juga sudah ditunjukkan sama sisi.
+Dan sudah digambarkan dibatasi oleh lingkaran $ABCDE$.
+
+Dengan demikian, sebuah segienam sama sisi dan sudut - sudut sama besar sudah
+digambarkan dibatasi lingkaran tertentu. Yang adalah hal yang perlu dilakukan.
+
+\begin{center}\textbf{Dalil}\end{center}
+Jadi, dari saat ini, sudah jelas bahwa sebuah sisi segienam adalah sama panjangdengan jari - jari lingkaran nya.
+
+Dan cara yang sama dengan segilima, jika kita tarik garis singgung ke lingkaran
+melalui seperenam bagian keseluruhan busur (keliling) lingkaran, sebuah 
+segienam sama sisi dan sudut - sudut sama besar dapat dibuat membatasi 
+lingkaran, dengan analogi yang sama yang digunakan terhadap segilima. 
+Selanjutnya, dengan cara yang sama yang digunakan terhadap segilima, 
+kita dapat menggambarkan 
+lingkaran yang membatasi dan dibatasi oleh segienam. Yang adalah hal yang perlu
 dilakukan.
-
-
-
-sisi yang sama besar
 
 
 \begin{thebibliography}{9} \bibitem{fitzpatrick}
@@ -7061,4 +7203,4 @@ Makalah mata kuliah Geometri Fakultas Pasca Sarjana Program Studi Pendidikan Mat
 \bibitem{clarkuni}
 https://mathcs.clarku.edu/~djoyce/java/elements/elements.html 
 \end{thebibliography}
-\end{document} 
+\end{document}
