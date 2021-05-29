@@ -1,0 +1,73 @@
+sin(cba)/ac = sin(bac)/cb
+
+sin(bac) = cb*sin(cba)/ac
+bac = asin(cb*sin(cba)/ac)
+
+4.4
+ax + by = c
+ix + jy = k
+
+ax - c = by
+ix - k = jy
+
+https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection
+(ax - c)/b =  (ix - k)/j
+j(ax - c) = (ix - k)b
+jax - jc = bix - bk
+jax - bix = jc - bk
+x = (jc - bk)/(ja - bi)
+in which j and b is one, and a and i is gradient of each line.
+x = (c - k)/(a - i)
+x = (constantOfEq1 - constantOfEq2)/(grad1 - grad2)
+given to points
+(0, -3) and (4, -3)
+with grad1 = g1 and grad2 = g2;
+ax + y = c;
+ax - c = -(-3);
+0x - c = 3
+-c = 3
+c = -3;
+
+
+
+
+https://amsi.org.au/ESA_Senior_Years/SeniorTopic1/1b/1b_2content_5.html
+see Point–gradient form
+grad = (y - y0)/(x - x0)
+eq 2
+y - (-3) = grad2(x - 4)
+y + 3 = grad2.x - grad2.4
+y = grad2*x - grad2*4 - 3
+eq 1
+y - (-3) = grad1(x - 0)
+y + 3 = grad1.x - 0
+y = grad1.x - 3
+eq1 = eq2 = y
+grad1.x - 3 = grad2*x - grad2*4 - 3
+
+ 
+
+-------------------------
+known two segment of line with each starting point and each gradiend
+find c1 and c2  first
+
+eq.
+m1(x11 - x01)  = y11 - y01
+m1x11 - m1x01  = y11 - y01
+since x01 and y01 is know then the equation can be simplified with
+m1x11 + y01 - m1x01 = y11
+y01 - m1x01= c1
+assume c2 also found
+y1 = m1x1 + c1
+y2 = m2x2 + c2
+if y1 = y2
+m1x1 + c1 = m2x2 + c2
+m1x1 - m2x2 = c2 - c1
+x1(m1 - m2) = c2 - c1
+x = (c2 - c1)/(m1 - m2)
+
+
+
+
+
+

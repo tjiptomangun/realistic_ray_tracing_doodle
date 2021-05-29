@@ -5912,7 +5912,7 @@ lingkaran $ABC$
 
 Misalkan $GH$ sudah ditarik menyinggung lingkaran $ABC$ di titik $A$ 
 \footnote{lihat catatan kaki 3.34}. Dan misalkan sudut $HAC$, sama besar
-dengan sudut $DEF$, sudah dibuat pada garis lurus $AH$ denga titik $A$ berada
+dengan sudut $DEF$, sudah dibuat pada garis lurus $AH$ dengan titik $A$ berada
 di padanya, dan sudut $GAB$ sama besar dengan sudut  $DFE$, pada garis lurus
 $AG$, dengan titik $A$ ada pada nya [Prop. 1.23]. Dan misalkan $BC$ sudah 
 dihubungkan.
@@ -7189,9 +7189,89 @@ lingkaran, dengan analogi yang sama yang digunakan terhadap segilima.
 Selanjutnya, dengan cara yang sama yang digunakan terhadap segilima, 
 kita dapat menggambarkan 
 lingkaran yang membatasi dan dibatasi oleh segienam. Yang adalah hal yang perlu
-dilakukan.
+dilakukan.  
+\stepcounter{section}
+\section*{\centering Proposisi \thesection}
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+Untuk menggambarkan segilimabelas dengan sisi - sisi sama panjang dan 
+sudut - sudut sama besar.
+\begin{center} 
+\begin{tikzpicture} 
+\pgfmathparse {3}
+\let \rad \pgfmathresult
+\pgfmathparse {sqrt(pow(\rad*(cos(90 - 120) - cos(90 + 120)), 2.0) +
+pow(\rad*(sin(90 - 120) - sin(90 + 120)), 2.0))}
+\let \cdlength \pgfmathresult
+\pgfmathparse {sqrt(pow(\rad*(cos(270 + 36) - cos(270 - 36)), 2.0) +
+pow(\rad*(sin(270 + 36) - sin(270 - 36)), 2.0))}
+\let \pentagonlen \pgfmathresult 
+%% f is angle on pentagon on the right of tringle angle of  c
+\pgfmathparse {sqrt(pow(\rad*(cos(90 + 120) - cos(270 - 36)), 2.0) +
+pow(\rad*(sin(90 + 120) - sin(270 - 36)), 2.0))} 
+\let \cflength \pgfmathresult
+\pgfmathparse {360/15} 
+\let \crfangle \pgfmathresult
+%% r is center of circle , so crf is angle that is formed  by line cr and rf
+%% so we are using the same strategy as in pentagon inscribed in a circle
+%% using center of circle and the two points at the bottom of the figure we
+%% want to build, using symetrical angle division , since we are using
+%% positive vertical as the top of the figure.
+\draw(0, 0) circle(\rad);
+\draw ({\rad*cos(90)}, {\rad*sin(90)}) node[anchor=south]{A} --
+({\rad*cos(90 - 120)}, {\rad*sin(90 - 120)}) node[anchor=west]{D} --
+({\rad*cos(90 + 120)}, {\rad*sin(90 + 120)}) node[anchor=east]{C} --
+({\rad*cos(90)}, {\rad*sin(90)});
+\draw ({\rad*cos(270 - 36)}, {\rad*sin(270 - 36)}) --
+ ({\rad*cos(270 + 36)}, {\rad*sin(270 + 36)}) --++
+ (72:\pentagonlen) --++
+ ({72*2}:\pentagonlen) --++
+ ({72*3}:\pentagonlen) node[anchor=east]{B}--++
+ ({72*4}:\pentagonlen); 
+\draw ({\rad*cos(270 - \crfangle/2)}, {\rad*sin(270 - \crfangle/2)}) --
+({\rad*cos(270 + \crfangle/2)}, {\rad*sin(270 + \crfangle/2)})
+--++ (\crfangle: \cflength) 
+--++ ({2*\crfangle}: \cflength) 
+--++ ({3*\crfangle}: \cflength)
+--++ ({4*\crfangle}: \cflength)
+--++ ({5*\crfangle}: \cflength)
+--++ ({6*\crfangle}: \cflength)
+--++ ({7*\crfangle}: \cflength)
+--++ ({8*\crfangle}: \cflength)
+--++ ({9*\crfangle}: \cflength)
+--++ ({10*\crfangle}: \cflength)
+--++ ({11*\crfangle}: \cflength)
+--++ ({12*\crfangle}: \cflength)
+--++ ({13*\crfangle}: \cflength)
+--++ ({14*\crfangle}: \cflength);
+\end{tikzpicture} 
+\end{center} 
+Misalkan $ABCD$ adalah lingkaran tertentu. Jadi diperlukan untuk menggambarkan
+persegi limabelas yang dibatasi lingkaran $ABCD$.
 
+Misalkan $AC$ adalah sisi dari sebuah segitiga sama sisi yang dibatasi 
+lingkaran [Prop. 4.2], dan $AB$ adalah sisi dari sebuah persegi lima yang 
+dibatasi lingkaran [Prop. 4.11] sudah digambarkan pada lingkaran $ABCD$. Dengan
+demikian, karena lingkaran $ABCD$ direncanakan akan terbentuk dari lima belas
+sisi yang sama panjang, busur $ABC$, kerena adalah sepertiga lingkaran, akan 
+disisipi lima buah sisi yang sama panjang tersebut, dan busur $AB$, karena 
+hanya seperlima dari seluruh lingkaran, akan disisipi tiga buah sisi sama 
+panjang tersebut. Dengan demikian, sisa keduanya, busur $BC$, akan disisipi
+dua potong sisi sama panjang tersebut. Misalkan busur $B$ sudah dibagi
+sama besar di titik $E$ [Prop. 3.30]. Dengan demikian, masing - masing $BE$ dan
+$EC$ adalah seperlimabelas dari lingkaran $ABCDE$.
 
+Jadi, jika kita menambahkan ke $BE$ dan $EC$ secara terus - menerus garis lurus
+yang sama panjang dengan keduanya kedalam lingkaran $ABCDE$ [Prop. 4.1], maka
+bidang persegi limabelas yang sama sisi dan sudut - sudut sama  besar akan 
+mengisi dan dibatasi oleh lingkaran. Yang adalah hal yang perlu dilakukan.
+
+Dan dengan cara yang sama yang sudah dilakukan terhadap segilima, jika kita
+menarik garis singgung ke seperlimabelas busur lingkaran, kita dapat 
+menggambarkan segilimabelas yang sama panjang dan sudut - sudut sama besar
+yang membatasi lingkaran. Dan lebih jauh, dengan bukti - bukti  yang sama
+dengan segilima kita juga dapat menggambarkan lingkaran yang membatasi dan 
+dibatasi segilimabelas yang sama sisi dan sudut - sudut sama besar. Yang 
+adalah hal yang perlu dilakukan.
 \begin{thebibliography}{9} \bibitem{fitzpatrick}
 Richard Fitzpatrick.
 \textit{EUCLID’S ELEMENTS OF GEOMETRY , The Greek text of J.L Heiberg(1883 - 1885)}.
