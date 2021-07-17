@@ -7386,7 +7386,8 @@ dan $\beta:\gamma::\zeta:\delta$, maka proporsi ini dikatakan terganggu}.
 notasi ini dinyatakan sebagai $m\alpha + m\beta + ... = m(\alpha+\beta+...)$}}
 \addcontentsline{toc}{section}{Proposisi \thesection} 
 Jika ada sembarang banyak besaran, yang adalah kelipatan yang sama besar,  
-masing - masing, terhadap besaran - besaran yang lain yang sama banyak anggotanya dengan kumpulan pertama, maka besarnya/banyaknya satu besaran dari 
+masing - masing, terhadap besaran - besaran yang lain yang sama banyak 
+anggotanya dengan kumpulan pertama, maka besarnya/banyaknya satu besaran dari 
 kumpulan pertama dapat dibagi satu besaran kumpulan kedua sama dengan 
 besarnya/banyaknya jumlah besaran - besaran pertama dapat dibagai jumlah 
 besaran - besaran kedua. 
@@ -7451,7 +7452,12 @@ keseluruhan besaran kedua. Yang adalah hal yang perlu ditunjukkan.
 \section*{\centering Proposisi \thesection\footnote{Dalam notasi modern, 
 notasi ini dinyatakan sebagai $m\alpha + n\alpha = (m+n)\alpha$}}
 \addcontentsline{toc}{section}{Proposisi \thesection} 
-
+Jika besaran pertama dan besaran ketiga adalah kelipatan yang sama dari
+masing - masing besaran kedua dan keempat, dan masing - masing besaran 
+kelima dan besaran keenam juga adalah kelipatan kelipatan yang sama dari
+besaran  kedua dan keempat, maka besaran jumlah pertama dan kelima, bersama
+jumlah besaran ketiga dan keenam, juga adalah kelipatan yang sama
+dari masing - masing besaran kedua dan besaran keempat.
 \begin{center} 
 \begin{tikzpicture} 
 \draw(0, 0) node[anchor=east]{F} --++(90:.1) --++ (270:.2) 
@@ -7486,15 +7492,7 @@ node[anchor=south]{B}
 node[anchor=south]{G} ;
 ;
 \end{tikzpicture} 
-\end{center}
-Jika besaran pertama dan besaran ketiga adalah kelipatan yang sama dari
-masing - masing besaran kedua dan keempat, dan masing - masing besaran 
-kelima dan besaran keenam juga adalah kelipatan kelipatan yang sama dari
-besaran  kedua dan keempat, maka besaran jumlah pertama dan kelima, bersama
-jumlah besaran ketiga dan keenam, juga adalah kelipatan yang sama
-dari masing - masing besaran kedua dan besaran keempat.
-
-
+\end{center} 
 Sebab misalkan besaran pertama $AB$ dan ketiga $DE$ adalah masing - masing
 kelipatan yang sama dari masing - masing besaran kedua $C$ dan keempat $F$.
 Dan misalkan besaran kelima $BG$ dan besaran keenam $EH$ adalah kelipatan yang
@@ -7530,8 +7528,9 @@ notasi ini dinyatakan sebagai $m(n\alpha)= (mn)\alpha$}}
 
 Jika sebuah besaran pertama dan besaran ketiga masing - masing adalah kelipatan
 yang sama dari besaran kedua dan keempat, dan kelipatan yang sama diterapkan
-pada besaran dan ketiga, maka melalui kesamaan, besaran - besaran yang 
-hasil terapkan tadi juga adalah kelipatan yang sama dari masing - masing
+pada masing - masing besaran pertama dan ketiga, maka melalui kesamaan, 
+besaran - besaran yang didapat dari pelipatan lain tadi juga 
+adalah kelipatan yang sama dari masing - masing
 besaran kedua dan keempat.
 
 \begin{center} 
@@ -7596,13 +7595,325 @@ besaran pertama $EK$ dan ketiga $GL$ adalah kelipatan yang sama dari masing -
 masing besaran kedua $B$ dan keempat $D$, dan besaran kelima $KF$ dan keenam
 $LH$ juga adala kelipatan - kelipatan yang sama dari masing - masing besaran 
 kedua dan keempat, maka jumlah bearan pertama dan kelima, yang menghasilkan $EF$,
-dan jumlah besaran ketiga dan keenam, mengkhasilkan $GH$, juga adalah kelipatan - kelipatan yang sama dari masing - masing besaran kedua dan keempat [Prop. 5.2].
+dan jumlah besaran ketiga dan keenam, mengkhasilkan $GH$, juga adalah kelipatan 
+- kelipatan yang sama dari masing - masing besaran kedua dan keempat 
+[Prop. 5.2].
 
 Dengan demikian, jika besaran pertama dan besaran ketiga adalah kelipatan yang
 sama dari besaran kedua dan besaran keempat, dan kelipatan yang sama sudah 
 diterapkan pada besaran pertama dan ketiga, maka besaran - besaran hasil terapan
 tadi juga akan merupakan kelipatan yang sama dari masing - masing besaran - 
 besaran kedua dan keempat. Yang adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection\footnote{Dalam notasi modern, 
+notasi ini dinyatakan sebagai jika $\alpha:\beta::\gamma:\delta$ maka
+$m\alpha : n\beta :: m\gamma : n\delta$ untuk semua $m$ dan $n$.}}
+\addcontentsline{toc}{section}{Proposisi \thesection} 
+
+Jika rasio besaran pertama dan kedua sama dengan rasio besaran ketiga dengan
+bilangan keempat, maka kelipatan yang sama dari besaran pertama dan ketiga 
+akan memiliki rasio yang sama besar dengan kelipatan yang sama lainnya terhadap
+bilangan kedua dan keempat, diambil dalam urutan yang sesuai.
+
+\begin{center} 
+\begin{tikzpicture} 
+\pgfmathparse {1}
+\let \alength \pgfmathresult
+\pgfmathparse {.4}
+\let \blength \pgfmathresult 
+\pgfmathparse {.6}
+\let \clength \pgfmathresult 
+\pgfmathparse {.3}
+\let \dlength \pgfmathresult
+\pgfmathparse {2}
+\let \mula \pgfmathresult 
+\pgfmathparse {4}
+\let \mulb \pgfmathresult
+\draw(0, 9) node[anchor=east]{A} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\alength)
+--++(90:.1) --++ (270:.2) --++(90:.1) ; 
+\draw(0, 8) node[anchor=east]{B} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\blength)
+--++(90:.1) --++ (270:.2) --++(90:.1) ; 
+\draw(0, 7) node[anchor=east]{E} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\alength)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\alength)
+--++(90:.1) --++ (270:.2) --++(90:.1); 
+\draw(0, 6) node[anchor=east]{G} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\blength)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\blength)
+--++(90:.1) --++ (270:.2) --++(90:.1)
+--++(0:\blength)
+--++(90:.1) --++ (270:.2) --++(90:.1)
+--++(0:\blength)
+--++(90:.1) --++ (270:.2) --++(90:.1); 
+\draw(0, 5) node[anchor=east]{K} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\alength*\mula)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\alength*\mula)
+--++(90:.1) --++ (270:.2) --++(90:.1); 
+\draw(0, 4) node[anchor=east]{M} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\blength*\mulb)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\blength*\mulb)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\blength*\mulb)
+--++(90:.1) --++ (270:.2) --++(90:.1); 
+\draw(0, 3) node[anchor=east]{C} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\clength)
+--++(90:.1) --++ (270:.2) --++(90:.1) ; 
+\draw(0, 2) node[anchor=east]{D} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\dlength)
+--++(90:.1) --++ (270:.2) --++(90:.1) ; 
+\draw(0, 1) node[anchor=east]{F} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\clength)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\clength)
+--++(90:.1) --++ (270:.2) --++(90:.1); 
+\draw(0, 0) node[anchor=east]{H} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\dlength)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\dlength)
+--++(90:.1) --++ (270:.2) --++(90:.1)
+--++(0:\dlength)
+--++(90:.1) --++ (270:.2) --++(90:.1)
+--++(0:\dlength)
+--++(90:.1) --++ (270:.2) --++(90:.1); 
+\draw(0, -1) node[anchor=east]{L} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\clength*\mula)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\clength*\mula)
+--++(90:.1) --++ (270:.2) --++(90:.1); 
+\draw(0, -2) node[anchor=east]{N} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\dlength*\mulb)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\dlength*\mulb)
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:\dlength*\mulb)
+--++(90:.1) --++ (270:.2) --++(90:.1); 
+\end{tikzpicture} 
+\end{center}
+Sebab misalkan rasio besaran pertama $A$ terhadap besaran 
+kedua $B$ sama dengan dengan rasio $C$ terhadap $D$. Dan misalkan kelipatan - 
+kelipatan yang sama besar $E$ dan $F$ sudah didapat dari  masing - masing $A$ 
+dan $C$, dan sembarang kelipatan yang sama besar lain $G$ dan $H$ sudah 
+didapat dari masing - masing $B$ dan $D$. Saya katakan perbandingan $E$ 
+terhadap $G$ sama besar dengan perbandingan $F$ terhadap $H$.
+
+Sebab misalkan kelipatan - kelipatan sama besar $K$ dan $L$ sudah didapat dari
+masing - masing $E$ dan $F$ , dan masing - masing kelipatan kelipatan sama
+besar $M$ dan $N$ sudah didapat dari masing - masing $G$ dan $H$.
+
+Dan karena $E$ dan $F$ adalah kelipatan - kelipatan yang sama besar dari masing -
+masing $A$ dan $C$, dan masing - masing kelipatan - kelipatan sama besar $K$
+dan $L$ sudah didapat dan masing - masing $E$ dan $F$, $K$ dan $L$ dengan 
+demikian adalah kelipatan - kelipatan sama besar dari masing - masing $A$ dan
+$C$ [Prop. 5.3]. Jadi dengan alasan - alasan yang sama, $M$ dan $N$ adalah 
+kelipatan - kelipatan sama besar dari masing - masing $B$ dan $D$. Dan karena
+rasio $A$ dan $B$ sama besar dengan rasio $C$ dan $D$, dan kelipatan - 
+kelipatan sama besar $K$ dan $L$ sudah didapat dari masing - masing $A$ dan $C$,
+dan kelipatan - kelipatan sama besar sembarang lainnya $M$ dan $N$ sudah didapat
+dari $B$ dan $D$, maka jika $K$ lebih besar dari $M$ maka $L$ juga akan lebih
+besar dari $N$, dan jika $K$ sama besar dengan $M$ maka $L$ juga sama besar 
+dengan $N$, dan jika $K$ lebih kecil dari $M$ maka $L$ juga lebih kecil dari 
+$N$ [Def. 5.5]. Dan $K$ dan $L$ adalah kelipatan - kelipatan sama besar
+dari masing - masing $E$ dan $F$, dan $M$ dan $N$ adalah sembarang kelipatan - 
+kelipatan sema besar dari masing - masign $G$ dan $H$. Dengan demikian
+rasio $E$ terhadap $G$ sama degan rasion $F$ terhadap $H$ [Def. 5.5].
+
+Dengan demikian, jika rasio besaran pertama terhadap besaran kedua sama dengan
+rasio besaran ketiga dengan besaran keempat, maka kelipatan - kelipatan sama
+besar dari besaran pertama dan ketiga juga akan memiliki rasio sama besar 
+dengan kelipatan - kelipatan sama besar lainnya dari besaran kedua dan keempat,
+diambil dengan urutan yang sesuai. Yang adalah hal yang perlu ditunjukkan.  
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection\footnote{Dalam notasi modern, 
+notasi ini dinyatakan sebagai $m\alpha - m\beta = m(\alpha - \beta)$ }}
+\addcontentsline{toc}{section}{Proposisi \thesection}
+
+Jika sebuah besaran (pertama) adalah kelipatan sebuah 
+besaran (kedua) lainnya, dan
+bagian yang diambil dari besaran pertama adalah kelipatan yang sama 
+dengan bagian diambil dari besaran kedua, maka sisa pengurangan dari besaran
+pertama adalah kelipatan yang sama dari sisa pengurangan besaran kedua, yang
+adalah perbandingan besaran pertama dengan besaran kedua.
+
+\begin{center}
+\pgfmathparse {3}
+\let \mult \pgfmathresult
+\pgfmathparse {2/3}
+\let \pone \pgfmathresult 
+\pgfmathparse {1/3} 
+\let \ptwo \pgfmathresult 
+\pgfmathparse {2} 
+\let \smallpart \pgfmathresult 
+\begin{tikzpicture} 
+\draw(0, 0) node[anchor=south]{A} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\smallpart*\pone}) 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\smallpart*\pone})
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\smallpart*\pone})
+node[anchor=south]{E} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\smallpart*\ptwo}) 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\smallpart*\ptwo})
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\smallpart*\ptwo}) 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+node[anchor=south]{B}; 
+\draw(0, -1) 
+node[anchor=south]{G} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\smallpart*\ptwo}) 
+node[anchor=south]{C} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\smallpart*\pone}) 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+node[anchor=south]{F} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\smallpart*\ptwo}) 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+node[anchor=south]{B};
+\end{tikzpicture} 
+\end{center}
+
+Sebab misalkan besaran $AB$ adalah kelipatan $CD$, dan $AE$ adalah bagian yang
+diambil dari $AB$ dan adalah kelipatan yang sama (besar dengan kelipatan sebelumnya) dari bagian $CF$ yang diambil
+dari $CD$. Saya katakan bahwa sisanya $EB$ juga adalah kelipatan yang sama
+dari sisa $FD$, yang mana adalah perbandingan $AB$ dengan $CD$.
+
+Sebab, sebanyak bagian di $AE$ yang habis dibagi oleh $CF$, sedemikian pula
+bagian misalnya $EB$ yang habis dibagi oleh $CG$.
+
+Dan karena $AE$ dan $EB$ adalah kelipatan - kelipatan yang sama dari masing - 
+masing $CF$ dan $GC$, $AE$ dan $AB$ dengan demikian juga adalah kelipatan - 
+kelipatan yang sama besar terhadap masing - masing $CG$ dan $GF$ [Prop. 5.1].
+Dan $AE$ dan $AB$ diasumsikan kelipatan - kelipatan yang sama dari masing - 
+masing $CF$ dan $CD$. Dengan demikian, $AB$ adalah kelipatan yang sama dari
+masing - masing $GF$ dan $CD$. Dengan demikian, $GF$ juga sama besar dengan $CD$.
+Misalkan $CF$ sudah dikurangkan dari keduanya. Dengan demikian, sisa $GC$ sama
+besar dengan sisa $FD$. Dan karena $AE$ dan $EB$ adalah kelipatan - kelipatan
+yang sama dari masing - masing $CF$ dan $GC$, dan $GC$ sama besar dengan $DF$, 
+$AE$ dan $EB$ dengan demikian kelipatan - kelipatan yang sama dari masing - masing
+$CF$ dan $FD$. Dan $AE$ dan $AB$ diasumsikan kelipatan - kelipatan yang sama
+dari masing - masing $CF$ dan $CD$. Dengan demikian, $EB$ dan $AB$ adalah kelipatan
+- kelipatan yang sama dari masing - masing $FD$ dan $CD$. Dengan demikian, sisa 
+$EB$ juga akan sama dengan kelipatan yang sama dari sisa $FD$, yang mana adalah
+perbandingan keseluruhan $AB$ dengan $CD$.
+
+Jadi jika dua, dimana  besaran yang besaran pertama adalah kelipatan besaran 
+kedua, dan bagian
+yang diambil dari besaran pertama adalah kelipatan yang sama juga dari bagian
+yang diambil dari besaran kedua, maka sisa besaran pertama juga adalah kelipatan
+yang sama yang dari sisa besaran kedua, yang adalah perbandingan keseluruah 
+ besaran pertama 
+terhadap keseluruhan besaran kedua. Yang adalah hal yang perlu ditunjukkan.
+
+\stepcounter{section}
+\section*{\centering Proposisi \thesection\footnote{Dalam notasi modern, 
+notasi ini dinyatakan sebagai $m\alpha - n\alpha = (m - n)\alpha$ }}
+Jika dua besaran adalah kelipatan - kelipatan yang sama dari dua besaran yang
+lain, dan beberapa bagian yang diambil (dari besaran - besaran pertama) adalah
+kelipatan - kelipatan yang sama dari bagian - bagian yang sama yang diambil
+dari masing - masing besaran - besaran kedua, maka sisa - sisa nya akan
+sama besar dengan besaran - besaran kedua atau sama besar dengan 
+kelipatan - kelipatan yang sama dari sisa - sia dari besaran - besaran kedua.
+\begin{center}
+\pgfmathparse {2}
+\let \po \pgfmathresult
+\pgfmathparse {1.4}
+\let \pt \pgfmathresult
+\begin{tikzpicture} 
+\draw(0, 4) node[anchor=south]{A} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\po}) 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\po})
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\po})
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+node[anchor=south]{G}
+--++(0:{\po})
+--++(90:.1) --++ (270:.2) --++(90:.1)
+node[anchor=south]{H};
+\draw(0, 3) node[anchor=south]{E} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\po}) 
+--++(90:.1) --++ (270:.2) --++(90:.1);
+\draw(0, 2)
+node[anchor=south]{K} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\pt}) 
+node[anchor=south]{C} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\pt}) 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\pt})
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\pt})
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+node[anchor=south]{H}
+--++(0:{\pt})
+--++(90:.1) --++ (270:.2) --++(90:.1)
+node[anchor=south]{D};
+\draw(0, 1) node[anchor=south]{F} 
+--++(90:.1) --++ (270:.2) --++(90:.1) 
+--++(0:{\pt}) 
+--++(90:.1) --++ (270:.2) --++(90:.1) ;
+\end{tikzpicture} 
+\end{center}
+Misalkan dua besaran $AB$ dan $CD$ adalah kelipatan - kelipatan yang sama dari
+masing - masing dua besaran $E$ dan $F$. Dan misalkan masing - masing bagian yang 
+diambil dari besaran - besaran pertama $AG$ dan $CH$ adalah kelipatan - kelipatan
+yang sama dari masing - masing $E$ dan $F$. Saya katakan bahwa sisa - sisa $GB$ 
+dan $HD$ adalah sama besar dengan masing - masing $E$ dan $F$ atau kelipatan -
+kelipatan yang sama dari $E$ dan $F$.
+
+Sebab misalkan pertama $GB$ sama besar dengan $E$. Saya katakan bahwa $HD$ juga
+sama besar dengan $F$.
+
+Sebab misalkan $CK$ sudah dibuat sama besar dengan $F$. Dan karena $AG$ dan $CD$
+adalah kelipatan - kelipatan sama besar dari masing - masing $E$ dan $F$, dan
+$GB$ sama besar dengan $E$, dan $KC$ sama besar $F$, $AB$ dan $KH$ dengan demikian
+juga sama besar dengan kelipatan - kelipatan yang sama dengan masing - masing 
+$E$ dan $F$ [Prop. 5.2]. Dan $AB$ dan $CD$ diasumsikan sama besar dengan kelipatan
+- kelipatan sama besar dari masing - masing $E$ dan $F$. Dengan demikian, $KH$ dan
+$CD$ adalah kelipatan - kelipatan sama besar dari masing - masing $F$ dan $F$.
+Karena itu, $KH$ dan $CD$ masing - masing adalah kelipatan sama besar dari $F$.
+Dengan demikian $KH$ sama besar dengan $CD$. Misalkan $CH$ sudah diambil dari 
+keduanya. Dengan demikian, sisa $KC$ sama besar dengan sisa $HD$. Tetapi, $F$
+sama besar dengan $KC$. Dengan demikian, $HD$ juga sama besar dengan $F$. Dengan
+demikian, jika $GB$ sama besar dengan $E$, maka $HD$ juga akan sama besar 
+dengan $F$.
+
+Jadi, dengan cara yang sama dapat ditunjukkan jika $GB$ adalah kelipatan dari
+$E$ maka $HD$ juga adalah kelipatan dari $F$.
+
+Dengan demikian, jika dua besaran - besaran pertama adalah kelipatan dari 
+besaran - besaran kedua, dan bagian - bagian yang diambil dari besaran - 
+besaran pertama adalah kelipatan yang sama dari bagian - bagian yang diambil dari
+masing - masing besaran - besaran kedua, maka sisa - sisa nya juga akan akan sama
+besar dengan besaran - besaran kedua atau kelipatan - kelipatan yang sama dari
+besaran - besaran kedua. Yang adalah hal yang perlu ditunjukkan.
 
 \begin{thebibliography}{9} \bibitem{fitzpatrick}
 Richard Fitzpatrick.
